@@ -29,6 +29,10 @@ npm run build
 
 首次使用时，在 GitHub 仓库的 `Settings -> Pages` 中将 Source 设为 `GitHub Actions`。
 
+如果希望 workflow 在首次运行时自动启用 GitHub Pages，可以在仓库 `Settings -> Secrets and variables -> Actions`
+添加 `PAGES_TOKEN`。该 token 需要具备 Pages 写权限；使用 PAT 时需要 `repo` scope 或 Pages write permission。
+没有配置该 secret 时，workflow 仍会完成测试与构建，并在 Pages 未启用时输出 notice 提醒手动启用。
+
 Vite 已设置 `base: './'`，因此部署到用户/组织站点或项目子路径时静态资源都能以相对路径加载。
 
 ## 设计说明

@@ -1,0 +1,163 @@
+import { render, screen, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import App from './App'
+
+describe('HanNet homepage', () => {
+  beforeEach(() => {
+    window.history.replaceState(null, '', '/')
+    window.localStorage.clear()
+  })
+
+  it('renders the company-led home view without rendering every page at once', () => {
+    render(<App />)
+
+    expect(screen.getAllByText('瀚网科技').length).toBeGreaterThan(0)
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /设备数据接入与业务协同平台/,
+      }),
+    ).toBeInTheDocument()
+    screen.getAllByRole('link', { name: '联系销售' }).forEach((link) => {
+      expect(link).toHaveAttribute('href', '#contact')
+    })
+    expect(screen.getByRole('link', { name: '查看产品' })).toBeInTheDocument()
+    expect(screen.getAllByText(/业务告警/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/数据看板/).length).toBeGreaterThan(0)
+    expect(screen.getByRole('img', { name: '瀚网科技功能与数据流动态图' })).toBeInTheDocument()
+    expect(screen.getByText('设备数据')).toBeInTheDocument()
+    expect(screen.getByText('业务规则')).toBeInTheDocument()
+    expect(screen.queryByText('车联现场')).not.toBeInTheDocument()
+    expect(screen.queryByTestId('hero-vehicle-visual')).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 2, name: '产品矩阵' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 2, name: '让设备数据进入业务闭环' })).not.toBeInTheDocument()
+  })
+
+  it('renders the expected navigation, language switcher and company identity', () => {
+    render(<App />)
+
+    const nav = screen.getByRole('navigation', { name: '主导航' })
+    ;['首页', '产品', '解决方案', '平台能力', '服务支持', '关于我们', '联系我们'].forEach((label) => {
+      expect(within(nav).getByRole('link', { name: label })).toBeInTheDocument()
+    })
+    expect(screen.getByRole('combobox', { name: '语言' })).toHaveValue('zh')
+    expect(screen.getAllByText('南京瀚网科技有限公司').length).toBeGreaterThan(0)
+  })
+
+  it('renders a contact sales form that creates a prefilled email link', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: '联系我们' }))
+
+    expect(screen.getByRole('heading', { level: 2, name: '联系销售' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 1, name: /设备数据接入与业务协同平台/ })).not.toBeInTheDocument()
+
+    await user.type(screen.getByLabelText('姓名'), '刘先生')
+    await user.type(screen.getByLabelText('公司'), '瀚网客户')
+    await user.type(screen.getByLabelText('邮箱'), 'liu@example.com')
+    await user.type(screen.getByLabelText('需求内容'), '想了解 VelaMQ 和 VelaMQ Bench 的上线方案')
+
+    const sendLink = screen.getByRole('link', { name: '发送邮件' })
+
+    expect(sendLink).toHaveAttribute('href', expect.stringContaining('mailto:sales@hanwang.tech'))
+    expect(sendLink).toHaveAttribute('href', expect.stringContaining('subject='))
+    expect(sendLink).toHaveAttribute('href', expect.stringContaining(encodeURIComponent('瀚网科技官网咨询 - 刘先生')))
+    expect(sendLink).toHaveAttribute('href', expect.stringContaining(encodeURIComponent('想了解 VelaMQ 和 VelaMQ Bench 的上线方案')))
+  })
+
+  it('renders products as an independent view with a selectable active product', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: '产品' }))
+
+    expect(screen.getByRole('heading', { level: 2, name: '产品矩阵' })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'VelaMQ' })).toHaveAttribute('aria-selected', 'true')
+    expect(screen.getByRole('tab', { name: 'VelaMQ Bench' })).toHaveAttribute('aria-selected', 'false')
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'VelaMQ 产品图标' })).toBeInTheDocument()
+    expect(screen.getByText(/设备消息与规则协同平台/)).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 2, name: '从评估到上线的服务支持' })).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('tab', { name: 'VelaMQ Bench' }))
+
+    expect(screen.getByRole('tab', { name: 'VelaMQ' })).toHaveAttribute('aria-selected', 'false')
+    expect(screen.getByRole('tab', { name: 'VelaMQ Bench' })).toHaveAttribute('aria-selected', 'true')
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ Bench' })).toBeInTheDocument()
+    expect(screen.getByText(/容量评估与上线验证工具/)).toBeInTheDocument()
+  })
+
+  it('renders each top-level feature view independently', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: '解决方案' }))
+    expect(screen.getByRole('heading', { level: 2, name: '让设备数据进入业务闭环' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: '从现场接入到运营闭环的一条业务数据链路' })).toBeInTheDocument()
+    expect(screen.getByText('现场接入')).toBeInTheDocument()
+    expect(screen.getByText('车联网消息通道')).toBeInTheDocument()
+    expect(screen.getAllByText('车辆数据流').length).toBeGreaterThan(1)
+    expect(screen.getAllByText('交付结果')).toHaveLength(4)
+    expect(screen.getByRole('img', { name: '工业设备接入动态数据流图' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: '车联网数据流场景图' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: '能源与楼宇数据采集动态数据流图' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: '智慧城市实时事件动态数据流图' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 2, name: '产品矩阵' })).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('link', { name: '平台能力' }))
+    expect(screen.getByRole('heading', { level: 2, name: '让设备事件自然进入业务流程' })).toBeInTheDocument()
+    expect(screen.getByText('流程保护')).toBeInTheDocument()
+    expect(screen.queryByText('车联网消息通道')).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('link', { name: '服务支持' }))
+    expect(screen.getByRole('heading', { level: 2, name: '从评估到上线的服务支持' })).toBeInTheDocument()
+    expect(screen.getByText('试点验证')).toBeInTheDocument()
+    expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
+  })
+
+  it('switches the rendered content between Chinese and English', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.selectOptions(screen.getByRole('combobox', { name: '语言' }), 'en')
+
+    expect(screen.getByRole('combobox', { name: 'Language' })).toHaveValue('en')
+    expect(screen.getByRole('navigation', { name: 'Main navigation' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        level: 1,
+        name: /Device Data Access and Business Collaboration Platform/,
+      }),
+    ).toBeInTheDocument()
+
+    await user.click(screen.getByRole('link', { name: 'Products' }))
+
+    expect(screen.getByRole('heading', { level: 2, name: 'Products' })).toBeInTheDocument()
+    await user.click(screen.getByRole('tab', { name: 'VelaMQ Bench' }))
+    expect(screen.getByText(/Capacity assessment and launch validation/)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('link', { name: 'Contact' }))
+    expect(screen.getByRole('heading', { level: 2, name: 'Contact sales' })).toBeInTheDocument()
+    await user.type(screen.getByLabelText('Name'), 'Alex')
+    expect(screen.getByRole('link', { name: 'Send email' })).toHaveAttribute(
+      'href',
+      expect.stringContaining(encodeURIComponent('Hanwang Tech website inquiry - Alex')),
+    )
+  })
+
+  it('renders service support resources without command-line content', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: '服务支持' }))
+
+    expect(screen.getByText('从评估到上线的服务支持')).toBeInTheDocument()
+    ;['方案沟通', '接入评估', '试点落地', '服务支持'].forEach((label) => {
+      expect(screen.getAllByRole('link', { name: label }).length).toBeGreaterThan(0)
+    })
+    ;['quickstart.sh', 'mqtt pub', 'node-01', '单节点', '多区域部署', '集群部署'].forEach((term) => {
+      expect(screen.queryByText(new RegExp(term))).not.toBeInTheDocument()
+    })
+  })
+})

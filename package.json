@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:docs": "npm run build && rsync -a --delete --exclude superpowers dist/ docs/",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest"

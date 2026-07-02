@@ -19,15 +19,40 @@ npm run build
 
 ## GitHub Pages 自动部署
 
-仓库包含 `.github/workflows/deploy.yml`。推送到 `main` 分支后，GitHub Actions 会执行：
+当前 GitHub Pages 可以使用两种发布方式。
+
+### 方式一：Deploy from a branch
+
+如果仓库 `Settings -> Pages` 中配置为 `Deploy from a branch`，请选择：
+
+- Branch: `main`
+- Folder: `/docs`
+
+本仓库已提交 `docs/index.html` 与构建后的静态资源，因此该方式可以直接访问：
+
+```text
+https://hwkj-tech.github.io/velamq-website/
+```
+
+更新页面内容后，运行并提交构建产物：
+
+```bash
+npm run build:docs
+git add docs package.json
+git commit -m "Update Pages build"
+git push
+```
+
+### 方式二：GitHub Actions
+
+仓库也包含 `.github/workflows/deploy.yml`。如果在 `Settings -> Pages` 中将 Source 设为 `GitHub Actions`，
+推送到 `main` 分支后，GitHub Actions 会执行：
 
 1. 安装依赖：`npm ci`
 2. 运行测试：`npm test -- --run`
 3. 构建静态文件：`npm run build`
 4. 上传 `dist`
 5. 使用 GitHub Pages 发布
-
-首次使用时，在 GitHub 仓库的 `Settings -> Pages` 中将 Source 设为 `GitHub Actions`。
 
 如果希望 workflow 在首次运行时自动启用 GitHub Pages，可以在仓库 `Settings -> Secrets and variables -> Actions`
 添加 `PAGES_TOKEN`。该 token 需要具备 Pages 写权限；使用 PAT 时需要 `repo` scope 或 Pages write permission。

@@ -16,21 +16,22 @@ export function VelaMQIcon({ className, label }: VelaMQIconProps) {
     <svg className={className} focusable="false" viewBox="0 0 64 64" {...accessibilityProps}>
       <defs>
         <linearGradient id={sailAId} x1="15%" x2="82%" y1="12%" y2="92%">
-          <stop offset="0%" stopColor="#55f4e0" />
-          <stop offset="48%" stopColor="#24b9f1" />
-          <stop offset="100%" stopColor="#1673ff" />
+          <stop offset="0%" stopColor="#8df5e4" />
+          <stop offset="52%" stopColor="#00acc1" />
+          <stop offset="100%" stopColor="#00897b" />
         </linearGradient>
         <linearGradient id={sailBId} x1="8%" x2="92%" y1="28%" y2="82%">
-          <stop offset="0%" stopColor="#24e6d6" />
-          <stop offset="62%" stopColor="#1aa9f2" />
-          <stop offset="100%" stopColor="#1167df" />
+          <stop offset="0%" stopColor="#dffdf8" />
+          <stop offset="58%" stopColor="#55d6cf" />
+          <stop offset="100%" stopColor="#00acc1" />
         </linearGradient>
         <radialGradient id={bgId} cx="50%" cy="42%" r="68%">
-          <stop offset="0%" stopColor="#06204b" />
-          <stop offset="100%" stopColor="#020a1b" />
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="58%" stopColor="#edfdfa" />
+          <stop offset="100%" stopColor="#d9f7f3" />
         </radialGradient>
       </defs>
-      <rect width="64" height="64" rx="14" fill={`url(#${bgId})`} />
+      <rect width="64" height="64" rx="14" fill={`url(#${bgId})`} stroke="#9fe7df" strokeWidth="1.4" />
       <path
         className="velamq-icon__sail velamq-icon__sail--back"
         d="M12 20 C22 27 29 35 32 44 C26 48 20 50 15 50 C16 38 15 29 12 20 Z"

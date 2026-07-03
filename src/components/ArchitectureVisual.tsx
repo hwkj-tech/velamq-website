@@ -20,10 +20,12 @@ const defaultContent: VisualContent = {
 }
 
 const routes = {
-  inbound: 'M144 286 C214 236 260 230 330 192',
-  top: 'M404 162 C474 104 548 88 632 96',
-  middle: 'M414 196 C500 202 560 214 632 226',
-  bottom: 'M404 226 C492 286 552 328 632 340',
+  sourceA: 'M118 120 C198 116 250 142 336 178',
+  sourceB: 'M118 196 C210 196 256 194 336 196',
+  sourceC: 'M118 272 C204 276 254 246 336 214',
+  serviceA: 'M430 164 C494 110 548 98 640 112',
+  serviceB: 'M432 196 C510 196 558 196 640 196',
+  serviceC: 'M430 228 C500 286 548 302 640 286',
 }
 
 type ArchitectureVisualProps = {
@@ -39,85 +41,89 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
         <span className="flow-visual__glow flow-visual__glow--c" />
       </div>
 
-      <div className="flow-source-panel" aria-label={content.inputLabel}>
-        {content.inputChips.map((chip, index) => (
-          <span className={`flow-source flow-source--${index + 1}`} key={chip}>
-            <i aria-hidden="true" />
-            {chip}
-          </span>
-        ))}
+      <div className="flow-visual__status" aria-hidden="true">
+        <span>business.fabric</span>
+        <strong>live</strong>
       </div>
 
-      <div className="flow-data-panel" aria-hidden="true">
-        <span className="flow-data-panel__ring flow-data-panel__ring--a" />
-        <span className="flow-data-panel__ring flow-data-panel__ring--b" />
-        <span className="flow-data-panel__node flow-data-panel__node--a" />
-        <span className="flow-data-panel__node flow-data-panel__node--b" />
-        <span className="flow-data-panel__node flow-data-panel__node--c" />
-        <div className="flow-data-card">
-          <span />
-          <span />
-          <span />
-        </div>
-      </div>
-
-      <svg className="flow-visual__map" viewBox="0 0 720 460" aria-hidden="true">
+      <svg className="flow-visual__map" viewBox="0 0 760 360" aria-hidden="true">
         <defs>
           <linearGradient id="business-flow-line" x1="0%" x2="100%" y1="0%" y2="0%">
-            <stop offset="0%" stopColor="#00acc1" stopOpacity="0.1" />
-            <stop offset="48%" stopColor="#00897b" stopOpacity="0.88" />
-            <stop offset="100%" stopColor="#ffb300" stopOpacity="0.76" />
+            <stop offset="0%" stopColor="#00acc1" stopOpacity="0.12" />
+            <stop offset="46%" stopColor="#8df5e4" stopOpacity="0.86" />
+            <stop offset="100%" stopColor="#ffb300" stopOpacity="0.78" />
           </linearGradient>
           <radialGradient id="business-flow-core" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.96" />
-            <stop offset="42%" stopColor="#8df5e4" stopOpacity="0.42" />
+            <stop offset="0%" stopColor="#8df5e4" stopOpacity="0.34" />
+            <stop offset="58%" stopColor="#00acc1" stopOpacity="0.1" />
             <stop offset="100%" stopColor="#00acc1" stopOpacity="0" />
           </radialGradient>
         </defs>
 
-        <path className="flow-line flow-line--inbound" d={routes.inbound} />
-        <path className="flow-line flow-line--top" d={routes.top} />
-        <path className="flow-line flow-line--middle" d={routes.middle} />
-        <path className="flow-line flow-line--bottom" d={routes.bottom} />
+        <path className="flow-line flow-line--source-a" d={routes.sourceA} />
+        <path className="flow-line flow-line--source-b" d={routes.sourceB} />
+        <path className="flow-line flow-line--source-c" d={routes.sourceC} />
+        <path className="flow-line flow-line--service-a" d={routes.serviceA} />
+        <path className="flow-line flow-line--service-b" d={routes.serviceB} />
+        <path className="flow-line flow-line--service-c" d={routes.serviceC} />
 
-        <circle className="flow-core flow-core--outer" cx="330" cy="196" r="116" />
-        <circle className="flow-core flow-core--middle" cx="330" cy="196" r="72" />
-        <circle className="flow-core flow-core--inner" cx="330" cy="196" r="11" />
+        <circle className="flow-core flow-core--outer" cx="382" cy="196" r="116" />
+        <circle className="flow-core flow-core--middle" cx="382" cy="196" r="74" />
+        <circle className="flow-core flow-core--inner" cx="382" cy="196" r="10" />
 
-        <circle className="flow-pulse flow-pulse--a" cx="144" cy="286" r="7" />
-        <circle className="flow-pulse flow-pulse--b" cx="632" cy="96" r="6" />
-        <circle className="flow-pulse flow-pulse--c" cx="632" cy="226" r="6" />
-        <circle className="flow-pulse flow-pulse--d" cx="632" cy="340" r="6" />
+        <circle className="flow-pulse flow-pulse--a" cx="118" cy="120" r="7" />
+        <circle className="flow-pulse flow-pulse--b" cx="118" cy="196" r="6" />
+        <circle className="flow-pulse flow-pulse--c" cx="118" cy="272" r="6" />
+        <circle className="flow-pulse flow-pulse--d" cx="640" cy="196" r="6" />
 
-        <circle className="flow-packet flow-packet--a" r="6">
-          <animateMotion dur="5.8s" path={routes.inbound} repeatCount="indefinite" />
-        </circle>
-        <circle className="flow-packet flow-packet--b" r="5">
-          <animateMotion begin="0.3s" dur="6.6s" path={routes.top} repeatCount="indefinite" />
-        </circle>
-        <circle className="flow-packet flow-packet--c" r="5">
-          <animateMotion begin="0.9s" dur="6.2s" path={routes.middle} repeatCount="indefinite" />
-        </circle>
-        <circle className="flow-packet flow-packet--d" r="5">
-          <animateMotion begin="1.2s" dur="7s" path={routes.bottom} repeatCount="indefinite" />
-        </circle>
+        {Object.values(routes).map((route, index) => (
+          <circle className={`flow-packet flow-packet--${index + 1}`} key={route} r={index < 3 ? 5 : 4.5}>
+            <animateMotion begin={`${index * 0.28}s`} dur={`${5.8 + index * 0.36}s`} path={route} repeatCount="indefinite" />
+          </circle>
+        ))}
       </svg>
 
-      <div className="flow-visual__core">
-        <VelaMQIcon className="flow-visual__core-icon" />
-        <span>{content.coreLabel}</span>
-        <strong>VelaMQ</strong>
-        <p>{content.coreBody}</p>
-      </div>
+      <div className="flow-visual__stage">
+        <div className="flow-source-panel" aria-label={content.inputLabel}>
+          {content.inputChips.map((chip, index) => (
+            <span className={`flow-source flow-source--${index + 1}`} key={chip}>
+              <i aria-hidden="true" />
+              {chip}
+            </span>
+          ))}
+        </div>
 
-      <div className="flow-service-stack" aria-label={content.serviceLabel}>
-        {content.serviceCards.map((card) => (
-          <article className={`flow-service-card flow-service-card--${card.tone}`} key={card.title}>
-            <span>{card.meta}</span>
-            <h2>{card.title}</h2>
-            <p>{card.text}</p>
-          </article>
-        ))}
+        <div className="flow-center-stage">
+          <div className="flow-visual__core">
+            <VelaMQIcon className="flow-visual__core-icon" />
+            <span>{content.coreLabel}</span>
+            <strong>VelaMQ</strong>
+            <p>{content.coreBody}</p>
+          </div>
+
+          <div className="flow-data-panel" aria-hidden="true">
+            <span className="flow-data-panel__ring flow-data-panel__ring--a" />
+            <span className="flow-data-panel__ring flow-data-panel__ring--b" />
+            <span className="flow-data-panel__node flow-data-panel__node--a" />
+            <span className="flow-data-panel__node flow-data-panel__node--b" />
+            <span className="flow-data-panel__node flow-data-panel__node--c" />
+            <div className="flow-data-card">
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+        </div>
+
+        <div className="flow-service-stack" aria-label={content.serviceLabel}>
+          {content.serviceCards.map((card) => (
+            <article className={`flow-service-card flow-service-card--${card.tone}`} key={card.title}>
+              <span>{card.meta}</span>
+              <h2>{card.title}</h2>
+              <p>{card.text}</p>
+            </article>
+          ))}
+        </div>
       </div>
 
       <div className="flow-modules" aria-label={content.modulesLabel}>

@@ -111,6 +111,17 @@ export function SolutionScenarioVisual({ content }: SolutionScenarioVisualProps)
       role="img"
       aria-label={content.ariaLabel}
     >
+      <div className="solution-scenario-visual__status" aria-hidden="true">
+        <span>{content.hubCaption}</span>
+        <strong>live</strong>
+      </div>
+
+      <div className="solution-scenario-visual__mesh" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </div>
+
       <div className="solution-scenario-visual__chips solution-scenario-visual__chips--left">
         {content.inputs.map((item) => (
           <span key={item}>{item}</span>

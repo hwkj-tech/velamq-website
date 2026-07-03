@@ -7,7 +7,7 @@ type BrandMarkProps = {
   onClick?: MouseEventHandler<HTMLAnchorElement>
 }
 
-export function BrandMark({ ariaLabel = '瀚网科技 首页', href = '#home', onClick }: BrandMarkProps) {
+export function BrandMark({ ariaLabel = '翰网科技 首页', href = '#home', onClick }: BrandMarkProps) {
   return (
     <a className="brand-mark" href={href} aria-label={ariaLabel} onClick={onClick}>
       <span className="brand-mark__symbol hannet-logo" aria-hidden="true">

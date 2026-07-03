@@ -1,5 +1,5 @@
-export const companyName = '南京瀚网科技有限公司'
-export const companyDisplayName = '瀚网科技'
+export const companyName = '南京翰网科技有限公司'
+export const companyDisplayName = '翰网科技'
 
 export type Locale = 'zh' | 'en'
 export type ViewId = 'home' | 'product' | 'solutions' | 'platform' | 'support' | 'company' | 'contact'
@@ -38,7 +38,7 @@ export const translations = {
       zh: '中文',
       en: 'English',
     },
-    brandHomeLabel: '瀚网科技 首页',
+    brandHomeLabel: '翰网科技 首页',
     github: 'GitHub',
     contact: '联系销售',
     navItems: [
@@ -54,7 +54,7 @@ export const translations = {
       eyebrow: ['HANWANG TECH', 'Realtime Infrastructure'],
       title: '设备数据接入与业务协同平台',
       body:
-        '瀚网科技面向工业、车联、能源与楼宇等场景，帮助企业把现场设备、业务系统、数据平台和运营流程连接起来，让告警、规则、看板、权限和系统集成快速落地。',
+        '翰网科技面向工业、车联、能源与楼宇等场景，帮助企业把现场设备、业务系统、数据平台和运营流程连接起来，让告警、规则、看板、权限和系统集成快速落地。',
       primaryCta: '联系销售',
       secondaryCta: '查看产品',
       signalsLabel: '平台能力摘要',
@@ -63,7 +63,7 @@ export const translations = {
     productPage: {
       eyebrow: '产品矩阵',
       title: '产品矩阵',
-      intro: 'VelaMQ 与 VelaMQ Bench 分别覆盖设备数据接入和上线验证，共同构成瀚网科技的业务协同产品线。',
+      intro: 'VelaMQ 与 VelaMQ Bench 分别覆盖设备数据接入和上线验证，共同构成翰网科技的业务协同产品线。',
       selectorLabel: '选择产品',
       capabilityEyebrow: '核心功能',
       capabilityTitle: '为海量设备连接而设计',
@@ -99,7 +99,7 @@ export const translations = {
       eyebrow: '平台能力',
       title: '让设备事件自然进入业务流程',
       body:
-        '瀚网科技把设备接入、规则判断、告警处置、权限审计和系统集成组织成可运营的业务闭环，帮助团队从数据可见走向流程可控。',
+        '翰网科技把设备接入、规则判断、告警处置、权限审计和系统集成组织成可运营的业务闭环，帮助团队从数据可见走向流程可控。',
     },
     architecturePoints: [
       { title: '平稳扩展', text: '随着业务范围、设备规模和数据量增长，平台能力可以持续扩展。' },
@@ -122,7 +122,7 @@ export const translations = {
       outcomeLabel: '交付结果',
       overviewLabel: '方案总览',
       overviewTitle: '从现场接入到运营闭环的一条业务数据链路',
-      overviewBody: '借鉴成熟物联网平台的产品表达，瀚网科技把设备连接、事件处理、业务规则、数据看板和系统集成组合成可复制的交付路径。',
+      overviewBody: '借鉴成熟物联网平台的产品表达，翰网科技把设备连接、事件处理、业务规则、数据看板和系统集成组合成可复制的交付路径。',
       metricLabel: '方案能力指标',
       metrics: [
         { value: '4 类', label: '核心行业场景' },
@@ -193,14 +193,14 @@ export const translations = {
       },
     ],
     supportPage: {
-      boardLabel: '瀚网科技交付支持看板',
+      boardLabel: '翰网科技交付支持看板',
       boardTitle: '交付协作看板',
       boardStatus: '上线支持',
       summary: ['业务模块', '规则流程', '看板交付', '持续优化'],
       eyebrow: '服务支持',
       title: '从评估到上线的服务支持',
       body:
-        '从业务方案、现场接入、规则配置到试点验证，瀚网科技提供清晰的交付路径，让团队更快完成设备数据与业务系统的协同落地。',
+        '从业务方案、现场接入、规则配置到试点验证，翰网科技提供清晰的交付路径，让团队更快完成设备数据与业务系统的协同落地。',
     },
     supportSteps: [
       { title: '需求梳理', text: '明确业务场景、设备范围、系统边界和上线目标。' },
@@ -215,8 +215,8 @@ export const translations = {
       { label: '服务支持', href: mailTo },
     ],
     companyPage: {
-      title: '与瀚网科技一起打通设备数据与业务流程',
-      body: '南京瀚网科技有限公司专注于设备数据接入、业务规则协同与企业级运营支持。',
+      title: '与翰网科技一起打通设备数据与业务流程',
+      body: '南京翰网科技有限公司专注于设备数据接入、业务规则协同与企业级运营支持。',
       facts: ['独立公司品牌', 'VelaMQ 产品线', '交付与上线支持'],
     },
     contactPage: {
@@ -239,17 +239,17 @@ export const translations = {
       },
       sendCta: '发送邮件',
       mailHint: '如果浏览器没有自动打开邮件客户端，可以复制销售邮箱发送。',
-      subjectPrefix: '瀚网科技官网咨询',
+      subjectPrefix: '翰网科技官网咨询',
       emptyValue: '未填写',
     },
-    footerText: '南京瀚网科技有限公司 专注于设备数据接入、业务规则协同与企业级运营支持。',
+    footerText: '南京翰网科技有限公司 专注于设备数据接入、业务规则协同与企业级运营支持。',
     footerColumns: [
       { title: '产品', links: ['VelaMQ', 'VelaMQ Bench', '规则自动化', '数据看板'] },
       { title: '资源', links: ['方案沟通', '接入评估', '试点落地', '服务支持'] },
       { title: '公司', links: ['关于我们', '联系方式', '服务支持', companyName] },
     ],
     visual: {
-      ariaLabel: '瀚网科技功能与数据流动态图',
+      ariaLabel: '翰网科技功能与数据流动态图',
       inputLabel: '数据来源',
       inputChips: ['设备数据', '业务事件', '系统状态'],
       coreLabel: '业务能力中枢',

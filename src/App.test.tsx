@@ -11,7 +11,7 @@ describe('HanNet homepage', () => {
   it('renders the company-led home view without rendering every page at once', () => {
     render(<App />)
 
-    expect(screen.getAllByText('瀚网科技').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('翰网科技').length).toBeGreaterThan(0)
     expect(
       screen.getByRole('heading', {
         level: 1,
@@ -24,7 +24,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('link', { name: '查看产品' })).toBeInTheDocument()
     expect(screen.getAllByText(/业务告警/).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/数据看板/).length).toBeGreaterThan(0)
-    expect(screen.getByRole('img', { name: '瀚网科技功能与数据流动态图' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: '翰网科技功能与数据流动态图' })).toBeInTheDocument()
     expect(screen.getByText('设备数据')).toBeInTheDocument()
     expect(screen.getByText('业务规则')).toBeInTheDocument()
     expect(screen.queryByText('车联现场')).not.toBeInTheDocument()
@@ -41,7 +41,7 @@ describe('HanNet homepage', () => {
       expect(within(nav).getByRole('link', { name: label })).toBeInTheDocument()
     })
     expect(screen.getByRole('combobox', { name: '语言' })).toHaveValue('zh')
-    expect(screen.getAllByText('南京瀚网科技有限公司').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('南京翰网科技有限公司').length).toBeGreaterThan(0)
   })
 
   it('renders a contact sales form that creates a prefilled email link', async () => {
@@ -54,7 +54,7 @@ describe('HanNet homepage', () => {
     expect(screen.queryByRole('heading', { level: 1, name: /设备数据接入与业务协同平台/ })).not.toBeInTheDocument()
 
     await user.type(screen.getByLabelText('姓名'), '刘先生')
-    await user.type(screen.getByLabelText('公司'), '瀚网客户')
+    await user.type(screen.getByLabelText('公司'), '翰网客户')
     await user.type(screen.getByLabelText('邮箱'), 'liu@example.com')
     await user.type(screen.getByLabelText('需求内容'), '想了解 VelaMQ 和 VelaMQ Bench 的上线方案')
 
@@ -62,7 +62,7 @@ describe('HanNet homepage', () => {
 
     expect(sendLink).toHaveAttribute('href', expect.stringContaining('mailto:sales@hanwang.tech'))
     expect(sendLink).toHaveAttribute('href', expect.stringContaining('subject='))
-    expect(sendLink).toHaveAttribute('href', expect.stringContaining(encodeURIComponent('瀚网科技官网咨询 - 刘先生')))
+    expect(sendLink).toHaveAttribute('href', expect.stringContaining(encodeURIComponent('翰网科技官网咨询 - 刘先生')))
     expect(sendLink).toHaveAttribute('href', expect.stringContaining(encodeURIComponent('想了解 VelaMQ 和 VelaMQ Bench 的上线方案')))
   })
 

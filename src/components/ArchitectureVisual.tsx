@@ -2,7 +2,7 @@ import type { VisualContent } from '../content'
 import { VelaMQIcon } from './VelaMQIcon'
 
 const defaultContent: VisualContent = {
-  ariaLabel: '瀚网科技功能与数据流动态图',
+  ariaLabel: '翰网科技功能与数据流动态图',
   inputLabel: '数据来源',
   inputChips: ['设备数据', '业务事件', '系统状态'],
   coreLabel: '业务能力中枢',

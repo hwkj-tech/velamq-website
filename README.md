@@ -1,6 +1,6 @@
-# 瀚网科技官网
+# 翰网科技官网
 
-南京瀚网科技有限公司官方网站。页面以“瀚网科技”为公司主品牌，展示 `VelaMQ` 和 `VelaMQ Bench` 两条产品线。项目使用 React、TypeScript 和 Vite 构建，并内置 GitHub Pages 自动部署 workflow。
+南京翰网科技有限公司官方网站。页面以“翰网科技”为公司主品牌，展示 `VelaMQ` 和 `VelaMQ Bench` 两条产品线。项目使用 React、TypeScript 和 Vite 构建，并内置 GitHub Pages 自动部署 workflow。
 
 ## 本地开发
 

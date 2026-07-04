@@ -2,10 +2,10 @@ export const companyName = '南京翰网科技有限公司'
 export const companyDisplayName = '翰网科技'
 
 export type Locale = 'zh' | 'en'
-export type ViewId = 'home' | 'product' | 'solutions' | 'platform' | 'support' | 'company' | 'contact'
+export type ViewId = 'home' | 'product' | 'solutions' | 'platform' | 'docs' | 'support' | 'company' | 'contact'
 export type ProductId = 'velamq' | 'velamq-bench'
 
-export const viewIds: ViewId[] = ['home', 'product', 'solutions', 'platform', 'support', 'company', 'contact']
+export const viewIds: ViewId[] = ['home', 'product', 'solutions', 'platform', 'docs', 'support', 'company', 'contact']
 export const productIds: ProductId[] = ['velamq', 'velamq-bench']
 
 export const salesEmail = 'sales@hanwang.tech'
@@ -46,6 +46,7 @@ export const translations = {
       { id: 'product', label: '产品', href: '#product' },
       { id: 'solutions', label: '解决方案', href: '#solutions' },
       { id: 'platform', label: '平台能力', href: '#platform' },
+      { id: 'docs', label: '文档', href: '#docs' },
       { id: 'support', label: '服务支持', href: '#support' },
       { id: 'company', label: '关于我们', href: '#company' },
       { id: 'contact', label: '联系我们', href: '#contact' },
@@ -55,10 +56,12 @@ export const translations = {
       title: '设备数据接入与业务协同平台',
       body:
         '翰网科技面向工业、车联、能源与楼宇等场景，帮助企业把现场设备、业务系统、数据平台和运营流程连接起来，让告警、规则、看板、权限和系统集成快速落地。',
-      primaryCta: '联系销售',
+      primaryCta: '查看文档',
       secondaryCta: '查看产品',
+      commandLabel: '快速开始命令',
+      command: 'npm create velamq@latest business-fabric',
       signalsLabel: '平台能力摘要',
-      signals: ['业务告警', '数据看板', '系统集成'],
+      signals: ['快速接入', '规则编排', '开放 API'],
     },
     productPage: {
       eyebrow: '产品矩阵',
@@ -208,6 +211,48 @@ export const translations = {
       { title: '试点验证', text: '通过 VelaMQ Bench 形成容量评估与上线建议。' },
       { title: '持续运营', text: '围绕告警、审计、报表和系统集成持续优化。' },
     ],
+    docsPage: {
+      eyebrow: 'Documentation',
+      title: '把产品能力沉淀成可搜索、可复制的工程文档',
+      body:
+        '文档系统围绕接入、规则、告警、看板、API 与部署组织内容，让售前沟通、项目交付和客户自助接入使用同一套语言。',
+      searchPlaceholder: '搜索接入方式、API、规则示例',
+      sidebarLabel: '文档目录',
+      tocLabel: '本页内容',
+      commandLabel: '安装与初始化',
+      command: 'npm create velamq@latest edge-project',
+      groups: [
+        { title: '开始使用', items: ['平台概览', '快速接入', '部署方式'] },
+        { title: '产品能力', items: ['设备接入', '规则自动化', '业务告警', '数据看板'] },
+        { title: '集成与运维', items: ['开放 API', '权限审计', '上线验证'] },
+      ],
+      sections: [
+        {
+          id: 'quickstart',
+          title: '快速开始',
+          text: '从业务场景出发创建接入项目，选择设备协议、业务模块和运行环境。',
+          code: ['npm create velamq@latest edge-project', 'cd edge-project', 'velamq dev --profile industrial'].join('\n'),
+        },
+        {
+          id: 'connect',
+          title: '设备接入',
+          text: '将现场设备、边缘网关和业务系统统一映射为数据源，后续规则和看板都基于同一模型编排。',
+          code: ['source "factory-line-a" {', '  protocol = "mqtt"', '  topic = "site/+/telemetry"', '}'].join('\n'),
+        },
+        {
+          id: 'rules',
+          title: '规则与告警',
+          text: '把设备事件转成通知、工单、系统动作和审计记录，让运营团队围绕同一个事件流协作。',
+          code: ['when temperature > 85 for 3m', 'then alert("bearing-overheat")', 'and dispatch("maintenance-team")'].join('\n'),
+        },
+        {
+          id: 'api',
+          title: '开放 API',
+          text: '通过标准接口把事件、指标、看板和处置记录同步到 ERP、MES、报表和自研系统。',
+          code: ['GET /api/v1/events?source=factory-line-a', 'POST /api/v1/workflows/dispatch', 'GET /api/v1/dashboards/operations'].join('\n'),
+        },
+      ],
+    },
     resources: [
       { label: '方案沟通', href: mailTo },
       { label: '接入评估', href: mailTo },
@@ -245,7 +290,7 @@ export const translations = {
     footerText: '南京翰网科技有限公司 专注于设备数据接入、业务规则协同与企业级运营支持。',
     footerColumns: [
       { title: '产品', links: ['VelaMQ', 'VelaMQ Bench', '规则自动化', '数据看板'] },
-      { title: '资源', links: ['方案沟通', '接入评估', '试点落地', '服务支持'] },
+      { title: '资源', links: ['文档中心', '方案沟通', '接入评估', '服务支持'] },
       { title: '公司', links: ['关于我们', '联系方式', '服务支持', companyName] },
     ],
     visual: {
@@ -282,6 +327,7 @@ export const translations = {
       { id: 'product', label: 'Products', href: '#product' },
       { id: 'solutions', label: 'Solutions', href: '#solutions' },
       { id: 'platform', label: 'Platform', href: '#platform' },
+      { id: 'docs', label: 'Docs', href: '#docs' },
       { id: 'support', label: 'Support', href: '#support' },
       { id: 'company', label: 'Company', href: '#company' },
       { id: 'contact', label: 'Contact', href: '#contact' },
@@ -291,10 +337,12 @@ export const translations = {
       title: 'Device Data Access and Business Collaboration Platform',
       body:
         'Hanwang Tech connects field devices, business systems, data platforms and operating workflows for industrial, connected-vehicle, energy and building scenarios.',
-      primaryCta: 'Contact sales',
+      primaryCta: 'Read docs',
       secondaryCta: 'View products',
+      commandLabel: 'Quickstart command',
+      command: 'npm create velamq@latest business-fabric',
       signalsLabel: 'Platform capability summary',
-      signals: ['Business alerts', 'Dashboards', 'System integration'],
+      signals: ['Quick access', 'Rule orchestration', 'Open API'],
     },
     productPage: {
       eyebrow: 'Products',
@@ -444,6 +492,48 @@ export const translations = {
       { title: 'Pilot validation', text: 'Use VelaMQ Bench to produce capacity assessment and launch recommendations.' },
       { title: 'Continuous operation', text: 'Optimize alerts, audit, reporting and integration after launch.' },
     ],
+    docsPage: {
+      eyebrow: 'Documentation',
+      title: 'Product docs for searchable, repeatable delivery',
+      body:
+        'The docs system organizes access, rules, alerts, dashboards, APIs and deployment notes so sales, delivery and customer teams share the same product language.',
+      searchPlaceholder: 'Search access guides, APIs and rule examples',
+      sidebarLabel: 'Documentation navigation',
+      tocLabel: 'On this page',
+      commandLabel: 'Install and initialize',
+      command: 'npm create velamq@latest edge-project',
+      groups: [
+        { title: 'Get started', items: ['Overview', 'Quick access', 'Deployment'] },
+        { title: 'Capabilities', items: ['Device access', 'Rule automation', 'Business alerts', 'Dashboards'] },
+        { title: 'Integration', items: ['Open API', 'Access audit', 'Launch validation'] },
+      ],
+      sections: [
+        {
+          id: 'quickstart',
+          title: 'Quickstart',
+          text: 'Create an access project from a business scenario, then choose protocols, modules and runtime profile.',
+          code: ['npm create velamq@latest edge-project', 'cd edge-project', 'velamq dev --profile industrial'].join('\n'),
+        },
+        {
+          id: 'connect',
+          title: 'Device access',
+          text: 'Map field devices, edge gateways and business systems into shared data sources for rules and dashboards.',
+          code: ['source "factory-line-a" {', '  protocol = "mqtt"', '  topic = "site/+/telemetry"', '}'].join('\n'),
+        },
+        {
+          id: 'rules',
+          title: 'Rules and alerts',
+          text: 'Turn device events into notifications, work orders, system actions and audit records.',
+          code: ['when temperature > 85 for 3m', 'then alert("bearing-overheat")', 'and dispatch("maintenance-team")'].join('\n'),
+        },
+        {
+          id: 'api',
+          title: 'Open API',
+          text: 'Sync events, metrics, dashboards and handling records into ERP, MES, reports and internal systems.',
+          code: ['GET /api/v1/events?source=factory-line-a', 'POST /api/v1/workflows/dispatch', 'GET /api/v1/dashboards/operations'].join('\n'),
+        },
+      ],
+    },
     resources: [
       { label: 'Solution discussion', href: mailTo },
       { label: 'Access assessment', href: mailTo },
@@ -481,7 +571,7 @@ export const translations = {
     footerText: 'Nanjing Hanwang Technology Co., Ltd. focuses on device data access, rule collaboration and enterprise operations.',
     footerColumns: [
       { title: 'Products', links: ['VelaMQ', 'VelaMQ Bench', 'Rule automation', 'Dashboards'] },
-      { title: 'Resources', links: ['Solution discussion', 'Access assessment', 'Pilot launch', 'Service support'] },
+      { title: 'Resources', links: ['Documentation', 'Solution discussion', 'Access assessment', 'Service support'] },
       { title: 'Company', links: ['About', 'Contact', 'Support', companyName] },
     ],
     visual: {

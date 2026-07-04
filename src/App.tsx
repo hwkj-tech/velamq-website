@@ -9,12 +9,15 @@ import {
   Cloud,
   Database,
   Factory,
+  FileText,
   Gauge,
   Landmark,
   Languages,
   Mail,
+  Search,
   Server,
   ShieldCheck,
+  Terminal,
   Workflow,
 } from 'lucide-react'
 import { type ChangeEvent, type MouseEvent, useEffect, useMemo, useState } from 'react'
@@ -43,6 +46,7 @@ const productIcons = [Server, Gauge]
 const resourceIcons = [BookOpen, Database, Activity, Cloud]
 const localeStorageKey = 'hannet-locale'
 const contactHref = '#contact'
+const docsHref = '#docs'
 
 type ContactFormState = {
   name: string
@@ -212,13 +216,18 @@ function App() {
               <h1 id="hero-title">{copy.hero.title}</h1>
               <p className="hero-lede">{copy.hero.body}</p>
               <div className="hero-actions">
-                <a className="button" href={contactHref} onClick={(event) => handleViewClick(event, 'contact')}>
+                <a className="button" href={docsHref} onClick={(event) => handleViewClick(event, 'docs')}>
                   {copy.hero.primaryCta}
                   <ArrowRight size={17} strokeWidth={2} aria-hidden="true" />
                 </a>
                 <a className="button button--secondary" href="#product" onClick={(event) => handleViewClick(event, 'product')}>
                   {copy.hero.secondaryCta}
                 </a>
+              </div>
+              <div className="hero-command" aria-label={copy.hero.commandLabel}>
+                <Terminal size={16} strokeWidth={1.8} aria-hidden="true" />
+                <span>$</span>
+                <code>{copy.hero.command}</code>
               </div>
               <div className="hero-signals" aria-label={copy.hero.signalsLabel}>
                 {copy.hero.signals.map((signal) => (
@@ -332,6 +341,73 @@ function App() {
                 </article>
               ))}
             </div>
+          </section>
+        )}
+
+        {activeView === 'docs' && (
+          <section className="docs-page page-view" id="docs" aria-labelledby="docs-title">
+            <aside className="docs-sidebar" aria-label={copy.docsPage.sidebarLabel}>
+              <div className="docs-search">
+                <Search size={16} strokeWidth={1.8} aria-hidden="true" />
+                <span>{copy.docsPage.searchPlaceholder}</span>
+                <kbd>⌘K</kbd>
+              </div>
+              <div className="docs-nav-groups">
+                {copy.docsPage.groups.map((group) => (
+                  <div className="docs-nav-group" key={group.title}>
+                    <h3>{group.title}</h3>
+                    {group.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </aside>
+
+            <article className="docs-article">
+              <p className="section-code">{copy.docsPage.eyebrow}</p>
+              <h2 id="docs-title">{copy.docsPage.title}</h2>
+              <p className="docs-article__lede">{copy.docsPage.body}</p>
+
+              <div className="docs-command" aria-label={copy.docsPage.commandLabel}>
+                <Terminal size={17} strokeWidth={1.8} aria-hidden="true" />
+                <span>$</span>
+                <code>{copy.docsPage.command}</code>
+              </div>
+
+              <div className="docs-section-list">
+                {copy.docsPage.sections.map((section) => (
+                  <section className="docs-section" id={section.id} key={section.id} aria-labelledby={`${section.id}-title`}>
+                    <div className="docs-section__copy">
+                      <FileText size={18} strokeWidth={1.8} aria-hidden="true" />
+                      <div>
+                        <h3 id={`${section.id}-title`}>{section.title}</h3>
+                        <p>{section.text}</p>
+                      </div>
+                    </div>
+                    <pre>
+                      <code>{section.code}</code>
+                    </pre>
+                  </section>
+                ))}
+              </div>
+            </article>
+
+            <aside className="docs-toc" aria-label={copy.docsPage.tocLabel}>
+              <h3>{copy.docsPage.tocLabel}</h3>
+              {copy.docsPage.sections.map((section) => (
+                <a
+                  href="#docs"
+                  key={section.id}
+                  onClick={(event) => {
+                    event.preventDefault()
+                    document.getElementById(section.id)?.scrollIntoView({ block: 'start' })
+                  }}
+                >
+                  {section.title}
+                </a>
+              ))}
+            </aside>
           </section>
         )}
 

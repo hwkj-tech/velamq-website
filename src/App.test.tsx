@@ -37,7 +37,7 @@ describe('HanNet homepage', () => {
     render(<App />)
 
     const nav = screen.getByRole('navigation', { name: '主导航' })
-    ;['首页', '产品', '解决方案', '平台能力', '服务支持', '关于我们', '联系我们'].forEach((label) => {
+    ;['首页', '产品', '解决方案', '平台能力', '文档', '服务支持', '关于我们', '联系我们'].forEach((label) => {
       expect(within(nav).getByRole('link', { name: label })).toBeInTheDocument()
     })
     expect(screen.getByRole('combobox', { name: '语言' })).toHaveValue('zh')
@@ -110,10 +110,16 @@ describe('HanNet homepage', () => {
     expect(screen.getByText('流程保护')).toBeInTheDocument()
     expect(screen.queryByText('车联网消息通道')).not.toBeInTheDocument()
 
+    await user.click(screen.getByRole('link', { name: '文档' }))
+    expect(screen.getByRole('heading', { level: 2, name: '把产品能力沉淀成可搜索、可复制的工程文档' })).toBeInTheDocument()
+    expect(screen.getByText('搜索接入方式、API、规则示例')).toBeInTheDocument()
+    expect(screen.getByText('npm create velamq@latest edge-project')).toBeInTheDocument()
+    expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
+
     await user.click(screen.getByRole('link', { name: '服务支持' }))
     expect(screen.getByRole('heading', { level: 2, name: '从评估到上线的服务支持' })).toBeInTheDocument()
     expect(screen.getByText('试点验证')).toBeInTheDocument()
-    expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
+    expect(screen.queryByText('npm create velamq@latest edge-project')).not.toBeInTheDocument()
   })
 
   it('switches the rendered content between Chinese and English', async () => {
@@ -136,6 +142,9 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'Products' })).toBeInTheDocument()
     await user.click(screen.getByRole('tab', { name: 'VelaMQ Bench' }))
     expect(screen.getByText(/Capacity assessment and launch validation/)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('link', { name: 'Docs' }))
+    expect(screen.getByRole('heading', { level: 2, name: 'Product docs for searchable, repeatable delivery' })).toBeInTheDocument()
 
     await user.click(screen.getByRole('link', { name: 'Contact' }))
     expect(screen.getByRole('heading', { level: 2, name: 'Contact sales' })).toBeInTheDocument()

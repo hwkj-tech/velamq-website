@@ -7171,3 +7171,168 @@ textarea::placeholder {
     font-size: 11px;
   }
 }
+
+/* Desktop header polish */
+@media (min-width: 721px) {
+  #home,
+  #product,
+  #solutions,
+  #platform,
+  #docs,
+  #support,
+  #architecture,
+  #developers,
+  #company,
+  #contact {
+    scroll-margin-top: 70px;
+  }
+
+  .site-shell::after {
+    opacity: 0.24;
+  }
+
+  .site-header {
+    background:
+      linear-gradient(180deg, rgba(1, 13, 10, 0.96), rgba(1, 13, 10, 0.82)),
+      rgba(0, 10, 7, 0.9);
+    border-bottom-color: rgba(148, 255, 229, 0.1);
+  }
+
+  .site-header::after {
+    opacity: 0.52;
+  }
+
+  .header-inner {
+    min-height: 58px;
+    height: 58px;
+    gap: 18px;
+  }
+
+  .brand-mark {
+    gap: 8px;
+  }
+
+  .brand-mark__symbol,
+  .hannet-logo svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-mark__word {
+    font-size: 15px;
+    line-height: 0.98;
+  }
+
+  .brand-mark__meta {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+
+  .hannet-logo svg {
+    filter: drop-shadow(0 0 10px rgba(116, 247, 210, 0.18));
+  }
+
+  .logo-frame {
+    fill: rgba(4, 21, 17, 0.92);
+    stroke: rgba(148, 255, 229, 0.32);
+  }
+
+  .logo-rail {
+    stroke: rgba(157, 255, 223, 0.88);
+  }
+
+  .logo-bridge {
+    stroke: rgba(88, 221, 255, 0.82);
+  }
+
+  .logo-node {
+    fill: #9dffdf;
+    stroke: rgba(1, 13, 10, 0.96);
+  }
+
+  .nav-links {
+    height: 100%;
+    gap: 2px;
+  }
+
+  .nav-links a,
+  .header-actions .text-link {
+    min-height: 30px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 8px;
+    color: rgba(234, 255, 251, 0.62);
+    font-size: 12px;
+    font-weight: 680;
+    letter-spacing: 0;
+    box-shadow: none;
+  }
+
+  .nav-links a:hover,
+  .header-actions .text-link:hover {
+    color: rgba(244, 255, 253, 0.94);
+    background: rgba(116, 247, 210, 0.055);
+  }
+
+  .nav-links a[aria-current='page'] {
+    color: #f4fffd;
+    background: rgba(116, 247, 210, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(116, 247, 210, 0.16);
+  }
+
+  .header-actions {
+    gap: 14px;
+  }
+
+  .language-select {
+    min-height: 36px;
+    height: 36px;
+    gap: 7px;
+    padding: 0 34px 0 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.035);
+    border-color: rgba(148, 255, 229, 0.15);
+    box-shadow: none;
+  }
+
+  .language-select:hover,
+  .language-select:focus-within {
+    border-color: rgba(148, 255, 229, 0.32);
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: none;
+  }
+
+  .language-select svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .language-select__label {
+    color: rgba(234, 255, 251, 0.56);
+    font-size: 11px;
+  }
+
+  .language-select select {
+    min-width: 58px;
+    height: 34px;
+    color: #f4fffd;
+    font-size: 12px;
+    font-weight: 780;
+  }
+
+  .language-select__chevron {
+    right: 11px;
+  }
+
+  .site-header .button--compact {
+    min-height: 36px;
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 780;
+    box-shadow: 0 10px 24px rgba(80, 226, 196, 0.14);
+  }
+}

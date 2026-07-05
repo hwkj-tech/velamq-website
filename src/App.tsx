@@ -10,7 +10,6 @@ import {
   Cloud,
   Database,
   Factory,
-  FileText,
   Gauge,
   Landmark,
   Languages,
@@ -21,7 +20,16 @@ import {
   Terminal,
   Workflow,
 } from 'lucide-react'
-import { type ChangeEvent, type FocusEvent, type KeyboardEvent, type MouseEvent, useEffect, useMemo, useState } from 'react'
+import {
+  type ChangeEvent,
+  type FocusEvent,
+  type KeyboardEvent,
+  type MouseEvent,
+  type ReactNode,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import './App.css'
 import { ArchitectureVisual } from './components/ArchitectureVisual'
 import { BrandMark } from './components/BrandMark'
@@ -40,6 +48,7 @@ import {
   type ProductId,
   type ViewId,
 } from './content'
+import { fluxmqDocs, type FluxMQDocBlock, type FluxMQDocDocument, type FluxMQDocsCatalog } from './fluxmqDocs'
 
 const capabilityIcons = [Server, Workflow, Database, Activity, ShieldCheck, Cable]
 const solutionIcons = [Factory, Car, Building2, Landmark]
@@ -75,16 +84,191 @@ const readInitialLocale = (): Locale => {
   }
 }
 
+const resolveDocsLink = (href: string, currentDocumentId: string, docsCatalog: FluxMQDocsCatalog) => {
+  if (/^(https?:|mailto:|#)/.test(href)) {
+    return undefined
+  }
+
+  const [rawPath] = href.split('#')
+  if (!rawPath) {
+    return undefined
+  }
+
+  const baseParts = currentDocumentId.split('/')
+  baseParts.pop()
+
+  const parts = rawPath.startsWith('/')
+    ? rawPath.replace(/^\/+/, '').split('/')
+    : [...baseParts, ...rawPath.split('/')]
+
+  const normalizedParts: string[] = []
+
+  for (const part of parts) {
+    if (!part || part === '.') {
+      continue
+    }
+    if (part === '..') {
+      normalizedParts.pop()
+      continue
+    }
+    normalizedParts.push(part)
+  }
+
+  const targetId = normalizedParts.join('/').replace(/\.(md|mdx)$/, '').replace(/\/$/, '')
+
+  return docsCatalog.documents[targetId] ? targetId : undefined
+}
+
+const renderInlineText = (
+  text: string,
+  currentDocument: FluxMQDocDocument,
+  docsCatalog: FluxMQDocsCatalog,
+  onSelectDocument: (id: string) => void,
+) => {
+  const nodes: ReactNode[] = []
+  const pattern = /(`[^`]+`|\*\*[^*]+\*\*|\[[^\]]+]\([^)]+\))/g
+  let lastIndex = 0
+  let match: RegExpExecArray | null
+
+  while ((match = pattern.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      nodes.push(text.slice(lastIndex, match.index))
+    }
+
+    const token = match[0]
+    const key = `${currentDocument.id}-${match.index}-${token}`
+
+    if (token.startsWith('`')) {
+      nodes.push(<code key={key}>{token.slice(1, -1)}</code>)
+    } else if (token.startsWith('**')) {
+      nodes.push(<strong key={key}>{token.slice(2, -2)}</strong>)
+    } else {
+      const linkMatch = token.match(/^\[([^\]]+)]\(([^)]+)\)$/)
+      if (linkMatch) {
+        const [, label, href] = linkMatch
+        const targetDocumentId = resolveDocsLink(href, currentDocument.id, docsCatalog)
+
+        nodes.push(
+          targetDocumentId ? (
+            <button
+              className="docs-inline-link"
+              key={key}
+              onClick={() => onSelectDocument(targetDocumentId)}
+              type="button"
+            >
+              {label}
+            </button>
+          ) : (
+            <a href={href} key={key}>
+              {label}
+            </a>
+          ),
+        )
+      }
+    }
+
+    lastIndex = match.index + token.length
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex))
+  }
+
+  return nodes
+}
+
+const renderDocsBlock = (
+  block: FluxMQDocBlock,
+  currentDocument: FluxMQDocDocument,
+  docsCatalog: FluxMQDocsCatalog,
+  onSelectDocument: (id: string) => void,
+) => {
+  const renderInline = (text: string) => renderInlineText(text, currentDocument, docsCatalog, onSelectDocument)
+
+  switch (block.type) {
+    case 'heading': {
+      const HeadingTag = block.level <= 2 ? 'h3' : 'h4'
+
+      return (
+        <HeadingTag className="docs-doc-heading" id={block.id} key={block.id}>
+          {block.text}
+        </HeadingTag>
+      )
+    }
+    case 'paragraph':
+      return (
+        <p className="docs-doc-paragraph" key={`${currentDocument.id}-${block.text}`}>
+          {renderInline(block.text)}
+        </p>
+      )
+    case 'list': {
+      const ListTag = block.ordered ? 'ol' : 'ul'
+
+      return (
+        <ListTag className="docs-doc-list" key={`${currentDocument.id}-${block.items.join('-')}`}>
+          {block.items.map((item) => (
+            <li key={item}>{renderInline(item)}</li>
+          ))}
+        </ListTag>
+      )
+    }
+    case 'code':
+      return (
+        <pre className="docs-code-block" data-language={block.language || 'text'} key={`${currentDocument.id}-${block.code}`}>
+          <code>{block.code}</code>
+        </pre>
+      )
+    case 'table':
+      return (
+        <div className="docs-table-wrap" key={`${currentDocument.id}-${block.headers.join('-')}`}>
+          <table>
+            <thead>
+              <tr>
+                {block.headers.map((header) => (
+                  <th key={header}>{renderInline(header)}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, rowIndex) => (
+                <tr key={`${currentDocument.id}-row-${rowIndex}`}>
+                  {row.map((cell, cellIndex) => (
+                    <td key={`${currentDocument.id}-cell-${rowIndex}-${cellIndex}`}>{renderInline(cell)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    case 'image':
+      return (
+        <figure className="docs-media" key={`${block.src}-${block.alt}`}>
+          <img src={block.src} alt={block.alt} loading="lazy" />
+          <figcaption>{block.alt}</figcaption>
+        </figure>
+      )
+    case 'video':
+      return (
+        <figure className="docs-media docs-media--video" key={block.src}>
+          <video controls muted playsInline preload="metadata" src={block.src} />
+          <figcaption>{block.title}</figcaption>
+        </figure>
+      )
+  }
+}
+
 function App() {
   const [locale, setLocale] = useState<Locale>(readInitialLocale)
   const [activeView, setActiveView] = useState<ViewId>(() => viewFromHash(window.location.hash))
   const [activeProduct, setActiveProduct] = useState<ProductId>('velamq')
-  const [activeDocsVersion, setActiveDocsVersion] = useState('v1.0')
-  const [activeDocsTopic, setActiveDocsTopic] = useState('overview')
+  const [activeDocsVersion, setActiveDocsVersion] = useState('1.0')
+  const [activeDocsTopic, setActiveDocsTopic] = useState(fluxmqDocs.zh.defaultDocumentId)
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
 
   const copy = translations[locale]
+  const docsCatalog = fluxmqDocs[locale]
   const selectedProduct = useMemo(
     () => copy.products.find((product) => product.id === activeProduct) ?? copy.products[0],
     [activeProduct, copy.products],
@@ -92,12 +276,12 @@ function App() {
   const selectedProductIndex = copy.products.findIndex((product) => product.id === selectedProduct.id)
   const SelectedProductIcon = productIcons[selectedProductIndex] ?? Server
   const selectedDocsVersion = useMemo(
-    () => copy.docsPage.versions.find((version) => version.id === activeDocsVersion) ?? copy.docsPage.versions[0],
-    [activeDocsVersion, copy.docsPage.versions],
+    () => docsCatalog.versions.find((version) => version.id === activeDocsVersion) ?? docsCatalog.versions[0],
+    [activeDocsVersion, docsCatalog.versions],
   )
-  const selectedDocsTopic = useMemo(
-    () => copy.docsPage.topics.find((topic) => topic.id === activeDocsTopic) ?? copy.docsPage.topics[0],
-    [activeDocsTopic, copy.docsPage.topics],
+  const selectedDocsDocument = useMemo(
+    () => docsCatalog.documents[activeDocsTopic] ?? docsCatalog.documents[docsCatalog.defaultDocumentId],
+    [activeDocsTopic, docsCatalog.defaultDocumentId, docsCatalog.documents],
   )
   const contactMailto = useMemo(() => {
     const valueOrFallback = (value: string) => value.trim() || copy.contactPage.emptyValue
@@ -411,18 +595,18 @@ function App() {
         )}
 
         {activeView === 'docs' && (
-          <section className="docs-page page-view" id="docs" aria-labelledby="docs-title">
-            <aside className="docs-sidebar" aria-label={copy.docsPage.sidebarLabel}>
+          <section className="docs-page docs-page--manual page-view" id="docs" aria-labelledby="docs-title">
+            <aside className="docs-sidebar" aria-label={docsCatalog.sidebarLabel}>
               <div className="docs-search">
                 <Search size={16} strokeWidth={1.8} aria-hidden="true" />
-                <span>{copy.docsPage.searchPlaceholder}</span>
+                <span>{docsCatalog.searchPlaceholder}</span>
                 <kbd>⌘K</kbd>
               </div>
               <div className="docs-version-card">
-                <label htmlFor="docs-version">{copy.docsPage.versionLabel}</label>
+                <label htmlFor="docs-version">{docsCatalog.versionLabel}</label>
                 <div className="docs-version-card__row">
                   <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
-                    {copy.docsPage.versions.map((version) => (
+                    {docsCatalog.versions.map((version) => (
                       <option key={version.id} value={version.id}>
                         {version.label}
                       </option>
@@ -433,87 +617,84 @@ function App() {
                 <p>{selectedDocsVersion.date}</p>
               </div>
               <div className="docs-nav-groups">
-                {copy.docsPage.groups.map((group) => (
+                {docsCatalog.groups.map((group) => (
                   <div className="docs-nav-group" key={group.title}>
                     <h3>{group.title}</h3>
-                    {group.items.map((item) => (
-                      <button
-                        aria-current={activeDocsTopic === item.id ? 'page' : undefined}
-                        data-doc-topic={item.id}
-                        key={item.id}
-                        onClick={() => {
-                          setActiveDocsTopic(item.id)
-                        }}
-                        type="button"
-                      >
-                        {item.label}
-                      </button>
-                    ))}
+                    {group.entries.map((entry) =>
+                      entry.type === 'category' ? (
+                        <span className={`docs-nav-category docs-nav-depth-${entry.depth}`} key={`${group.title}-${entry.label}`}>
+                          {entry.label}
+                        </span>
+                      ) : (
+                        <button
+                          aria-current={selectedDocsDocument.id === entry.id ? 'page' : undefined}
+                          className={`docs-nav-button docs-nav-depth-${entry.depth}`}
+                          data-doc-topic={entry.id}
+                          key={entry.id}
+                          onClick={() => {
+                            setActiveDocsTopic(entry.id)
+                          }}
+                          type="button"
+                        >
+                          {entry.label}
+                        </button>
+                      ),
+                    )}
                   </div>
                 ))}
               </div>
             </aside>
 
             <article className="docs-article">
-              <p className="section-code">{copy.docsPage.eyebrow}</p>
-              <h2 id="docs-title">{copy.docsPage.title}</h2>
-              <p className="docs-article__lede">{copy.docsPage.body}</p>
+              <p className="section-code">{docsCatalog.eyebrow}</p>
+              <h2 id="docs-title">{docsCatalog.title}</h2>
+              <p className="docs-article__lede">{docsCatalog.body}</p>
 
-              <div className="docs-command" aria-label={copy.docsPage.commandLabel}>
+              <div className="docs-command" aria-label={docsCatalog.commandLabel}>
                 <Terminal size={17} strokeWidth={1.8} aria-hidden="true" />
                 <span>$</span>
                 <code>{selectedDocsVersion.command}</code>
               </div>
 
               <div className="docs-version-note">
-                <strong>{copy.docsPage.versionStatusLabel}</strong>
+                <strong>{docsCatalog.versionStatusLabel}</strong>
                 <span>{selectedDocsVersion.label}</span>
                 <p>{selectedDocsVersion.note}</p>
               </div>
 
-              <div className="docs-topic-panel">
-                <div className="docs-topic-header">
-                  <div className="docs-topic-header__icon">
-                    <FileText size={18} strokeWidth={1.8} aria-hidden="true" />
-                  </div>
-                  <div>
-                    <span>{selectedDocsTopic.id}</span>
-                    <h3 id={`${selectedDocsTopic.id}-title`}>{selectedDocsTopic.title}</h3>
-                    <p>{selectedDocsTopic.summary}</p>
-                  </div>
+              <div className="docs-topic-panel docs-document-panel">
+                <div className="docs-document-header">
+                  <span className="docs-document-path">{selectedDocsDocument.sourcePath}</span>
+                  <h3 id={`${selectedDocsDocument.id}-title`}>{selectedDocsDocument.title}</h3>
+                  {selectedDocsDocument.summary && <p>{selectedDocsDocument.summary}</p>}
                 </div>
 
-                <div className="docs-section-list">
-                  {selectedDocsTopic.sections.map((section) => (
-                  <section className="docs-section" id={section.id} key={section.id} aria-labelledby={`${section.id}-title`}>
-                    <div className="docs-section__copy">
-                      <FileText size={18} strokeWidth={1.8} aria-hidden="true" />
-                      <div>
-                        <h3 id={`${section.id}-title`}>{section.title}</h3>
-                        <p>{section.text}</p>
-                      </div>
+                <div className="docs-document-body">
+                  {selectedDocsDocument.blocks.map((block, index) => (
+                    <div className="docs-block" key={`${selectedDocsDocument.id}-${index}`}>
+                      {renderDocsBlock(block, selectedDocsDocument, docsCatalog, setActiveDocsTopic)}
                     </div>
-                    <pre>
-                      <code>{section.code}</code>
-                    </pre>
-                  </section>
                   ))}
                 </div>
               </div>
             </article>
 
-            <aside className="docs-toc" aria-label={copy.docsPage.tocLabel}>
-              <h3>{copy.docsPage.tocLabel}</h3>
-              {selectedDocsTopic.sections.map((section) => (
+            <aside className="docs-toc" aria-label={docsCatalog.tocLabel}>
+              <h3>{docsCatalog.tocLabel}</h3>
+              <a href="#docs" onClick={(event) => event.preventDefault()}>
+                {selectedDocsDocument.title}
+              </a>
+              {selectedDocsDocument.headings.map((heading) => (
                 <a
-                  href="#docs"
-                  key={section.id}
+                  className={`docs-toc-depth-${heading.level}`}
+                  href={`#${heading.id}`}
+                  key={heading.id}
                   onClick={(event) => {
                     event.preventDefault()
-                    document.getElementById(section.id)?.scrollIntoView({ block: 'start' })
+                    document.getElementById(heading.id)?.scrollIntoView({ block: 'start' })
                   }}
                 >
-                  {section.title}
+                  {heading.text}
                 </a>
               ))}
             </aside>

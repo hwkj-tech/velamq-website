@@ -40,7 +40,7 @@ describe('HanNet homepage', () => {
     ;['首页', '产品', '解决方案', '平台能力', '文档', '服务支持', '关于我们', '联系我们'].forEach((label) => {
       expect(within(nav).getByRole('link', { name: label })).toBeInTheDocument()
     })
-    expect(screen.getByRole('combobox', { name: '语言' })).toHaveValue('zh')
+    expect(screen.getByRole('button', { name: '语言: 中文' })).toHaveAttribute('aria-expanded', 'false')
     expect(screen.getAllByText('南京翰网科技有限公司').length).toBeGreaterThan(0)
   })
 
@@ -128,9 +128,11 @@ describe('HanNet homepage', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.selectOptions(screen.getByRole('combobox', { name: '语言' }), 'en')
+    await user.click(screen.getByRole('button', { name: '语言: 中文' }))
+    expect(screen.getByRole('listbox', { name: '语言' })).toBeInTheDocument()
+    await user.click(screen.getByRole('option', { name: 'English' }))
 
-    expect(screen.getByRole('combobox', { name: 'Language' })).toHaveValue('en')
+    expect(screen.getByRole('button', { name: 'Language: English' })).toHaveAttribute('aria-expanded', 'false')
     expect(screen.getByRole('navigation', { name: 'Main navigation' })).toBeInTheDocument()
     expect(
       screen.getByRole('heading', {

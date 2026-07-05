@@ -5,6 +5,7 @@ import {
   Building2,
   Cable,
   Car,
+  Check,
   ChevronDown,
   Cloud,
   Database,
@@ -20,7 +21,7 @@ import {
   Terminal,
   Workflow,
 } from 'lucide-react'
-import { type ChangeEvent, type MouseEvent, useEffect, useMemo, useState } from 'react'
+import { type ChangeEvent, type FocusEvent, type KeyboardEvent, type MouseEvent, useEffect, useMemo, useState } from 'react'
 import './App.css'
 import { ArchitectureVisual } from './components/ArchitectureVisual'
 import { BrandMark } from './components/BrandMark'
@@ -47,6 +48,8 @@ const resourceIcons = [BookOpen, Database, Activity, Cloud]
 const localeStorageKey = 'hannet-locale'
 const contactHref = '#contact'
 const docsHref = '#docs'
+const localeOptions: Locale[] = ['zh', 'en']
+const languageMenuId = 'site-language-menu'
 
 type ContactFormState = {
   name: string
@@ -79,6 +82,7 @@ function App() {
   const [activeDocsVersion, setActiveDocsVersion] = useState('v1.0')
   const [activeDocsTopic, setActiveDocsTopic] = useState('overview')
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
 
   const copy = translations[locale]
   const selectedProduct = useMemo(
@@ -152,11 +156,22 @@ function App() {
     activateView(id)
   }
 
-  const changeLanguage = (event: ChangeEvent<HTMLSelectElement>) => {
-    const nextLocale = event.currentTarget.value
+  const selectLanguage = (nextLocale: Locale) => {
+    setLocale(nextLocale)
+    setIsLanguageMenuOpen(false)
+  }
 
-    if (nextLocale === 'zh' || nextLocale === 'en') {
-      setLocale(nextLocale)
+  const handleLanguageBlur = (event: FocusEvent<HTMLDivElement>) => {
+    const nextTarget = event.relatedTarget
+
+    if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
+      setIsLanguageMenuOpen(false)
+    }
+  }
+
+  const handleLanguageKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') {
+      setIsLanguageMenuOpen(false)
     }
   }
 
@@ -196,16 +211,49 @@ function App() {
             })}
           </nav>
           <div className="header-actions">
-            <div className="language-select">
+            <div className="language-select" onBlur={handleLanguageBlur} onKeyDown={handleLanguageKeyDown}>
               <Languages size={16} strokeWidth={1.9} aria-hidden="true" />
               <span className="language-select__label" aria-hidden="true">
                 {copy.languageLabel}
               </span>
-              <select aria-label={copy.languageLabel} onChange={changeLanguage} value={locale}>
-                <option value="zh">{copy.languageOptions.zh}</option>
-                <option value="en">{copy.languageOptions.en}</option>
-              </select>
-              <ChevronDown className="language-select__chevron" size={15} strokeWidth={2} aria-hidden="true" />
+              <button
+                aria-controls={languageMenuId}
+                aria-expanded={isLanguageMenuOpen}
+                aria-haspopup="listbox"
+                aria-label={`${copy.languageLabel}: ${copy.languageOptions[locale]}`}
+                className="language-select__trigger"
+                onClick={() => setIsLanguageMenuOpen((isOpen) => !isOpen)}
+                type="button"
+              >
+                {copy.languageOptions[locale]}
+              </button>
+              <ChevronDown
+                className={`language-select__chevron${isLanguageMenuOpen ? ' is-open' : ''}`}
+                size={15}
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+              {isLanguageMenuOpen && (
+                <div className="language-select__menu" id={languageMenuId} role="listbox" aria-label={copy.languageLabel}>
+                  {localeOptions.map((option) => {
+                    const isSelected = locale === option
+
+                    return (
+                      <button
+                        aria-selected={isSelected}
+                        className={`language-select__option${isSelected ? ' is-selected' : ''}`}
+                        key={option}
+                        onClick={() => selectLanguage(option)}
+                        role="option"
+                        type="button"
+                      >
+                        <span>{copy.languageOptions[option]}</span>
+                        <Check size={14} strokeWidth={2.4} aria-hidden="true" />
+                      </button>
+                    )
+                  })}
+                </div>
+              )}
             </div>
             <a className="text-link" href="https://github.com/yunliu-tech">
               {copy.github}

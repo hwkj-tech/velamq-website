@@ -111,9 +111,11 @@ describe('HanNet homepage', () => {
     expect(screen.queryByText('车联网消息通道')).not.toBeInTheDocument()
 
     await user.click(screen.getByRole('link', { name: '文档' }))
-    expect(screen.getByRole('heading', { level: 2, name: '把产品能力沉淀成可搜索、可复制的工程文档' })).toBeInTheDocument()
-    expect(screen.getByText('搜索接入方式、API、规则示例')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
+    expect(screen.getByText('搜索 VelaMQ 接入、规则、API')).toBeInTheDocument()
     expect(screen.getByText('npm create velamq@latest edge-project')).toBeInTheDocument()
+    expect(screen.getByRole('combobox', { name: '文档版本' })).toHaveValue('v1.0')
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ 概览' })).toBeInTheDocument()
     expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
 
     await user.click(screen.getByRole('link', { name: '服务支持' }))
@@ -144,7 +146,8 @@ describe('HanNet homepage', () => {
     expect(screen.getByText(/Capacity assessment and launch validation/)).toBeInTheDocument()
 
     await user.click(screen.getByRole('link', { name: 'Docs' }))
-    expect(screen.getByRole('heading', { level: 2, name: 'Product docs for searchable, repeatable delivery' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Documentation' })).toBeInTheDocument()
+    expect(screen.getByRole('combobox', { name: 'Docs version' })).toHaveValue('v1.0')
 
     await user.click(screen.getByRole('link', { name: 'Contact' }))
     expect(screen.getByRole('heading', { level: 2, name: 'Contact sales' })).toBeInTheDocument()
@@ -168,5 +171,28 @@ describe('HanNet homepage', () => {
     ;['quickstart.sh', 'mqtt pub', 'node-01', '单节点', '多区域部署', '集群部署'].forEach((term) => {
       expect(screen.queryByText(new RegExp(term))).not.toBeInTheDocument()
     })
+  })
+
+  it('switches VelaMQ docs versions and renders one topic at a time', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: '文档' }))
+
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ 概览' })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 3, name: '快速开始' })).not.toBeInTheDocument()
+
+    await user.selectOptions(screen.getByRole('combobox', { name: '文档版本' }), 'v0.9')
+
+    expect(screen.getByRole('combobox', { name: '文档版本' })).toHaveValue('v0.9')
+    expect(screen.getByText('npm create velamq@0.9 edge-project')).toBeInTheDocument()
+    expect(screen.getByText(/适合存量项目查阅/)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: '规则引擎' }))
+
+    expect(screen.getByRole('heading', { level: 3, name: '规则引擎' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: '条件表达式' })).toBeInTheDocument()
+    expect(screen.getByText(/payload.temperature/)).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 3, name: 'VelaMQ 概览' })).not.toBeInTheDocument()
   })
 })

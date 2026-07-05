@@ -76,6 +76,8 @@ function App() {
   const [locale, setLocale] = useState<Locale>(readInitialLocale)
   const [activeView, setActiveView] = useState<ViewId>(() => viewFromHash(window.location.hash))
   const [activeProduct, setActiveProduct] = useState<ProductId>('velamq')
+  const [activeDocsVersion, setActiveDocsVersion] = useState('v1.0')
+  const [activeDocsTopic, setActiveDocsTopic] = useState('overview')
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
 
   const copy = translations[locale]
@@ -85,6 +87,14 @@ function App() {
   )
   const selectedProductIndex = copy.products.findIndex((product) => product.id === selectedProduct.id)
   const SelectedProductIcon = productIcons[selectedProductIndex] ?? Server
+  const selectedDocsVersion = useMemo(
+    () => copy.docsPage.versions.find((version) => version.id === activeDocsVersion) ?? copy.docsPage.versions[0],
+    [activeDocsVersion, copy.docsPage.versions],
+  )
+  const selectedDocsTopic = useMemo(
+    () => copy.docsPage.topics.find((topic) => topic.id === activeDocsTopic) ?? copy.docsPage.topics[0],
+    [activeDocsTopic, copy.docsPage.topics],
+  )
   const contactMailto = useMemo(() => {
     const valueOrFallback = (value: string) => value.trim() || copy.contactPage.emptyValue
     const subject = `${copy.contactPage.subjectPrefix} - ${valueOrFallback(contactForm.name)}`
@@ -148,6 +158,10 @@ function App() {
     if (nextLocale === 'zh' || nextLocale === 'en') {
       setLocale(nextLocale)
     }
+  }
+
+  const changeDocsVersion = (event: ChangeEvent<HTMLSelectElement>) => {
+    setActiveDocsVersion(event.currentTarget.value)
   }
 
   const updateContactField =
@@ -224,10 +238,14 @@ function App() {
                   {copy.hero.secondaryCta}
                 </a>
               </div>
-              <div className="hero-command" aria-label={copy.hero.commandLabel}>
-                <Terminal size={16} strokeWidth={1.8} aria-hidden="true" />
-                <span>$</span>
-                <code>{copy.hero.command}</code>
+              <div className="hero-data-pulse" aria-label={copy.hero.commandLabel}>
+                {copy.hero.flowSignals.map((signal, index) => (
+                  <span className={`hero-data-pulse__item hero-data-pulse__item--${index + 1}`} key={signal.label}>
+                    <i aria-hidden="true" />
+                    <strong>{signal.label}</strong>
+                    <small>{signal.value}</small>
+                  </span>
+                ))}
               </div>
               <div className="hero-signals" aria-label={copy.hero.signalsLabel}>
                 {copy.hero.signals.map((signal) => (
@@ -352,12 +370,36 @@ function App() {
                 <span>{copy.docsPage.searchPlaceholder}</span>
                 <kbd>⌘K</kbd>
               </div>
+              <div className="docs-version-card">
+                <label htmlFor="docs-version">{copy.docsPage.versionLabel}</label>
+                <div className="docs-version-card__row">
+                  <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
+                    {copy.docsPage.versions.map((version) => (
+                      <option key={version.id} value={version.id}>
+                        {version.label}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="docs-version-badge">{selectedDocsVersion.status}</span>
+                </div>
+                <p>{selectedDocsVersion.date}</p>
+              </div>
               <div className="docs-nav-groups">
                 {copy.docsPage.groups.map((group) => (
                   <div className="docs-nav-group" key={group.title}>
                     <h3>{group.title}</h3>
                     {group.items.map((item) => (
-                      <span key={item}>{item}</span>
+                      <button
+                        aria-current={activeDocsTopic === item.id ? 'page' : undefined}
+                        data-doc-topic={item.id}
+                        key={item.id}
+                        onClick={() => {
+                          setActiveDocsTopic(item.id)
+                        }}
+                        type="button"
+                      >
+                        {item.label}
+                      </button>
                     ))}
                   </div>
                 ))}
@@ -372,11 +414,29 @@ function App() {
               <div className="docs-command" aria-label={copy.docsPage.commandLabel}>
                 <Terminal size={17} strokeWidth={1.8} aria-hidden="true" />
                 <span>$</span>
-                <code>{copy.docsPage.command}</code>
+                <code>{selectedDocsVersion.command}</code>
               </div>
 
-              <div className="docs-section-list">
-                {copy.docsPage.sections.map((section) => (
+              <div className="docs-version-note">
+                <strong>{copy.docsPage.versionStatusLabel}</strong>
+                <span>{selectedDocsVersion.label}</span>
+                <p>{selectedDocsVersion.note}</p>
+              </div>
+
+              <div className="docs-topic-panel">
+                <div className="docs-topic-header">
+                  <div className="docs-topic-header__icon">
+                    <FileText size={18} strokeWidth={1.8} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <span>{selectedDocsTopic.id}</span>
+                    <h3 id={`${selectedDocsTopic.id}-title`}>{selectedDocsTopic.title}</h3>
+                    <p>{selectedDocsTopic.summary}</p>
+                  </div>
+                </div>
+
+                <div className="docs-section-list">
+                  {selectedDocsTopic.sections.map((section) => (
                   <section className="docs-section" id={section.id} key={section.id} aria-labelledby={`${section.id}-title`}>
                     <div className="docs-section__copy">
                       <FileText size={18} strokeWidth={1.8} aria-hidden="true" />
@@ -389,13 +449,14 @@ function App() {
                       <code>{section.code}</code>
                     </pre>
                   </section>
-                ))}
+                  ))}
+                </div>
               </div>
             </article>
 
             <aside className="docs-toc" aria-label={copy.docsPage.tocLabel}>
               <h3>{copy.docsPage.tocLabel}</h3>
-              {copy.docsPage.sections.map((section) => (
+              {selectedDocsTopic.sections.map((section) => (
                 <a
                   href="#docs"
                   key={section.id}

@@ -8233,3 +8233,43 @@ h4.docs-doc-heading {
     font-size: 32px;
   }
 }
+
+/* Product page hardening: keep product panels dark even when previous light-theme
+   card rules or browser compositing try to wash through translucent layers. */
+#product .product-selector {
+  background:
+    linear-gradient(90deg, rgba(116, 247, 210, 0.052) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(116, 247, 210, 0.038) 1px, transparent 1px),
+    radial-gradient(circle at 18% 0%, rgba(116, 247, 210, 0.13), transparent 42%),
+    linear-gradient(145deg, rgba(8, 40, 34, 0.96), rgba(3, 18, 15, 0.98));
+  background-size: 34px 34px, 34px 34px, auto, auto;
+  backdrop-filter: none;
+}
+
+#product .product-tab {
+  background:
+    linear-gradient(145deg, rgba(13, 45, 38, 0.78), rgba(2, 12, 10, 0.96));
+}
+
+#product .product-tab:hover,
+#product .product-tab[aria-selected='true'] {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(116, 247, 210, 0.22), transparent 46%),
+    linear-gradient(145deg, rgba(14, 55, 46, 0.96), rgba(4, 20, 17, 0.98));
+}
+
+#product .product-card {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(116, 247, 210, 0.15), transparent 34%),
+    radial-gradient(circle at 88% 20%, rgba(88, 221, 255, 0.11), transparent 30%),
+    linear-gradient(145deg, rgba(9, 39, 34, 0.96), rgba(3, 18, 15, 0.98));
+  backdrop-filter: none;
+}
+
+#product .product-card::before {
+  opacity: 0.55;
+}
+
+#product .product-tags span {
+  background: rgba(2, 12, 10, 0.76);
+}

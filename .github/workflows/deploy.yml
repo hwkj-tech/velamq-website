@@ -1,4 +1,4 @@
-name: Build website
+name: Deploy website
 
 on:
   push:
@@ -8,6 +8,12 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -31,8 +37,18 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Build Pages output
-        run: npm run build:docs
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
-      - name: Verify committed Pages output
-        run: git diff --exit-code docs
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

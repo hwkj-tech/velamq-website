@@ -7485,7 +7485,7 @@ textarea::placeholder {
   }
 }
 
-/* FluxMQ documentation, Rig-inspired reading system */
+/* VelaMQ documentation, Rig-inspired reading system */
 .docs-page--manual {
   width: min(1500px, calc(100% - 48px));
   grid-template-columns: 292px minmax(0, 1fr) 220px;

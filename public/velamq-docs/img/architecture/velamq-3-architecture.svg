@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
-  <title id="title">FluxMQ 3.0 分层架构图</title>
-  <desc id="desc">展示 FluxMQ 3.0 从设备接入、Broker 核心、管理控制到规则、存储、数据源、集群和观测系统的分层关系。</desc>
+  <title id="title">VelaMQ 3.0 分层架构图</title>
+  <desc id="desc">展示 VelaMQ 3.0 从设备接入、Broker 核心、管理控制到规则、存储、数据源、集群和观测系统的分层关系。</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ffffff"/>
@@ -63,9 +63,9 @@
     <path class="grid" d="M1080 96 V686"/>
   </g>
 
-  <text class="title" x="68" y="64">FluxMQ 3.0 Architecture</text>
+  <text class="title" x="68" y="64">VelaMQ 3.0 Architecture</text>
   <text class="subtitle" x="68" y="91">一体化 MQTT Broker：接入、路由、治理、规则、集群与可观测</text>
-  <text class="tiny" x="1120" y="68" text-anchor="end">fluxmq-rs workspace</text>
+  <text class="tiny" x="1120" y="68" text-anchor="end">velamq-rs workspace</text>
 
   <rect class="node" x="70" y="126" width="190" height="74" rx="14"/>
   <text class="label" x="165" y="157" text-anchor="middle">设备接入</text>
@@ -80,7 +80,7 @@
   <text class="body" x="1115" y="183" text-anchor="middle">gRPC Fanout</text>
 
   <rect class="frame" x="58" y="238" width="1164" height="358" rx="22"/>
-  <text class="tiny" x="88" y="271">apps/fluxmqd</text>
+  <text class="tiny" x="88" y="271">apps/velamqd</text>
   <text class="body" x="88" y="294">启动配置、License、Broker、监听器、API 与集群协调</text>
   <line class="lane" x1="88" y1="330" x2="1192" y2="330"/>
 

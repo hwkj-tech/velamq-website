@@ -48,7 +48,7 @@ import {
   type ProductId,
   type ViewId,
 } from './content'
-import { fluxmqDocs, type FluxMQDocBlock, type FluxMQDocDocument, type FluxMQDocsCatalog } from './fluxmqDocs'
+import { velamqDocs, type VelaMQDocBlock, type VelaMQDocDocument, type VelaMQDocsCatalog } from './velamqDocs'
 
 const capabilityIcons = [Server, Workflow, Database, Activity, ShieldCheck, Cable]
 const solutionIcons = [Factory, Car, Building2, Landmark]
@@ -84,7 +84,7 @@ const readInitialLocale = (): Locale => {
   }
 }
 
-const resolveDocsLink = (href: string, currentDocumentId: string, docsCatalog: FluxMQDocsCatalog) => {
+const resolveDocsLink = (href: string, currentDocumentId: string, docsCatalog: VelaMQDocsCatalog) => {
   if (/^(https?:|mailto:|#)/.test(href)) {
     return undefined
   }
@@ -121,8 +121,8 @@ const resolveDocsLink = (href: string, currentDocumentId: string, docsCatalog: F
 
 const renderInlineText = (
   text: string,
-  currentDocument: FluxMQDocDocument,
-  docsCatalog: FluxMQDocsCatalog,
+  currentDocument: VelaMQDocDocument,
+  docsCatalog: VelaMQDocsCatalog,
   onSelectDocument: (id: string) => void,
 ) => {
   const nodes: ReactNode[] = []
@@ -178,9 +178,9 @@ const renderInlineText = (
 }
 
 const renderDocsBlock = (
-  block: FluxMQDocBlock,
-  currentDocument: FluxMQDocDocument,
-  docsCatalog: FluxMQDocsCatalog,
+  block: VelaMQDocBlock,
+  currentDocument: VelaMQDocDocument,
+  docsCatalog: VelaMQDocsCatalog,
   onSelectDocument: (id: string) => void,
 ) => {
   const renderInline = (text: string) => renderInlineText(text, currentDocument, docsCatalog, onSelectDocument)
@@ -263,12 +263,12 @@ function App() {
   const [activeView, setActiveView] = useState<ViewId>(() => viewFromHash(window.location.hash))
   const [activeProduct, setActiveProduct] = useState<ProductId>('velamq')
   const [activeDocsVersion, setActiveDocsVersion] = useState('1.0')
-  const [activeDocsTopic, setActiveDocsTopic] = useState(fluxmqDocs.zh.defaultDocumentId)
+  const [activeDocsTopic, setActiveDocsTopic] = useState(velamqDocs.zh.defaultDocumentId)
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
 
   const copy = translations[locale]
-  const docsCatalog = fluxmqDocs[locale]
+  const docsCatalog = velamqDocs[locale]
   const selectedProduct = useMemo(
     () => copy.products.find((product) => product.id === activeProduct) ?? copy.products[0],
     [activeProduct, copy.products],

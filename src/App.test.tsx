@@ -111,9 +111,9 @@ describe('HanNet homepage', () => {
     expect(screen.queryByText('车联网消息通道')).not.toBeInTheDocument()
 
     await user.click(screen.getByRole('link', { name: '文档' }))
-    expect(screen.getByRole('heading', { level: 2, name: 'FluxMQ 文档中心' })).toBeInTheDocument()
-    expect(screen.getByText('浏览 FluxMQ 文档、规则、API')).toBeInTheDocument()
-    expect(screen.getByText('FLUXMQ_CONFIG_FILE=config.toml cargo run -p fluxmqd')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
+    expect(screen.getByText('浏览 VelaMQ 文档、规则、API')).toBeInTheDocument()
+    expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
     expect(screen.getByRole('combobox', { name: '文档版本' })).toHaveValue('1.0')
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '快速启动' })).toBeInTheDocument()
@@ -149,7 +149,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByText(/Capacity assessment and launch validation/)).toBeInTheDocument()
 
     await user.click(screen.getByRole('link', { name: 'Docs' }))
-    expect(screen.getByRole('heading', { level: 2, name: 'FluxMQ Documentation' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Documentation' })).toBeInTheDocument()
     expect(screen.getByRole('combobox', { name: 'Docs version' })).toHaveValue('1.0')
     expect(screen.getByRole('heading', { level: 3, name: 'Product Introduction' })).toBeInTheDocument()
 
@@ -177,7 +177,7 @@ describe('HanNet homepage', () => {
     })
   })
 
-  it('renders imported FluxMQ 1.0 docs and switches one document at a time', async () => {
+  it('renders imported VelaMQ 1.0 docs and switches one document at a time', async () => {
     const user = userEvent.setup()
     render(<App />)
 
@@ -187,14 +187,14 @@ describe('HanNet homepage', () => {
     expect(screen.queryByRole('heading', { level: 3, name: '快速启动' })).not.toBeInTheDocument()
 
     expect(screen.getByRole('combobox', { name: '文档版本' })).toHaveValue('1.0')
-    expect(screen.getByText('FLUXMQ_CONFIG_FILE=config.toml cargo run -p fluxmqd')).toBeInTheDocument()
-    expect(screen.getByText(/内容来源于 fluxmq-rs-doc/)).toBeInTheDocument()
+    expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
+    expect(screen.getByText(/内容来源于 velamq-rs-doc/)).toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: '快速启动' }))
 
     expect(screen.getByRole('heading', { level: 3, name: '快速启动' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: '启动服务' })).toBeInTheDocument()
-    expect(screen.getAllByText(/FLUXMQ_CONFIG_FILE=config.toml cargo run -p fluxmqd/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd/).length).toBeGreaterThan(0)
 
     await user.click(screen.getByRole('button', { name: '规则引擎总览' }))
 

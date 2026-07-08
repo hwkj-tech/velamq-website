@@ -45,6 +45,11 @@ describe('HanNet homepage', () => {
     })
     expect(screen.getByRole('button', { name: '语言: 中文' })).toHaveAttribute('aria-expanded', 'false')
     expect(screen.getAllByText('南京翰网科技有限公司').length).toBeGreaterThan(0)
+    expect(screen.getByRole('link', { name: '苏ICP备2026045547号-1' })).toHaveAttribute(
+      'href',
+      'https://beian.miit.gov.cn/',
+    )
+    expect(screen.getByText('velamq.com')).toBeInTheDocument()
   })
 
   it('renders a contact sales form that creates a prefilled email link', async () => {

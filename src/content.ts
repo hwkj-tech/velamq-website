@@ -488,6 +488,12 @@ export const translations = {
       emptyValue: '未填写',
     },
     footerText: '南京翰网科技有限公司 专注于设备数据接入、业务规则协同与企业级运营支持。',
+    icp: {
+      label: '网站备案号',
+      number: '苏ICP备2026045547号-1',
+      domain: 'velamq.com',
+      href: 'https://beian.miit.gov.cn/',
+    },
     footerColumns: [
       { title: '产品', links: ['VelaMQ', 'VelaMQ Bench', '规则自动化', '数据看板'] },
       { title: '资源', links: ['文档中心', '方案沟通', '接入评估', '服务支持'] },
@@ -974,6 +980,12 @@ export const translations = {
       emptyValue: 'Not provided',
     },
     footerText: 'Nanjing Hanwang Technology Co., Ltd. focuses on device data access, rule collaboration and enterprise operations.',
+    icp: {
+      label: 'ICP filing',
+      number: '苏ICP备2026045547号-1',
+      domain: 'velamq.com',
+      href: 'https://beian.miit.gov.cn/',
+    },
     footerColumns: [
       { title: 'Products', links: ['VelaMQ', 'VelaMQ Bench', 'Rule automation', 'Dashboards'] },
       { title: 'Resources', links: ['Documentation', 'Solution discussion', 'Access assessment', 'Service support'] },

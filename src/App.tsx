@@ -919,6 +919,12 @@ function App() {
         <div className="footer-brand">
           <BrandMark ariaLabel={copy.brandHomeLabel} href="#home" onClick={(event) => handleViewClick(event, 'home')} />
           <p>{copy.footerText}</p>
+          <div className="footer-filing" aria-label={copy.icp.label}>
+            <a href={copy.icp.href} target="_blank" rel="noreferrer">
+              {copy.icp.number}
+            </a>
+            <span>{copy.icp.domain}</span>
+          </div>
         </div>
         <div className="footer-columns">
           {copy.footerColumns.map((column) => (

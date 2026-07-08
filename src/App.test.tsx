@@ -188,7 +188,7 @@ describe('HanNet homepage', () => {
 
     expect(screen.getByRole('combobox', { name: '文档版本' })).toHaveValue('1.0')
     expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
-    expect(screen.getByText(/内容来源于 velamq-rs-doc/)).toBeInTheDocument()
+    expect(screen.queryByText(/内容来源于 velamq-rs-doc/)).not.toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: '快速启动' }))
 

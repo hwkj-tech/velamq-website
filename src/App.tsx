@@ -604,17 +604,13 @@ function App() {
               </div>
               <div className="docs-version-card">
                 <label htmlFor="docs-version">{docsCatalog.versionLabel}</label>
-                <div className="docs-version-card__row">
-                  <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
-                    {docsCatalog.versions.map((version) => (
-                      <option key={version.id} value={version.id}>
-                        {version.label}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="docs-version-badge">{selectedDocsVersion.status}</span>
-                </div>
-                <p>{selectedDocsVersion.date}</p>
+                <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
+                  {docsCatalog.versions.map((version) => (
+                    <option key={version.id} value={version.id}>
+                      {version.label}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="docs-nav-groups">
                 {docsCatalog.groups.map((group) => (
@@ -654,12 +650,6 @@ function App() {
                 <Terminal size={17} strokeWidth={1.8} aria-hidden="true" />
                 <span>$</span>
                 <code>{selectedDocsVersion.command}</code>
-              </div>
-
-              <div className="docs-version-note">
-                <strong>{docsCatalog.versionStatusLabel}</strong>
-                <span>{selectedDocsVersion.label}</span>
-                <p>{selectedDocsVersion.note}</p>
               </div>
 
               <div className="docs-topic-panel docs-document-panel">

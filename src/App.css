@@ -8423,3 +8423,64 @@ h4.docs-doc-heading {
 #solutions .solution-vehicle-shadow {
   stroke: rgba(116, 247, 210, 0.22);
 }
+
+/* Contact and support pages need darker child controls than the legacy light theme. */
+#support .support-board__bar strong,
+#support .support-board__summary span {
+  color: #dffdf8;
+  border-color: rgba(148, 255, 229, 0.16);
+  background: rgba(2, 12, 10, 0.7);
+  box-shadow: none;
+}
+
+#support .support-board::before,
+#contact.contact-section::before {
+  opacity: 0.36;
+}
+
+#contact .contact-meta span {
+  min-height: 86px;
+  color: #d7e6e2;
+}
+
+#contact .contact-meta strong,
+#contact .contact-form label,
+#contact .contact-form__actions .text-link {
+  color: #f8fffd;
+}
+
+#contact .contact-meta svg {
+  color: #74f7d2;
+}
+
+#contact .contact-form {
+  border-top-color: rgba(116, 247, 210, 0.72);
+}
+
+#contact .contact-form input,
+#contact .contact-form textarea {
+  color: #f4fffd;
+  border-color: rgba(148, 255, 229, 0.2);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.028)),
+    rgba(1, 12, 10, 0.76);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 0 0 1px rgba(116, 247, 210, 0.02);
+}
+
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus {
+  color: #ffffff;
+  border-color: rgba(116, 247, 210, 0.62);
+  background: rgba(1, 14, 12, 0.92);
+  box-shadow:
+    0 0 0 3px rgba(116, 247, 210, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+#contact .contact-form input::placeholder,
+#contact .contact-form textarea::placeholder,
+#contact .contact-form > p {
+  color: rgba(215, 230, 226, 0.54);
+}

@@ -53,7 +53,7 @@ export const translations = {
     ],
     hero: {
       eyebrow: ['HANWANG TECH', 'Realtime Infrastructure'],
-      title: '设备数据接入与业务协同平台',
+      title: '设备数据接入\n与业务协同平台',
       body:
         '翰网科技面向工业、车联、能源与楼宇等场景，帮助企业把现场设备、业务系统、数据平台和运营流程连接起来，让告警、规则、看板、权限和系统集成快速落地。',
       primaryCta: '查看文档',
@@ -539,7 +539,7 @@ export const translations = {
     ],
     hero: {
       eyebrow: ['HANWANG TECH', 'Realtime Infrastructure'],
-      title: 'Device Data Access and Business Collaboration Platform',
+      title: 'Device Data Access\nand Business Collaboration Platform',
       body:
         'Hanwang Tech connects field devices, business systems, data platforms and operating workflows for industrial, connected-vehicle, energy and building scenarios.',
       primaryCta: 'Read docs',

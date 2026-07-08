@@ -459,7 +459,9 @@ function App() {
                   <span key={item}>{item}</span>
                 ))}
               </div>
-              <h1 id="hero-title">{copy.hero.title}</h1>
+              <h1 id="hero-title" aria-label={locale === 'zh' ? copy.hero.title.replace(/\s+/g, '') : copy.hero.title.replace(/\s+/g, ' ')}>
+                {copy.hero.title}
+              </h1>
               <p className="hero-lede">{copy.hero.body}</p>
               <div className="hero-actions">
                 <a className="button" href={docsHref} onClick={(event) => handleViewClick(event, 'docs')}>

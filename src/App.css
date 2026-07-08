@@ -5939,7 +5939,7 @@
   }
 
   .hero-copy h1 {
-    font-size: 58px;
+    font-size: 56px;
   }
 }
 
@@ -5954,7 +5954,7 @@
   }
 
   .hero-copy h1 {
-    font-size: 54px;
+    font-size: clamp(44px, 7vw, 58px);
   }
 
   .hero-copy,
@@ -6016,8 +6016,9 @@
 
   .hero-copy h1 {
     font-size: 40px;
-    line-height: 1.08;
-    word-break: normal;
+    line-height: 1.12;
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
 
   .hero-company-mark {
@@ -6271,11 +6272,15 @@ html {
 }
 
 .hero-copy h1 {
-  max-width: 680px;
+  max-width: 760px;
   color: #f8fffd;
-  font-size: clamp(52px, 7vw, 92px);
-  line-height: 0.94;
-  letter-spacing: -0.035em;
+  font-size: clamp(50px, 5.2vw, 76px);
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  text-wrap: balance;
 }
 
 .hero-lede,
@@ -6782,8 +6787,8 @@ textarea::placeholder {
   }
 
   .hero-copy h1 {
-    font-size: clamp(40px, 13vw, 52px);
-    line-height: 0.98;
+    font-size: clamp(34px, 10vw, 48px);
+    line-height: 1.12;
   }
 
   .nav-links {

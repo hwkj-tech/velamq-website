@@ -201,5 +201,10 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 3, name: '规则引擎总览' })).toBeInTheDocument()
     expect(screen.getAllByText(/规则引擎负责把 MQTT 消息/).length).toBeGreaterThan(0)
     expect(screen.queryByRole('heading', { level: 3, name: '快速启动' })).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: '数据管理' }))
+
+    const screenshot = screen.getByRole('img', { name: 'VelaMQ 3.0 数据管理与存储状态入口截图' })
+    expect(screenshot).toHaveAttribute('src', './velamq-docs/img/screenshots/dashboard.png')
   })
 })

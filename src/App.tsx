@@ -59,6 +59,7 @@ const contactHref = '#contact'
 const docsHref = '#docs'
 const localeOptions: Locale[] = ['zh', 'en']
 const languageMenuId = 'site-language-menu'
+const siteAssetBase = import.meta.env.BASE_URL || './'
 
 type ContactFormState = {
   name: string
@@ -117,6 +118,17 @@ const resolveDocsLink = (href: string, currentDocumentId: string, docsCatalog: V
   const targetId = normalizedParts.join('/').replace(/\.(md|mdx)$/, '').replace(/\/$/, '')
 
   return docsCatalog.documents[targetId] ? targetId : undefined
+}
+
+const resolveStaticAsset = (src: string) => {
+  if (/^(https?:|data:|blob:|mailto:|#)/.test(src)) {
+    return src
+  }
+
+  const normalizedBase = siteAssetBase === '/' ? './' : siteAssetBase.endsWith('/') ? siteAssetBase : `${siteAssetBase}/`
+  const normalizedSrc = src.replace(/^\/+/, '')
+
+  return `${normalizedBase}${normalizedSrc}`
 }
 
 const renderInlineText = (
@@ -244,14 +256,14 @@ const renderDocsBlock = (
     case 'image':
       return (
         <figure className="docs-media" key={`${block.src}-${block.alt}`}>
-          <img src={block.src} alt={block.alt} loading="lazy" />
+          <img src={resolveStaticAsset(block.src)} alt={block.alt} loading="lazy" />
           <figcaption>{block.alt}</figcaption>
         </figure>
       )
     case 'video':
       return (
         <figure className="docs-media docs-media--video" key={block.src}>
-          <video controls muted playsInline preload="metadata" src={block.src} />
+          <video controls muted playsInline preload="metadata" src={resolveStaticAsset(block.src)} />
           <figcaption>{block.title}</figcaption>
         </figure>
       )

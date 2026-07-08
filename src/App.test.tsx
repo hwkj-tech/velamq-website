@@ -1,6 +1,9 @@
+import { existsSync } from 'node:fs'
+import path from 'node:path'
 import { render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from './App'
+import { velamqDocs } from './velamqDocs'
 
 describe('HanNet homepage', () => {
   beforeEach(() => {
@@ -206,5 +209,25 @@ describe('HanNet homepage', () => {
 
     const screenshot = screen.getByRole('img', { name: 'VelaMQ 3.0 数据管理与存储状态入口截图' })
     expect(screenshot).toHaveAttribute('src', './velamq-docs/img/screenshots/dashboard.png')
+  })
+
+  it('keeps every imported docs media asset available in public', () => {
+    const missingAssets: string[] = []
+
+    Object.entries(velamqDocs).forEach(([locale, catalog]) => {
+      Object.values(catalog.documents).forEach((document) => {
+        document.blocks.forEach((block) => {
+          if (block.type !== 'image' && block.type !== 'video') return
+
+          const relativePath = block.src.replace(/^\/+/, '')
+          const publicPath = path.join(process.cwd(), 'public', relativePath)
+          if (!existsSync(publicPath)) {
+            missingAssets.push(`${locale}/${document.id}: ${block.src}`)
+          }
+        })
+      })
+    })
+
+    expect(missingAssets).toEqual([])
   })
 })

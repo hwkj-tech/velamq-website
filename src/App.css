@@ -6839,10 +6839,10 @@ textarea::placeholder {
 
 .flow-business-board {
   position: relative;
-  min-height: 332px;
+  min-height: 352px;
   display: grid;
-  grid-template-columns: minmax(118px, 0.72fr) minmax(170px, 0.96fr) minmax(190px, 1.05fr);
-  gap: 22px;
+  grid-template-columns: minmax(150px, 0.9fr) minmax(170px, 0.88fr) minmax(220px, 1.18fr);
+  gap: 18px;
   align-items: center;
   isolation: isolate;
 }
@@ -6893,7 +6893,7 @@ textarea::placeholder {
   text-transform: uppercase;
 }
 
-.flow-business-column--left strong,
+.flow-business-input,
 .flow-business-service,
 .flow-business-hub {
   border: 1px solid rgba(148, 255, 229, 0.16);
@@ -6904,24 +6904,52 @@ textarea::placeholder {
   backdrop-filter: blur(12px);
 }
 
-.flow-business-column--left strong {
-  min-height: 46px;
+.flow-business-input {
+  min-height: 72px;
   display: flex;
-  align-items: center;
-  padding: 0 14px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
   color: #eafffb;
-  border-radius: 999px;
-  font-size: 14px;
+  border-radius: 14px;
 }
 
-.flow-business-column--left strong::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  margin-right: 10px;
+.flow-business-input i {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  margin-top: 8px;
   border-radius: 999px;
   background: var(--color-accent);
   box-shadow: 0 0 14px rgba(116, 247, 210, 0.72);
+}
+
+.flow-business-input div {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.flow-business-input small {
+  color: rgba(116, 247, 210, 0.78);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.flow-business-input strong {
+  color: #f8fffd;
+  font-size: 15px;
+  line-height: 1.18;
+}
+
+.flow-business-input p {
+  margin: 0;
+  color: rgba(215, 230, 226, 0.62);
+  font-size: 11px;
+  line-height: 1.42;
 }
 
 .flow-business-hub {
@@ -6953,11 +6981,18 @@ textarea::placeholder {
 }
 
 .flow-business-service {
-  min-height: 76px;
+  min-height: 94px;
   display: grid;
   gap: 4px;
   padding: 12px 14px;
   border-radius: 12px;
+}
+
+.flow-business-service__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 
 .flow-business-service small {
@@ -6966,9 +7001,24 @@ textarea::placeholder {
   font-weight: 800;
 }
 
+.flow-business-service em {
+  max-width: 96px;
+  padding: 3px 7px;
+  color: rgba(234, 255, 251, 0.74);
+  border: 1px solid rgba(148, 255, 229, 0.12);
+  border-radius: 999px;
+  background: rgba(0, 10, 7, 0.42);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: right;
+}
+
 .flow-business-service strong {
   color: #f8fffd;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.1;
 }
 

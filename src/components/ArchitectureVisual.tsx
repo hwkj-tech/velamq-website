@@ -5,13 +5,18 @@ const defaultContent: VisualContent = {
   ariaLabel: '翰网科技功能与数据流动态图',
   inputLabel: '数据来源',
   inputChips: ['设备数据', '业务事件', '系统状态'],
+  inputItems: [
+    { title: '设备数据', meta: 'Telemetry', detail: '连接、指标、上下线状态' },
+    { title: '业务事件', meta: 'Event stream', detail: '告警、工单、流程触发' },
+    { title: '系统状态', meta: 'State sync', detail: '权限、审计、处理进度' },
+  ],
   coreLabel: '业务能力中枢',
   coreBody: '数据流 · 业务流',
   serviceLabel: '业务协同模块',
   serviceCards: [
-    { title: '业务规则', meta: '规则自动化', text: '把事件转成流程、通知和系统动作', tone: 'a' },
-    { title: '业务告警', meta: '异常触达', text: '告警、处置进度与协作流程同步', tone: 'b' },
-    { title: '数据看板', meta: '运营可视化', text: '设备状态、业务结果和趋势统一呈现', tone: 'c' },
+    { title: '业务规则', meta: '规则自动化', text: '把事件转成流程、通知和系统动作', tone: 'a', status: '已编排' },
+    { title: '业务告警', meta: '异常触达', text: '告警、处置进度与协作流程同步', tone: 'b', status: 'SLA 同步' },
+    { title: '数据看板', meta: '运营可视化', text: '设备状态、业务结果和趋势统一呈现', tone: 'c', status: '实时刷新' },
   ],
   modulesLabel: '平台功能模块',
   supportModules: ['设备接入', '规则自动化', '业务告警', '数据看板'],
@@ -24,6 +29,11 @@ type ArchitectureVisualProps = {
 }
 
 export function ArchitectureVisual({ content = defaultContent }: ArchitectureVisualProps) {
+  const inputItems =
+    'inputItems' in content && content.inputItems
+      ? content.inputItems
+      : content.inputChips.map((chip) => ({ title: chip, meta: 'stream', detail: '' }))
+
   return (
     <div className="architecture-visual flow-visual" role="img" aria-label={content.ariaLabel}>
       <svg className="flow-visual__net" viewBox="0 0 620 500" preserveAspectRatio="none" aria-hidden="true">
@@ -62,8 +72,15 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
 
             <div className="flow-business-column flow-business-column--left" aria-label={content.inputLabel}>
               <span>{content.inputLabel}</span>
-              {content.inputChips.map((chip) => (
-                <strong key={chip}>{chip}</strong>
+              {inputItems.map((item) => (
+                <article className="flow-business-input" key={item.title}>
+                  <i aria-hidden="true" />
+                  <div>
+                    <small>{item.meta}</small>
+                    <strong>{item.title}</strong>
+                    {item.detail && <p>{item.detail}</p>}
+                  </div>
+                </article>
               ))}
             </div>
 
@@ -78,7 +95,10 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
               <span>{content.serviceLabel}</span>
               {content.serviceCards.map((card) => (
                 <article className={`flow-business-service flow-business-service--${card.tone}`} key={card.title}>
-                  <small>{card.meta}</small>
+                  <div className="flow-business-service__head">
+                    <small>{card.meta}</small>
+                    {'status' in card && card.status && <em>{card.status}</em>}
+                  </div>
                   <strong>{card.title}</strong>
                   <p>{card.text}</p>
                 </article>

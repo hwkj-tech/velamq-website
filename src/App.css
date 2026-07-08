@@ -6361,7 +6361,7 @@ html {
 .flow-terminal {
   position: relative;
   z-index: 2;
-  width: min(100%, 620px);
+  width: min(100%, 590px);
   margin: 34px auto 0;
   border: 1px solid rgba(148, 255, 229, 0.16);
   border-radius: 14px;
@@ -6410,6 +6410,7 @@ html {
 }
 
 .flow-terminal__bar strong {
+  flex: 0 0 auto;
   color: var(--color-accent);
   font-size: 11px;
   font-weight: 700;
@@ -6420,7 +6421,7 @@ html {
 .flow-terminal__screen {
   position: relative;
   min-height: 390px;
-  padding: 26px;
+  padding: 24px 22px;
   overflow: hidden;
   background:
     linear-gradient(90deg, rgba(116, 247, 210, 0.045) 1px, transparent 1px),
@@ -6866,8 +6867,8 @@ textarea::placeholder {
   position: relative;
   min-height: 352px;
   display: grid;
-  grid-template-columns: minmax(150px, 0.9fr) minmax(170px, 0.88fr) minmax(220px, 1.18fr);
-  gap: 18px;
+  grid-template-columns: minmax(132px, 0.86fr) minmax(150px, 0.82fr) minmax(186px, 1.04fr);
+  gap: 14px;
   align-items: center;
   isolation: isolate;
 }
@@ -6934,7 +6935,7 @@ textarea::placeholder {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding: 12px;
+  padding: 11px 12px;
   color: #eafffb;
   border-radius: 14px;
 }
@@ -7009,7 +7010,7 @@ textarea::placeholder {
   min-height: 94px;
   display: grid;
   gap: 4px;
-  padding: 12px 14px;
+  padding: 12px;
   border-radius: 12px;
 }
 

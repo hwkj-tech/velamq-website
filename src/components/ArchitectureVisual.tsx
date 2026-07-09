@@ -9,14 +9,18 @@ const defaultContent: VisualContent = {
     { title: 'MQTT 5.0', meta: '发布订阅' },
     { title: 'MQTT over QUIC', meta: '0-RTT 传输' },
     { title: 'WebSocket API', meta: '边缘网关' },
+    { title: 'HTTP Webhook', meta: '业务回调' },
+    { title: '边缘采集', meta: '设备汇聚' },
   ],
   coreLabel: '消息运行时',
   coreBody: 'Broker · Rule · AI',
   serviceLabel: '规则执行层',
   serviceCards: [
-    { title: 'SQL 规则引擎', meta: '流式处理', text: '', tone: 'a', status: 'SQL' },
-    { title: '低延迟路由', meta: '实时分发', text: '', tone: 'b', status: 'p95 ms' },
-    { title: 'AI 诊断与观测', meta: '智能运维', text: '', tone: 'c', status: 'AI' },
+    { title: 'SQL 规则引擎', meta: '流式处理', text: '', tone: 'a' },
+    { title: '低延迟路由', meta: '实时分发', text: '', tone: 'b' },
+    { title: 'AI 诊断与观测', meta: '智能运维', text: '', tone: 'c' },
+    { title: '权限与审计', meta: '安全治理', text: '', tone: 'a' },
+    { title: '指标与告警', meta: '实时观测', text: '', tone: 'b' },
   ],
   modulesLabel: '技术特性模块',
   supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', '权限审计', '数据看板', '开放 API'],
@@ -97,7 +101,6 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
                 <article className={`flow-business-service flow-business-service--${card.tone}`} key={card.title}>
                   <div className="flow-business-service__head">
                     <small>{card.meta}</small>
-                    {'status' in card && card.status && <em>{card.status}</em>}
                   </div>
                   <strong>{card.title}</strong>
                   {card.text && <p>{card.text}</p>}

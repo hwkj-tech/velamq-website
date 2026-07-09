@@ -6879,10 +6879,10 @@ textarea::placeholder {
 
 .flow-business-board {
   position: relative;
-  min-height: 332px;
+  min-height: 342px;
   display: grid;
-  grid-template-columns: minmax(128px, 0.82fr) minmax(142px, 0.74fr) minmax(178px, 0.98fr);
-  gap: 12px;
+  grid-template-columns: minmax(142px, 0.9fr) minmax(132px, 0.7fr) minmax(178px, 0.96fr);
+  gap: 11px;
   align-items: center;
   isolation: isolate;
 }
@@ -6920,7 +6920,7 @@ textarea::placeholder {
 
 .flow-business-column {
   display: grid;
-  gap: 10px;
+  gap: 7px;
 }
 
 .flow-business-column > span,
@@ -6945,13 +6945,13 @@ textarea::placeholder {
 }
 
 .flow-business-input {
-  min-height: 64px;
+  min-height: 46px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 13px;
+  gap: 9px;
+  padding: 8px 11px;
   color: #eafffb;
-  border-radius: 12px;
+  border-radius: 9px;
 }
 
 .flow-business-input i {
@@ -6965,14 +6965,15 @@ textarea::placeholder {
 
 .flow-business-input div {
   min-width: 0;
-  display: grid;
-  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .flow-business-input small {
   color: rgba(116, 247, 210, 0.78);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -6980,7 +6981,7 @@ textarea::placeholder {
 
 .flow-business-input strong {
   color: #f8fffd;
-  font-size: 15px;
+  font-size: 13.5px;
   line-height: 1.18;
 }
 
@@ -6992,7 +6993,7 @@ textarea::placeholder {
 }
 
 .flow-business-hub {
-  min-height: 172px;
+  min-height: 156px;
   display: grid;
   place-items: center;
   align-content: center;
@@ -7020,45 +7021,32 @@ textarea::placeholder {
 }
 
 .flow-business-service {
-  min-height: 90px;
+  min-height: 52px;
   display: grid;
   align-content: center;
-  gap: 5px;
-  padding: 13px 14px;
-  border-radius: 12px;
+  gap: 2px;
+  padding: 8px 11px;
+  border-radius: 9px;
 }
 
 .flow-business-service__head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  display: block;
 }
 
 .flow-business-service small {
   color: var(--color-accent);
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 800;
+  letter-spacing: 0.06em;
 }
 
 .flow-business-service em {
-  max-width: 96px;
-  padding: 3px 7px;
-  color: rgba(234, 255, 251, 0.74);
-  border: 1px solid rgba(148, 255, 229, 0.12);
-  border-radius: 999px;
-  background: rgba(0, 10, 7, 0.42);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: right;
+  display: none;
 }
 
 .flow-business-service strong {
   color: #f8fffd;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.1;
 }
 

@@ -6,22 +6,22 @@ const defaultContent: VisualContent = {
   inputLabel: '协议接入层',
   inputChips: ['MQTT 5.0', 'MQTT over QUIC', 'WebSocket'],
   inputItems: [
-    { title: 'MQTT 5.0', meta: '发布订阅' },
-    { title: 'MQTT over QUIC', meta: '0-RTT 传输' },
-    { title: 'WebSocket API', meta: '边缘网关' },
+    { title: 'MQTT 5.0', meta: '发布订阅', badges: ['QoS 1/2', 'Retain', 'Shared Sub'] },
+    { title: 'MQTT over QUIC', meta: '0-RTT 传输', badges: ['弱网恢复', '连接迁移', '低握手'] },
+    { title: 'WebSocket API', meta: '边缘网关', badges: ['REST', 'Webhook', 'Browser'] },
   ],
   coreLabel: '消息运行时',
-  coreBody: 'Broker · Router · Rule',
+  coreBody: 'Broker · Rule · AI',
   serviceLabel: '规则执行层',
   serviceCards: [
-    { title: 'SQL 规则引擎', meta: '流式处理', text: '', tone: 'a', status: 'SQL' },
-    { title: '低延迟路由', meta: '实时分发', text: '', tone: 'b', status: 'p95 ms' },
-    { title: '观测与安全', meta: '指标审计', text: '', tone: 'c', status: 'Live' },
+    { title: 'SQL 规则引擎', meta: '流式处理', text: '', tone: 'a', status: 'SQL', badges: ['Filter', 'Transform', 'Action'] },
+    { title: '低延迟路由', meta: '实时分发', text: '', tone: 'b', status: 'p95 ms', badges: ['Session', 'Fanout', 'Cluster'] },
+    { title: 'AI 诊断与观测', meta: '智能运维', text: '', tone: 'c', status: 'AI', badges: ['Root Cause', 'Anomaly', 'Insight'] },
   ],
   modulesLabel: '技术特性模块',
-  supportModules: ['规则引擎', 'MQTT over QUIC', 'ACL/Auth', 'Prometheus'],
+  supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', 'Prometheus'],
   flowLabel: '技术能力流',
-  flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL 规则', 'Webhook', 'Metrics'],
+  flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL 规则', 'AI Insight', 'Metrics'],
 }
 
 type ArchitectureVisualProps = {
@@ -79,6 +79,13 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
                     <small>{item.meta}</small>
                     <strong>{item.title}</strong>
                     {'detail' in item && item.detail && <p>{item.detail}</p>}
+                    {'badges' in item && item.badges && (
+                      <div className="flow-business-badges">
+                        {item.badges.map((badge) => (
+                          <span key={badge}>{badge}</span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </article>
               ))}
@@ -101,6 +108,13 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
                 </div>
                 <strong>{card.title}</strong>
                   {card.text && <p>{card.text}</p>}
+                  {'badges' in card && card.badges && (
+                    <div className="flow-business-badges">
+                      {card.badges.map((badge) => (
+                        <span key={badge}>{badge}</span>
+                      ))}
+                    </div>
+                  )}
               </article>
             ))}
             </div>

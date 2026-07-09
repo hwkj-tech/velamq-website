@@ -6978,6 +6978,28 @@ textarea::placeholder {
   line-height: 1.42;
 }
 
+.flow-business-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.flow-business-badges span {
+  min-height: 19px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 7px;
+  color: rgba(234, 255, 251, 0.72);
+  border: 1px solid rgba(148, 255, 229, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.035);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .flow-business-hub {
   min-height: 188px;
   display: grid;

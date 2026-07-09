@@ -150,6 +150,13 @@ describe('HanNet homepage', () => {
         name: /Device Data Access and Business Collaboration Platform/,
       }),
     ).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Hanwang Tech technical capabilities and message-flow animation' })).toBeInTheDocument()
+    expect(screen.getByText('Protocol Mesh')).toBeInTheDocument()
+    expect(screen.getByText('SQL Rule Engine')).toBeInTheDocument()
+    expect(screen.getByText('Observe & Secure')).toBeInTheDocument()
+    expect(screen.queryByText('协议接入层')).not.toBeInTheDocument()
+    expect(screen.queryByText('观测与安全')).not.toBeInTheDocument()
+    expect(screen.queryByText(/QoS/)).not.toBeInTheDocument()
 
     await user.click(screen.getByRole('link', { name: 'Products' }))
 

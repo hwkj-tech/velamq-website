@@ -519,7 +519,7 @@ export const translations = {
       modulesLabel: '技术特性模块',
       supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', '权限审计', '数据看板', '开放 API'],
       flowLabel: '技术能力流',
-      flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
+      flowSteps: ['MQTT 5', 'QUIC', '消息总线', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
     },
   },
   en: {
@@ -1011,7 +1011,7 @@ export const translations = {
       modulesLabel: 'Technical feature modules',
       supportModules: ['Rule Engine', 'MQTT over QUIC', 'AI Diagnosis', 'ACL / Audit', 'Dashboard', 'Open API'],
       flowLabel: 'Technical capability flow',
-      flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL Rules', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
+      flowSteps: ['MQTT 5', 'QUIC', 'Message Bus', 'SQL Rules', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
     },
   },
 } as const

@@ -21,7 +21,7 @@ const defaultContent: VisualContent = {
   modulesLabel: '技术特性模块',
   supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', '权限审计', '数据看板', '开放 API'],
   flowLabel: '技术能力流',
-  flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
+  flowSteps: ['MQTT 5', 'QUIC', '消息总线', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
 }
 
 type ArchitectureVisualProps = {

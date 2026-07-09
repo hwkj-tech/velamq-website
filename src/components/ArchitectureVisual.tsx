@@ -2,26 +2,26 @@ import type { VisualContent } from '../content'
 import { VelaMQIcon } from './VelaMQIcon'
 
 const defaultContent: VisualContent = {
-  ariaLabel: '翰网科技功能与数据流动态图',
-  inputLabel: '数据来源',
-  inputChips: ['设备数据', '业务事件', '系统状态'],
+  ariaLabel: '翰网科技技术能力与消息流动态图',
+  inputLabel: '接入协议',
+  inputChips: ['MQTT', 'MQTT over QUIC', 'Open API'],
   inputItems: [
-    { title: '设备数据', meta: 'Telemetry', detail: '连接、指标、上下线状态' },
-    { title: '业务事件', meta: 'Event stream', detail: '告警、工单、流程触发' },
-    { title: '系统状态', meta: 'State sync', detail: '权限、审计、处理进度' },
+    { title: 'MQTT 接入', meta: 'MQTT 3/5', detail: '设备连接、发布订阅' },
+    { title: 'QUIC 链路', meta: 'MQTT over QUIC', detail: '弱网恢复、低握手延迟' },
+    { title: 'API & Webhook', meta: 'Open API', detail: '系统集成、事件回调' },
   ],
-  coreLabel: '业务能力中枢',
-  coreBody: '数据流 · 业务流',
-  serviceLabel: '业务协同模块',
+  coreLabel: '消息与规则内核',
+  coreBody: '连接 · 路由 · 规则',
+  serviceLabel: '核心技术能力',
   serviceCards: [
-    { title: '业务规则', meta: '规则自动化', text: '把事件转成流程、通知和系统动作', tone: 'a', status: '已编排' },
-    { title: '业务告警', meta: '异常触达', text: '告警、处置进度与协作流程同步', tone: 'b', status: 'SLA 同步' },
-    { title: '数据看板', meta: '运营可视化', text: '设备状态、业务结果和趋势统一呈现', tone: 'c', status: '实时刷新' },
+    { title: '规则引擎', meta: 'Rule Engine', text: '过滤、转换、触发动作', tone: 'a', status: 'SQL' },
+    { title: '低延迟路由', meta: 'Realtime Route', text: '百万级连接与消息分发', tone: 'b', status: 'p95 ms' },
+    { title: '可观测与审计', meta: 'Observability', text: '指标、链路、操作留痕', tone: 'c', status: 'Live' },
   ],
-  modulesLabel: '平台功能模块',
-  supportModules: ['设备接入', '规则自动化', '业务告警', '数据看板'],
-  flowLabel: '功能与数据流',
-  flowSteps: ['数据接入', '边缘汇聚', 'VelaMQ', '规则处理', '系统集成', '运营看板'],
+  modulesLabel: '技术特性模块',
+  supportModules: ['规则引擎', 'MQTT over QUIC', '低延迟路由', 'Open API'],
+  flowLabel: '技术能力流',
+  flowSteps: ['MQTT', 'QUIC', 'VelaMQ', '规则引擎', 'API', '可观测'],
 }
 
 type ArchitectureVisualProps = {

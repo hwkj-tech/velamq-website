@@ -6,22 +6,22 @@ const defaultContent: VisualContent = {
   inputLabel: '协议接入层',
   inputChips: ['MQTT 5.0', 'MQTT over QUIC', 'WebSocket'],
   inputItems: [
-    { title: 'MQTT 5.0', meta: '发布订阅', badges: ['QoS 1/2', 'Retain', 'Shared Sub'] },
-    { title: 'MQTT over QUIC', meta: '0-RTT 传输', badges: ['弱网恢复', '连接迁移', '低握手'] },
-    { title: 'WebSocket API', meta: '边缘网关', badges: ['REST', 'Webhook', 'Browser'] },
+    { title: 'MQTT 5.0', meta: '发布订阅' },
+    { title: 'MQTT over QUIC', meta: '0-RTT 传输' },
+    { title: 'WebSocket API', meta: '边缘网关' },
   ],
   coreLabel: '消息运行时',
   coreBody: 'Broker · Rule · AI',
   serviceLabel: '规则执行层',
   serviceCards: [
-    { title: 'SQL 规则引擎', meta: '流式处理', text: '', tone: 'a', status: 'SQL', badges: ['Filter', 'Transform', 'Action'] },
-    { title: '低延迟路由', meta: '实时分发', text: '', tone: 'b', status: 'p95 ms', badges: ['Session', 'Fanout', 'Cluster'] },
-    { title: 'AI 诊断与观测', meta: '智能运维', text: '', tone: 'c', status: 'AI', badges: ['Root Cause', 'Anomaly', 'Insight'] },
+    { title: 'SQL 规则引擎', meta: '流式处理', text: '', tone: 'a', status: 'SQL' },
+    { title: '低延迟路由', meta: '实时分发', text: '', tone: 'b', status: 'p95 ms' },
+    { title: 'AI 诊断与观测', meta: '智能运维', text: '', tone: 'c', status: 'AI' },
   ],
   modulesLabel: '技术特性模块',
-  supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', 'Prometheus'],
+  supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', '权限审计', '数据看板', '开放 API'],
   flowLabel: '技术能力流',
-  flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL 规则', 'AI Insight', 'Metrics'],
+  flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
 }
 
 type ArchitectureVisualProps = {
@@ -79,13 +79,6 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
                     <small>{item.meta}</small>
                     <strong>{item.title}</strong>
                     {'detail' in item && item.detail && <p>{item.detail}</p>}
-                    {'badges' in item && item.badges && (
-                      <div className="flow-business-badges">
-                        {item.badges.map((badge) => (
-                          <span key={badge}>{badge}</span>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 </article>
               ))}
@@ -103,20 +96,13 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
               {content.serviceCards.map((card) => (
                 <article className={`flow-business-service flow-business-service--${card.tone}`} key={card.title}>
                   <div className="flow-business-service__head">
-                  <small>{card.meta}</small>
-                  {'status' in card && card.status && <em>{card.status}</em>}
-                </div>
-                <strong>{card.title}</strong>
+                    <small>{card.meta}</small>
+                    {'status' in card && card.status && <em>{card.status}</em>}
+                  </div>
+                  <strong>{card.title}</strong>
                   {card.text && <p>{card.text}</p>}
-                  {'badges' in card && card.badges && (
-                    <div className="flow-business-badges">
-                      {card.badges.map((badge) => (
-                        <span key={badge}>{badge}</span>
-                      ))}
-                    </div>
-                  )}
-              </article>
-            ))}
+                </article>
+              ))}
             </div>
           </div>
 
@@ -127,13 +113,13 @@ export function ArchitectureVisual({ content = defaultContent }: ArchitectureVis
               </span>
             ))}
           </div>
-        </div>
-      </div>
 
-      <div className="flow-visual__metrics" aria-label={content.modulesLabel}>
-        {content.supportModules.map((module) => (
-          <span key={module}>{module}</span>
-        ))}
+          <div className="flow-business-modules" aria-label={content.modulesLabel}>
+            {content.supportModules.map((module) => (
+              <span key={module}>{module}</span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )

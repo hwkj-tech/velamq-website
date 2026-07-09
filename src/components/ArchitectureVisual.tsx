@@ -6,11 +6,11 @@ const defaultContent: VisualContent = {
   inputLabel: '协议接入层',
   inputChips: ['MQTT 5.0', 'MQTT over QUIC', 'WebSocket'],
   inputItems: [
+    { title: 'MQTT 3.1.1', meta: '兼容接入' },
     { title: 'MQTT 5.0', meta: '发布订阅' },
     { title: 'MQTT over QUIC', meta: '0-RTT 传输' },
     { title: 'WebSocket API', meta: '边缘网关' },
     { title: 'HTTP Webhook', meta: '业务回调' },
-    { title: '边缘采集', meta: '设备汇聚' },
   ],
   coreLabel: '消息运行时',
   coreBody: 'Broker · Rule · AI',
@@ -25,7 +25,7 @@ const defaultContent: VisualContent = {
   modulesLabel: '技术特性模块',
   supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', '权限审计', '数据看板', '开放 API'],
   flowLabel: '技术能力流',
-  flowSteps: ['MQTT 5', 'QUIC', '消息总线', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
+  flowSteps: ['MQTT 3.1.1', 'MQTT 5', 'QUIC', '消息总线', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics'],
 }
 
 type ArchitectureVisualProps = {

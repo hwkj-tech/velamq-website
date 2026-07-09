@@ -504,11 +504,11 @@ export const translations = {
       inputLabel: '协议接入层',
       inputChips: ['MQTT 5.0', 'MQTT over QUIC', 'WebSocket'],
       inputItems: [
+        { title: 'MQTT 3.1.1', meta: '兼容接入' },
         { title: 'MQTT 5.0', meta: '发布订阅' },
         { title: 'MQTT over QUIC', meta: '0-RTT 传输' },
         { title: 'WebSocket API', meta: '边缘网关' },
         { title: 'HTTP Webhook', meta: '业务回调' },
-        { title: '边缘采集', meta: '设备汇聚' },
       ],
       coreLabel: '消息运行时',
       coreBody: 'Broker · Rule · AI',
@@ -523,7 +523,7 @@ export const translations = {
       modulesLabel: '技术特性模块',
       supportModules: ['规则引擎', 'MQTT over QUIC', 'AI 诊断', '权限审计', '数据看板', '开放 API'],
       flowLabel: '技术能力流',
-      flowSteps: ['MQTT 5', 'QUIC', '消息总线', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
+      flowSteps: ['MQTT 3.1.1', 'MQTT 5', 'QUIC', '消息总线', 'SQL 规则', 'Webhook', 'AI Insight', 'Metrics'],
     },
   },
   en: {
@@ -1000,11 +1000,11 @@ export const translations = {
       inputLabel: 'Protocol Mesh',
       inputChips: ['MQTT 5.0', 'MQTT over QUIC', 'WebSocket'],
       inputItems: [
+        { title: 'MQTT 3.1.1', meta: 'Compatible Access' },
         { title: 'MQTT 5.0', meta: 'Pub/Sub' },
         { title: 'MQTT over QUIC', meta: '0-RTT Transport' },
         { title: 'WebSocket API', meta: 'Edge Gateway' },
         { title: 'HTTP Webhook', meta: 'Business Callback' },
-        { title: 'Edge Collector', meta: 'Device Aggregation' },
       ],
       coreLabel: 'Message Runtime',
       coreBody: 'Broker · Rule · AI',
@@ -1019,7 +1019,7 @@ export const translations = {
       modulesLabel: 'Technical feature modules',
       supportModules: ['Rule Engine', 'MQTT over QUIC', 'AI Diagnosis', 'ACL / Audit', 'Dashboard', 'Open API'],
       flowLabel: 'Technical capability flow',
-      flowSteps: ['MQTT 5', 'QUIC', 'Message Bus', 'SQL Rules', 'Webhook', 'AI Insight', 'Metrics', 'Audit'],
+      flowSteps: ['MQTT 3.1.1', 'MQTT 5', 'QUIC', 'Message Bus', 'SQL Rules', 'Webhook', 'AI Insight', 'Metrics'],
     },
   },
 } as const

@@ -3,25 +3,25 @@ import { VelaMQIcon } from './VelaMQIcon'
 
 const defaultContent: VisualContent = {
   ariaLabel: '翰网科技技术能力与消息流动态图',
-  inputLabel: '接入协议',
-  inputChips: ['MQTT', 'MQTT over QUIC', 'Open API'],
+  inputLabel: 'Protocol Mesh',
+  inputChips: ['MQTT 5.0', 'MQTT over QUIC', 'WebSocket'],
   inputItems: [
-    { title: 'MQTT 接入', meta: 'MQTT 3/5', detail: '设备连接、发布订阅' },
-    { title: 'QUIC 链路', meta: 'MQTT over QUIC', detail: '弱网恢复、低握手延迟' },
-    { title: 'API & Webhook', meta: 'Open API', detail: '系统集成、事件回调' },
+    { title: 'MQTT 5.0', meta: 'pub/sub broker', detail: 'QoS · retained · shared sub' },
+    { title: 'MQTT over QUIC', meta: '0-RTT transport', detail: 'mobility · weak network' },
+    { title: 'WebSocket API', meta: 'edge gateway', detail: 'browser · webhook · REST' },
   ],
-  coreLabel: '消息与规则内核',
-  coreBody: '连接 · 路由 · 规则',
-  serviceLabel: '核心技术能力',
+  coreLabel: 'Message Runtime',
+  coreBody: 'broker · router · rule engine',
+  serviceLabel: 'Execution Layer',
   serviceCards: [
-    { title: '规则引擎', meta: 'Rule Engine', text: '过滤、转换、触发动作', tone: 'a', status: 'SQL' },
-    { title: '低延迟路由', meta: 'Realtime Route', text: '百万级连接与消息分发', tone: 'b', status: 'p95 ms' },
-    { title: '可观测与审计', meta: 'Observability', text: '指标、链路、操作留痕', tone: 'c', status: 'Live' },
+    { title: 'SQL Rule Engine', meta: 'stream processing', text: 'filter · transform · action', tone: 'a', status: 'SQL' },
+    { title: 'Low-latency Route', meta: 'realtime dispatch', text: 'fanout · session · cluster', tone: 'b', status: 'p95 ms' },
+    { title: 'Observe & Secure', meta: 'ops telemetry', text: 'metrics · ACL · audit log', tone: 'c', status: 'Live' },
   ],
-  modulesLabel: '技术特性模块',
-  supportModules: ['规则引擎', 'MQTT over QUIC', '低延迟路由', 'Open API'],
-  flowLabel: '技术能力流',
-  flowSteps: ['MQTT', 'QUIC', 'VelaMQ', '规则引擎', 'API', '可观测'],
+  modulesLabel: 'Technical feature modules',
+  supportModules: ['Rule Engine', 'MQTT over QUIC', 'ACL/Auth', 'Prometheus'],
+  flowLabel: 'Technical capability flow',
+  flowSteps: ['MQTT 5', 'QUIC', 'VelaMQ', 'SQL Rules', 'Webhook', 'Metrics'],
 }
 
 type ArchitectureVisualProps = {

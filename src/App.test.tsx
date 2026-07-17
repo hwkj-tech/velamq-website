@@ -271,7 +271,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 3, name: 'Kafka 数据源' })).toBeInTheDocument()
     expect(screen.getAllByRole('img', { name: 'Kafka 配置截图' })[0]).toHaveAttribute(
       'src',
-      './velamq-docs/img/screenshots/datasources/kafka.svg',
+      './velamq-docs/img/screenshots/datasources/kafka.png',
     )
   })
 

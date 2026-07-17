@@ -3140,7 +3140,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "HTTP 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/http.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
             "type": "paragraph",
@@ -3215,7 +3215,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "HTTP 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/http.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
             "type": "code",
@@ -3231,7 +3231,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "HTTP 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/http.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
             "type": "code",
@@ -3303,7 +3303,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "InfluxDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/influxdb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
             "type": "paragraph",
@@ -3364,7 +3364,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "InfluxDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/influxdb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
             "type": "code",
@@ -3380,7 +3380,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "InfluxDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/influxdb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
             "type": "code",
@@ -3435,7 +3435,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Kafka 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/kafka.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
             "type": "paragraph",
@@ -3506,7 +3506,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Kafka 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/kafka.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
             "type": "code",
@@ -3522,7 +3522,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Kafka 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/kafka.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
             "type": "code",
@@ -3587,7 +3587,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Log 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/log.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
             "type": "paragraph",
@@ -3643,7 +3643,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Log 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/log.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
             "type": "code",
@@ -3659,7 +3659,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Log 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/log.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
             "type": "code",
@@ -3730,7 +3730,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MongoDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mongodb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
             "type": "paragraph",
@@ -3771,7 +3771,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MongoDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mongodb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
             "type": "code",
@@ -3787,7 +3787,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MongoDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mongodb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
             "type": "code",
@@ -3853,7 +3853,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MQTT 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mqtt.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
             "type": "paragraph",
@@ -3914,7 +3914,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MQTT 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mqtt.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
             "type": "code",
@@ -3930,7 +3930,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MQTT 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mqtt.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
             "type": "code",
@@ -4009,7 +4009,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "对象存储 / 搜索 / Loki 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/object-search-loki.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/object-search-loki.png"
           },
           {
             "type": "heading",
@@ -4376,7 +4376,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "数据源总览 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/overview.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/overview.png"
           },
           {
             "type": "heading",
@@ -4562,7 +4562,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "数据源总览 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/overview.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/overview.png"
           },
           {
             "type": "paragraph",
@@ -4670,7 +4670,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Pulsar 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/pulsar.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
             "type": "paragraph",
@@ -4721,7 +4721,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Pulsar 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/pulsar.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
             "type": "code",
@@ -4737,7 +4737,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Pulsar 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/pulsar.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
             "type": "code",
@@ -4792,7 +4792,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RabbitMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "paragraph",
@@ -4818,7 +4818,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RabbitMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "code",
@@ -4834,7 +4834,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RabbitMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "code",
@@ -4894,7 +4894,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Redis 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/redis.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
             "type": "paragraph",
@@ -4940,7 +4940,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Redis 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/redis.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
             "type": "code",
@@ -4956,7 +4956,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Redis 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/redis.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
             "type": "code",
@@ -5021,7 +5021,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RocketMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
             "type": "paragraph",
@@ -5057,7 +5057,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RocketMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
             "type": "code",
@@ -5073,7 +5073,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RocketMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
             "type": "code",
@@ -5133,7 +5133,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "paragraph",
@@ -5158,7 +5158,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "code",
@@ -5174,7 +5174,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "code",
@@ -5190,7 +5190,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "code",
@@ -5250,7 +5250,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "paragraph",
@@ -5276,7 +5276,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
@@ -5292,7 +5292,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
@@ -5308,7 +5308,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
@@ -5363,7 +5363,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Oracle 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/oracle.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
             "type": "paragraph",
@@ -5393,7 +5393,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Oracle 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/oracle.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
             "type": "code",
@@ -5409,7 +5409,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Oracle 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/oracle.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
             "type": "code",
@@ -5474,7 +5474,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "paragraph",
@@ -5500,7 +5500,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "code",
@@ -5516,7 +5516,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "paragraph",
@@ -5545,7 +5545,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "paragraph",
@@ -5615,7 +5615,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "paragraph",
@@ -5641,7 +5641,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
@@ -5657,7 +5657,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
@@ -5673,7 +5673,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
@@ -5733,7 +5733,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "paragraph",
@@ -5763,7 +5763,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
@@ -5779,7 +5779,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
@@ -5795,7 +5795,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
@@ -5860,7 +5860,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQL 通用配置 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sql.png"
           },
           {
             "type": "paragraph",
@@ -16044,7 +16044,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "HTTP 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/http.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
             "type": "paragraph",
@@ -16119,7 +16119,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "HTTP 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/http.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
             "type": "code",
@@ -16135,7 +16135,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "HTTP 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/http.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
             "type": "code",
@@ -16207,7 +16207,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "InfluxDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/influxdb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
             "type": "paragraph",
@@ -16268,7 +16268,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "InfluxDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/influxdb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
             "type": "code",
@@ -16284,7 +16284,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "InfluxDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/influxdb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
             "type": "code",
@@ -16339,7 +16339,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Kafka 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/kafka.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
             "type": "paragraph",
@@ -16410,7 +16410,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Kafka 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/kafka.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
             "type": "code",
@@ -16426,7 +16426,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Kafka 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/kafka.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
             "type": "code",
@@ -16491,7 +16491,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Log 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/log.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
             "type": "paragraph",
@@ -16547,7 +16547,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Log 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/log.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
             "type": "code",
@@ -16563,7 +16563,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Log 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/log.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
             "type": "code",
@@ -16634,7 +16634,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MongoDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mongodb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
             "type": "paragraph",
@@ -16675,7 +16675,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MongoDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mongodb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
             "type": "code",
@@ -16691,7 +16691,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MongoDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mongodb.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
             "type": "code",
@@ -16757,7 +16757,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MQTT 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mqtt.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
             "type": "paragraph",
@@ -16818,7 +16818,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MQTT 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mqtt.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
             "type": "code",
@@ -16834,7 +16834,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MQTT 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mqtt.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
             "type": "code",
@@ -16913,7 +16913,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "对象存储 / 搜索 / Loki 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/object-search-loki.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/object-search-loki.png"
           },
           {
             "type": "heading",
@@ -17275,7 +17275,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "数据源总览 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/overview.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/overview.png"
           },
           {
             "type": "heading",
@@ -17461,7 +17461,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "数据源总览 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/overview.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/overview.png"
           },
           {
             "type": "paragraph",
@@ -17534,7 +17534,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Pulsar 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/pulsar.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
             "type": "paragraph",
@@ -17585,7 +17585,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Pulsar 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/pulsar.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
             "type": "code",
@@ -17601,7 +17601,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Pulsar 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/pulsar.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
             "type": "code",
@@ -17656,7 +17656,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RabbitMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "paragraph",
@@ -17682,7 +17682,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RabbitMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "code",
@@ -17698,7 +17698,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RabbitMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "code",
@@ -17758,7 +17758,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Redis 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/redis.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
             "type": "paragraph",
@@ -17804,7 +17804,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Redis 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/redis.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
             "type": "code",
@@ -17820,7 +17820,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Redis 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/redis.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
             "type": "code",
@@ -17885,7 +17885,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RocketMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
             "type": "paragraph",
@@ -17921,7 +17921,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RocketMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
             "type": "code",
@@ -17937,7 +17937,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "RocketMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
             "type": "code",
@@ -17997,7 +17997,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "paragraph",
@@ -18022,7 +18022,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "code",
@@ -18038,7 +18038,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "code",
@@ -18054,7 +18054,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "ClickHouse 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "code",
@@ -18114,7 +18114,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "paragraph",
@@ -18140,7 +18140,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
@@ -18156,7 +18156,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
@@ -18172,7 +18172,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
@@ -18227,7 +18227,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Oracle 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/oracle.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
             "type": "paragraph",
@@ -18257,7 +18257,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Oracle 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/oracle.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
             "type": "code",
@@ -18273,7 +18273,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "Oracle 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/oracle.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
             "type": "code",
@@ -18338,7 +18338,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "paragraph",
@@ -18364,7 +18364,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "code",
@@ -18380,7 +18380,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "paragraph",
@@ -18409,7 +18409,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "paragraph",
@@ -18479,7 +18479,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "paragraph",
@@ -18505,7 +18505,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
@@ -18521,7 +18521,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
@@ -18537,7 +18537,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
@@ -18597,7 +18597,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "paragraph",
@@ -18627,7 +18627,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
@@ -18643,7 +18643,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
@@ -18659,7 +18659,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
@@ -18724,7 +18724,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "image",
             "alt": "SQL 通用配置 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sql.svg"
+            "src": "/velamq-docs/img/screenshots/datasources/sql.png"
           },
           {
             "type": "paragraph",

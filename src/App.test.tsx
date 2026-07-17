@@ -99,6 +99,24 @@ describe('HanNet homepage', () => {
     expect(screen.getByText(/容量评估与上线验证工具/)).toBeInTheDocument()
   })
 
+  it('navigates from footer links', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: 'VelaMQ Bench' }))
+
+    expect(screen.getByRole('heading', { level: 2, name: '产品矩阵' })).toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'VelaMQ Bench' })).toHaveAttribute('aria-selected', 'true')
+
+    await user.click(screen.getByRole('link', { name: '文档中心' }))
+
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
+
+    await user.click(screen.getByRole('link', { name: '联系方式' }))
+
+    expect(screen.getByRole('heading', { level: 2, name: '联系销售' })).toBeInTheDocument()
+  })
+
   it('renders each top-level feature view independently', async () => {
     const user = userEvent.setup()
     render(<App />)
@@ -116,12 +134,14 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('img', { name: '智慧城市实时事件动态数据流图' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { level: 2, name: '产品矩阵' })).not.toBeInTheDocument()
 
-    await user.click(screen.getByRole('link', { name: '平台能力' }))
+    const nav = screen.getByRole('navigation', { name: '主导航' })
+
+    await user.click(within(nav).getByRole('link', { name: '平台能力' }))
     expect(screen.getByRole('heading', { level: 2, name: '让设备事件自然进入业务流程' })).toBeInTheDocument()
     expect(screen.getByText('流程保护')).toBeInTheDocument()
     expect(screen.queryByText('车联网消息通道')).not.toBeInTheDocument()
 
-    await user.click(screen.getByRole('link', { name: '文档' }))
+    await user.click(within(nav).getByRole('link', { name: '文档' }))
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
     expect(screen.getByText('浏览 VelaMQ 文档、规则、API')).toBeInTheDocument()
     expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
@@ -130,7 +150,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('button', { name: '快速启动' })).toBeInTheDocument()
     expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
 
-    await user.click(screen.getByRole('link', { name: '服务支持' }))
+    await user.click(within(nav).getByRole('link', { name: '服务支持' }))
     expect(screen.getByRole('heading', { level: 2, name: '从评估到上线的服务支持' })).toBeInTheDocument()
     expect(screen.getByText('试点验证')).toBeInTheDocument()
     expect(screen.queryByText('npm create velamq@latest edge-project')).not.toBeInTheDocument()
@@ -162,18 +182,20 @@ describe('HanNet homepage', () => {
     expect(screen.queryByText('协议接入层')).not.toBeInTheDocument()
     expect(screen.queryByText('AI 诊断与观测')).not.toBeInTheDocument()
 
-    await user.click(screen.getByRole('link', { name: 'Products' }))
+    const nav = screen.getByRole('navigation', { name: 'Main navigation' })
+
+    await user.click(within(nav).getByRole('link', { name: 'Products' }))
 
     expect(screen.getByRole('heading', { level: 2, name: 'Products' })).toBeInTheDocument()
     await user.click(screen.getByRole('tab', { name: 'VelaMQ Bench' }))
     expect(screen.getByText(/Capacity assessment and launch validation/)).toBeInTheDocument()
 
-    await user.click(screen.getByRole('link', { name: 'Docs' }))
+    await user.click(within(nav).getByRole('link', { name: 'Docs' }))
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Documentation' })).toBeInTheDocument()
     expect(screen.getByRole('combobox', { name: 'Docs version' })).toHaveValue('1.0')
     expect(screen.getByRole('heading', { level: 3, name: 'Product Introduction' })).toBeInTheDocument()
 
-    await user.click(screen.getByRole('link', { name: 'Contact' }))
+    await user.click(within(nav).getByRole('link', { name: 'Contact' }))
     expect(screen.getByRole('heading', { level: 2, name: 'Contact sales' })).toBeInTheDocument()
     await user.type(screen.getByLabelText('Name'), 'Alex')
     expect(screen.getByRole('link', { name: 'Send email' })).toHaveAttribute(
@@ -186,7 +208,7 @@ describe('HanNet homepage', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('link', { name: '服务支持' }))
+    await user.click(within(screen.getByRole('navigation', { name: '主导航' })).getByRole('link', { name: '服务支持' }))
 
     expect(screen.getByText('从评估到上线的服务支持')).toBeInTheDocument()
     ;['方案沟通', '接入评估', '试点落地', '服务支持'].forEach((label) => {

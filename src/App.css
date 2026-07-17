@@ -3797,11 +3797,21 @@
   font-size: 15px;
 }
 
-.footer-columns span {
+.footer-columns a {
   display: block;
   margin-top: 10px;
   color: var(--color-muted);
   font-size: 14px;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.footer-columns a:hover,
+.footer-columns a:focus-visible {
+  color: var(--color-accent);
+  transform: translateX(3px);
 }
 
 @media (max-width: 1080px) {

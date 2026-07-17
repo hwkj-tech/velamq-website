@@ -75,6 +75,34 @@ const initialContactForm: ContactFormState = {
   message: '',
 }
 
+type FooterTarget = {
+  product?: ProductId
+  view: ViewId
+}
+
+const footerTargetByLabel: Record<string, FooterTarget> = {
+  VelaMQ: { view: 'product', product: 'velamq' },
+  'VelaMQ Bench': { view: 'product', product: 'velamq-bench' },
+  规则自动化: { view: 'platform' },
+  数据看板: { view: 'platform' },
+  文档中心: { view: 'docs' },
+  方案沟通: { view: 'contact' },
+  接入评估: { view: 'support' },
+  服务支持: { view: 'support' },
+  关于我们: { view: 'company' },
+  联系方式: { view: 'contact' },
+  [companyName]: { view: 'company' },
+  'Rule automation': { view: 'platform' },
+  Dashboards: { view: 'platform' },
+  Documentation: { view: 'docs' },
+  'Solution discussion': { view: 'contact' },
+  'Access assessment': { view: 'support' },
+  'Service support': { view: 'support' },
+  About: { view: 'company' },
+  Contact: { view: 'contact' },
+  Support: { view: 'support' },
+}
+
 const isViewId = (id: string): id is ViewId => viewIds.includes(id as ViewId)
 
 const readInitialLocale = (): Locale => {
@@ -350,6 +378,22 @@ function App() {
 
     event.preventDefault()
     activateView(id)
+  }
+
+  const handleFooterLinkClick = (event: MouseEvent<HTMLAnchorElement>, label: string) => {
+    const target = footerTargetByLabel[label]
+
+    if (!target) {
+      return
+    }
+
+    event.preventDefault()
+
+    if (target.product) {
+      setActiveProduct(target.product)
+    }
+
+    activateView(target.view)
   }
 
   const selectLanguage = (nextLocale: Locale) => {
@@ -931,7 +975,9 @@ function App() {
             <div key={column.title}>
               <h3>{column.title}</h3>
               {column.links.map((link) => (
-                <span key={link}>{link}</span>
+                <a href={`#${footerTargetByLabel[link]?.view ?? 'home'}`} key={link} onClick={(event) => handleFooterLinkClick(event, link)}>
+                  {link}
+                </a>
               ))}
             </div>
           ))}

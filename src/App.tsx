@@ -48,7 +48,13 @@ import {
   type ProductId,
   type ViewId,
 } from './content'
-import { velamqDocs, type VelaMQDocBlock, type VelaMQDocDocument, type VelaMQDocsCatalog } from './velamqDocs'
+import {
+  velamqDocs,
+  type VelaMQDocBlock,
+  type VelaMQDocDocument,
+  type VelaMQDocNavEntry,
+  type VelaMQDocsCatalog,
+} from './velamqDocs'
 
 const capabilityIcons = [Server, Workflow, Database, Activity, ShieldCheck, Cable]
 const solutionIcons = [Factory, Car, Building2, Landmark]
@@ -78,6 +84,17 @@ const initialContactForm: ContactFormState = {
 type FooterTarget = {
   product?: ProductId
   view: ViewId
+}
+
+type DocsNavBranch = {
+  children: VelaMQDocNavEntry[]
+  entry: VelaMQDocNavEntry
+  key: string
+}
+
+type DocsNavGroup = {
+  branches: DocsNavBranch[]
+  title: string
 }
 
 const footerTargetByLabel: Record<string, FooterTarget> = {
@@ -111,6 +128,39 @@ const readInitialLocale = (): Locale => {
   } catch {
     return 'zh'
   }
+}
+
+const docsNavEntryKey = (groupTitle: string, entry: VelaMQDocNavEntry, index: number) =>
+  entry.type === 'doc' ? entry.id : `${groupTitle}:${entry.depth}:${entry.label}:${index}`
+
+const buildDocsNavGroups = (catalog: VelaMQDocsCatalog): DocsNavGroup[] =>
+  catalog.groups.map((group) => {
+    const branches: DocsNavBranch[] = []
+    let activeBranch: DocsNavBranch | undefined
+
+    group.entries.forEach((entry, index) => {
+      if (entry.depth === 0 || !activeBranch) {
+        activeBranch = {
+          children: [],
+          entry,
+          key: docsNavEntryKey(group.title, entry, index),
+        }
+        branches.push(activeBranch)
+        return
+      }
+
+      activeBranch.children.push(entry)
+    })
+
+    return { title: group.title, branches }
+  })
+
+const branchContainsDocument = (branch: DocsNavBranch, documentId: string) => {
+  if (branch.entry.type === 'doc' && branch.entry.id === documentId) {
+    return true
+  }
+
+  return branch.children.some((entry) => entry.type === 'doc' && entry.id === documentId)
 }
 
 const resolveDocsLink = (href: string, currentDocumentId: string, docsCatalog: VelaMQDocsCatalog) => {
@@ -306,6 +356,7 @@ function App() {
   const [activeDocsTopic, setActiveDocsTopic] = useState(velamqDocs.zh.defaultDocumentId)
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
+  const [expandedDocsBranches, setExpandedDocsBranches] = useState<string[]>([])
 
   const copy = translations[locale]
   const docsCatalog = velamqDocs[locale]
@@ -323,6 +374,23 @@ function App() {
     () => docsCatalog.documents[activeDocsTopic] ?? docsCatalog.documents[docsCatalog.defaultDocumentId],
     [activeDocsTopic, docsCatalog.defaultDocumentId, docsCatalog.documents],
   )
+  const docsNavGroups = useMemo(() => buildDocsNavGroups(docsCatalog), [docsCatalog])
+  const activeDocsBranchKeys = useMemo(() => {
+    const keys = new Set<string>()
+    docsNavGroups.forEach((group) => {
+      group.branches.forEach((branch) => {
+        if (branchContainsDocument(branch, selectedDocsDocument.id)) {
+          keys.add(branch.key)
+        }
+      })
+    })
+    return keys
+  }, [docsNavGroups, selectedDocsDocument.id])
+  const toggleDocsBranch = (branchKey: string) => {
+    setExpandedDocsBranches((current) =>
+      current.includes(branchKey) ? current.filter((key) => key !== branchKey) : [...current, branchKey],
+    )
+  }
   const contactMailto = useMemo(() => {
     const valueOrFallback = (value: string) => value.trim() || copy.contactPage.emptyValue
     const subject = `${copy.contactPage.subjectPrefix} - ${valueOrFallback(contactForm.name)}`
@@ -671,29 +739,84 @@ function App() {
                 </select>
               </div>
               <div className="docs-nav-groups">
-                {docsCatalog.groups.map((group) => (
+                {docsNavGroups.map((group) => (
                   <div className="docs-nav-group" key={group.title}>
                     <h3>{group.title}</h3>
-                    {group.entries.map((entry) =>
-                      entry.type === 'category' ? (
-                        <span className={`docs-nav-category docs-nav-depth-${entry.depth}`} key={`${group.title}-${entry.label}`}>
-                          {entry.label}
-                        </span>
-                      ) : (
-                        <button
-                          aria-current={selectedDocsDocument.id === entry.id ? 'page' : undefined}
-                          className={`docs-nav-button docs-nav-depth-${entry.depth}`}
-                          data-doc-topic={entry.id}
-                          key={entry.id}
-                          onClick={() => {
-                            setActiveDocsTopic(entry.id)
-                          }}
-                          type="button"
-                        >
-                          {entry.label}
-                        </button>
-                      ),
-                    )}
+                    {group.branches.map((branch) => {
+                      const hasChildren = branch.children.length > 0
+                      const isExpanded = expandedDocsBranches.includes(branch.key) || activeDocsBranchKeys.has(branch.key)
+                      const toggleLabel = `${isExpanded ? (locale === 'zh' ? '折叠' : 'Collapse') : locale === 'zh' ? '展开' : 'Expand'} ${
+                        branch.entry.label
+                      }`
+
+                      return (
+                        <div className="docs-nav-branch" key={branch.key}>
+                          <div className="docs-nav-row">
+                            {branch.entry.type === 'category' ? (
+                              <span className="docs-nav-category docs-nav-category--root">{branch.entry.label}</span>
+                            ) : (
+                              (() => {
+                                const entry = branch.entry
+
+                                return (
+                                  <button
+                                    aria-current={selectedDocsDocument.id === entry.id ? 'page' : undefined}
+                                    className="docs-nav-button docs-nav-depth-0"
+                                    data-doc-topic={entry.id}
+                                    onClick={() => {
+                                      setActiveDocsTopic(entry.id)
+                                    }}
+                                    type="button"
+                                  >
+                                    {entry.label}
+                                  </button>
+                                )
+                              })()
+                            )}
+                            {hasChildren && (
+                              <button
+                                aria-expanded={isExpanded}
+                                aria-label={toggleLabel}
+                                className="docs-nav-toggle"
+                                onClick={() => {
+                                  toggleDocsBranch(branch.key)
+                                }}
+                                type="button"
+                              >
+                                <ChevronDown size={14} strokeWidth={2} aria-hidden="true" />
+                              </button>
+                            )}
+                          </div>
+                          {hasChildren && isExpanded && (
+                            <div className="docs-nav-children">
+                              {branch.children.map((entry) =>
+                                entry.type === 'category' ? (
+                                  <span
+                                    className={`docs-nav-category docs-nav-depth-${entry.depth}`}
+                                    key={`${branch.key}-${entry.label}`}
+                                  >
+                                    {entry.label}
+                                  </span>
+                                ) : (
+                                  <button
+                                    aria-current={selectedDocsDocument.id === entry.id ? 'page' : undefined}
+                                    className={`docs-nav-button docs-nav-depth-${entry.depth}`}
+                                    data-doc-topic={entry.id}
+                                    key={entry.id}
+                                    onClick={() => {
+                                      setActiveDocsTopic(entry.id)
+                                    }}
+                                    type="button"
+                                  >
+                                    {entry.label}
+                                  </button>
+                                ),
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      )
+                    })}
                   </div>
                 ))}
               </div>

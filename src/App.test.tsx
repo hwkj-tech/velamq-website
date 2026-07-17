@@ -238,6 +238,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 3, name: '启动服务' })).toBeInTheDocument()
     expect(screen.getAllByText(/VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd/).length).toBeGreaterThan(0)
 
+    await user.click(screen.getByRole('button', { name: '展开 规则引擎' }))
     await user.click(screen.getByRole('button', { name: '规则引擎总览' }))
 
     expect(screen.getByRole('heading', { level: 3, name: '规则引擎总览' })).toBeInTheDocument()
@@ -248,6 +249,30 @@ describe('HanNet homepage', () => {
 
     const screenshot = screen.getByRole('img', { name: 'VelaMQ 3.0 数据管理与存储状态入口截图' })
     expect(screenshot).toHaveAttribute('src', './velamq-docs/img/screenshots/dashboard.png')
+  })
+
+  it('keeps second-level docs navigation collapsed until a section is opened', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: '文档' }))
+
+    expect(screen.getAllByText('数据源').length).toBeGreaterThan(0)
+    expect(screen.queryByRole('button', { name: 'Kafka 数据源' })).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: '展开 数据源' }))
+
+    expect(screen.getByRole('button', { name: 'Kafka 数据源' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Redis 数据源' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'MQTT 数据源' })).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Kafka 数据源' }))
+
+    expect(screen.getByRole('heading', { level: 3, name: 'Kafka 数据源' })).toBeInTheDocument()
+    expect(screen.getAllByRole('img', { name: 'Kafka 配置截图' })[0]).toHaveAttribute(
+      'src',
+      './velamq-docs/img/screenshots/datasources/kafka.svg',
+    )
   })
 
   it('keeps every imported docs media asset available in public', () => {

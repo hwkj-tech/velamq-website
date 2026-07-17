@@ -5644,6 +5644,18 @@
   gap: 7px;
 }
 
+.docs-nav-branch {
+  display: grid;
+  gap: 4px;
+}
+
+.docs-nav-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: 4px;
+}
+
 .docs-nav-group h3,
 .docs-toc h3 {
   margin: 0 0 4px;
@@ -5673,6 +5685,31 @@
   cursor: pointer;
   font: inherit;
   text-align: left;
+}
+
+.docs-nav-group .docs-nav-toggle {
+  width: 28px;
+  min-height: 28px;
+  justify-content: center;
+  padding: 0;
+  color: #6f827e;
+  border: 1px solid rgba(7, 21, 19, 0.08);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.docs-nav-group .docs-nav-toggle svg {
+  transition: transform 160ms ease;
+}
+
+.docs-nav-group .docs-nav-toggle[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+.docs-nav-children {
+  display: grid;
+  gap: 4px;
+  padding: 2px 0 7px 7px;
+  border-left: 1px solid rgba(0, 168, 134, 0.12);
 }
 
 .docs-nav-group button[aria-current='page'],
@@ -7604,6 +7641,14 @@ textarea::placeholder {
   gap: 4px;
 }
 
+.docs-page--manual .docs-nav-branch {
+  gap: 3px;
+}
+
+.docs-page--manual .docs-nav-row {
+  min-width: 0;
+}
+
 .docs-page--manual .docs-nav-category {
   min-height: 24px;
   display: flex;
@@ -7615,6 +7660,17 @@ textarea::placeholder {
   letter-spacing: 0.04em;
 }
 
+.docs-page--manual .docs-nav-category--root {
+  min-height: 30px;
+  margin-top: 0;
+  padding: 0 9px;
+  color: rgba(234, 255, 251, 0.7);
+  border-radius: 6px;
+  background: rgba(116, 247, 210, 0.055);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
 .docs-page--manual .docs-nav-button {
   min-height: 28px;
   padding: 0 9px;
@@ -7622,6 +7678,21 @@ textarea::placeholder {
   border-radius: 6px;
   font-size: 12px;
   line-height: 1.25;
+}
+
+.docs-page--manual .docs-nav-toggle {
+  color: rgba(234, 255, 251, 0.58);
+  border-color: rgba(148, 255, 229, 0.12);
+  background: rgba(116, 247, 210, 0.045);
+}
+
+.docs-page--manual .docs-nav-toggle:hover {
+  color: #f4fffd;
+  background: rgba(116, 247, 210, 0.11);
+}
+
+.docs-page--manual .docs-nav-children {
+  border-left-color: rgba(116, 247, 210, 0.15);
 }
 
 .docs-page--manual .docs-nav-depth-1 {

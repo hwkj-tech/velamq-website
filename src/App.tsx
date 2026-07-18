@@ -65,6 +65,7 @@ const contactHref = '#contact'
 const docsHref = '#docs'
 const localeOptions: Locale[] = ['zh', 'en']
 const languageMenuId = 'site-language-menu'
+const docsMenuId = 'site-docs-menu'
 const siteAssetBase = import.meta.env.BASE_URL || './'
 
 type ContactFormState = {
@@ -95,6 +96,198 @@ type DocsNavBranch = {
 type DocsNavGroup = {
   branches: DocsNavBranch[]
   title: string
+}
+
+const createDoc = (
+  id: string,
+  title: string,
+  summary: string,
+  sourcePath: string,
+  sections: Array<{ code?: string; id: string; text: string; title: string }>,
+): VelaMQDocDocument => ({
+  id,
+  title,
+  summary,
+  sourcePath,
+  headings: sections.map((section) => ({ id: section.id, level: 2, text: section.title })),
+  blocks: [
+    { type: 'paragraph', text: summary },
+    ...sections.flatMap<VelaMQDocBlock>((section) => [
+      { type: 'heading', id: section.id, level: 2, text: section.title },
+      { type: 'paragraph', text: section.text },
+      ...(section.code ? [{ type: 'code' as const, language: 'bash', code: section.code }] : []),
+    ]),
+  ],
+})
+
+const createBenchDocsCatalog = (locale: Locale): VelaMQDocsCatalog => {
+  const isZh = locale === 'zh'
+  const documents = isZh
+    ? {
+        overview: createDoc(
+          'overview',
+          'VelaMQ Bench 概览',
+          'VelaMQ Bench 面向上线前容量评估、压测执行和报告交付，帮助团队把真实业务场景转成可复现的验证流程。',
+          'bench/overview.md',
+          [
+            {
+              id: 'positioning',
+              title: '产品定位',
+              text: '围绕连接数、吞吐、延迟、规则执行和外部写入目标建立压测模型，验证 VelaMQ 在上线场景中的稳定边界。',
+              code: 'velamq-bench scenario init --template industrial-edge',
+            },
+            {
+              id: 'workflow',
+              title: '交付流程',
+              text: '从场景建模、执行压测、采集指标到输出报告，Bench 用统一流程沉淀每次上线验证结论。',
+              code: 'scenario -> load test -> metrics -> launch report',
+            },
+          ],
+        ),
+        scenarios: createDoc(
+          'scenarios',
+          '场景建模',
+          '把业务容量目标拆成设备规模、消息模型、协议、规则链路和数据源写入策略。',
+          'bench/scenarios.md',
+          [
+            {
+              id: 'device-model',
+              title: '设备与消息模型',
+              text: '定义设备数量、连接节奏、消息频率、payload 大小、主题分布和 MQTT 版本，尽量贴近真实现场。',
+              code: ['devices = 50000', 'message_rate = "120k/min"', 'protocol = "mqtt5"'].join('\n'),
+            },
+            {
+              id: 'business-path',
+              title: '业务链路',
+              text: '把规则引擎、Webhook、Kafka、SQL 或时序库写入纳入同一次压测，验证端到端链路。',
+              code: 'rule -> action -> datasource -> dashboard',
+            },
+          ],
+        ),
+        reports: createDoc(
+          'reports',
+          '报告与上线建议',
+          '输出吞吐、延迟分位线、错误率、资源消耗和容量建议，让上线决策有可追溯依据。',
+          'bench/reports.md',
+          [
+            {
+              id: 'metrics',
+              title: '核心指标',
+              text: '关注连接建立速率、消息吞吐、规则处理延迟、数据源写入耗时、CPU/内存和异常重试。',
+              code: 'p95 latency < 20ms\nerror_rate < 0.1%\nconnections stable',
+            },
+            {
+              id: 'recommendation',
+              title: '上线建议',
+              text: '报告会结合目标容量、资源水位和瓶颈位置，给出集群规模、端点参数、规则拆分和数据源批量写入建议。',
+              code: 'velamq-bench report --format html --output launch-report.html',
+            },
+          ],
+        ),
+      }
+    : {
+        overview: createDoc(
+          'overview',
+          'VelaMQ Bench Overview',
+          'VelaMQ Bench turns launch capacity goals into repeatable scenarios, load tests and delivery reports.',
+          'bench/overview.md',
+          [
+            {
+              id: 'positioning',
+              title: 'Positioning',
+              text: 'Model connections, throughput, latency, rules and external writes to verify the operating boundary before launch.',
+              code: 'velamq-bench scenario init --template industrial-edge',
+            },
+            {
+              id: 'workflow',
+              title: 'Workflow',
+              text: 'Bench keeps scenario modeling, test execution, metrics collection and report delivery in one reproducible flow.',
+              code: 'scenario -> load test -> metrics -> launch report',
+            },
+          ],
+        ),
+        scenarios: createDoc(
+          'scenarios',
+          'Scenario Modeling',
+          'Break business capacity goals into device scale, message model, protocol, rule path and datasource writes.',
+          'bench/scenarios.md',
+          [
+            {
+              id: 'device-model',
+              title: 'Device and Message Model',
+              text: 'Define device count, connect ramp, message rate, payload size, topic distribution and MQTT version close to the real site.',
+              code: ['devices = 50000', 'message_rate = "120k/min"', 'protocol = "mqtt5"'].join('\n'),
+            },
+            {
+              id: 'business-path',
+              title: 'Business Path',
+              text: 'Include rules, webhooks, Kafka, SQL or time-series writes in the same test to verify the end-to-end path.',
+              code: 'rule -> action -> datasource -> dashboard',
+            },
+          ],
+        ),
+        reports: createDoc(
+          'reports',
+          'Reports and Launch Advice',
+          'Produce throughput, latency percentiles, error rate, resource usage and capacity recommendations.',
+          'bench/reports.md',
+          [
+            {
+              id: 'metrics',
+              title: 'Core Metrics',
+              text: 'Track connection ramp, message throughput, rule latency, datasource write time, CPU/memory and retry behavior.',
+              code: 'p95 latency < 20ms\nerror_rate < 0.1%\nconnections stable',
+            },
+            {
+              id: 'recommendation',
+              title: 'Launch Recommendation',
+              text: 'Reports translate capacity goals and bottlenecks into cluster size, endpoint tuning, rule splitting and datasource batching advice.',
+              code: 'velamq-bench report --format html --output launch-report.html',
+            },
+          ],
+        ),
+      }
+
+  return {
+    locale,
+    productName: 'VelaMQ Bench',
+    title: isZh ? 'VelaMQ Bench 文档中心' : 'VelaMQ Bench Documentation',
+    eyebrow: 'VelaMQ Bench Docs',
+    body: isZh
+      ? '围绕压测场景、容量评估、指标采集和上线报告维护文档，方便团队在上线前验证 VelaMQ 的真实承载能力。'
+      : 'Documentation for load scenarios, capacity assessment, metrics collection and launch reports before production rollout.',
+    searchPlaceholder: isZh ? '浏览 Bench 场景、压测、报告' : 'Search Bench scenarios, tests and reports',
+    sidebarLabel: isZh ? 'VelaMQ Bench 文档目录' : 'VelaMQ Bench documentation navigation',
+    tocLabel: isZh ? '本页内容' : 'On this page',
+    versionLabel: isZh ? '文档版本' : 'Docs version',
+    versionStatusLabel: isZh ? '版本状态' : 'Version status',
+    commandLabel: isZh ? '当前版本快速启动' : 'Quickstart for this version',
+    defaultDocumentId: 'overview',
+    versions: [
+      {
+        id: '1.0',
+        label: '1.0',
+        status: 'latest',
+        date: 'VelaMQ Bench 1.0',
+        note: isZh ? '当前官网维护版本，覆盖上线前压测与容量评估流程。' : 'Current website version for pre-launch load testing and capacity assessment.',
+        command: 'velamq-bench run --scenario industrial-edge',
+      },
+    ],
+    groups: [
+      {
+        title: isZh ? '产品总览' : 'Product',
+        entries: [{ type: 'doc', id: 'overview', label: documents.overview.title, depth: 0 }],
+      },
+      {
+        title: isZh ? '上线验证' : 'Launch Validation',
+        entries: [
+          { type: 'doc', id: 'scenarios', label: documents.scenarios.title, depth: 0 },
+          { type: 'doc', id: 'reports', label: documents.reports.title, depth: 0 },
+        ],
+      },
+    ],
+    documents,
+  }
 }
 
 const footerTargetByLabel: Record<string, FooterTarget> = {
@@ -352,14 +545,32 @@ function App() {
   const [locale, setLocale] = useState<Locale>(readInitialLocale)
   const [activeView, setActiveView] = useState<ViewId>(() => viewFromHash(window.location.hash))
   const [activeProduct, setActiveProduct] = useState<ProductId>('velamq')
+  const [activeDocsProduct, setActiveDocsProduct] = useState<ProductId>('velamq')
   const [activeDocsVersion, setActiveDocsVersion] = useState('1.0')
   const [activeDocsTopic, setActiveDocsTopic] = useState(velamqDocs.zh.defaultDocumentId)
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
+  const [isDocsMenuOpen, setIsDocsMenuOpen] = useState(false)
   const [expandedDocsBranches, setExpandedDocsBranches] = useState<string[]>([])
 
   const copy = translations[locale]
-  const docsCatalog = velamqDocs[locale]
+  const docsCatalogs = useMemo<Record<ProductId, VelaMQDocsCatalog>>(
+    () => ({
+      velamq: velamqDocs[locale],
+      'velamq-bench': createBenchDocsCatalog(locale),
+    }),
+    [locale],
+  )
+  const docsCatalog = docsCatalogs[activeDocsProduct]
+  const docsProductOptions = useMemo(
+    () =>
+      copy.products.map((product) => ({
+        id: product.id,
+        label: product.name,
+        summary: product.summary,
+      })),
+    [copy.products],
+  )
   const selectedProduct = useMemo(
     () => copy.products.find((product) => product.id === activeProduct) ?? copy.products[0],
     [activeProduct, copy.products],
@@ -483,6 +694,34 @@ function App() {
     }
   }
 
+  const handleDocsMenuBlur = (event: FocusEvent<HTMLDivElement>) => {
+    const nextTarget = event.relatedTarget
+
+    if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
+      setIsDocsMenuOpen(false)
+    }
+  }
+
+  const selectDocsProduct = (product: ProductId) => {
+    const nextCatalog = docsCatalogs[product]
+    setActiveDocsProduct(product)
+    setActiveDocsTopic(nextCatalog.defaultDocumentId)
+    setActiveDocsVersion(nextCatalog.versions[0]?.id ?? '1.0')
+    setExpandedDocsBranches([])
+    setIsDocsMenuOpen(false)
+    activateView('docs')
+  }
+
+  const handleDocsMenuKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') {
+      setIsDocsMenuOpen(false)
+    }
+  }
+
+  const changeDocsProduct = (event: ChangeEvent<HTMLSelectElement>) => {
+    selectDocsProduct(event.currentTarget.value as ProductId)
+  }
+
   const changeDocsVersion = (event: ChangeEvent<HTMLSelectElement>) => {
     setActiveDocsVersion(event.currentTarget.value)
   }
@@ -505,6 +744,48 @@ function App() {
           <nav className="nav-links" aria-label={copy.navLabel}>
             {copy.navItems.map((item) => {
               const isActive = isViewId(item.id) && activeView === item.id
+              if (item.id === 'docs') {
+                return (
+                  <div
+                    className="nav-docs-menu"
+                    key={item.label}
+                    onBlur={handleDocsMenuBlur}
+                    onKeyDown={handleDocsMenuKeyDown}
+                  >
+                    <a
+                      aria-controls={docsMenuId}
+                      aria-current={isActive ? 'page' : undefined}
+                      aria-expanded={isDocsMenuOpen}
+                      aria-haspopup="menu"
+                      href={item.href}
+                      onClick={(event) => {
+                        event.preventDefault()
+                        activateView('docs')
+                        setIsDocsMenuOpen((isOpen) => !isOpen)
+                      }}
+                    >
+                      {item.label}
+                      <ChevronDown className="nav-docs-menu__chevron" size={13} strokeWidth={2.2} aria-hidden="true" />
+                    </a>
+                    {isDocsMenuOpen && (
+                      <div className="nav-docs-menu__panel" id={docsMenuId} role="menu" aria-label={item.label}>
+                        {docsProductOptions.map((product) => (
+                          <button
+                            className={product.id === activeDocsProduct ? 'is-selected' : undefined}
+                            key={product.id}
+                            onClick={() => selectDocsProduct(product.id)}
+                            role="menuitem"
+                            type="button"
+                          >
+                            <span>{product.label}</span>
+                            <small>{product.summary}</small>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )
+              }
 
               return (
                 <a
@@ -728,15 +1009,32 @@ function App() {
                 <span>{docsCatalog.searchPlaceholder}</span>
                 <kbd>⌘K</kbd>
               </div>
-              <div className="docs-version-card">
-                <label htmlFor="docs-version">{docsCatalog.versionLabel}</label>
-                <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
-                  {docsCatalog.versions.map((version) => (
-                    <option key={version.id} value={version.id}>
-                      {version.label}
-                    </option>
-                  ))}
-                </select>
+              <div className="docs-version-card docs-product-switcher">
+                <div className="docs-select-field">
+                  <label htmlFor="docs-product">{locale === 'zh' ? '产品文档' : 'Product docs'}</label>
+                  <select
+                    aria-label={locale === 'zh' ? '产品文档' : 'Product docs'}
+                    id="docs-product"
+                    onChange={changeDocsProduct}
+                    value={activeDocsProduct}
+                  >
+                    {docsProductOptions.map((product) => (
+                      <option key={product.id} value={product.id}>
+                        {product.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="docs-select-field">
+                  <label htmlFor="docs-version">{docsCatalog.versionLabel}</label>
+                  <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
+                    {docsCatalog.versions.map((version) => (
+                      <option key={version.id} value={version.id}>
+                        {version.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
               <div className="docs-nav-groups">
                 {docsNavGroups.map((group) => (
@@ -752,7 +1050,24 @@ function App() {
                       return (
                         <div className="docs-nav-branch" key={branch.key}>
                           <div className="docs-nav-row">
-                            {branch.entry.type === 'category' ? (
+                            {hasChildren ? (
+                              <button
+                                aria-expanded={isExpanded}
+                                aria-label={toggleLabel}
+                                className={`docs-nav-button docs-nav-parent docs-nav-depth-0${
+                                  branch.entry.type === 'doc' && selectedDocsDocument.id === branch.entry.id
+                                    ? ' is-current-parent'
+                                    : ''
+                                }`}
+                                onClick={() => {
+                                  toggleDocsBranch(branch.key)
+                                }}
+                                type="button"
+                              >
+                                <span>{branch.entry.label}</span>
+                                <ChevronDown className="docs-nav-parent__chevron" size={14} strokeWidth={2} aria-hidden="true" />
+                              </button>
+                            ) : branch.entry.type === 'category' ? (
                               <span className="docs-nav-category docs-nav-category--root">{branch.entry.label}</span>
                             ) : (
                               (() => {
@@ -772,19 +1087,6 @@ function App() {
                                   </button>
                                 )
                               })()
-                            )}
-                            {hasChildren && (
-                              <button
-                                aria-expanded={isExpanded}
-                                aria-label={toggleLabel}
-                                className="docs-nav-toggle"
-                                onClick={() => {
-                                  toggleDocsBranch(branch.key)
-                                }}
-                                type="button"
-                              >
-                                <ChevronDown size={14} strokeWidth={2} aria-hidden="true" />
-                              </button>
                             )}
                           </div>
                           {hasChildren && isExpanded && (

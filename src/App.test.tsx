@@ -145,7 +145,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
     expect(screen.getByText('浏览 VelaMQ 文档、规则、API')).toBeInTheDocument()
     expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
-    expect(screen.getByRole('combobox', { name: '版本' })).toHaveValue('1.0')
+    expect(screen.getByRole('button', { name: '版本: latest (1.0)' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '快速启动' })).toBeInTheDocument()
     expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
@@ -192,7 +192,7 @@ describe('HanNet homepage', () => {
 
     await user.click(within(nav).getByRole('link', { name: 'Docs' }))
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Documentation' })).toBeInTheDocument()
-    expect(screen.getByRole('combobox', { name: 'Version' })).toHaveValue('1.0')
+    expect(screen.getByRole('button', { name: 'Version: latest (1.0)' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: 'Product Introduction' })).toBeInTheDocument()
 
     await user.click(within(nav).getByRole('link', { name: 'Contact' }))
@@ -228,7 +228,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { level: 3, name: '快速启动' })).not.toBeInTheDocument()
 
-    expect(screen.getByRole('combobox', { name: '版本' })).toHaveValue('1.0')
+    expect(screen.getByRole('button', { name: '版本: latest (1.0)' })).toBeInTheDocument()
     expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
     expect(screen.queryByText(/内容来源于 velamq-rs-doc/)).not.toBeInTheDocument()
 

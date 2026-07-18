@@ -66,6 +66,7 @@ const docsHref = '#docs'
 const localeOptions: Locale[] = ['zh', 'en']
 const languageMenuId = 'site-language-menu'
 const docsMenuId = 'site-docs-menu'
+const docsVersionMenuId = 'docs-version-menu'
 const siteAssetBase = import.meta.env.BASE_URL || './'
 
 type ContactFormState = {
@@ -551,6 +552,7 @@ function App() {
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
   const [isDocsMenuOpen, setIsDocsMenuOpen] = useState(false)
+  const [isDocsVersionMenuOpen, setIsDocsVersionMenuOpen] = useState(false)
   const [expandedDocsBranches, setExpandedDocsBranches] = useState<string[]>([])
 
   const copy = translations[locale]
@@ -718,8 +720,26 @@ function App() {
     }
   }
 
-  const changeDocsVersion = (event: ChangeEvent<HTMLSelectElement>) => {
-    setActiveDocsVersion(event.currentTarget.value)
+  const selectedDocsVersionLabel =
+    selectedDocsVersion.status === 'latest' ? `latest (${selectedDocsVersion.label})` : selectedDocsVersion.label
+
+  const selectDocsVersion = (versionId: string) => {
+    setActiveDocsVersion(versionId)
+    setIsDocsVersionMenuOpen(false)
+  }
+
+  const handleDocsVersionBlur = (event: FocusEvent<HTMLDivElement>) => {
+    const nextTarget = event.relatedTarget
+
+    if (!(nextTarget instanceof Node) || !event.currentTarget.contains(nextTarget)) {
+      setIsDocsVersionMenuOpen(false)
+    }
+  }
+
+  const handleDocsVersionKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === 'Escape') {
+      setIsDocsVersionMenuOpen(false)
+    }
   }
 
   const updateContactField =
@@ -1006,14 +1026,53 @@ function App() {
                 <kbd>⌘K</kbd>
               </div>
               <div className="docs-version-card">
-                <label htmlFor="docs-version">{locale === 'zh' ? '版本' : 'Version'}</label>
-                <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
-                  {docsCatalog.versions.map((version) => (
-                    <option key={version.id} value={version.id}>
-                      {version.status === 'latest' ? `latest (${version.label})` : version.label}
-                    </option>
-                  ))}
-                </select>
+                <span>{locale === 'zh' ? '版本' : 'Version'}</span>
+                <div className="docs-version-picker" onBlur={handleDocsVersionBlur} onKeyDown={handleDocsVersionKeyDown}>
+                  <button
+                    aria-controls={docsVersionMenuId}
+                    aria-expanded={isDocsVersionMenuOpen}
+                    aria-haspopup="listbox"
+                    aria-label={`${locale === 'zh' ? '版本' : 'Version'}: ${selectedDocsVersionLabel}`}
+                    className="docs-version-picker__trigger"
+                    onClick={() => setIsDocsVersionMenuOpen((isOpen) => !isOpen)}
+                    type="button"
+                  >
+                    <span>{selectedDocsVersionLabel}</span>
+                    <ChevronDown
+                      className={`docs-version-picker__chevron${isDocsVersionMenuOpen ? ' is-open' : ''}`}
+                      size={14}
+                      strokeWidth={2.2}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  {isDocsVersionMenuOpen && (
+                    <div
+                      className="docs-version-picker__menu"
+                      id={docsVersionMenuId}
+                      role="listbox"
+                      aria-label={locale === 'zh' ? '版本' : 'Version'}
+                    >
+                      {docsCatalog.versions.map((version) => {
+                        const label = version.status === 'latest' ? `latest (${version.label})` : version.label
+                        const isSelected = version.id === selectedDocsVersion.id
+
+                        return (
+                          <button
+                            aria-selected={isSelected}
+                            className={isSelected ? 'is-selected' : undefined}
+                            key={version.id}
+                            onClick={() => selectDocsVersion(version.id)}
+                            role="option"
+                            type="button"
+                          >
+                            <span>{label}</span>
+                            <small>{version.date}</small>
+                          </button>
+                        )
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
               <div className="docs-nav-groups">
                 {docsNavGroups.map((group) => (

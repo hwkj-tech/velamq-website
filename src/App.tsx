@@ -718,10 +718,6 @@ function App() {
     }
   }
 
-  const changeDocsProduct = (event: ChangeEvent<HTMLSelectElement>) => {
-    selectDocsProduct(event.currentTarget.value as ProductId)
-  }
-
   const changeDocsVersion = (event: ChangeEvent<HTMLSelectElement>) => {
     setActiveDocsVersion(event.currentTarget.value)
   }
@@ -1009,32 +1005,15 @@ function App() {
                 <span>{docsCatalog.searchPlaceholder}</span>
                 <kbd>⌘K</kbd>
               </div>
-              <div className="docs-version-card docs-product-switcher">
-                <div className="docs-select-field">
-                  <label htmlFor="docs-product">{locale === 'zh' ? '产品文档' : 'Product docs'}</label>
-                  <select
-                    aria-label={locale === 'zh' ? '产品文档' : 'Product docs'}
-                    id="docs-product"
-                    onChange={changeDocsProduct}
-                    value={activeDocsProduct}
-                  >
-                    {docsProductOptions.map((product) => (
-                      <option key={product.id} value={product.id}>
-                        {product.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-                <div className="docs-select-field">
-                  <label htmlFor="docs-version">{docsCatalog.versionLabel}</label>
-                  <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
-                    {docsCatalog.versions.map((version) => (
-                      <option key={version.id} value={version.id}>
-                        {version.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+              <div className="docs-version-card">
+                <label htmlFor="docs-version">{locale === 'zh' ? '版本' : 'Version'}</label>
+                <select id="docs-version" onChange={changeDocsVersion} value={selectedDocsVersion.id}>
+                  {docsCatalog.versions.map((version) => (
+                    <option key={version.id} value={version.id}>
+                      {version.status === 'latest' ? `latest (${version.label})` : version.label}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="docs-nav-groups">
                 {docsNavGroups.map((group) => (

@@ -7693,19 +7693,11 @@ textarea::placeholder {
 
 .docs-page--manual .docs-version-card {
   display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
   gap: 12px;
   border-color: rgba(148, 255, 229, 0.12);
   background: rgba(0, 14, 11, 0.48);
-}
-
-.docs-page--manual .docs-select-field {
-  display: grid;
-  gap: 7px;
-}
-
-.docs-page--manual .docs-select-field + .docs-select-field {
-  padding-top: 10px;
-  border-top: 1px solid rgba(148, 255, 229, 0.1);
 }
 
 .docs-page--manual .docs-version-card select {

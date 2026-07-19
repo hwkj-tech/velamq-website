@@ -49,7 +49,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "productName": "VelaMQ",
     "title": "VelaMQ 文档中心",
     "eyebrow": "VelaMQ Docs",
-    "body": "从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，官网统一以 1.0 版本维护。",
+    "body": "从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，官网统一以 v1.0.0 版本维护。",
     "searchPlaceholder": "浏览 VelaMQ 文档、规则、API",
     "sidebarLabel": "VelaMQ 文档目录",
     "tocLabel": "本页内容",
@@ -59,10 +59,10 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "defaultDocumentId": "product/introduction",
     "versions": [
       {
-        "id": "1.0",
-        "label": "1.0",
-        "status": "latest",
-        "date": "VelaMQ 1.0",
+        "id": "v1.0.0",
+        "label": "v1.0.0",
+        "status": "stable",
+        "date": "VelaMQ v1.0.0",
         "note": "当前官网文档版本，内容来源于 velamq-rs-doc，并按官网文档系统重新排版。",
         "command": "VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
       }
@@ -12962,7 +12962,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "productName": "VelaMQ",
     "title": "VelaMQ Documentation",
     "eyebrow": "VelaMQ Docs",
-    "body": "VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation migrated from velamq-rs-doc and maintained here as version 1.0.",
+    "body": "VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation migrated from velamq-rs-doc and maintained here as version v1.0.0.",
     "searchPlaceholder": "Browse VelaMQ docs, rules and APIs",
     "sidebarLabel": "VelaMQ documentation navigation",
     "tocLabel": "On this page",
@@ -12972,10 +12972,10 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "defaultDocumentId": "product/introduction",
     "versions": [
       {
-        "id": "1.0",
-        "label": "1.0",
-        "status": "latest",
-        "date": "VelaMQ 1.0",
+        "id": "v1.0.0",
+        "label": "v1.0.0",
+        "status": "stable",
+        "date": "VelaMQ v1.0.0",
         "note": "Current website documentation version, migrated from velamq-rs-doc and restyled for the website docs system.",
         "command": "VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
       }

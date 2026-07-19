@@ -637,8 +637,8 @@ const buildCatalog = (locale, docsDir) => {
     eyebrow: 'VelaMQ Docs',
     body:
       locale === 'zh'
-        ? '从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，官网统一以 1.0 版本维护。'
-        : 'VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation migrated from velamq-rs-doc and maintained here as version 1.0.',
+        ? '从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，官网统一以 v1.0.0 版本维护。'
+        : 'VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation migrated from velamq-rs-doc and maintained here as version v1.0.0.',
     searchPlaceholder: locale === 'zh' ? '浏览 VelaMQ 文档、规则、API' : 'Browse VelaMQ docs, rules and APIs',
     sidebarLabel: locale === 'zh' ? 'VelaMQ 文档目录' : 'VelaMQ documentation navigation',
     tocLabel: locale === 'zh' ? '本页内容' : 'On this page',
@@ -648,10 +648,10 @@ const buildCatalog = (locale, docsDir) => {
     defaultDocumentId: documents['product/introduction'] ? 'product/introduction' : Object.keys(documents)[0],
     versions: [
       {
-        id: '1.0',
-        label: '1.0',
-        status: 'latest',
-        date: 'VelaMQ 1.0',
+        id: 'v1.0.0',
+        label: 'v1.0.0',
+        status: 'stable',
+        date: 'VelaMQ v1.0.0',
         note:
           locale === 'zh'
             ? '当前官网文档版本，内容来源于 velamq-rs-doc，并按官网文档系统重新排版。'
@@ -691,12 +691,56 @@ const createProductAssetAliases = () => {
   visit(assetOutputDir)
 }
 
+const readExistingDatasourceScreenshots = () => {
+  const datasourceDir = path.join(assetOutputDir, 'img/screenshots/datasources')
+  const screenshots = new Map()
+
+  if (!fs.existsSync(datasourceDir)) {
+    return screenshots
+  }
+
+  for (const entry of fs.readdirSync(datasourceDir, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith('.png')) {
+      screenshots.set(entry.name, fs.readFileSync(path.join(datasourceDir, entry.name)))
+    }
+  }
+
+  return screenshots
+}
+
+const createDatasourceScreenshotAliases = (existingScreenshots) => {
+  const screenshotDir = path.join(assetOutputDir, 'img/screenshots')
+  const datasourceDir = path.join(screenshotDir, 'datasources')
+  const fallbackImage = path.join(screenshotDir, 'datasources.png')
+
+  fs.mkdirSync(datasourceDir, { recursive: true })
+
+  for (const [name, buffer] of existingScreenshots) {
+    fs.writeFileSync(path.join(datasourceDir, name), buffer)
+  }
+
+  if (!fs.existsSync(fallbackImage)) {
+    return
+  }
+
+  for (const visual of Object.values(datasourceVisuals)) {
+    const aliasPath = path.join(datasourceDir, `${visual.slug}.png`)
+
+    if (!fs.existsSync(aliasPath)) {
+      fs.copyFileSync(fallbackImage, aliasPath)
+    }
+  }
+}
+
 const copyAssets = () => {
+  const existingDatasourceScreenshots = readExistingDatasourceScreenshots()
+
   fs.rmSync(assetOutputDir, { recursive: true, force: true })
   fs.mkdirSync(assetOutputDir, { recursive: true })
   fs.cpSync(path.join(sourceRoot, 'static/img'), path.join(assetOutputDir, 'img'), { recursive: true })
   fs.cpSync(path.join(sourceRoot, 'static/videos'), path.join(assetOutputDir, 'videos'), { recursive: true })
   createProductAssetAliases()
+  createDatasourceScreenshotAliases(existingDatasourceScreenshots)
 }
 
 const generated = {

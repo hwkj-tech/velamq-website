@@ -266,10 +266,10 @@ const createBenchDocsCatalog = (locale: Locale): VelaMQDocsCatalog => {
     defaultDocumentId: 'overview',
     versions: [
       {
-        id: '1.0',
-        label: '1.0',
-        status: 'latest',
-        date: 'VelaMQ Bench 1.0',
+        id: 'v1.0.0',
+        label: 'v1.0.0',
+        status: 'stable',
+        date: 'VelaMQ Bench v1.0.0',
         note: isZh ? '当前官网维护版本，覆盖上线前压测与容量评估流程。' : 'Current website version for pre-launch load testing and capacity assessment.',
         command: 'velamq-bench run --scenario industrial-edge',
       },
@@ -547,7 +547,7 @@ function App() {
   const [activeView, setActiveView] = useState<ViewId>(() => viewFromHash(window.location.hash))
   const [activeProduct, setActiveProduct] = useState<ProductId>('velamq')
   const [activeDocsProduct, setActiveDocsProduct] = useState<ProductId>('velamq')
-  const [activeDocsVersion, setActiveDocsVersion] = useState('1.0')
+  const [activeDocsVersion, setActiveDocsVersion] = useState('v1.0.0')
   const [activeDocsTopic, setActiveDocsTopic] = useState(velamqDocs.zh.defaultDocumentId)
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
@@ -708,7 +708,7 @@ function App() {
     const nextCatalog = docsCatalogs[product]
     setActiveDocsProduct(product)
     setActiveDocsTopic(nextCatalog.defaultDocumentId)
-    setActiveDocsVersion(nextCatalog.versions[0]?.id ?? '1.0')
+    setActiveDocsVersion(nextCatalog.versions[0]?.id ?? 'v1.0.0')
     setExpandedDocsBranches([])
     setIsDocsMenuOpen(false)
     activateView('docs')
@@ -720,8 +720,7 @@ function App() {
     }
   }
 
-  const selectedDocsVersionLabel =
-    selectedDocsVersion.status === 'latest' ? `latest (${selectedDocsVersion.label})` : selectedDocsVersion.label
+  const selectedDocsVersionLabel = selectedDocsVersion.label
 
   const selectDocsVersion = (versionId: string) => {
     setActiveDocsVersion(versionId)
@@ -1053,7 +1052,7 @@ function App() {
                       aria-label={locale === 'zh' ? '版本' : 'Version'}
                     >
                       {docsCatalog.versions.map((version) => {
-                        const label = version.status === 'latest' ? `latest (${version.label})` : version.label
+                        const label = version.label
                         const isSelected = version.id === selectedDocsVersion.id
 
                         return (

@@ -7,6 +7,7 @@ import {
   Car,
   Check,
   ChevronDown,
+  ChevronRight,
   Cloud,
   Database,
   Factory,
@@ -1033,11 +1034,6 @@ function App() {
         {activeView === 'docs' && (
           <section className="docs-page docs-page--manual page-view" id="docs" aria-labelledby="docs-title">
             <aside className="docs-sidebar" aria-label={docsCatalog.sidebarLabel}>
-              <div className="docs-search">
-                <Search size={16} strokeWidth={1.8} aria-hidden="true" />
-                <span>{docsCatalog.searchPlaceholder}</span>
-                <kbd>⌘K</kbd>
-              </div>
               <div className="docs-version-card">
                 <span>{locale === 'zh' ? '版本' : 'Version'}</span>
                 <div className="docs-version-picker" onBlur={handleDocsVersionBlur} onKeyDown={handleDocsVersionKeyDown}>
@@ -1106,17 +1102,20 @@ function App() {
                                 aria-expanded={isExpanded}
                                 aria-label={toggleLabel}
                                 className={`docs-nav-button docs-nav-parent docs-nav-depth-0${
-                                  branch.entry.type === 'doc' && selectedDocsDocument.id === branch.entry.id
-                                    ? ' is-current-parent'
-                                    : ''
+                                  activeDocsBranchKeys.has(branch.key) ? ' is-current-branch' : ''
                                 }`}
                                 onClick={() => {
                                   toggleDocsBranch(branch.key)
                                 }}
                                 type="button"
                               >
+                                <ChevronRight
+                                  className="docs-nav-parent__chevron"
+                                  size={14}
+                                  strokeWidth={2}
+                                  aria-hidden="true"
+                                />
                                 <span>{branch.entry.label}</span>
-                                <ChevronDown className="docs-nav-parent__chevron" size={14} strokeWidth={2} aria-hidden="true" />
                               </button>
                             ) : branch.entry.type === 'category' ? (
                               <span className="docs-nav-category docs-nav-category--root">{branch.entry.label}</span>
@@ -1196,25 +1195,32 @@ function App() {
               </div>
             </article>
 
-            <aside className="docs-toc" aria-label={docsCatalog.tocLabel}>
-              <h3>{docsCatalog.tocLabel}</h3>
-              <a href="#docs" onClick={(event) => event.preventDefault()}>
-                {selectedDocsDocument.title}
-              </a>
-              {selectedDocsDocument.headings.map((heading) => (
-                <a
-                  className={`docs-toc-depth-${heading.level}`}
-                  href={`#${heading.id}`}
-                  key={heading.id}
-                  onClick={(event) => {
-                    event.preventDefault()
-                    document.getElementById(heading.id)?.scrollIntoView({ block: 'start' })
-                  }}
-                >
-                  {heading.text}
+            <div className="docs-rail">
+              <div className="docs-search" role="search" aria-label={docsCatalog.searchPlaceholder}>
+                <Search size={16} strokeWidth={1.8} aria-hidden="true" />
+                <span>{docsCatalog.searchPlaceholder}</span>
+                <kbd>⌘K</kbd>
+              </div>
+              <aside className="docs-toc" aria-label={docsCatalog.tocLabel}>
+                <h3>{docsCatalog.tocLabel}</h3>
+                <a href="#docs" onClick={(event) => event.preventDefault()}>
+                  {selectedDocsDocument.title}
                 </a>
-              ))}
-            </aside>
+                {selectedDocsDocument.headings.map((heading) => (
+                  <a
+                    className={`docs-toc-depth-${heading.level}`}
+                    href={`#${heading.id}`}
+                    key={heading.id}
+                    onClick={(event) => {
+                      event.preventDefault()
+                      document.getElementById(heading.id)?.scrollIntoView({ block: 'start' })
+                    }}
+                  >
+                    {heading.text}
+                  </a>
+                ))}
+              </aside>
+            </div>
           </section>
         )}
 

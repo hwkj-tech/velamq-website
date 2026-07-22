@@ -143,7 +143,8 @@ describe('HanNet homepage', () => {
 
     await user.click(within(nav).getByRole('link', { name: '文档' }))
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
-    expect(screen.getByText('浏览 VelaMQ 文档、规则、API')).toBeInTheDocument()
+    expect(screen.getByRole('search', { name: '浏览 VelaMQ 文档、规则、API' })).toBeInTheDocument()
+    expect(within(screen.getByRole('complementary', { name: 'VelaMQ 文档目录' })).queryByRole('search')).not.toBeInTheDocument()
     expect(screen.getByRole('button', { name: '版本: v1.0.0' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '展开 快速开始' })).toBeInTheDocument()

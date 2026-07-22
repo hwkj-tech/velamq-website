@@ -146,7 +146,8 @@ describe('HanNet homepage', () => {
     expect(screen.getByText('浏览 VelaMQ 文档、规则、API')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '版本: v1.0.0' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '快速启动' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '展开 快速开始' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Linux 安装与服务管理' })).not.toBeInTheDocument()
     expect(screen.queryByText('VELAMQ DOCS')).not.toBeInTheDocument()
     expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
 
@@ -232,27 +233,45 @@ describe('HanNet homepage', () => {
     expect(screen.queryByText(/内容来源于 velamq-rs-doc/)).not.toBeInTheDocument()
     expect(screen.queryByText('product/introduction.mdx')).not.toBeInTheDocument()
 
-    await user.click(screen.getByRole('button', { name: '快速启动' }))
+    expect(screen.getByRole('button', { name: '展开 快速开始' })).toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: 'Linux 安装与服务管理' })).not.toBeInTheDocument()
 
-    expect(screen.getByRole('heading', { level: 3, name: '快速启动' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: '一、选择安装包' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: '三、启动服务' })).toBeInTheDocument()
-    expect(screen.queryByLabelText('当前版本快速启动')).not.toBeInTheDocument()
-    expect(screen.getAllByText(/https:\/\/velamq\.obs\.cn-east-3\.myhuaweicloud\.com\/velamqd-0\.0\.1/).length).toBeGreaterThan(0)
+    await user.click(screen.getByRole('button', { name: '展开 快速开始' }))
 
-    await user.click(screen.getByRole('button', { name: '安装包下载' }))
+    expect(screen.getByText('Linux 安装与服务管理', { selector: 'button[data-doc-topic="install/linux"]' })).toBeInTheDocument()
+    expect(screen.getByText('macOS 安装与服务管理', { selector: 'button[data-doc-topic="install/macos"]' })).toBeInTheDocument()
+    expect(screen.getByText('Windows 安装与服务管理', { selector: 'button[data-doc-topic="install/windows"]' })).toBeInTheDocument()
+
+    await user.click(screen.getByText('安装包下载', { selector: 'button[data-doc-topic="install/package"]' }))
 
     expect(screen.getByRole('heading', { level: 3, name: '安装包下载' })).toBeInTheDocument()
-    expect(screen.getAllByText('velamqd-0.0.1-windows-x86_64.zip').length).toBeGreaterThan(0)
-    expect(screen.getByText('https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip')).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 4, name: 'Linux 服务管理' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 4, name: '服务更新' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 4, name: '回滚版本' })).toBeInTheDocument()
-    expect(screen.getAllByText(/sudo systemctl enable --now velamq/).length).toBeGreaterThan(0)
-    expect(screen.getByText('deploy/update.sh NEW_PACKAGE_DIR')).toBeInTheDocument()
-    expect(screen.getByText(/macOS 本地脚本会在安装目录下创建/)).toBeInTheDocument()
-    expect(screen.getByText(/它的更新逻辑是/)).toBeInTheDocument()
-    expect(screen.getAllByText(/sudo \.\/deploy\/restart\.sh/).length).toBeGreaterThan(0)
+    expect(screen.getByRole('link', { name: 'velamqd-0.0.1-windows-x86_64.zip' })).toHaveAttribute(
+      'href',
+      'https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip',
+    )
+    expect(screen.queryByText(/sudo systemctl enable/)).not.toBeInTheDocument()
+
+    await user.click(screen.getByText('Linux 安装与服务管理', { selector: 'button[data-doc-topic="install/linux"]' }))
+
+    expect(screen.getByRole('heading', { level: 3, name: 'Linux 安装与服务管理' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: '四、安装 systemd 服务' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: '七、更新 systemd 服务' })).toBeInTheDocument()
+    expect(screen.getAllByText(/sudo \.\/deploy\/install-systemd\.sh --enable-now/).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/sudo \/opt\/velamq\/current\/deploy\/update\.sh/).length).toBeGreaterThan(0)
+    expect(screen.queryByText(/Apple Silicon/)).not.toBeInTheDocument()
+
+    await user.click(screen.getByText('macOS 安装与服务管理', { selector: 'button[data-doc-topic="install/macos"]' }))
+
+    expect(screen.getByRole('heading', { level: 3, name: 'macOS 安装与服务管理' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: '四、状态、日志与停止' })).toBeInTheDocument()
+    expect(screen.getAllByText(/run\/velamqd\.pid/).length).toBeGreaterThan(0)
+    expect(screen.queryByText(/systemctl start velamq/)).not.toBeInTheDocument()
+
+    await user.click(screen.getByText('Windows 安装与服务管理', { selector: 'button[data-doc-topic="install/windows"]' }))
+
+    expect(screen.getByRole('heading', { level: 3, name: 'Windows 安装与服务管理' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: '六、更新版本' })).toBeInTheDocument()
+    expect(screen.getAllByText(/Invoke-WebRequest/).length).toBeGreaterThan(0)
 
     await user.click(screen.getByRole('button', { name: '展开 规则引擎' }))
     await user.click(screen.getByRole('button', { name: '规则引擎总览' }))
@@ -272,6 +291,12 @@ describe('HanNet homepage', () => {
     render(<App />)
 
     await user.click(screen.getByRole('link', { name: '文档' }))
+
+    expect(screen.queryByRole('button', { name: 'Linux 安装与服务管理' })).not.toBeInTheDocument()
+    await user.click(screen.getByRole('button', { name: '展开 快速开始' }))
+    expect(screen.getByRole('button', { name: 'Linux 安装与服务管理' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'macOS 安装与服务管理' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Windows 安装与服务管理' })).toBeInTheDocument()
 
     expect(screen.getAllByText('数据源').length).toBeGreaterThan(0)
     expect(screen.queryByRole('button', { name: 'Kafka 数据源' })).not.toBeInTheDocument()

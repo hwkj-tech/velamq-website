@@ -713,6 +713,21 @@ function App() {
     activateView('docs')
   }
 
+  const selectDocsTopic = (topicId: string) => {
+    setActiveDocsTopic(topicId)
+
+    if (typeof window.requestAnimationFrame !== 'function') {
+      return
+    }
+
+    window.requestAnimationFrame(() => {
+      const article = document.getElementById('docs-document')
+      if (article && typeof article.scrollIntoView === 'function') {
+        article.scrollIntoView({ block: 'start' })
+      }
+    })
+  }
+
   const handleDocsMenuKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Escape') {
       setIsDocsMenuOpen(false)
@@ -1115,7 +1130,7 @@ function App() {
                                     className="docs-nav-button docs-nav-depth-0"
                                     data-doc-topic={entry.id}
                                     onClick={() => {
-                                      setActiveDocsTopic(entry.id)
+                                      selectDocsTopic(entry.id)
                                     }}
                                     type="button"
                                   >
@@ -1142,7 +1157,7 @@ function App() {
                                     data-doc-topic={entry.id}
                                     key={entry.id}
                                     onClick={() => {
-                                      setActiveDocsTopic(entry.id)
+                                      selectDocsTopic(entry.id)
                                     }}
                                     type="button"
                                   >
@@ -1160,7 +1175,7 @@ function App() {
               </div>
             </aside>
 
-            <article className="docs-article">
+            <article className="docs-article" id="docs-document">
               <h2 className="visually-hidden" id="docs-title">
                 {docsCatalog.title}
               </h2>
@@ -1174,7 +1189,7 @@ function App() {
                 <div className="docs-document-body">
                   {selectedDocsDocument.blocks.map((block, index) => (
                     <div className="docs-block" key={`${selectedDocsDocument.id}-${index}`}>
-                      {renderDocsBlock(block, selectedDocsDocument, docsCatalog, setActiveDocsTopic)}
+                      {renderDocsBlock(block, selectedDocsDocument, docsCatalog, selectDocsTopic)}
                     </div>
                   ))}
                 </div>

@@ -125,21 +125,38 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "title": "安装部署",
         "entries": [
           {
+            "type": "category",
+            "label": "快速开始",
+            "depth": 0
+          },
+          {
             "type": "doc",
-            "id": "install/quick-start",
-            "label": "快速启动",
+            "id": "install/linux",
+            "label": "Linux 安装与服务管理",
+            "depth": 1
+          },
+          {
+            "type": "doc",
+            "id": "install/macos",
+            "label": "macOS 安装与服务管理",
+            "depth": 1
+          },
+          {
+            "type": "doc",
+            "id": "install/windows",
+            "label": "Windows 安装与服务管理",
+            "depth": 1
+          },
+          {
+            "type": "doc",
+            "id": "install/package",
+            "label": "安装包下载",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "install/config",
             "label": "配置说明",
-            "depth": 0
-          },
-          {
-            "type": "doc",
-            "id": "install/package",
-            "label": "安装包下载",
             "depth": 0
           }
         ]
@@ -9613,7 +9630,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "install/config": {
         "id": "install/config",
         "title": "配置说明",
-        "summary": "当前 VelaMQ 3.0 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。",
+        "summary": "当前 VelaMQ 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。",
         "sourcePath": "install/config.md",
         "headings": [
           {
@@ -9662,7 +9679,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "当前 VelaMQ 3.0 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。"
+            "text": "当前 VelaMQ 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。"
           },
           {
             "type": "heading",
@@ -9853,599 +9870,299 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           }
         ]
       },
-      "install/package": {
-        "id": "install/package",
-        "title": "安装包下载",
-        "summary": "VelaMQ 提供面向 macOS、Linux 和 Windows 的便携 zip 安装包。安装包包含服务端二进制、默认配置、控制台静态资源和启动脚本，适合评估、PoC、边缘节点和单机生产部署起步。",
-        "sourcePath": "install/package.md",
+      "install/linux": {
+        "id": "install/linux",
+        "title": "Linux 安装与服务管理",
+        "summary": "本页说明如何在 Linux x86_64 或 ARM64 主机安装 VelaMQ，并使用 systemd 完成开机自启、状态检查、日志查看、版本更新和回滚。",
+        "sourcePath": "install/linux.md",
         "headings": [
           {
-            "id": "当前版本",
+            "id": "一选择安装包",
             "level": 2,
-            "text": "当前版本"
+            "text": "一、选择安装包"
           },
           {
-            "id": "下载地址",
+            "id": "二下载并解压",
             "level": 2,
-            "text": "下载地址"
+            "text": "二、下载并解压"
           },
           {
-            "id": "平台选择建议",
+            "id": "三评估环境直接启动",
             "level": 2,
-            "text": "平台选择建议"
+            "text": "三、评估环境直接启动"
           },
           {
-            "id": "安装包结构",
+            "id": "四安装-systemd-服务",
             "level": 2,
-            "text": "安装包结构"
+            "text": "四、安装 systemd 服务"
           },
           {
-            "id": "macos-linux-安装",
+            "id": "五日常服务管理",
             "level": 2,
-            "text": "macOS / Linux 安装"
+            "text": "五、日常服务管理"
           },
           {
-            "id": "windows-安装",
+            "id": "六查看日志",
             "level": 2,
-            "text": "Windows 安装"
+            "text": "六、查看日志"
           },
           {
-            "id": "启动与访问",
+            "id": "七更新-systemd-服务",
             "level": 2,
-            "text": "启动与访问"
+            "text": "七、更新 systemd 服务"
           },
           {
-            "id": "生产部署建议",
+            "id": "八更新失败回滚",
             "level": 2,
-            "text": "生产部署建议"
+            "text": "八、更新失败回滚"
           },
           {
-            "id": "linux-服务管理",
-            "level": 3,
-            "text": "Linux 服务管理"
+            "id": "九配置与数据目录",
+            "level": 2,
+            "text": "九、配置与数据目录"
           },
           {
-            "id": "从源码构建",
+            "id": "十端口与健康检查",
             "level": 2,
-            "text": "从源码构建"
+            "text": "十、端口与健康检查"
+          },
+          {
+            "id": "十一卸载-systemd-服务",
+            "level": 2,
+            "text": "十一、卸载 systemd 服务"
           }
         ],
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 提供面向 macOS、Linux 和 Windows 的便携 zip 安装包。安装包包含服务端二进制、默认配置、控制台静态资源和启动脚本，适合评估、PoC、边缘节点和单机生产部署起步。"
+            "text": "本页说明如何在 Linux x86_64 或 ARM64 主机安装 VelaMQ，并使用 systemd 完成开机自启、状态检查、日志查看、版本更新和回滚。"
           },
           {
             "type": "heading",
-            "id": "当前版本",
+            "id": "一选择安装包",
             "level": 2,
-            "text": "当前版本"
+            "text": "一、选择安装包"
           },
           {
             "type": "paragraph",
-            "text": "当前公开下载版本："
+            "text": "确认 CPU 架构："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "uname -m"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "输出",
+              "安装包"
+            ],
+            "rows": [
+              [
+                "`x86_64`",
+                "[velamqd-0.0.1-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip)"
+              ],
+              [
+                "`aarch64`、`arm64`",
+                "[velamqd-0.0.1-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip)"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "以下示例使用 Linux x86_64 包。ARM64 部署只需替换文件名和目录名。"
+          },
+          {
+            "type": "heading",
+            "id": "二下载并解压",
+            "level": 2,
+            "text": "二、下载并解压"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\nsudo chmod +x velamqd-0.0.1-linux-musl-x86_64/bin/velamqd\nsudo chmod +x velamqd-0.0.1-linux-musl-x86_64/deploy/*.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "推荐目录结构："
           },
           {
             "type": "code",
             "language": "text",
-            "code": "0.0.1"
+            "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\n  velamqd-0.0.1-linux-musl-x86_64/"
           },
           {
             "type": "heading",
-            "id": "下载地址",
+            "id": "三评估环境直接启动",
             "level": 2,
-            "text": "下载地址"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "平台",
-              "文件名",
-              "下载地址"
-            ],
-            "rows": [
-              [
-                "macOS Apple Silicon",
-                "`velamqd-0.0.1-macos-aarch64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
-              ],
-              [
-                "macOS Intel",
-                "`velamqd-0.0.1-macos-x86_64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
-              ],
-              [
-                "Linux ARM64 musl",
-                "`velamqd-0.0.1-linux-musl-aarch64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
-              ],
-              [
-                "Linux x86_64 musl",
-                "`velamqd-0.0.1-linux-musl-x86_64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
-              ],
-              [
-                "Windows x86_64",
-                "`velamqd-0.0.1-windows-x86_64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
-              ]
-            ]
+            "text": "三、评估环境直接启动"
           },
           {
             "type": "paragraph",
-            "text": "Linux musl 包适合大多数 Linux 发行版，依赖更少，便于在服务器、容器和边缘主机上部署。"
-          },
-          {
-            "type": "heading",
-            "id": "平台选择建议",
-            "level": 2,
-            "text": "平台选择建议"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "部署机器",
-              "推荐安装包"
-            ],
-            "rows": [
-              [
-                "MacBook / Mac mini，Apple Silicon 芯片",
-                "`velamqd-0.0.1-macos-aarch64.zip`"
-              ],
-              [
-                "Intel Mac",
-                "`velamqd-0.0.1-macos-x86_64.zip`"
-              ],
-              [
-                "Intel / AMD Linux 服务器",
-                "`velamqd-0.0.1-linux-musl-x86_64.zip`"
-              ],
-              [
-                "ARM Linux 服务器、国产 ARM 云主机",
-                "`velamqd-0.0.1-linux-musl-aarch64.zip`"
-              ],
-              [
-                "Windows 服务器或本地 Windows 测试机",
-                "`velamqd-0.0.1-windows-x86_64.zip`"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "安装包结构",
-            "level": 2,
-            "text": "安装包结构"
-          },
-          {
-            "type": "paragraph",
-            "text": "解压后的目录通常包含："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`bin/velamqd` 或 `bin/velamqd.exe`：VelaMQ 服务端进程。",
-              "`config.toml`：默认配置文件。",
-              "`static/`：管理控制台静态资源。",
-              "`sql/`：初始化或升级所需 SQL 资源。",
-              "`deploy/`：部署与服务管理脚本目录。",
-              "`deploy/start.sh`：macOS / Linux 启动脚本，默认后台运行并写入 pid/log；传入 `--foreground` 可前台运行。",
-              "`deploy/start.bat`：Windows 前台启动脚本。",
-              "`deploy/install-systemd.sh`：Linux systemd 服务安装脚本。",
-              "`deploy/stop.sh`：macOS / Linux 停止脚本；Linux 已安装 systemd 服务时自动执行 `systemctl stop`。",
-              "`deploy/restart.sh`：macOS / Linux 重启脚本；Linux 已安装 systemd 服务时自动执行 `systemctl restart`。",
-              "`deploy/status.sh`：macOS / Linux 状态查看脚本；Linux 已安装 systemd 服务时自动执行 `systemctl status`。",
-              "`deploy/logs.sh`：macOS / Linux 日志查看脚本；本地模式跟踪 `logs/velamqd.log`，systemd 模式跟踪 `journalctl`。",
-              "`deploy/update.sh`：macOS / Linux 版本更新脚本；切换 `current` 软链接并重启服务。",
-              "`deploy/uninstall-systemd.sh`：Linux systemd 服务卸载脚本。",
-              "`deploy/systemd/`：systemd unit 模板与说明。",
-              "`README.md`：安装包说明。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "macos-linux-安装",
-            "level": 2,
-            "text": "macOS / Linux 安装"
-          },
-          {
-            "type": "paragraph",
-            "text": "下载后解压到固定目录："
+            "text": "不安装 systemd 时，可以使用安装包内脚本在后台运行："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
+            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\n./deploy/start.sh\n./deploy/status.sh\n./deploy/logs.sh"
           },
           {
             "type": "paragraph",
-            "text": "macOS 本地脚本会在安装目录下创建 `run/velamqd.pid` 和 `logs/velamqd.log`。常用操作："
+            "text": "本地模式的 PID 位于 `run/velamqd.pid`，日志位于 `logs/velamqd.log`。常用命令："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "./deploy/status.sh\n./deploy/logs.sh\n./deploy/restart.sh\n./deploy/stop.sh"
+            "code": "./deploy/restart.sh\n./deploy/stop.sh"
+          },
+          {
+            "type": "heading",
+            "id": "四安装-systemd-服务",
+            "level": 2,
+            "text": "四、安装 systemd 服务"
           },
           {
             "type": "paragraph",
-            "text": "Linux 服务器示例："
+            "text": "生产环境建议使用安装包自带脚本："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
-          },
-          {
-            "type": "heading",
-            "id": "windows-安装",
-            "level": 2,
-            "text": "Windows 安装"
+            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now"
           },
           {
             "type": "paragraph",
-            "text": "PowerShell 示例："
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\deploy\\start.bat"
-          },
-          {
-            "type": "heading",
-            "id": "启动与访问",
-            "level": 2,
-            "text": "启动与访问"
-          },
-          {
-            "type": "paragraph",
-            "text": "启动脚本会默认使用安装目录下的 `config.toml`："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "macOS / Linux：`VELAMQ_CONFIG_FILE=$PACKAGE_DIR/config.toml`",
-              "Windows：`VELAMQ_CONFIG_FILE=%PACKAGE_DIR%\\config.toml`"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "启动成功后访问："
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "http://127.0.0.1:8080/"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果部署在远程服务器上，把 `127.0.0.1` 替换为服务器 IP 或域名，并确认防火墙、云安全组和反向代理已放通。"
-          },
-          {
-            "type": "heading",
-            "id": "生产部署建议",
-            "level": 2,
-            "text": "生产部署建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "使用独立的数据目录和日志目录，避免和临时解压目录混用。",
-              "Linux 生产环境建议使用 systemd 托管 VelaMQ，配置 `Restart=on-failure`、`LimitNOFILE=1048576` 和开机自启。",
-              "将 `config.toml` 纳入配置管理，升级安装包时不要直接覆盖生产配置。",
-              "控制台建议只对内网开放，公网访问需通过 HTTPS 网关和身份认证保护。",
-              "MQTT 生产接入建议启用 TLS、账号认证和 ACL。",
-              "升级前备份 `config.toml`、数据目录、License 文件和关键审计记录。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "linux-服务管理",
-            "level": 3,
-            "text": "Linux 服务管理"
-          },
-          {
-            "type": "paragraph",
-            "text": "以下示例假设安装包已经解压到 `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`。"
-          },
-          {
-            "type": "paragraph",
-            "text": "安装包内所有服务操作脚本都在 `deploy/` 目录下，生产环境优先使用这些脚本，避免把启动、停止、更新脚本散放在安装包根目录。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "脚本",
-              "用途"
-            ],
-            "rows": [
-              [
-                "`deploy/install-systemd.sh --enable-now`",
-                "安装 systemd 服务、创建 `/opt/velamq/current` 软链接并立即启动"
-              ],
-              [
-                "`deploy/start.sh`",
-                "不安装 systemd 时，以本地后台进程方式启动当前安装包"
-              ],
-              [
-                "`deploy/stop.sh`",
-                "停止本地进程；如果已安装 systemd 服务则停止 systemd 服务"
-              ],
-              [
-                "`deploy/restart.sh`",
-                "重启本地进程；如果已安装 systemd 服务则重启 systemd 服务"
-              ],
-              [
-                "`deploy/status.sh`",
-                "查看本地 pid 状态；如果已安装 systemd 服务则查看 systemd 状态"
-              ],
-              [
-                "`deploy/logs.sh`",
-                "跟踪本地日志；如果已安装 systemd 服务则跟踪 journald 日志"
-              ],
-              [
-                "`deploy/update.sh NEW_PACKAGE_DIR`",
-                "切换 `current` 到新版本安装包目录并重启服务"
-              ],
-              [
-                "`deploy/uninstall-systemd.sh`",
-                "停止、禁用并删除 systemd 服务"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "`deploy/update.sh` 不会把新版本直接覆盖到旧目录。它的更新逻辑是："
+            "text": "安装脚本会："
           },
           {
             "type": "list",
             "ordered": true,
             "items": [
-              "校验传入的新版本目录和 `bin/velamqd` 是否存在且可执行。",
-              "备份当前包目录下的 `config.toml` 到安装根目录。",
-              "停止当前本地进程；如果 Linux 已安装 systemd 服务，则停止 systemd 服务。",
-              "把安装根目录下的 `current` 软链接切换到新版本目录，然后从新版本重启服务。"
+              "创建 `/opt/velamq/current` 软链接并指向当前版本。",
+              "安装 `/etc/systemd/system/velamq.service`。",
+              "执行 `systemctl daemon-reload`。",
+              "启用开机自启并立即启动服务。"
             ]
           },
           {
             "type": "paragraph",
-            "text": "因此推荐目录结构保持为："
+            "text": "systemd 固定从以下路径启动，因此后续更新不需要修改 unit 文件："
           },
           {
             "type": "code",
             "language": "text",
-            "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.2-linux-musl-x86_64\n  velamqd-0.0.1-linux-musl-x86_64/\n  velamqd-0.0.2-linux-musl-x86_64/"
+            "code": "/opt/velamq/current/bin/velamqd\n/opt/velamq/current/config.toml"
           },
           {
             "type": "heading",
-            "id": "目录规划",
-            "level": 4,
-            "text": "目录规划"
-          },
-          {
-            "type": "paragraph",
-            "text": "生产环境建议把程序目录、数据目录、日志目录和配置文件分开管理："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "路径",
-              "用途"
-            ],
-            "rows": [
-              [
-                "`/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`",
-                "当前版本程序目录"
-              ],
-              [
-                "`/opt/velamq/current`",
-                "指向当前版本的软链接，systemd 固定引用该路径"
-              ],
-              [
-                "`/etc/velamq/config.toml`",
-                "生产配置文件"
-              ],
-              [
-                "`/var/lib/velamq`",
-                "数据目录，建议挂载持久化磁盘"
-              ],
-              [
-                "`/var/log/velamq`",
-                "日志目录，如配置文件启用文件日志"
-              ],
-              [
-                "`/etc/velamq/velamq.lic`",
-                "License 文件，如启用商业授权"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "初始化目录："
+            "id": "五日常服务管理",
+            "level": 2,
+            "text": "五、日常服务管理"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq /etc/velamq /var/lib/velamq /var/log/velamq\nsudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq /var/lib/velamq /var/log/velamq\nsudo cp /opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml /etc/velamq/config.toml\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current"
+            "code": "sudo systemctl start velamq\nsudo systemctl stop velamq\nsudo systemctl restart velamq\nsudo systemctl status velamq\nsudo systemctl enable velamq\nsudo systemctl disable velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "安装包脚本也会自动识别 systemd："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "sudo chown velamq:velamq /etc/velamq/config.toml\nsudo chmod 640 /etc/velamq/config.toml"
-          },
-          {
-            "type": "paragraph",
-            "text": "在 `config.toml` 中把数据目录、日志目录等生产路径指向持久化目录，避免升级安装包时误删运行数据。"
+            "code": "cd /opt/velamq/current\nsudo ./deploy/status.sh\nsudo ./deploy/restart.sh\nsudo ./deploy/stop.sh"
           },
           {
             "type": "heading",
-            "id": "使用部署脚本安装服务",
-            "level": 4,
-            "text": "使用部署脚本安装服务"
+            "id": "六查看日志",
+            "level": 2,
+            "text": "六、查看日志"
           },
           {
             "type": "paragraph",
-            "text": "如果安装包已经放在 `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`，推荐直接使用内置脚本安装："
+            "text": "持续查看服务日志："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now\nsudo ./deploy/status.sh"
+            "code": "sudo journalctl -u velamq -f"
           },
           {
             "type": "paragraph",
-            "text": "安装脚本会把 `/opt/velamq/current` 指向当前安装包，并让 systemd 固定使用 `/opt/velamq/current`。后续更新只需要切换 `current` 软链接并重启服务。"
+            "text": "查看最近日志："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -n 200 --no-pager\nsudo journalctl -u velamq --since \"1 hour ago\""
+          },
+          {
+            "type": "paragraph",
+            "text": "也可以使用统一脚本："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo /opt/velamq/current/deploy/logs.sh"
           },
           {
             "type": "heading",
-            "id": "创建-systemd-服务",
-            "level": 4,
-            "text": "创建 systemd 服务"
+            "id": "七更新-systemd-服务",
+            "level": 2,
+            "text": "七、更新 systemd 服务"
           },
           {
             "type": "paragraph",
-            "text": "创建 `/etc/systemd/system/velamq.service`："
+            "text": "更新时不要覆盖当前目录。先把新安装包解压到 `/opt/velamq` 下的独立目录："
           },
           {
             "type": "code",
-            "language": "ini",
-            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/current\nEnvironment=VELAMQ_CONFIG_FILE=/etc/velamq/config.toml\nEnvironment=VELAMQ_LICENSE_FILE=/etc/velamq/velamq.lic\nExecStart=/opt/velamq/current/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\nTimeoutStopSec=30\nKillSignal=SIGTERM\n\n[Install]\nWantedBy=multi-user.target"
+            "language": "bash",
+            "code": "cd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.2-linux-musl-x86_64.zip\nsudo chmod +x velamqd-0.0.2-linux-musl-x86_64/bin/velamqd\nsudo chmod +x velamqd-0.0.2-linux-musl-x86_64/deploy/*.sh"
           },
           {
             "type": "paragraph",
-            "text": "如果暂时不使用 License，可以删除 `VELAMQ_LICENSE_FILE` 这一行。"
+            "text": "保留当前生产配置。当前 `deploy/update.sh` 会备份旧配置，但不会自动把旧配置复制进新目录："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo cp /opt/velamq/current/config.toml \\\n  /opt/velamq/velamqd-0.0.2-linux-musl-x86_64/config.toml"
+          },
+          {
+            "type": "paragraph",
+            "text": "执行更新："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo /opt/velamq/current/deploy/update.sh \\\n  /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
+          },
+          {
+            "type": "paragraph",
+            "text": "更新脚本会校验新程序、备份当前 `config.toml`、停止服务、切换 `current` 软链接、重启服务并打印状态。普通版本更新不需要执行 `systemctl daemon-reload`；只有 unit 文件内容变化时才需要重新加载。"
+          },
+          {
+            "type": "paragraph",
+            "text": "验证当前版本路径和服务状态："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "readlink -f /opt/velamq/current\nsudo systemctl status velamq\nsudo journalctl -u velamq -n 100 --no-pager\ncurl -I http://127.0.0.1:8080/"
           },
           {
             "type": "heading",
-            "id": "启动停止与开机自启",
-            "level": 4,
-            "text": "启动、停止与开机自启"
+            "id": "八更新失败回滚",
+            "level": 2,
+            "text": "八、更新失败回滚"
           },
           {
             "type": "paragraph",
-            "text": "加载并启动服务："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "常用服务命令："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl start velamq\nsudo systemctl stop velamq\nsudo systemctl restart velamq\nsudo systemctl reload-or-restart velamq\nsudo systemctl disable velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "查看日志："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo journalctl -u velamq -f\nsudo journalctl -u velamq --since \"1 hour ago\"\nsudo journalctl -u velamq -n 200 --no-pager"
-          },
-          {
-            "type": "paragraph",
-            "text": "也可以使用安装包内脚本："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cd /opt/velamq/current\nsudo ./deploy/status.sh\nsudo ./deploy/logs.sh\nsudo ./deploy/stop.sh\nsudo ./deploy/restart.sh"
-          },
-          {
-            "type": "heading",
-            "id": "配置变更",
-            "level": 4,
-            "text": "配置变更"
-          },
-          {
-            "type": "paragraph",
-            "text": "修改 `/etc/velamq/config.toml` 后，建议先备份再重启："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo vi /etc/velamq/config.toml\nsudo systemctl restart velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果服务没有正常启动，查看最近日志："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo journalctl -u velamq -n 200 --no-pager"
-          },
-          {
-            "type": "heading",
-            "id": "服务更新",
-            "level": 4,
-            "text": "服务更新"
-          },
-          {
-            "type": "paragraph",
-            "text": "升级前建议准备一个短暂停机窗口，并完成备份："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl stop velamq\nsudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo tar -czf /opt/velamq/velamq-backup-$(date +%Y%m%d%H%M%S).tgz /etc/velamq /var/lib/velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "下载并解压新安装包，例如 `0.0.2`："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.2-linux-musl-x86_64.zip\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
-          },
-          {
-            "type": "paragraph",
-            "text": "切换当前版本软链接并启动："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo ln -sfn /opt/velamq/velamqd-0.0.2-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl start velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "也可以使用内置更新脚本完成切换和重启："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cd /opt/velamq/current\nsudo ./deploy/update.sh /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
-          },
-          {
-            "type": "paragraph",
-            "text": "验证控制台、MQTT 端口和日志："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "curl -I http://127.0.0.1:8080/\nsudo journalctl -u velamq -n 100 --no-pager"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果新版本需要新增配置项，把新包中的 `config.toml` 与 `/etc/velamq/config.toml` 对比后再合并，不要直接覆盖生产配置。"
-          },
-          {
-            "type": "heading",
-            "id": "回滚版本",
-            "level": 4,
-            "text": "回滚版本"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果升级后出现异常，可以把软链接切回旧版本："
+            "text": "把 `current` 切回旧版本并重启："
           },
           {
             "type": "code",
@@ -10454,78 +10171,87 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "如果配置也需要回滚："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo cp /etc/velamq/config.toml.YYYYmmddHHMMSS.bak /etc/velamq/config.toml\nsudo chown velamq:velamq /etc/velamq/config.toml\nsudo systemctl restart velamq"
+            "text": "安装根目录中的 `velamq-backup-YYYYmmddHHMMSS.tgz` 保存了更新前的 `config.toml`。如新配置存在问题，解压备份并恢复后再次重启。"
           },
           {
             "type": "heading",
-            "id": "卸载服务",
-            "level": 4,
-            "text": "卸载服务"
-          },
-          {
-            "type": "paragraph",
-            "text": "停止服务并取消开机自启："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl disable --now velamq\nsudo rm -f /etc/systemd/system/velamq.service\nsudo systemctl daemon-reload"
-          },
-          {
-            "type": "paragraph",
-            "text": "如需彻底删除程序和数据，确认备份后再移除目录："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo rm -rf /opt/velamq\nsudo rm -rf /etc/velamq\nsudo rm -rf /var/lib/velamq\nsudo rm -rf /var/log/velamq"
-          },
-          {
-            "type": "heading",
-            "id": "从源码构建",
+            "id": "九配置与数据目录",
             "level": 2,
-            "text": "从源码构建"
+            "text": "九、配置与数据目录"
           },
           {
             "type": "paragraph",
-            "text": "如需自行打包，可以使用源码仓库中的 `deploy/package.sh`："
+            "text": "默认 systemd 安装脚本使用 `/opt/velamq/current/config.toml`。生产环境应确保 RocksDB、备份和日志使用持久化路径，避免把运行数据放在待替换的版本目录中。"
+          },
+          {
+            "type": "paragraph",
+            "text": "如需将配置固定在 `/etc/velamq/config.toml`，请修改 unit 中的环境变量："
+          },
+          {
+            "type": "code",
+            "language": "ini",
+            "code": "Environment=VELAMQ_CONFIG_FILE=/etc/velamq/config.toml"
+          },
+          {
+            "type": "paragraph",
+            "text": "修改 unit 后执行："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs\nbash deploy/package.sh"
+            "code": "sudo systemctl daemon-reload\nsudo systemctl restart velamq"
+          },
+          {
+            "type": "heading",
+            "id": "十端口与健康检查",
+            "level": 2,
+            "text": "十、端口与健康检查"
           },
           {
             "type": "paragraph",
-            "text": "常用参数："
+            "text": "根据实际监听配置放通端口："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "# 指定版本号\nVERSION=0.0.1 bash deploy/package.sh\n\n# 只打当前机器可运行的包\nTARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# 构建 Linux x86_64 和 Linux ARM64\nTARGETS=\"x86_64-unknown-linux-musl aarch64-unknown-linux-musl\" bash deploy/package.sh"
+            "code": "sudo ufw allow 8080/tcp\nsudo ufw allow 1883/tcp"
+          },
+          {
+            "type": "paragraph",
+            "text": "检查控制台和监听端口："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "curl -I http://127.0.0.1:8080/\nss -lntp | grep -E ':8080|:1883'"
+          },
+          {
+            "type": "heading",
+            "id": "十一卸载-systemd-服务",
+            "level": 2,
+            "text": "十一、卸载 systemd 服务"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/current\nsudo ./deploy/uninstall-systemd.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "卸载脚本会停止服务、取消开机自启、删除 unit 并重新加载 systemd。程序、配置和数据目录不会自动删除，便于备份或重新安装。"
           }
         ]
       },
-      "install/quick-start": {
-        "id": "install/quick-start",
-        "title": "快速启动",
-        "summary": "本指南适用于第一次安装 VelaMQ 的评估、测试和单机部署。你可以直接下载对应操作系统的安装包，解压后启动服务，再通过控制台完成管理员初始化和第一个 MQTT 端点配置。",
-        "sourcePath": "install/quick-start.md",
+      "install/macos": {
+        "id": "install/macos",
+        "title": "macOS 安装与服务管理",
+        "summary": "本页适用于 Apple Silicon 和 Intel Mac，覆盖下载、启动、停止、状态、日志、更新和常见安全提示。macOS 安装包使用本地进程脚本，不依赖 systemd。",
+        "sourcePath": "install/macos.md",
         "headings": [
           {
-            "id": "适用场景",
+            "id": "一确认芯片架构",
             "level": 2,
-            "text": "适用场景"
-          },
-          {
-            "id": "一选择安装包",
-            "level": 2,
-            "text": "一、选择安装包"
+            "text": "一、确认芯片架构"
           },
           {
             "id": "二下载并解压",
@@ -10538,105 +10264,320 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "三、启动服务"
           },
           {
-            "id": "四放通端口",
+            "id": "四状态日志与停止",
             "level": 2,
-            "text": "四、放通端口"
+            "text": "四、状态、日志与停止"
           },
           {
-            "id": "五创建第一个-mqtt-端点",
+            "id": "五更新版本",
             "level": 2,
-            "text": "五、创建第一个 MQTT 端点"
+            "text": "五、更新版本"
           },
           {
-            "id": "六验证消息收发",
+            "id": "六回滚版本",
             "level": 2,
-            "text": "六、验证消息收发"
+            "text": "六、回滚版本"
           },
           {
-            "id": "七控制台验证",
+            "id": "七macos-安全提示",
             "level": 2,
-            "text": "七、控制台验证"
-          },
-          {
-            "id": "八常见问题",
-            "level": 2,
-            "text": "八、常见问题"
-          },
-          {
-            "id": "macos-提示无法打开",
-            "level": 3,
-            "text": "macOS 提示无法打开"
-          },
-          {
-            "id": "linux-提示权限不足",
-            "level": 3,
-            "text": "Linux 提示权限不足"
-          },
-          {
-            "id": "端口被占用",
-            "level": 3,
-            "text": "端口被占用"
+            "text": "七、macOS 安全提示"
           }
         ],
         "blocks": [
           {
-            "type": "heading",
-            "id": "适用场景",
-            "level": 2,
-            "text": "适用场景"
-          },
-          {
             "type": "paragraph",
-            "text": "本指南适用于第一次安装 VelaMQ 的评估、测试和单机部署。你可以直接下载对应操作系统的安装包，解压后启动服务，再通过控制台完成管理员初始化和第一个 MQTT 端点配置。"
+            "text": "本页适用于 Apple Silicon 和 Intel Mac，覆盖下载、启动、停止、状态、日志、更新和常见安全提示。macOS 安装包使用本地进程脚本，不依赖 systemd。"
           },
           {
             "type": "heading",
-            "id": "一选择安装包",
+            "id": "一确认芯片架构",
             "level": 2,
-            "text": "一、选择安装包"
+            "text": "一、确认芯片架构"
           },
           {
-            "type": "paragraph",
-            "text": "根据部署机器的操作系统和 CPU 架构选择安装包："
+            "type": "code",
+            "language": "bash",
+            "code": "uname -m"
           },
           {
             "type": "table",
             "headers": [
-              "平台",
-              "适用机器",
-              "下载地址"
+              "输出",
+              "安装包"
             ],
             "rows": [
               [
-                "macOS Apple Silicon",
-                "M1 / M2 / M3 / M4",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
+                "`arm64`",
+                "[velamqd-0.0.1-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip)"
               ],
               [
-                "macOS Intel",
-                "Intel Mac",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
+                "`x86_64`",
+                "[velamqd-0.0.1-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip)"
+              ]
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "二下载并解压",
+            "level": 2,
+            "text": "二、下载并解压"
+          },
+          {
+            "type": "paragraph",
+            "text": "Apple Silicon 示例："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x bin/velamqd deploy/*.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Intel Mac 请把文件名替换为 `velamqd-0.0.1-macos-x86_64.zip`。"
+          },
+          {
+            "type": "heading",
+            "id": "三启动服务",
+            "level": 2,
+            "text": "三、启动服务"
+          },
+          {
+            "type": "paragraph",
+            "text": "后台启动："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "前台启动，适合观察启动日志："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/start.sh --foreground"
+          },
+          {
+            "type": "paragraph",
+            "text": "默认使用当前安装目录的 `config.toml`。如需指定其他配置："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "VELAMQ_CONFIG_FILE=/path/to/config.toml ./deploy/start.sh"
+          },
+          {
+            "type": "heading",
+            "id": "四状态日志与停止",
+            "level": 2,
+            "text": "四、状态、日志与停止"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/status.sh\n./deploy/logs.sh\n./deploy/restart.sh\n./deploy/stop.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "本地运行文件位于："
+          },
+          {
+            "type": "table",
+            "headers": [
+              "路径",
+              "用途"
+            ],
+            "rows": [
+              [
+                "`run/velamqd.pid`",
+                "后台进程 PID"
               ],
               [
-                "Linux ARM64",
-                "ARM 服务器、国产 ARM 云主机",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
-              ],
-              [
-                "Linux x86_64",
-                "Intel / AMD Linux 服务器",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
-              ],
-              [
-                "Windows x86_64",
-                "Windows 10/11、Windows Server",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
+                "`logs/velamqd.log`",
+                "标准输出和错误日志"
               ]
             ]
           },
           {
             "type": "paragraph",
-            "text": "如果不确定当前机器架构："
+            "text": "按 `Ctrl+C` 可以退出 `deploy/logs.sh`，不会停止 VelaMQ 服务。"
+          },
+          {
+            "type": "heading",
+            "id": "五更新版本",
+            "level": 2,
+            "text": "五、更新版本"
+          },
+          {
+            "type": "paragraph",
+            "text": "把新版本解压到旧版本同级目录，并先复制当前配置："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-macos-aarch64.zip\nunzip velamqd-0.0.2-macos-aarch64.zip\nchmod +x velamqd-0.0.2-macos-aarch64/bin/velamqd velamqd-0.0.2-macos-aarch64/deploy/*.sh\ncp current/config.toml velamqd-0.0.2-macos-aarch64/config.toml"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果首次安装时还没有 `current` 软链接，先创建："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "ln -sfn \"$HOME/velamq/velamqd-0.0.1-macos-aarch64\" \"$HOME/velamq/current\""
+          },
+          {
+            "type": "paragraph",
+            "text": "执行更新："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "~/velamq/current/deploy/update.sh \\\n  ~/velamq/velamqd-0.0.2-macos-aarch64"
+          },
+          {
+            "type": "paragraph",
+            "text": "脚本会停止旧进程、切换 `current` 并从新版本启动。更新后检查："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "readlink ~/velamq/current\n~/velamq/current/deploy/status.sh\n~/velamq/current/deploy/logs.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Intel Mac 请使用对应的 `macos-x86_64` 包名。"
+          },
+          {
+            "type": "heading",
+            "id": "六回滚版本",
+            "level": 2,
+            "text": "六、回滚版本"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "~/velamq/current/deploy/stop.sh\nln -sfn \"$HOME/velamq/velamqd-0.0.1-macos-aarch64\" \"$HOME/velamq/current\"\n~/velamq/current/deploy/start.sh\n~/velamq/current/deploy/status.sh"
+          },
+          {
+            "type": "heading",
+            "id": "七macos-安全提示",
+            "level": 2,
+            "text": "七、macOS 安全提示"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果系统提示程序来自未知开发者："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "xattr -dr com.apple.quarantine ~/velamq/velamqd-0.0.1-macos-aarch64\nchmod +x ~/velamq/velamqd-0.0.1-macos-aarch64/bin/velamqd"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果端口被占用："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "lsof -nP -iTCP:8080 -sTCP:LISTEN\nlsof -nP -iTCP:1883 -sTCP:LISTEN"
+          },
+          {
+            "type": "paragraph",
+            "text": "启动成功后访问 `http://127.0.0.1:8080/`。"
+          }
+        ]
+      },
+      "install/package": {
+        "id": "install/package",
+        "title": "安装包下载",
+        "summary": "VelaMQ 提供适用于 Linux、macOS 和 Windows 的便携 zip 安装包。请选择与操作系统和 CPU 架构匹配的文件，再进入对应平台的独立安装指南。",
+        "sourcePath": "install/package.md",
+        "headings": [
+          {
+            "id": "当前版本",
+            "level": 2,
+            "text": "当前版本"
+          },
+          {
+            "id": "选择安装包",
+            "level": 2,
+            "text": "选择安装包"
+          },
+          {
+            "id": "平台安装指南",
+            "level": 2,
+            "text": "平台安装指南"
+          },
+          {
+            "id": "安装包结构",
+            "level": 2,
+            "text": "安装包结构"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "VelaMQ 提供适用于 Linux、macOS 和 Windows 的便携 zip 安装包。请选择与操作系统和 CPU 架构匹配的文件，再进入对应平台的独立安装指南。"
+          },
+          {
+            "type": "heading",
+            "id": "当前版本",
+            "level": 2,
+            "text": "当前版本"
+          },
+          {
+            "type": "paragraph",
+            "text": "当前公开安装包版本为 `0.0.1`。"
+          },
+          {
+            "type": "heading",
+            "id": "选择安装包",
+            "level": 2,
+            "text": "选择安装包"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "操作系统",
+              "CPU 架构",
+              "安装包"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "x86_64（Intel / AMD）",
+                "[velamqd-0.0.1-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip)"
+              ],
+              [
+                "Linux",
+                "ARM64 / aarch64",
+                "[velamqd-0.0.1-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip)"
+              ],
+              [
+                "macOS",
+                "Apple Silicon",
+                "[velamqd-0.0.1-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip)"
+              ],
+              [
+                "macOS",
+                "Intel",
+                "[velamqd-0.0.1-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip)"
+              ],
+              [
+                "Windows",
+                "x86_64",
+                "[velamqd-0.0.1-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip)"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Linux musl 包依赖较少，适合服务器、容器宿主机和边缘节点。执行以下命令可以确认机器架构："
           },
           {
             "type": "code",
@@ -10654,118 +10595,169 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "二下载并解压",
+            "id": "平台安装指南",
             "level": 2,
-            "text": "二、下载并解压"
+            "text": "平台安装指南"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "平台",
+              "适用场景",
+              "指南"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "服务器、边缘主机、systemd 生产部署",
+                "[Linux 安装与服务管理](./linux)"
+              ],
+              [
+                "macOS",
+                "Apple Silicon / Intel 本地评估与开发",
+                "[macOS 安装与服务管理](./macos)"
+              ],
+              [
+                "Windows",
+                "Windows 10/11、Windows Server",
+                "[Windows 安装与服务管理](./windows)"
+              ]
+            ]
           },
           {
             "type": "paragraph",
-            "text": "macOS Apple Silicon："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "mkdir -p ~/velamq && cd ~/velamq\ncurl -L -o velamqd-0.0.1-macos-aarch64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64"
-          },
-          {
-            "type": "paragraph",
-            "text": "Linux x86_64："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -o velamqd-0.0.1-linux-musl-x86_64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64"
-          },
-          {
-            "type": "paragraph",
-            "text": "Windows PowerShell："
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64"
+            "text": "完成平台安装后，继续阅读[快速开始](./quick-start)，创建 MQTT 端点并验证消息收发。"
           },
           {
             "type": "heading",
-            "id": "三启动服务",
+            "id": "安装包结构",
             "level": 2,
-            "text": "三、启动服务"
+            "text": "安装包结构"
           },
           {
             "type": "paragraph",
-            "text": "macOS / Linux："
+            "text": "解压后的目录包含："
           },
           {
-            "type": "code",
-            "language": "bash",
-            "code": "chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果需要手动指定配置文件："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "VELAMQ_CONFIG_FILE=./config.toml ./bin/velamqd"
-          },
-          {
-            "type": "paragraph",
-            "text": "Linux 服务器建议使用 systemd 托管，便于开机自启、异常重启和统一日志管理。以下示例假设安装目录为 `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.1-linux-musl-x86_64"
-          },
-          {
-            "type": "paragraph",
-            "text": "创建 `/etc/systemd/system/velamq.service`："
-          },
-          {
-            "type": "code",
-            "language": "ini",
-            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nEnvironment=VELAMQ_CONFIG_FILE=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml\nExecStart=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\n\n[Install]\nWantedBy=multi-user.target"
-          },
-          {
-            "type": "paragraph",
-            "text": "启动并设置开机自启："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
+            "type": "table",
+            "headers": [
+              "路径",
+              "说明"
+            ],
+            "rows": [
+              [
+                "`bin/velamqd`、`bin/velamqd.exe`",
+                "VelaMQ 服务端程序"
+              ],
+              [
+                "`config.toml`",
+                "默认启动配置"
+              ],
+              [
+                "`static/`",
+                "管理控制台资源"
+              ],
+              [
+                "`sql/`",
+                "初始化或升级 SQL 资源"
+              ],
+              [
+                "`deploy/`",
+                "启动、停止、状态、日志、更新和 systemd 脚本"
+              ],
+              [
+                "`README.md`",
+                "安装包说明"
+              ]
+            ]
           },
           {
             "type": "paragraph",
-            "text": "查看运行日志："
+            "text": "生产环境不要直接覆盖旧版本目录。建议把每个版本解压到独立目录，并通过 `current` 软链接切换版本；完整流程见 [Linux 安装与服务管理](./linux)。"
+          }
+        ]
+      },
+      "install/quick-start": {
+        "id": "install/quick-start",
+        "title": "快速开始",
+        "summary": "本指南聚焦 VelaMQ 启动后的公共操作。下载、安装、服务管理和版本更新请进入对应操作系统的独立指南。",
+        "sourcePath": "install/quick-start.md",
+        "headings": [
+          {
+            "id": "一选择操作系统",
+            "level": 2,
+            "text": "一、选择操作系统"
           },
           {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo journalctl -u velamq -f"
+            "id": "二打开管理控制台",
+            "level": 2,
+            "text": "二、打开管理控制台"
+          },
+          {
+            "id": "三创建-mqtt-端点",
+            "level": 2,
+            "text": "三、创建 MQTT 端点"
+          },
+          {
+            "id": "四验证发布订阅",
+            "level": 2,
+            "text": "四、验证发布订阅"
+          },
+          {
+            "id": "五完成上线前检查",
+            "level": 2,
+            "text": "五、完成上线前检查"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "本指南聚焦 VelaMQ 启动后的公共操作。下载、安装、服务管理和版本更新请进入对应操作系统的独立指南。"
+          },
+          {
+            "type": "heading",
+            "id": "一选择操作系统",
+            "level": 2,
+            "text": "一、选择操作系统"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "操作系统",
+              "安装指南",
+              "推荐用途"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "[Linux 安装与服务管理](./linux)",
+                "服务器、边缘主机、生产部署"
+              ],
+              [
+                "macOS",
+                "[macOS 安装与服务管理](./macos)",
+                "本地评估、开发和演示"
+              ],
+              [
+                "Windows",
+                "[Windows 安装与服务管理](./windows)",
+                "Windows 本地评估和服务器"
+              ]
+            ]
           },
           {
             "type": "paragraph",
-            "text": "Windows PowerShell："
+            "text": "所有公开文件及 CPU 架构说明见[安装包下载](./package)。"
           },
           {
-            "type": "code",
-            "language": "powershell",
-            "code": ".\\deploy\\start.bat"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果需要手动指定配置文件："
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": "$env:VELAMQ_CONFIG_FILE=\".\\config.toml\"\n.\\bin\\velamqd.exe"
+            "type": "heading",
+            "id": "二打开管理控制台",
+            "level": 2,
+            "text": "二、打开管理控制台"
           },
           {
             "type": "paragraph",
-            "text": "服务启动后，默认控制台地址为："
+            "text": "服务启动后访问："
           },
           {
             "type": "code",
@@ -10774,57 +10766,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "首次启动如果没有控制台用户，会进入创建管理员页面。建议使用强密码，并妥善保存管理员账号。"
+            "text": "远程部署时，把 `127.0.0.1` 替换为服务器 IP 或域名，并确认防火墙、云安全组和反向代理允许访问。首次启动如果没有控制台用户，页面会引导创建管理员。"
           },
           {
             "type": "heading",
-            "id": "四放通端口",
+            "id": "三创建-mqtt-端点",
             "level": 2,
-            "text": "四、放通端口"
-          },
-          {
-            "type": "paragraph",
-            "text": "评估环境通常至少需要访问："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "端口",
-              "用途"
-            ],
-            "rows": [
-              [
-                "`8080`",
-                "管理控制台与 HTTP API"
-              ],
-              [
-                "`1883`",
-                "MQTT TCP 接入端口"
-              ],
-              [
-                "`8083`",
-                "MQTT WebSocket 接入端口，按实际配置启用"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "Linux 防火墙示例："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo ufw allow 8080/tcp\nsudo ufw allow 1883/tcp"
-          },
-          {
-            "type": "paragraph",
-            "text": "生产环境建议把控制台放在内网或网关后面，并通过反向代理开启 HTTPS。"
-          },
-          {
-            "type": "heading",
-            "id": "五创建第一个-mqtt-端点",
-            "level": 2,
-            "text": "五、创建第一个 MQTT 端点"
+            "text": "三、创建 MQTT 端点"
           },
           {
             "type": "paragraph",
@@ -10869,13 +10817,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "六验证消息收发",
+            "id": "四验证发布订阅",
             "level": 2,
-            "text": "六、验证消息收发"
+            "text": "四、验证发布订阅"
           },
           {
             "type": "paragraph",
-            "text": "安装 `mosquitto-clients` 后，可以用命令行验证发布订阅："
+            "text": "安装 `mosquitto-clients` 后，在第一个终端订阅："
           },
           {
             "type": "code",
@@ -10884,7 +10832,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "另开一个终端发布消息："
+            "text": "在第二个终端发布："
           },
           {
             "type": "code",
@@ -10893,83 +10841,248 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "如果订阅端能收到 JSON 消息，说明 MQTT 接入链路已经可用。"
+            "text": "订阅端收到 JSON 消息，表示 MQTT 接入链路可用。"
           },
           {
             "type": "heading",
-            "id": "七控制台验证",
+            "id": "五完成上线前检查",
             "level": 2,
-            "text": "七、控制台验证"
-          },
-          {
-            "type": "paragraph",
-            "text": "完成消息收发后，建议依次检查："
+            "text": "五、完成上线前检查"
           },
           {
             "type": "list",
             "ordered": false,
             "items": [
               "仪表盘：确认连接数、消息计数和服务状态正常。",
-              "连接管理：查看在线 MQTT 客户端、协议版本和会话信息。",
-              "监控指标：检查连接、吞吐、延迟、规则和认证指标。",
-              "设备认证与 ACL：为生产环境配置账号、证书或访问控制策略。",
-              "数据源与规则引擎：把设备事件路由到业务系统、数据库、消息队列或 Webhook。"
+              "连接管理：检查在线客户端、协议版本和会话信息。",
+              "监控指标：确认连接、吞吐、延迟、规则和认证指标正常。",
+              "设备认证与 ACL：生产环境配置账号、证书和访问控制策略。",
+              "数据源与规则引擎：把设备事件路由到业务系统、数据库、消息队列或 Webhook。",
+              "网络安全：管理控制台放在内网或 HTTPS 网关后面，不直接暴露到公网。"
             ]
           },
           {
-            "type": "heading",
-            "id": "八常见问题",
+            "type": "paragraph",
+            "text": "后续可以继续阅读[配置说明](./config)、[设备认证与 ACL](../guide/auth-acl)和[规则引擎](../guide/rule-engine/overview.md)。"
+          }
+        ]
+      },
+      "install/windows": {
+        "id": "install/windows",
+        "title": "Windows 安装与服务管理",
+        "summary": "本页适用于 Windows 10、Windows 11 和 Windows Server x86_64，使用 PowerShell 完成下载、启动、验证、停止和更新。",
+        "sourcePath": "install/windows.md",
+        "headings": [
+          {
+            "id": "一确认系统架构",
             "level": 2,
-            "text": "八、常见问题"
+            "text": "一、确认系统架构"
+          },
+          {
+            "id": "二下载并解压",
+            "level": 2,
+            "text": "二、下载并解压"
+          },
+          {
+            "id": "三启动服务",
+            "level": 2,
+            "text": "三、启动服务"
+          },
+          {
+            "id": "四后台运行与停止",
+            "level": 2,
+            "text": "四、后台运行与停止"
+          },
+          {
+            "id": "五windows-防火墙",
+            "level": 2,
+            "text": "五、Windows 防火墙"
+          },
+          {
+            "id": "六更新版本",
+            "level": 2,
+            "text": "六、更新版本"
+          },
+          {
+            "id": "七验证与排障",
+            "level": 2,
+            "text": "七、验证与排障"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "本页适用于 Windows 10、Windows 11 和 Windows Server x86_64，使用 PowerShell 完成下载、启动、验证、停止和更新。"
           },
           {
             "type": "heading",
-            "id": "macos-提示无法打开",
-            "level": 3,
-            "text": "macOS 提示无法打开"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果系统提示安装包来自未知开发者，可以先给二进制增加执行权限，再移除隔离属性："
+            "id": "一确认系统架构",
+            "level": 2,
+            "text": "一、确认系统架构"
           },
           {
             "type": "code",
-            "language": "bash",
-            "code": "chmod +x ./bin/velamqd ./deploy/start.sh\nxattr -dr com.apple.quarantine .\n./deploy/start.sh"
+            "language": "powershell",
+            "code": "$env:PROCESSOR_ARCHITECTURE"
+          },
+          {
+            "type": "paragraph",
+            "text": "当前公开包支持 `AMD64` / x86_64："
+          },
+          {
+            "type": "paragraph",
+            "text": "[下载 velamqd-0.0.1-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip)"
           },
           {
             "type": "heading",
-            "id": "linux-提示权限不足",
-            "level": 3,
-            "text": "Linux 提示权限不足"
+            "id": "二下载并解压",
+            "level": 2,
+            "text": "二、下载并解压"
           },
           {
             "type": "paragraph",
-            "text": "确认当前用户对安装目录有读写权限，或把安装目录放到当前用户目录下："
+            "text": "在 PowerShell 中执行："
           },
           {
             "type": "code",
-            "language": "bash",
-            "code": "mkdir -p ~/velamq"
+            "language": "powershell",
+            "code": "New-Item -ItemType Directory -Force C:\\velamq | Out-Null\nSet-Location C:\\velamq\nInvoke-WebRequest `\n  -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip `\n  -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive `\n  .\\velamqd-0.0.1-windows-x86_64.zip `\n  -DestinationPath .\\velamqd-0.0.1-windows-x86_64\nSet-Location .\\velamqd-0.0.1-windows-x86_64"
           },
           {
             "type": "heading",
-            "id": "端口被占用",
-            "level": 3,
-            "text": "端口被占用"
+            "id": "三启动服务",
+            "level": 2,
+            "text": "三、启动服务"
           },
           {
             "type": "paragraph",
-            "text": "检查端口占用："
+            "text": "前台启动："
           },
           {
             "type": "code",
-            "language": "bash",
-            "code": "lsof -i :8080\nlsof -i :1883"
+            "language": "powershell",
+            "code": ".\\deploy\\start.bat"
           },
           {
             "type": "paragraph",
-            "text": "如需更换端口，编辑 `config.toml` 后重启服务。"
+            "text": "默认读取安装目录下的 `config.toml`。指定其他配置文件："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$env:VELAMQ_CONFIG_FILE=\"C:\\velamq\\config.toml\"\n.\\bin\\velamqd.exe"
+          },
+          {
+            "type": "paragraph",
+            "text": "保持 PowerShell 窗口运行。按 `Ctrl+C` 可以停止进程。"
+          },
+          {
+            "type": "heading",
+            "id": "四后台运行与停止",
+            "level": 2,
+            "text": "四、后台运行与停止"
+          },
+          {
+            "type": "paragraph",
+            "text": "需要后台运行时，可以使用 PowerShell："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$package = \"C:\\velamq\\velamqd-0.0.1-windows-x86_64\"\n$env:VELAMQ_CONFIG_FILE = \"$package\\config.toml\"\n$process = Start-Process `\n  -FilePath \"$package\\bin\\velamqd.exe\" `\n  -WorkingDirectory $package `\n  -PassThru\n$process.Id | Set-Content \"$package\\velamqd.pid\""
+          },
+          {
+            "type": "paragraph",
+            "text": "查看状态："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$pidValue = Get-Content .\\velamqd.pid\nGet-Process -Id $pidValue"
+          },
+          {
+            "type": "paragraph",
+            "text": "停止进程："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$pidValue = Get-Content .\\velamqd.pid\nStop-Process -Id $pidValue\nRemove-Item .\\velamqd.pid -ErrorAction SilentlyContinue"
+          },
+          {
+            "type": "heading",
+            "id": "五windows-防火墙",
+            "level": 2,
+            "text": "五、Windows 防火墙"
+          },
+          {
+            "type": "paragraph",
+            "text": "以管理员身份运行 PowerShell："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "New-NetFirewallRule -DisplayName \"VelaMQ Console\" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow\nNew-NetFirewallRule -DisplayName \"VelaMQ MQTT\" -Direction Inbound -Protocol TCP -LocalPort 1883 -Action Allow"
+          },
+          {
+            "type": "paragraph",
+            "text": "生产环境不建议把管理控制台直接暴露到公网。"
+          },
+          {
+            "type": "heading",
+            "id": "六更新版本",
+            "level": 2,
+            "text": "六、更新版本"
+          },
+          {
+            "type": "paragraph",
+            "text": "下载新版本并解压到独立目录，不要覆盖旧版本："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "Set-Location C:\\velamq\nInvoke-WebRequest `\n  -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-windows-x86_64.zip `\n  -OutFile velamqd-0.0.2-windows-x86_64.zip\nExpand-Archive `\n  .\\velamqd-0.0.2-windows-x86_64.zip `\n  -DestinationPath .\\velamqd-0.0.2-windows-x86_64\nCopy-Item `\n  .\\velamqd-0.0.1-windows-x86_64\\config.toml `\n  .\\velamqd-0.0.2-windows-x86_64\\config.toml -Force"
+          },
+          {
+            "type": "paragraph",
+            "text": "停止旧进程后启动新版本："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "Set-Location C:\\velamq\\velamqd-0.0.2-windows-x86_64\n.\\deploy\\start.bat"
+          },
+          {
+            "type": "paragraph",
+            "text": "确认新版本运行正常前保留旧目录。出现异常时停止新进程并从旧目录重新执行 `deploy\\start.bat` 即可回滚。"
+          },
+          {
+            "type": "heading",
+            "id": "七验证与排障",
+            "level": 2,
+            "text": "七、验证与排障"
+          },
+          {
+            "type": "paragraph",
+            "text": "检查控制台："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "Invoke-WebRequest http://127.0.0.1:8080/ -UseBasicParsing"
+          },
+          {
+            "type": "paragraph",
+            "text": "检查端口："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "Get-NetTCPConnection -LocalPort 8080,1883 -ErrorAction SilentlyContinue"
+          },
+          {
+            "type": "paragraph",
+            "text": "启动成功后浏览器访问 `http://127.0.0.1:8080/`。"
           }
         ]
       },
@@ -13758,21 +13871,38 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "title": "Install",
         "entries": [
           {
-            "type": "doc",
-            "id": "install/quick-start",
+            "type": "category",
             "label": "Quick Start",
+            "depth": 0
+          },
+          {
+            "type": "doc",
+            "id": "install/linux",
+            "label": "Linux Installation and Service Management",
+            "depth": 1
+          },
+          {
+            "type": "doc",
+            "id": "install/macos",
+            "label": "macOS Installation and Service Management",
+            "depth": 1
+          },
+          {
+            "type": "doc",
+            "id": "install/windows",
+            "label": "Windows Installation and Service Management",
+            "depth": 1
+          },
+          {
+            "type": "doc",
+            "id": "install/package",
+            "label": "Package Downloads",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "install/config",
             "label": "配置说明",
-            "depth": 0
-          },
-          {
-            "type": "doc",
-            "id": "install/package",
-            "label": "Package Downloads",
             "depth": 0
           }
         ]
@@ -23193,7 +23323,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "install/config": {
         "id": "install/config",
         "title": "配置说明",
-        "summary": "当前 VelaMQ 3.0 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。",
+        "summary": "当前 VelaMQ 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。",
         "sourcePath": "install/config.md",
         "headings": [
           {
@@ -23242,7 +23372,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "当前 VelaMQ 3.0 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。"
+            "text": "当前 VelaMQ 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。"
           },
           {
             "type": "heading",
@@ -23433,379 +23563,463 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           }
         ]
       },
-      "install/package": {
-        "id": "install/package",
-        "title": "Package Downloads",
-        "summary": "VelaMQ provides portable zip packages for macOS, Linux, and Windows. Each package includes the server binary, default configuration, console static assets, and startup scripts. It is suitable for evaluation, PoC, edge nodes, and the first step of single-node production deployment.",
-        "sourcePath": "install/package.md",
+      "install/linux": {
+        "id": "install/linux",
+        "title": "Linux Installation and Service Management",
+        "summary": "This page explains how to install VelaMQ on Linux x86_64 or ARM64 and manage startup, logs, upgrades, and rollback with systemd.",
+        "sourcePath": "install/linux.md",
         "headings": [
           {
-            "id": "current-version",
+            "id": "1-select-a-package",
             "level": 2,
-            "text": "Current version"
+            "text": "1. Select a package"
           },
           {
-            "id": "download-urls",
+            "id": "2-download-and-extract",
             "level": 2,
-            "text": "Download URLs"
+            "text": "2. Download and extract"
           },
           {
-            "id": "platform-selection",
+            "id": "3-direct-startup-for-evaluation",
             "level": 2,
-            "text": "Platform selection"
+            "text": "3. Direct startup for evaluation"
           },
           {
-            "id": "package-layout",
+            "id": "4-install-the-systemd-service",
             "level": 2,
-            "text": "Package layout"
+            "text": "4. Install the systemd service"
           },
           {
-            "id": "macos-linux-installation",
+            "id": "5-daily-service-operations",
             "level": 2,
-            "text": "macOS / Linux installation"
+            "text": "5. Daily service operations"
           },
           {
-            "id": "windows-installation",
+            "id": "6-logs",
             "level": 2,
-            "text": "Windows installation"
+            "text": "6. Logs"
           },
           {
-            "id": "start-and-access",
+            "id": "7-upgrade-a-systemd-deployment",
             "level": 2,
-            "text": "Start and access"
+            "text": "7. Upgrade a systemd deployment"
           },
           {
-            "id": "production-notes",
+            "id": "8-roll-back",
             "level": 2,
-            "text": "Production notes"
+            "text": "8. Roll back"
           },
           {
-            "id": "linux-service-management",
-            "level": 3,
-            "text": "Linux service management"
+            "id": "9-configuration-and-persistent-data",
+            "level": 2,
+            "text": "9. Configuration and persistent data"
           },
           {
-            "id": "build-from-source",
+            "id": "10-ports-and-health-checks",
             "level": 2,
-            "text": "Build from source"
+            "text": "10. Ports and health checks"
+          },
+          {
+            "id": "11-uninstall-the-systemd-service",
+            "level": 2,
+            "text": "11. Uninstall the systemd service"
           }
         ],
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ provides portable zip packages for macOS, Linux, and Windows. Each package includes the server binary, default configuration, console static assets, and startup scripts. It is suitable for evaluation, PoC, edge nodes, and the first step of single-node production deployment."
+            "text": "This page explains how to install VelaMQ on Linux x86_64 or ARM64 and manage startup, logs, upgrades, and rollback with systemd."
           },
           {
             "type": "heading",
-            "id": "current-version",
+            "id": "1-select-a-package",
             "level": 2,
-            "text": "Current version"
-          },
-          {
-            "type": "paragraph",
-            "text": "Current public download version:"
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "0.0.1"
-          },
-          {
-            "type": "heading",
-            "id": "download-urls",
-            "level": 2,
-            "text": "Download URLs"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "Platform",
-              "File",
-              "Download URL"
-            ],
-            "rows": [
-              [
-                "macOS Apple Silicon",
-                "`velamqd-0.0.1-macos-aarch64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
-              ],
-              [
-                "macOS Intel",
-                "`velamqd-0.0.1-macos-x86_64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
-              ],
-              [
-                "Linux ARM64 musl",
-                "`velamqd-0.0.1-linux-musl-aarch64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
-              ],
-              [
-                "Linux x86_64 musl",
-                "`velamqd-0.0.1-linux-musl-x86_64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
-              ],
-              [
-                "Windows x86_64",
-                "`velamqd-0.0.1-windows-x86_64.zip`",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "The Linux musl packages work well for most Linux distributions and have fewer runtime dependencies, which makes them easier to deploy on servers, containers, and edge hosts."
-          },
-          {
-            "type": "heading",
-            "id": "platform-selection",
-            "level": 2,
-            "text": "Platform selection"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "Target machine",
-              "Recommended package"
-            ],
-            "rows": [
-              [
-                "MacBook / Mac mini with Apple Silicon",
-                "`velamqd-0.0.1-macos-aarch64.zip`"
-              ],
-              [
-                "Intel Mac",
-                "`velamqd-0.0.1-macos-x86_64.zip`"
-              ],
-              [
-                "Intel / AMD Linux server",
-                "`velamqd-0.0.1-linux-musl-x86_64.zip`"
-              ],
-              [
-                "ARM Linux server or ARM cloud host",
-                "`velamqd-0.0.1-linux-musl-aarch64.zip`"
-              ],
-              [
-                "Windows Server or local Windows test machine",
-                "`velamqd-0.0.1-windows-x86_64.zip`"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "package-layout",
-            "level": 2,
-            "text": "Package layout"
-          },
-          {
-            "type": "paragraph",
-            "text": "After extraction, the package usually contains:"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`bin/velamqd` or `bin/velamqd.exe`: VelaMQ server process.",
-              "`config.toml`: default configuration file.",
-              "`static/`: management console static assets.",
-              "`sql/`: initialization or migration SQL resources.",
-              "`deploy/`: deployment and service-management scripts.",
-              "`deploy/start.sh`: macOS / Linux startup script. It starts in the background and writes pid/log files by default; pass `--foreground` to run in the current terminal.",
-              "`deploy/start.bat`: Windows foreground startup script.",
-              "`deploy/install-systemd.sh`: Linux systemd service installer.",
-              "`deploy/stop.sh`: macOS / Linux stop script. On Linux, it uses `systemctl stop` when the systemd service is installed.",
-              "`deploy/restart.sh`: macOS / Linux restart script. On Linux, it uses `systemctl restart` when the systemd service is installed.",
-              "`deploy/status.sh`: macOS / Linux status script. On Linux, it uses `systemctl status` when the systemd service is installed.",
-              "`deploy/logs.sh`: macOS / Linux log-following script. Local mode follows `logs/velamqd.log`; systemd mode follows `journalctl`.",
-              "`deploy/update.sh`: macOS / Linux version update script. It switches the `current` symlink to the new package and restarts the service.",
-              "`deploy/uninstall-systemd.sh`: Linux systemd service uninstaller.",
-              "`deploy/systemd/`: systemd unit templates and notes.",
-              "`README.md`: package notes."
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "macos-linux-installation",
-            "level": 2,
-            "text": "macOS / Linux installation"
-          },
-          {
-            "type": "paragraph",
-            "text": "Download and extract to a fixed directory:"
+            "text": "1. Select a package"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
+            "code": "uname -m"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Output",
+              "Package"
+            ],
+            "rows": [
+              [
+                "`x86_64`",
+                "[velamqd-0.0.1-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip)"
+              ],
+              [
+                "`aarch64`, `arm64`",
+                "[velamqd-0.0.1-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip)"
+              ]
+            ]
           },
           {
             "type": "paragraph",
-            "text": "The macOS local scripts create `run/velamqd.pid` and `logs/velamqd.log` under the package directory. Common operations:"
+            "text": "The examples below use the x86_64 package. Replace the file and directory names for ARM64."
+          },
+          {
+            "type": "heading",
+            "id": "2-download-and-extract",
+            "level": 2,
+            "text": "2. Download and extract"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\nsudo chmod +x velamqd-0.0.1-linux-musl-x86_64/bin/velamqd\nsudo chmod +x velamqd-0.0.1-linux-musl-x86_64/deploy/*.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Recommended layout:"
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\n  velamqd-0.0.1-linux-musl-x86_64/"
+          },
+          {
+            "type": "heading",
+            "id": "3-direct-startup-for-evaluation",
+            "level": 2,
+            "text": "3. Direct startup for evaluation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run VelaMQ in the background without installing systemd:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\n./deploy/start.sh\n./deploy/status.sh\n./deploy/logs.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Local mode writes the PID to `run/velamqd.pid` and output to `logs/velamqd.log`."
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/restart.sh\n./deploy/stop.sh"
+          },
+          {
+            "type": "heading",
+            "id": "4-install-the-systemd-service",
+            "level": 2,
+            "text": "4. Install the systemd service"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use the packaged installer for production:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now"
+          },
+          {
+            "type": "paragraph",
+            "text": "The installer creates `/opt/velamq/current`, installs `/etc/systemd/system/velamq.service`, reloads systemd, enables boot startup, and starts VelaMQ. The unit always references:"
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "/opt/velamq/current/bin/velamqd\n/opt/velamq/current/config.toml"
+          },
+          {
+            "type": "heading",
+            "id": "5-daily-service-operations",
+            "level": 2,
+            "text": "5. Daily service operations"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl start velamq\nsudo systemctl stop velamq\nsudo systemctl restart velamq\nsudo systemctl status velamq\nsudo systemctl enable velamq\nsudo systemctl disable velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "The package helpers also detect the installed systemd unit:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/current\nsudo ./deploy/status.sh\nsudo ./deploy/restart.sh\nsudo ./deploy/stop.sh"
+          },
+          {
+            "type": "heading",
+            "id": "6-logs",
+            "level": 2,
+            "text": "6. Logs"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -f\nsudo journalctl -u velamq -n 200 --no-pager\nsudo journalctl -u velamq --since \"1 hour ago\""
+          },
+          {
+            "type": "paragraph",
+            "text": "The common helper follows journald when the unit is installed:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo /opt/velamq/current/deploy/logs.sh"
+          },
+          {
+            "type": "heading",
+            "id": "7-upgrade-a-systemd-deployment",
+            "level": 2,
+            "text": "7. Upgrade a systemd deployment"
+          },
+          {
+            "type": "paragraph",
+            "text": "Extract the new package into a separate directory instead of overwriting the active version:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.2-linux-musl-x86_64.zip\nsudo chmod +x velamqd-0.0.2-linux-musl-x86_64/bin/velamqd\nsudo chmod +x velamqd-0.0.2-linux-musl-x86_64/deploy/*.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Copy the active production configuration. The current `deploy/update.sh` backs up the old configuration but does not copy it into the new directory:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo cp /opt/velamq/current/config.toml \\\n  /opt/velamq/velamqd-0.0.2-linux-musl-x86_64/config.toml"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run the upgrade:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo /opt/velamq/current/deploy/update.sh \\\n  /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
+          },
+          {
+            "type": "paragraph",
+            "text": "The script validates the binary, backs up `config.toml`, stops the service, switches the `current` symlink, restarts VelaMQ, and prints its status. A normal version upgrade does not require `systemctl daemon-reload`; reload only when the unit file changes."
+          },
+          {
+            "type": "paragraph",
+            "text": "Verify the result:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "readlink -f /opt/velamq/current\nsudo systemctl status velamq\nsudo journalctl -u velamq -n 100 --no-pager\ncurl -I http://127.0.0.1:8080/"
+          },
+          {
+            "type": "heading",
+            "id": "8-roll-back",
+            "level": 2,
+            "text": "8. Roll back"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl stop velamq\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl restart velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "The installation root contains a timestamped `velamq-backup-*.tgz` with the previous `config.toml`."
+          },
+          {
+            "type": "heading",
+            "id": "9-configuration-and-persistent-data",
+            "level": 2,
+            "text": "9. Configuration and persistent data"
+          },
+          {
+            "type": "paragraph",
+            "text": "The packaged unit uses `/opt/velamq/current/config.toml`. In production, place RocksDB data, backups, and file logs outside version directories. To keep configuration at `/etc/velamq/config.toml`, update the unit environment:"
+          },
+          {
+            "type": "code",
+            "language": "ini",
+            "code": "Environment=VELAMQ_CONFIG_FILE=/etc/velamq/config.toml"
+          },
+          {
+            "type": "paragraph",
+            "text": "After modifying the unit:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl daemon-reload\nsudo systemctl restart velamq"
+          },
+          {
+            "type": "heading",
+            "id": "10-ports-and-health-checks",
+            "level": 2,
+            "text": "10. Ports and health checks"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo ufw allow 8080/tcp\nsudo ufw allow 1883/tcp\ncurl -I http://127.0.0.1:8080/\nss -lntp | grep -E ':8080|:1883'"
+          },
+          {
+            "type": "heading",
+            "id": "11-uninstall-the-systemd-service",
+            "level": 2,
+            "text": "11. Uninstall the systemd service"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/current\nsudo ./deploy/uninstall-systemd.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "The script stops and disables the service, removes the unit, and reloads systemd. It keeps program, configuration, and data directories for backup or reinstall."
+          }
+        ]
+      },
+      "install/macos": {
+        "id": "install/macos",
+        "title": "macOS Installation and Service Management",
+        "summary": "This page covers Apple Silicon and Intel Macs. The macOS package uses local process helpers and does not depend on systemd.",
+        "sourcePath": "install/macos.md",
+        "headings": [
+          {
+            "id": "1-check-the-architecture",
+            "level": 2,
+            "text": "1. Check the architecture"
+          },
+          {
+            "id": "2-download-and-extract",
+            "level": 2,
+            "text": "2. Download and extract"
+          },
+          {
+            "id": "3-start-velamq",
+            "level": 2,
+            "text": "3. Start VelaMQ"
+          },
+          {
+            "id": "4-status-logs-restart-and-stop",
+            "level": 2,
+            "text": "4. Status, logs, restart, and stop"
+          },
+          {
+            "id": "5-upgrade",
+            "level": 2,
+            "text": "5. Upgrade"
+          },
+          {
+            "id": "6-roll-back",
+            "level": 2,
+            "text": "6. Roll back"
+          },
+          {
+            "id": "7-macos-security-and-ports",
+            "level": 2,
+            "text": "7. macOS security and ports"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page covers Apple Silicon and Intel Macs. The macOS package uses local process helpers and does not depend on systemd."
+          },
+          {
+            "type": "heading",
+            "id": "1-check-the-architecture",
+            "level": 2,
+            "text": "1. Check the architecture"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "uname -m"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Output",
+              "Package"
+            ],
+            "rows": [
+              [
+                "`arm64`",
+                "[velamqd-0.0.1-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip)"
+              ],
+              [
+                "`x86_64`",
+                "[velamqd-0.0.1-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip)"
+              ]
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "2-download-and-extract",
+            "level": 2,
+            "text": "2. Download and extract"
+          },
+          {
+            "type": "paragraph",
+            "text": "Apple Silicon example:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x bin/velamqd deploy/*.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "For an Intel Mac, use `velamqd-0.0.1-macos-x86_64.zip`."
+          },
+          {
+            "type": "heading",
+            "id": "3-start-velamq",
+            "level": 2,
+            "text": "3. Start VelaMQ"
+          },
+          {
+            "type": "paragraph",
+            "text": "Background mode:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Foreground mode:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/start.sh --foreground"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use a custom configuration file when needed:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "VELAMQ_CONFIG_FILE=/path/to/config.toml ./deploy/start.sh"
+          },
+          {
+            "type": "heading",
+            "id": "4-status-logs-restart-and-stop",
+            "level": 2,
+            "text": "4. Status, logs, restart, and stop"
           },
           {
             "type": "code",
             "language": "bash",
             "code": "./deploy/status.sh\n./deploy/logs.sh\n./deploy/restart.sh\n./deploy/stop.sh"
-          },
-          {
-            "type": "paragraph",
-            "text": "Linux server example:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
-          },
-          {
-            "type": "heading",
-            "id": "windows-installation",
-            "level": 2,
-            "text": "Windows installation"
-          },
-          {
-            "type": "paragraph",
-            "text": "PowerShell example:"
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\deploy\\start.bat"
-          },
-          {
-            "type": "heading",
-            "id": "start-and-access",
-            "level": 2,
-            "text": "Start and access"
-          },
-          {
-            "type": "paragraph",
-            "text": "The startup scripts use the package-local `config.toml` by default:"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "macOS / Linux: `VELAMQ_CONFIG_FILE=$PACKAGE_DIR/config.toml`",
-              "Windows: `VELAMQ_CONFIG_FILE=%PACKAGE_DIR%\\config.toml`"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "After startup, open:"
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "http://127.0.0.1:8080/"
-          },
-          {
-            "type": "paragraph",
-            "text": "For a remote server, replace `127.0.0.1` with the server IP or domain name, and make sure the firewall, cloud security group, and reverse proxy allow access."
-          },
-          {
-            "type": "heading",
-            "id": "production-notes",
-            "level": 2,
-            "text": "Production notes"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Use dedicated data and log directories instead of temporary extraction paths.",
-              "For Linux production deployments, manage VelaMQ with systemd and configure `Restart=on-failure`, `LimitNOFILE=1048576`, and boot startup.",
-              "Keep `config.toml` under configuration management, and do not overwrite production configuration during upgrades.",
-              "Keep the console private. Public access should go through an HTTPS gateway and identity protection.",
-              "Enable TLS, authentication, and ACL for production MQTT access.",
-              "Before upgrades, back up `config.toml`, data directories, License files, and key audit records."
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "linux-service-management",
-            "level": 3,
-            "text": "Linux service management"
-          },
-          {
-            "type": "paragraph",
-            "text": "The following example assumes the package is extracted to `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`."
-          },
-          {
-            "type": "paragraph",
-            "text": "All package service-operation scripts live under `deploy/`. In production, prefer these scripts so startup, shutdown, and update operations are not scattered in the package root."
-          },
-          {
-            "type": "table",
-            "headers": [
-              "Script",
-              "Purpose"
-            ],
-            "rows": [
-              [
-                "`deploy/install-systemd.sh --enable-now`",
-                "Install the systemd service, create the `/opt/velamq/current` symlink, and start immediately"
-              ],
-              [
-                "`deploy/start.sh`",
-                "Start the current package as a local background process when systemd is not installed"
-              ],
-              [
-                "`deploy/stop.sh`",
-                "Stop the local process, or stop the systemd service if installed"
-              ],
-              [
-                "`deploy/restart.sh`",
-                "Restart the local process, or restart the systemd service if installed"
-              ],
-              [
-                "`deploy/status.sh`",
-                "Show local pid status, or systemd service status if installed"
-              ],
-              [
-                "`deploy/logs.sh`",
-                "Follow local logs, or journald logs if systemd is installed"
-              ],
-              [
-                "`deploy/update.sh NEW_PACKAGE_DIR`",
-                "Switch `current` to a new version and restart the service"
-              ],
-              [
-                "`deploy/uninstall-systemd.sh`",
-                "Stop, disable, and remove the systemd service"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "`deploy/update.sh` does not overwrite the old package directory. Its update flow is:"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "Validate the new package directory and ensure `bin/velamqd` exists and is executable.",
-              "Back up the current package's `config.toml` to the installation root.",
-              "Stop the current local process, or stop the systemd service if it is installed on Linux.",
-              "Switch the `current` symlink in the installation root to the new package directory, then restart from the new version."
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "Keep the installation layout like this:"
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.2-linux-musl-x86_64\n  velamqd-0.0.1-linux-musl-x86_64/\n  velamqd-0.0.2-linux-musl-x86_64/"
-          },
-          {
-            "type": "heading",
-            "id": "directory-layout",
-            "level": 4,
-            "text": "Directory layout"
-          },
-          {
-            "type": "paragraph",
-            "text": "For production, keep program files, data, logs, and configuration separate:"
           },
           {
             "type": "table",
@@ -23815,408 +24029,192 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ],
             "rows": [
               [
-                "`/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`",
-                "Current version program directory"
+                "`run/velamqd.pid`",
+                "Background process ID"
               ],
               [
-                "`/opt/velamq/current`",
-                "Symlink to the active version, referenced by systemd"
-              ],
-              [
-                "`/etc/velamq/config.toml`",
-                "Production configuration file"
-              ],
-              [
-                "`/var/lib/velamq`",
-                "Data directory, preferably on persistent storage"
-              ],
-              [
-                "`/var/log/velamq`",
-                "Log directory, if file logging is enabled"
-              ],
-              [
-                "`/etc/velamq/velamq.lic`",
-                "License file, if commercial licensing is enabled"
+                "`logs/velamqd.log`",
+                "Standard output and error log"
               ]
             ]
           },
           {
             "type": "paragraph",
-            "text": "Initialize directories:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq /etc/velamq /var/lib/velamq /var/log/velamq\nsudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq /var/lib/velamq /var/log/velamq\nsudo cp /opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml /etc/velamq/config.toml\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo chown velamq:velamq /etc/velamq/config.toml\nsudo chmod 640 /etc/velamq/config.toml"
-          },
-          {
-            "type": "paragraph",
-            "text": "Set data and log paths in `config.toml` to persistent directories so upgrades do not remove runtime data."
+            "text": "Press `Ctrl+C` to exit `deploy/logs.sh` without stopping VelaMQ."
           },
           {
             "type": "heading",
-            "id": "install-the-service-with-package-scripts",
-            "level": 4,
-            "text": "Install the service with package scripts"
-          },
-          {
-            "type": "paragraph",
-            "text": "If the package is already placed at `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`, install it with the built-in script:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now\nsudo ./deploy/status.sh"
-          },
-          {
-            "type": "paragraph",
-            "text": "The installer points `/opt/velamq/current` to the current package and makes systemd use `/opt/velamq/current`. Later upgrades only need to switch the `current` symlink and restart the service."
-          },
-          {
-            "type": "heading",
-            "id": "create-the-systemd-service",
-            "level": 4,
-            "text": "Create the systemd service"
-          },
-          {
-            "type": "paragraph",
-            "text": "Create `/etc/systemd/system/velamq.service`:"
-          },
-          {
-            "type": "code",
-            "language": "ini",
-            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/current\nEnvironment=VELAMQ_CONFIG_FILE=/etc/velamq/config.toml\nEnvironment=VELAMQ_LICENSE_FILE=/etc/velamq/velamq.lic\nExecStart=/opt/velamq/current/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\nTimeoutStopSec=30\nKillSignal=SIGTERM\n\n[Install]\nWantedBy=multi-user.target"
-          },
-          {
-            "type": "paragraph",
-            "text": "Remove the `VELAMQ_LICENSE_FILE` line if no License file is used."
-          },
-          {
-            "type": "heading",
-            "id": "start-stop-and-boot-startup",
-            "level": 4,
-            "text": "Start, stop, and boot startup"
-          },
-          {
-            "type": "paragraph",
-            "text": "Load and start the service:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "Common service commands:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl start velamq\nsudo systemctl stop velamq\nsudo systemctl restart velamq\nsudo systemctl reload-or-restart velamq\nsudo systemctl disable velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "Inspect logs:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo journalctl -u velamq -f\nsudo journalctl -u velamq --since \"1 hour ago\"\nsudo journalctl -u velamq -n 200 --no-pager"
-          },
-          {
-            "type": "paragraph",
-            "text": "Or use the package scripts:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cd /opt/velamq/current\nsudo ./deploy/status.sh\nsudo ./deploy/logs.sh\nsudo ./deploy/stop.sh\nsudo ./deploy/restart.sh"
-          },
-          {
-            "type": "heading",
-            "id": "configuration-changes",
-            "level": 4,
-            "text": "Configuration changes"
-          },
-          {
-            "type": "paragraph",
-            "text": "Back up `/etc/velamq/config.toml` before editing, then restart:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo vi /etc/velamq/config.toml\nsudo systemctl restart velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "If the service fails to start, inspect recent logs:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo journalctl -u velamq -n 200 --no-pager"
-          },
-          {
-            "type": "heading",
-            "id": "service-update",
-            "level": 4,
-            "text": "Service update"
-          },
-          {
-            "type": "paragraph",
-            "text": "Before upgrading, schedule a short maintenance window and create backups:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl stop velamq\nsudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo tar -czf /opt/velamq/velamq-backup-$(date +%Y%m%d%H%M%S).tgz /etc/velamq /var/lib/velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "Download and extract the new package, for example `0.0.2`:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.2-linux-musl-x86_64.zip\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
-          },
-          {
-            "type": "paragraph",
-            "text": "Switch the active symlink and start:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo ln -sfn /opt/velamq/velamqd-0.0.2-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl start velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "You can also use the built-in update script:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cd /opt/velamq/current\nsudo ./deploy/update.sh /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
-          },
-          {
-            "type": "paragraph",
-            "text": "Verify the console, MQTT port, and logs:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "curl -I http://127.0.0.1:8080/\nsudo journalctl -u velamq -n 100 --no-pager"
-          },
-          {
-            "type": "paragraph",
-            "text": "If the new version adds configuration options, compare the new package's `config.toml` with `/etc/velamq/config.toml` and merge manually. Do not overwrite production configuration directly."
-          },
-          {
-            "type": "heading",
-            "id": "rollback",
-            "level": 4,
-            "text": "Rollback"
-          },
-          {
-            "type": "paragraph",
-            "text": "If the upgrade fails, switch the symlink back to the previous version:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl stop velamq\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl restart velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "If configuration must be rolled back:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo cp /etc/velamq/config.toml.YYYYmmddHHMMSS.bak /etc/velamq/config.toml\nsudo chown velamq:velamq /etc/velamq/config.toml\nsudo systemctl restart velamq"
-          },
-          {
-            "type": "heading",
-            "id": "uninstall-service",
-            "level": 4,
-            "text": "Uninstall service"
-          },
-          {
-            "type": "paragraph",
-            "text": "Stop the service and disable boot startup:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl disable --now velamq\nsudo rm -f /etc/systemd/system/velamq.service\nsudo systemctl daemon-reload"
-          },
-          {
-            "type": "paragraph",
-            "text": "To remove program files and data, confirm backups first:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo rm -rf /opt/velamq\nsudo rm -rf /etc/velamq\nsudo rm -rf /var/lib/velamq\nsudo rm -rf /var/log/velamq"
-          },
-          {
-            "type": "heading",
-            "id": "build-from-source",
+            "id": "5-upgrade",
             "level": 2,
-            "text": "Build from source"
+            "text": "5. Upgrade"
           },
           {
             "type": "paragraph",
-            "text": "To build packages yourself, use `deploy/package.sh` from the source repository:"
+            "text": "Extract the new version beside the old version and preserve the active configuration:"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs\nbash deploy/package.sh"
+            "code": "cd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-macos-aarch64.zip\nunzip velamqd-0.0.2-macos-aarch64.zip\nchmod +x velamqd-0.0.2-macos-aarch64/bin/velamqd velamqd-0.0.2-macos-aarch64/deploy/*.sh\ncp current/config.toml velamqd-0.0.2-macos-aarch64/config.toml"
           },
           {
             "type": "paragraph",
-            "text": "Common parameters:"
+            "text": "Create the `current` symlink if this is the first upgrade:"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "# Specify version\nVERSION=0.0.1 bash deploy/package.sh\n\n# Build only the current host target\nTARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# Build Linux x86_64 and Linux ARM64\nTARGETS=\"x86_64-unknown-linux-musl aarch64-unknown-linux-musl\" bash deploy/package.sh"
+            "code": "ln -sfn \"$HOME/velamq/velamqd-0.0.1-macos-aarch64\" \"$HOME/velamq/current\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Run the upgrade:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "~/velamq/current/deploy/update.sh \\\n  ~/velamq/velamqd-0.0.2-macos-aarch64"
+          },
+          {
+            "type": "paragraph",
+            "text": "Verify the active version:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "readlink ~/velamq/current\n~/velamq/current/deploy/status.sh\n~/velamq/current/deploy/logs.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Use the matching `macos-x86_64` names on an Intel Mac."
+          },
+          {
+            "type": "heading",
+            "id": "6-roll-back",
+            "level": 2,
+            "text": "6. Roll back"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "~/velamq/current/deploy/stop.sh\nln -sfn \"$HOME/velamq/velamqd-0.0.1-macos-aarch64\" \"$HOME/velamq/current\"\n~/velamq/current/deploy/start.sh\n~/velamq/current/deploy/status.sh"
+          },
+          {
+            "type": "heading",
+            "id": "7-macos-security-and-ports",
+            "level": 2,
+            "text": "7. macOS security and ports"
+          },
+          {
+            "type": "paragraph",
+            "text": "If macOS reports an unidentified developer:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "xattr -dr com.apple.quarantine ~/velamq/velamqd-0.0.1-macos-aarch64\nchmod +x ~/velamq/velamqd-0.0.1-macos-aarch64/bin/velamqd"
+          },
+          {
+            "type": "paragraph",
+            "text": "Check occupied ports:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "lsof -nP -iTCP:8080 -sTCP:LISTEN\nlsof -nP -iTCP:1883 -sTCP:LISTEN"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open `http://127.0.0.1:8080/` after startup."
           }
         ]
       },
-      "install/quick-start": {
-        "id": "install/quick-start",
-        "title": "Quick Start",
-        "summary": "Use this guide for first-time VelaMQ evaluation, testing, and single-node deployment. Download the package that matches your operating system, start the service, initialize the administrator account, and create the first MQTT listener from the console.",
-        "sourcePath": "install/quick-start.md",
+      "install/package": {
+        "id": "install/package",
+        "title": "Package Downloads",
+        "summary": "VelaMQ provides portable zip packages for Linux, macOS, and Windows. Select the file matching your operating system and CPU architecture, then follow the dedicated platform guide.",
+        "sourcePath": "install/package.md",
         "headings": [
           {
-            "id": "when-to-use-this-guide",
+            "id": "current-version",
             "level": 2,
-            "text": "When to use this guide"
+            "text": "Current version"
           },
           {
-            "id": "1-choose-a-package",
+            "id": "select-a-package",
             "level": 2,
-            "text": "1. Choose a package"
+            "text": "Select a package"
           },
           {
-            "id": "2-download-and-extract",
+            "id": "platform-guides",
             "level": 2,
-            "text": "2. Download and extract"
+            "text": "Platform guides"
           },
           {
-            "id": "3-start-the-service",
+            "id": "package-layout",
             "level": 2,
-            "text": "3. Start the service"
-          },
-          {
-            "id": "4-open-required-ports",
-            "level": 2,
-            "text": "4. Open required ports"
-          },
-          {
-            "id": "5-create-the-first-mqtt-listener",
-            "level": 2,
-            "text": "5. Create the first MQTT listener"
-          },
-          {
-            "id": "6-verify-publish-and-subscribe",
-            "level": 2,
-            "text": "6. Verify publish and subscribe"
-          },
-          {
-            "id": "7-validate-in-the-console",
-            "level": 2,
-            "text": "7. Validate in the console"
-          },
-          {
-            "id": "8-troubleshooting",
-            "level": 2,
-            "text": "8. Troubleshooting"
-          },
-          {
-            "id": "macos-blocks-the-executable",
-            "level": 3,
-            "text": "macOS blocks the executable"
-          },
-          {
-            "id": "linux-permission-denied",
-            "level": 3,
-            "text": "Linux permission denied"
-          },
-          {
-            "id": "port-already-in-use",
-            "level": 3,
-            "text": "Port already in use"
+            "text": "Package layout"
           }
         ],
         "blocks": [
           {
-            "type": "heading",
-            "id": "when-to-use-this-guide",
-            "level": 2,
-            "text": "When to use this guide"
-          },
-          {
             "type": "paragraph",
-            "text": "Use this guide for first-time VelaMQ evaluation, testing, and single-node deployment. Download the package that matches your operating system, start the service, initialize the administrator account, and create the first MQTT listener from the console."
+            "text": "VelaMQ provides portable zip packages for Linux, macOS, and Windows. Select the file matching your operating system and CPU architecture, then follow the dedicated platform guide."
           },
           {
             "type": "heading",
-            "id": "1-choose-a-package",
+            "id": "current-version",
             "level": 2,
-            "text": "1. Choose a package"
+            "text": "Current version"
           },
           {
             "type": "paragraph",
-            "text": "Select the package for your operating system and CPU architecture:"
+            "text": "The current public package version is `0.0.1`."
+          },
+          {
+            "type": "heading",
+            "id": "select-a-package",
+            "level": 2,
+            "text": "Select a package"
           },
           {
             "type": "table",
             "headers": [
-              "Platform",
-              "Target machine",
-              "Download URL"
+              "Operating system",
+              "CPU architecture",
+              "Package"
             ],
             "rows": [
               [
-                "macOS Apple Silicon",
-                "M1 / M2 / M3 / M4",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
+                "Linux",
+                "x86_64 (Intel / AMD)",
+                "[velamqd-0.0.1-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip)"
               ],
               [
-                "macOS Intel",
-                "Intel Mac",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
+                "Linux",
+                "ARM64 / aarch64",
+                "[velamqd-0.0.1-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip)"
               ],
               [
-                "Linux ARM64",
-                "ARM servers and ARM cloud hosts",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
+                "macOS",
+                "Apple Silicon",
+                "[velamqd-0.0.1-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip)"
               ],
               [
-                "Linux x86_64",
-                "Intel / AMD Linux servers",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
+                "macOS",
+                "Intel",
+                "[velamqd-0.0.1-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip)"
               ],
               [
-                "Windows x86_64",
-                "Windows 10/11 and Windows Server",
-                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
+                "Windows",
+                "x86_64",
+                "[velamqd-0.0.1-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip)"
               ]
             ]
           },
           {
             "type": "paragraph",
-            "text": "Check the current CPU architecture:"
+            "text": "Linux musl packages have few runtime dependencies and work well on servers, container hosts, and edge nodes. Check the machine architecture with:"
           },
           {
             "type": "code",
@@ -24225,7 +24223,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "Windows PowerShell:"
+            "text": "On Windows PowerShell:"
           },
           {
             "type": "code",
@@ -24234,118 +24232,165 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "2-download-and-extract",
+            "id": "platform-guides",
             "level": 2,
-            "text": "2. Download and extract"
+            "text": "Platform guides"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Platform",
+              "Typical use",
+              "Guide"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "Servers, edge hosts, and systemd production deployments",
+                "[Linux installation and service management](./linux)"
+              ],
+              [
+                "macOS",
+                "Apple Silicon / Intel local evaluation and development",
+                "[macOS installation and service management](./macos)"
+              ],
+              [
+                "Windows",
+                "Windows 10/11 and Windows Server",
+                "[Windows installation and service management](./windows)"
+              ]
+            ]
           },
           {
             "type": "paragraph",
-            "text": "macOS Apple Silicon:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "mkdir -p ~/velamq && cd ~/velamq\ncurl -L -o velamqd-0.0.1-macos-aarch64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64"
-          },
-          {
-            "type": "paragraph",
-            "text": "Linux x86_64:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -o velamqd-0.0.1-linux-musl-x86_64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64"
-          },
-          {
-            "type": "paragraph",
-            "text": "Windows PowerShell:"
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64"
+            "text": "After installing, continue with the [Quick Start](./quick-start) to create an MQTT listener and verify message flow."
           },
           {
             "type": "heading",
-            "id": "3-start-the-service",
+            "id": "package-layout",
             "level": 2,
-            "text": "3. Start the service"
+            "text": "Package layout"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Path",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "`bin/velamqd`, `bin/velamqd.exe`",
+                "VelaMQ server binary"
+              ],
+              [
+                "`config.toml`",
+                "Default startup configuration"
+              ],
+              [
+                "`static/`",
+                "Management console assets"
+              ],
+              [
+                "`sql/`",
+                "Initialization or upgrade SQL resources"
+              ],
+              [
+                "`deploy/`",
+                "Start, stop, status, logs, update, and systemd scripts"
+              ],
+              [
+                "`README.md`",
+                "Package notes"
+              ]
+            ]
           },
           {
             "type": "paragraph",
-            "text": "macOS / Linux:"
+            "text": "Do not overwrite an existing version directory in production. Extract each version into its own directory and switch versions through the `current` symlink. See the [Linux guide](./linux) for the complete workflow."
+          }
+        ]
+      },
+      "install/quick-start": {
+        "id": "install/quick-start",
+        "title": "Quick Start",
+        "summary": "This guide covers the common workflow after VelaMQ is running. Use the dedicated operating-system guide for downloads, installation, service management, and upgrades.",
+        "sourcePath": "install/quick-start.md",
+        "headings": [
+          {
+            "id": "1-select-an-operating-system",
+            "level": 2,
+            "text": "1. Select an operating system"
           },
           {
-            "type": "code",
-            "language": "bash",
-            "code": "chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
+            "id": "2-open-the-management-console",
+            "level": 2,
+            "text": "2. Open the management console"
+          },
+          {
+            "id": "3-create-an-mqtt-listener",
+            "level": 2,
+            "text": "3. Create an MQTT listener"
+          },
+          {
+            "id": "4-verify-publish-and-subscribe",
+            "level": 2,
+            "text": "4. Verify publish and subscribe"
+          },
+          {
+            "id": "5-pre-production-checklist",
+            "level": 2,
+            "text": "5. Pre-production checklist"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This guide covers the common workflow after VelaMQ is running. Use the dedicated operating-system guide for downloads, installation, service management, and upgrades."
+          },
+          {
+            "type": "heading",
+            "id": "1-select-an-operating-system",
+            "level": 2,
+            "text": "1. Select an operating system"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Operating system",
+              "Installation guide",
+              "Recommended use"
+            ],
+            "rows": [
+              [
+                "Linux",
+                "[Linux installation and service management](./linux)",
+                "Servers, edge hosts, and production"
+              ],
+              [
+                "macOS",
+                "[macOS installation and service management](./macos)",
+                "Local evaluation, development, and demos"
+              ],
+              [
+                "Windows",
+                "[Windows installation and service management](./windows)",
+                "Windows evaluation and servers"
+              ]
+            ]
           },
           {
             "type": "paragraph",
-            "text": "To start with an explicit config file:"
+            "text": "See [Package Downloads](./package) for all public files and CPU architecture details."
           },
           {
-            "type": "code",
-            "language": "bash",
-            "code": "VELAMQ_CONFIG_FILE=./config.toml ./bin/velamqd"
-          },
-          {
-            "type": "paragraph",
-            "text": "For Linux servers, use systemd to manage startup, automatic restart, and journald logs. The following example assumes the package is installed at `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.1-linux-musl-x86_64"
+            "type": "heading",
+            "id": "2-open-the-management-console",
+            "level": 2,
+            "text": "2. Open the management console"
           },
           {
             "type": "paragraph",
-            "text": "Create `/etc/systemd/system/velamq.service`:"
-          },
-          {
-            "type": "code",
-            "language": "ini",
-            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nEnvironment=VELAMQ_CONFIG_FILE=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml\nExecStart=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\n\n[Install]\nWantedBy=multi-user.target"
-          },
-          {
-            "type": "paragraph",
-            "text": "Start the service and enable it on boot:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
-          },
-          {
-            "type": "paragraph",
-            "text": "Follow logs:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo journalctl -u velamq -f"
-          },
-          {
-            "type": "paragraph",
-            "text": "Windows PowerShell:"
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": ".\\deploy\\start.bat"
-          },
-          {
-            "type": "paragraph",
-            "text": "To start with an explicit config file:"
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": "$env:VELAMQ_CONFIG_FILE=\".\\config.toml\"\n.\\bin\\velamqd.exe"
-          },
-          {
-            "type": "paragraph",
-            "text": "Open the console after the service starts:"
+            "text": "After starting the service, open:"
           },
           {
             "type": "code",
@@ -24354,67 +24399,23 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "If no console user exists, VelaMQ opens the administrator setup page. Use a strong password and keep the administrator account safe."
+            "text": "For remote deployments, replace `127.0.0.1` with the server IP or domain name and allow access through the firewall, cloud security group, and reverse proxy. The console prompts you to create an administrator when no user exists."
           },
           {
             "type": "heading",
-            "id": "4-open-required-ports",
+            "id": "3-create-an-mqtt-listener",
             "level": 2,
-            "text": "4. Open required ports"
+            "text": "3. Create an MQTT listener"
           },
           {
             "type": "paragraph",
-            "text": "An evaluation environment usually needs:"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "Port",
-              "Purpose"
-            ],
-            "rows": [
-              [
-                "`8080`",
-                "Management console and HTTP API"
-              ],
-              [
-                "`1883`",
-                "MQTT TCP listener"
-              ],
-              [
-                "`8083`",
-                "MQTT WebSocket listener, if enabled"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "Linux firewall example:"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "sudo ufw allow 8080/tcp\nsudo ufw allow 1883/tcp"
-          },
-          {
-            "type": "paragraph",
-            "text": "For production, keep the console on a private network or behind a gateway, and enable HTTPS through a reverse proxy."
-          },
-          {
-            "type": "heading",
-            "id": "5-create-the-first-mqtt-listener",
-            "level": 2,
-            "text": "5. Create the first MQTT listener"
-          },
-          {
-            "type": "paragraph",
-            "text": "Open the console, go to \"Listeners\", and create a TCP listener:"
+            "text": "Open **Listeners** in the console and add a TCP listener:"
           },
           {
             "type": "table",
             "headers": [
               "Field",
-              "Recommended value"
+              "Suggested value"
             ],
             "rows": [
               [
@@ -24435,27 +24436,27 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               ],
               [
                 "TLS",
-                "Disabled for evaluation, enabled for production"
+                "Optional for evaluation; recommended for production"
               ],
               [
                 "Enabled",
-                "On"
+                "Yes"
               ]
             ]
           },
           {
             "type": "paragraph",
-            "text": "After saving, the broker reloads listeners."
+            "text": "The broker refreshes the listener after the configuration is saved."
           },
           {
             "type": "heading",
-            "id": "6-verify-publish-and-subscribe",
+            "id": "4-verify-publish-and-subscribe",
             "level": 2,
-            "text": "6. Verify publish and subscribe"
+            "text": "4. Verify publish and subscribe"
           },
           {
             "type": "paragraph",
-            "text": "Install `mosquitto-clients`, then subscribe:"
+            "text": "After installing `mosquitto-clients`, subscribe in one terminal:"
           },
           {
             "type": "code",
@@ -24464,7 +24465,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "Open another terminal and publish:"
+            "text": "Publish from another terminal:"
           },
           {
             "type": "code",
@@ -24473,83 +24474,214 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "If the subscriber receives the JSON payload, the MQTT path is working."
+            "text": "Receiving the JSON message confirms that the MQTT connection path works."
           },
           {
             "type": "heading",
-            "id": "7-validate-in-the-console",
+            "id": "5-pre-production-checklist",
             "level": 2,
-            "text": "7. Validate in the console"
-          },
-          {
-            "type": "paragraph",
-            "text": "After message verification, check:"
+            "text": "5. Pre-production checklist"
           },
           {
             "type": "list",
             "ordered": false,
             "items": [
-              "Dashboard: connection count, message count, and service health.",
-              "Connections: online MQTT clients, protocol version, and session details.",
-              "Metrics: connection, throughput, latency, rule, authentication, and ACL metrics.",
-              "Authentication and ACL: configure accounts, certificates, or access control for production.",
-              "Data sources and rules: route device events to business systems, databases, message queues, or Webhooks."
+              "Confirm connection count, message counters, and service health on the dashboard.",
+              "Inspect online clients, protocol versions, and sessions.",
+              "Check connection, throughput, latency, rule, and authentication metrics.",
+              "Configure accounts, certificates, and ACL policies for production.",
+              "Route device events to business systems, databases, queues, or webhooks.",
+              "Keep the management console on a private network or behind an HTTPS gateway."
             ]
           },
           {
-            "type": "heading",
-            "id": "8-troubleshooting",
+            "type": "paragraph",
+            "text": "Continue with [Configuration](./config), [Device Authentication and ACL](../guide/auth-acl), and the [Rule Engine](../guide/rule-engine/overview.md)."
+          }
+        ]
+      },
+      "install/windows": {
+        "id": "install/windows",
+        "title": "Windows Installation and Service Management",
+        "summary": "This page covers Windows 10, Windows 11, and Windows Server x86_64 using PowerShell.",
+        "sourcePath": "install/windows.md",
+        "headings": [
+          {
+            "id": "1-check-the-architecture",
             "level": 2,
-            "text": "8. Troubleshooting"
+            "text": "1. Check the architecture"
+          },
+          {
+            "id": "2-download-and-extract",
+            "level": 2,
+            "text": "2. Download and extract"
+          },
+          {
+            "id": "3-start-velamq",
+            "level": 2,
+            "text": "3. Start VelaMQ"
+          },
+          {
+            "id": "4-background-mode-and-stop",
+            "level": 2,
+            "text": "4. Background mode and stop"
+          },
+          {
+            "id": "5-windows-firewall",
+            "level": 2,
+            "text": "5. Windows Firewall"
+          },
+          {
+            "id": "6-upgrade",
+            "level": 2,
+            "text": "6. Upgrade"
+          },
+          {
+            "id": "7-verification-and-troubleshooting",
+            "level": 2,
+            "text": "7. Verification and troubleshooting"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "This page covers Windows 10, Windows 11, and Windows Server x86_64 using PowerShell."
           },
           {
             "type": "heading",
-            "id": "macos-blocks-the-executable",
-            "level": 3,
-            "text": "macOS blocks the executable"
-          },
-          {
-            "type": "paragraph",
-            "text": "If macOS reports that the package cannot be opened, grant execute permission and remove quarantine attributes:"
+            "id": "1-check-the-architecture",
+            "level": 2,
+            "text": "1. Check the architecture"
           },
           {
             "type": "code",
-            "language": "bash",
-            "code": "chmod +x ./bin/velamqd ./deploy/start.sh\nxattr -dr com.apple.quarantine .\n./deploy/start.sh"
+            "language": "powershell",
+            "code": "$env:PROCESSOR_ARCHITECTURE"
+          },
+          {
+            "type": "paragraph",
+            "text": "The public package supports `AMD64` / x86_64:"
+          },
+          {
+            "type": "paragraph",
+            "text": "[Download velamqd-0.0.1-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip)"
           },
           {
             "type": "heading",
-            "id": "linux-permission-denied",
-            "level": 3,
-            "text": "Linux permission denied"
-          },
-          {
-            "type": "paragraph",
-            "text": "Make sure the current user can read and write the installation directory, or install under your home directory:"
+            "id": "2-download-and-extract",
+            "level": 2,
+            "text": "2. Download and extract"
           },
           {
             "type": "code",
-            "language": "bash",
-            "code": "mkdir -p ~/velamq"
+            "language": "powershell",
+            "code": "New-Item -ItemType Directory -Force C:\\velamq | Out-Null\nSet-Location C:\\velamq\nInvoke-WebRequest `\n  -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip `\n  -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive `\n  .\\velamqd-0.0.1-windows-x86_64.zip `\n  -DestinationPath .\\velamqd-0.0.1-windows-x86_64\nSet-Location .\\velamqd-0.0.1-windows-x86_64"
           },
           {
             "type": "heading",
-            "id": "port-already-in-use",
-            "level": 3,
-            "text": "Port already in use"
-          },
-          {
-            "type": "paragraph",
-            "text": "Check occupied ports:"
+            "id": "3-start-velamq",
+            "level": 2,
+            "text": "3. Start VelaMQ"
           },
           {
             "type": "code",
-            "language": "bash",
-            "code": "lsof -i :8080\nlsof -i :1883"
+            "language": "powershell",
+            "code": ".\\deploy\\start.bat"
           },
           {
             "type": "paragraph",
-            "text": "Edit `config.toml` and restart the service if you need to change ports."
+            "text": "Use a custom configuration file when needed:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$env:VELAMQ_CONFIG_FILE=\"C:\\velamq\\config.toml\"\n.\\bin\\velamqd.exe"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keep the PowerShell window open. Press `Ctrl+C` to stop the process."
+          },
+          {
+            "type": "heading",
+            "id": "4-background-mode-and-stop",
+            "level": 2,
+            "text": "4. Background mode and stop"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$package = \"C:\\velamq\\velamqd-0.0.1-windows-x86_64\"\n$env:VELAMQ_CONFIG_FILE = \"$package\\config.toml\"\n$process = Start-Process `\n  -FilePath \"$package\\bin\\velamqd.exe\" `\n  -WorkingDirectory $package `\n  -PassThru\n$process.Id | Set-Content \"$package\\velamqd.pid\""
+          },
+          {
+            "type": "paragraph",
+            "text": "Check status and stop:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$pidValue = Get-Content .\\velamqd.pid\nGet-Process -Id $pidValue\nStop-Process -Id $pidValue\nRemove-Item .\\velamqd.pid -ErrorAction SilentlyContinue"
+          },
+          {
+            "type": "heading",
+            "id": "5-windows-firewall",
+            "level": 2,
+            "text": "5. Windows Firewall"
+          },
+          {
+            "type": "paragraph",
+            "text": "Run PowerShell as Administrator:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "New-NetFirewallRule -DisplayName \"VelaMQ Console\" -Direction Inbound -Protocol TCP -LocalPort 8080 -Action Allow\nNew-NetFirewallRule -DisplayName \"VelaMQ MQTT\" -Direction Inbound -Protocol TCP -LocalPort 1883 -Action Allow"
+          },
+          {
+            "type": "paragraph",
+            "text": "Do not expose the management console directly to the public Internet in production."
+          },
+          {
+            "type": "heading",
+            "id": "6-upgrade",
+            "level": 2,
+            "text": "6. Upgrade"
+          },
+          {
+            "type": "paragraph",
+            "text": "Extract the new version into a separate directory and preserve the configuration:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "Set-Location C:\\velamq\nInvoke-WebRequest `\n  -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-windows-x86_64.zip `\n  -OutFile velamqd-0.0.2-windows-x86_64.zip\nExpand-Archive `\n  .\\velamqd-0.0.2-windows-x86_64.zip `\n  -DestinationPath .\\velamqd-0.0.2-windows-x86_64\nCopy-Item `\n  .\\velamqd-0.0.1-windows-x86_64\\config.toml `\n  .\\velamqd-0.0.2-windows-x86_64\\config.toml -Force"
+          },
+          {
+            "type": "paragraph",
+            "text": "Stop the old process and launch the new version:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "Set-Location C:\\velamq\\velamqd-0.0.2-windows-x86_64\n.\\deploy\\start.bat"
+          },
+          {
+            "type": "paragraph",
+            "text": "Keep the old directory until verification completes. To roll back, stop the new process and run `deploy\\start.bat` from the old directory."
+          },
+          {
+            "type": "heading",
+            "id": "7-verification-and-troubleshooting",
+            "level": 2,
+            "text": "7. Verification and troubleshooting"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "Invoke-WebRequest http://127.0.0.1:8080/ -UseBasicParsing\nGet-NetTCPConnection -LocalPort 8080,1883 -ErrorAction SilentlyContinue"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open `http://127.0.0.1:8080/` after startup."
           }
         ]
       },

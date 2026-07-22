@@ -7902,6 +7902,7 @@ textarea::placeholder {
 
 .docs-page--manual .docs-article {
   max-width: 890px;
+  scroll-margin-top: 88px;
 }
 
 .docs-page--manual .docs-article h2 {

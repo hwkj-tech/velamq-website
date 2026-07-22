@@ -10028,8 +10028,17 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               "`config.toml`：默认配置文件。",
               "`static/`：管理控制台静态资源。",
               "`sql/`：初始化或升级所需 SQL 资源。",
-              "`start.sh`：macOS / Linux 启动脚本。",
-              "`start.bat`：Windows 启动脚本。",
+              "`deploy/`：部署与服务管理脚本目录。",
+              "`deploy/start.sh`：macOS / Linux 前台启动脚本。",
+              "`deploy/start.bat`：Windows 前台启动脚本。",
+              "`deploy/install-systemd.sh`：Linux systemd 服务安装脚本。",
+              "`deploy/stop.sh`：Linux systemd 停止脚本。",
+              "`deploy/restart.sh`：Linux systemd 重启脚本。",
+              "`deploy/status.sh`：Linux systemd 状态查看脚本。",
+              "`deploy/logs.sh`：Linux systemd 日志查看脚本。",
+              "`deploy/update.sh`：Linux systemd 版本更新脚本。",
+              "`deploy/uninstall-systemd.sh`：Linux systemd 服务卸载脚本。",
+              "`deploy/systemd/`：systemd unit 模板与说明。",
               "`README.md`：安装包说明。"
             ]
           },
@@ -10046,7 +10055,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./start.sh bin/velamqd\n./start.sh"
+            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
           },
           {
             "type": "paragraph",
@@ -10055,7 +10064,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./start.sh bin/velamqd\n./start.sh"
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
           },
           {
             "type": "heading",
@@ -10070,7 +10079,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "powershell",
-            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\start.bat"
+            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\deploy\\start.bat"
           },
           {
             "type": "heading",
@@ -10130,6 +10139,51 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "paragraph",
             "text": "以下示例假设安装包已经解压到 `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`。"
+          },
+          {
+            "type": "paragraph",
+            "text": "安装包内所有服务操作脚本都在 `deploy/` 目录下，生产环境优先使用这些脚本，避免把启动、停止、更新脚本散放在安装包根目录。"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "脚本",
+              "用途"
+            ],
+            "rows": [
+              [
+                "`deploy/install-systemd.sh --enable-now`",
+                "安装 systemd 服务、创建 `/opt/velamq/current` 软链接并立即启动"
+              ],
+              [
+                "`deploy/start.sh`",
+                "不安装 systemd 时，直接以前台方式启动当前安装包"
+              ],
+              [
+                "`deploy/stop.sh`",
+                "停止 systemd 服务"
+              ],
+              [
+                "`deploy/restart.sh`",
+                "重启 systemd 服务并显示状态"
+              ],
+              [
+                "`deploy/status.sh`",
+                "查看 systemd 服务状态"
+              ],
+              [
+                "`deploy/logs.sh`",
+                "跟踪 systemd 服务日志"
+              ],
+              [
+                "`deploy/update.sh NEW_VERSION_DIR`",
+                "切换 `/opt/velamq/current` 到新版本并重启服务"
+              ],
+              [
+                "`deploy/uninstall-systemd.sh`",
+                "停止、禁用并删除 systemd 服务"
+              ]
+            ]
           },
           {
             "type": "heading",
@@ -10194,6 +10248,25 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
+            "id": "使用部署脚本安装服务",
+            "level": 4,
+            "text": "使用部署脚本安装服务"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果安装包已经放在 `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`，推荐直接使用内置脚本安装："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now\nsudo ./deploy/status.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "安装脚本会把 `/opt/velamq/current` 指向当前安装包，并让 systemd 固定使用 `/opt/velamq/current`。后续更新只需要切换 `current` 软链接并重启服务。"
+          },
+          {
+            "type": "heading",
             "id": "创建-systemd-服务",
             "level": 4,
             "text": "创建 systemd 服务"
@@ -10243,6 +10316,15 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "sudo journalctl -u velamq -f\nsudo journalctl -u velamq --since \"1 hour ago\"\nsudo journalctl -u velamq -n 200 --no-pager"
+          },
+          {
+            "type": "paragraph",
+            "text": "也可以使用安装包内脚本："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/current\nsudo ./deploy/status.sh\nsudo ./deploy/logs.sh\nsudo ./deploy/stop.sh\nsudo ./deploy/restart.sh"
           },
           {
             "type": "heading",
@@ -10300,6 +10382,15 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "sudo ln -sfn /opt/velamq/velamqd-0.0.2-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl start velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "也可以使用内置更新脚本完成切换和重启："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/current\nsudo ./deploy/update.sh /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
           },
           {
             "type": "paragraph",
@@ -10575,7 +10666,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "chmod +x ./start.sh bin/velamqd\n./start.sh"
+            "code": "chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
           },
           {
             "type": "paragraph",
@@ -10629,7 +10720,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "powershell",
-            "code": ".\\start.bat"
+            "code": ".\\deploy\\start.bat"
           },
           {
             "type": "paragraph",
@@ -10812,7 +10903,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "chmod +x ./bin/velamqd ./start.sh\nxattr -dr com.apple.quarantine .\n./start.sh"
+            "code": "chmod +x ./bin/velamqd ./deploy/start.sh\nxattr -dr com.apple.quarantine .\n./deploy/start.sh"
           },
           {
             "type": "heading",
@@ -12133,7 +12224,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./start.sh"
+            "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./deploy/start.sh"
           },
           {
             "type": "paragraph",
@@ -23485,8 +23576,17 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               "`config.toml`: default configuration file.",
               "`static/`: management console static assets.",
               "`sql/`: initialization or migration SQL resources.",
-              "`start.sh`: macOS / Linux startup script.",
-              "`start.bat`: Windows startup script.",
+              "`deploy/`: deployment and service-management scripts.",
+              "`deploy/start.sh`: macOS / Linux foreground startup script.",
+              "`deploy/start.bat`: Windows foreground startup script.",
+              "`deploy/install-systemd.sh`: Linux systemd service installer.",
+              "`deploy/stop.sh`: Linux systemd stop script.",
+              "`deploy/restart.sh`: Linux systemd restart script.",
+              "`deploy/status.sh`: Linux systemd status script.",
+              "`deploy/logs.sh`: Linux systemd log-following script.",
+              "`deploy/update.sh`: Linux systemd version update script.",
+              "`deploy/uninstall-systemd.sh`: Linux systemd service uninstaller.",
+              "`deploy/systemd/`: systemd unit templates and notes.",
               "`README.md`: package notes."
             ]
           },
@@ -23503,7 +23603,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./start.sh bin/velamqd\n./start.sh"
+            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
           },
           {
             "type": "paragraph",
@@ -23512,7 +23612,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./start.sh bin/velamqd\n./start.sh"
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
           },
           {
             "type": "heading",
@@ -23527,7 +23627,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "powershell",
-            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\start.bat"
+            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\deploy\\start.bat"
           },
           {
             "type": "heading",
@@ -23587,6 +23687,51 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "paragraph",
             "text": "The following example assumes the package is extracted to `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`."
+          },
+          {
+            "type": "paragraph",
+            "text": "All package service-operation scripts live under `deploy/`. In production, prefer these scripts so startup, shutdown, and update operations are not scattered in the package root."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Script",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "`deploy/install-systemd.sh --enable-now`",
+                "Install the systemd service, create the `/opt/velamq/current` symlink, and start immediately"
+              ],
+              [
+                "`deploy/start.sh`",
+                "Start the current package in the foreground without installing systemd"
+              ],
+              [
+                "`deploy/stop.sh`",
+                "Stop the systemd service"
+              ],
+              [
+                "`deploy/restart.sh`",
+                "Restart the systemd service and show status"
+              ],
+              [
+                "`deploy/status.sh`",
+                "Show systemd service status"
+              ],
+              [
+                "`deploy/logs.sh`",
+                "Follow systemd service logs"
+              ],
+              [
+                "`deploy/update.sh NEW_PACKAGE_DIR`",
+                "Switch `/opt/velamq/current` to a new version and restart the service"
+              ],
+              [
+                "`deploy/uninstall-systemd.sh`",
+                "Stop, disable, and remove the systemd service"
+              ]
+            ]
           },
           {
             "type": "heading",
@@ -23651,6 +23796,25 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
+            "id": "install-the-service-with-package-scripts",
+            "level": 4,
+            "text": "Install the service with package scripts"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the package is already placed at `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`, install it with the built-in script:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now\nsudo ./deploy/status.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "The installer points `/opt/velamq/current` to the current package and makes systemd use `/opt/velamq/current`. Later upgrades only need to switch the `current` symlink and restart the service."
+          },
+          {
+            "type": "heading",
             "id": "create-the-systemd-service",
             "level": 4,
             "text": "Create the systemd service"
@@ -23700,6 +23864,15 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "sudo journalctl -u velamq -f\nsudo journalctl -u velamq --since \"1 hour ago\"\nsudo journalctl -u velamq -n 200 --no-pager"
+          },
+          {
+            "type": "paragraph",
+            "text": "Or use the package scripts:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/current\nsudo ./deploy/status.sh\nsudo ./deploy/logs.sh\nsudo ./deploy/stop.sh\nsudo ./deploy/restart.sh"
           },
           {
             "type": "heading",
@@ -23757,6 +23930,15 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "sudo ln -sfn /opt/velamq/velamqd-0.0.2-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl start velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "You can also use the built-in update script:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq/current\nsudo ./deploy/update.sh /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
           },
           {
             "type": "paragraph",
@@ -24032,7 +24214,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "chmod +x ./start.sh bin/velamqd\n./start.sh"
+            "code": "chmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
           },
           {
             "type": "paragraph",
@@ -24086,7 +24268,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "powershell",
-            "code": ".\\start.bat"
+            "code": ".\\deploy\\start.bat"
           },
           {
             "type": "paragraph",
@@ -24269,7 +24451,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "chmod +x ./bin/velamqd ./start.sh\nxattr -dr com.apple.quarantine .\n./start.sh"
+            "code": "chmod +x ./bin/velamqd ./deploy/start.sh\nxattr -dr com.apple.quarantine .\n./deploy/start.sh"
           },
           {
             "type": "heading",
@@ -25544,7 +25726,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./start.sh"
+            "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./deploy/start.sh"
           },
           {
             "type": "paragraph",

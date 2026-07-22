@@ -249,6 +249,8 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 4, name: '服务更新' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 4, name: '回滚版本' })).toBeInTheDocument()
     expect(screen.getAllByText(/sudo systemctl enable --now velamq/).length).toBeGreaterThan(0)
+    expect(screen.getByText('deploy/update.sh NEW_VERSION_DIR')).toBeInTheDocument()
+    expect(screen.getAllByText(/sudo \.\/deploy\/restart\.sh/).length).toBeGreaterThan(0)
 
     await user.click(screen.getByRole('button', { name: '展开 规则引擎' }))
     await user.click(screen.getByRole('button', { name: '规则引擎总览' }))

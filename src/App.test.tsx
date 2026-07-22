@@ -249,7 +249,9 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 4, name: '服务更新' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 4, name: '回滚版本' })).toBeInTheDocument()
     expect(screen.getAllByText(/sudo systemctl enable --now velamq/).length).toBeGreaterThan(0)
-    expect(screen.getByText('deploy/update.sh NEW_VERSION_DIR')).toBeInTheDocument()
+    expect(screen.getByText('deploy/update.sh NEW_PACKAGE_DIR')).toBeInTheDocument()
+    expect(screen.getByText(/macOS 本地脚本会在安装目录下创建/)).toBeInTheDocument()
+    expect(screen.getByText(/它的更新逻辑是/)).toBeInTheDocument()
     expect(screen.getAllByText(/sudo \.\/deploy\/restart\.sh/).length).toBeGreaterThan(0)
 
     await user.click(screen.getByRole('button', { name: '展开 规则引擎' }))

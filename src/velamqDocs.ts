@@ -10029,14 +10029,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               "`static/`：管理控制台静态资源。",
               "`sql/`：初始化或升级所需 SQL 资源。",
               "`deploy/`：部署与服务管理脚本目录。",
-              "`deploy/start.sh`：macOS / Linux 前台启动脚本。",
+              "`deploy/start.sh`：macOS / Linux 启动脚本，默认后台运行并写入 pid/log；传入 `--foreground` 可前台运行。",
               "`deploy/start.bat`：Windows 前台启动脚本。",
               "`deploy/install-systemd.sh`：Linux systemd 服务安装脚本。",
-              "`deploy/stop.sh`：Linux systemd 停止脚本。",
-              "`deploy/restart.sh`：Linux systemd 重启脚本。",
-              "`deploy/status.sh`：Linux systemd 状态查看脚本。",
-              "`deploy/logs.sh`：Linux systemd 日志查看脚本。",
-              "`deploy/update.sh`：Linux systemd 版本更新脚本。",
+              "`deploy/stop.sh`：macOS / Linux 停止脚本；Linux 已安装 systemd 服务时自动执行 `systemctl stop`。",
+              "`deploy/restart.sh`：macOS / Linux 重启脚本；Linux 已安装 systemd 服务时自动执行 `systemctl restart`。",
+              "`deploy/status.sh`：macOS / Linux 状态查看脚本；Linux 已安装 systemd 服务时自动执行 `systemctl status`。",
+              "`deploy/logs.sh`：macOS / Linux 日志查看脚本；本地模式跟踪 `logs/velamqd.log`，systemd 模式跟踪 `journalctl`。",
+              "`deploy/update.sh`：macOS / Linux 版本更新脚本；切换 `current` 软链接并重启服务。",
               "`deploy/uninstall-systemd.sh`：Linux systemd 服务卸载脚本。",
               "`deploy/systemd/`：systemd unit 模板与说明。",
               "`README.md`：安装包说明。"
@@ -10056,6 +10056,15 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "macOS 本地脚本会在安装目录下创建 `run/velamqd.pid` 和 `logs/velamqd.log`。常用操作："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/status.sh\n./deploy/logs.sh\n./deploy/restart.sh\n./deploy/stop.sh"
           },
           {
             "type": "paragraph",
@@ -10157,33 +10166,56 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               ],
               [
                 "`deploy/start.sh`",
-                "不安装 systemd 时，直接以前台方式启动当前安装包"
+                "不安装 systemd 时，以本地后台进程方式启动当前安装包"
               ],
               [
                 "`deploy/stop.sh`",
-                "停止 systemd 服务"
+                "停止本地进程；如果已安装 systemd 服务则停止 systemd 服务"
               ],
               [
                 "`deploy/restart.sh`",
-                "重启 systemd 服务并显示状态"
+                "重启本地进程；如果已安装 systemd 服务则重启 systemd 服务"
               ],
               [
                 "`deploy/status.sh`",
-                "查看 systemd 服务状态"
+                "查看本地 pid 状态；如果已安装 systemd 服务则查看 systemd 状态"
               ],
               [
                 "`deploy/logs.sh`",
-                "跟踪 systemd 服务日志"
+                "跟踪本地日志；如果已安装 systemd 服务则跟踪 journald 日志"
               ],
               [
-                "`deploy/update.sh NEW_VERSION_DIR`",
-                "切换 `/opt/velamq/current` 到新版本并重启服务"
+                "`deploy/update.sh NEW_PACKAGE_DIR`",
+                "切换 `current` 到新版本安装包目录并重启服务"
               ],
               [
                 "`deploy/uninstall-systemd.sh`",
                 "停止、禁用并删除 systemd 服务"
               ]
             ]
+          },
+          {
+            "type": "paragraph",
+            "text": "`deploy/update.sh` 不会把新版本直接覆盖到旧目录。它的更新逻辑是："
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "校验传入的新版本目录和 `bin/velamqd` 是否存在且可执行。",
+              "备份当前包目录下的 `config.toml` 到安装根目录。",
+              "停止当前本地进程；如果 Linux 已安装 systemd 服务，则停止 systemd 服务。",
+              "把安装根目录下的 `current` 软链接切换到新版本目录，然后从新版本重启服务。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "因此推荐目录结构保持为："
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.2-linux-musl-x86_64\n  velamqd-0.0.1-linux-musl-x86_64/\n  velamqd-0.0.2-linux-musl-x86_64/"
           },
           {
             "type": "heading",
@@ -23577,14 +23609,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               "`static/`: management console static assets.",
               "`sql/`: initialization or migration SQL resources.",
               "`deploy/`: deployment and service-management scripts.",
-              "`deploy/start.sh`: macOS / Linux foreground startup script.",
+              "`deploy/start.sh`: macOS / Linux startup script. It starts in the background and writes pid/log files by default; pass `--foreground` to run in the current terminal.",
               "`deploy/start.bat`: Windows foreground startup script.",
               "`deploy/install-systemd.sh`: Linux systemd service installer.",
-              "`deploy/stop.sh`: Linux systemd stop script.",
-              "`deploy/restart.sh`: Linux systemd restart script.",
-              "`deploy/status.sh`: Linux systemd status script.",
-              "`deploy/logs.sh`: Linux systemd log-following script.",
-              "`deploy/update.sh`: Linux systemd version update script.",
+              "`deploy/stop.sh`: macOS / Linux stop script. On Linux, it uses `systemctl stop` when the systemd service is installed.",
+              "`deploy/restart.sh`: macOS / Linux restart script. On Linux, it uses `systemctl restart` when the systemd service is installed.",
+              "`deploy/status.sh`: macOS / Linux status script. On Linux, it uses `systemctl status` when the systemd service is installed.",
+              "`deploy/logs.sh`: macOS / Linux log-following script. Local mode follows `logs/velamqd.log`; systemd mode follows `journalctl`.",
+              "`deploy/update.sh`: macOS / Linux version update script. It switches the `current` symlink to the new package and restarts the service.",
               "`deploy/uninstall-systemd.sh`: Linux systemd service uninstaller.",
               "`deploy/systemd/`: systemd unit templates and notes.",
               "`README.md`: package notes."
@@ -23604,6 +23636,15 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./deploy/start.sh bin/velamqd\n./deploy/start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "The macOS local scripts create `run/velamqd.pid` and `logs/velamqd.log` under the package directory. Common operations:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "./deploy/status.sh\n./deploy/logs.sh\n./deploy/restart.sh\n./deploy/stop.sh"
           },
           {
             "type": "paragraph",
@@ -23705,33 +23746,56 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               ],
               [
                 "`deploy/start.sh`",
-                "Start the current package in the foreground without installing systemd"
+                "Start the current package as a local background process when systemd is not installed"
               ],
               [
                 "`deploy/stop.sh`",
-                "Stop the systemd service"
+                "Stop the local process, or stop the systemd service if installed"
               ],
               [
                 "`deploy/restart.sh`",
-                "Restart the systemd service and show status"
+                "Restart the local process, or restart the systemd service if installed"
               ],
               [
                 "`deploy/status.sh`",
-                "Show systemd service status"
+                "Show local pid status, or systemd service status if installed"
               ],
               [
                 "`deploy/logs.sh`",
-                "Follow systemd service logs"
+                "Follow local logs, or journald logs if systemd is installed"
               ],
               [
                 "`deploy/update.sh NEW_PACKAGE_DIR`",
-                "Switch `/opt/velamq/current` to a new version and restart the service"
+                "Switch `current` to a new version and restart the service"
               ],
               [
                 "`deploy/uninstall-systemd.sh`",
                 "Stop, disable, and remove the systemd service"
               ]
             ]
+          },
+          {
+            "type": "paragraph",
+            "text": "`deploy/update.sh` does not overwrite the old package directory. Its update flow is:"
+          },
+          {
+            "type": "list",
+            "ordered": true,
+            "items": [
+              "Validate the new package directory and ensure `bin/velamqd` exists and is executable.",
+              "Back up the current package's `config.toml` to the installation root.",
+              "Stop the current local process, or stop the systemd service if it is installed on Linux.",
+              "Switch the `current` symlink in the installation root to the new package directory, then restart from the new version."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Keep the installation layout like this:"
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.2-linux-musl-x86_64\n  velamqd-0.0.1-linux-musl-x86_64/\n  velamqd-0.0.2-linux-musl-x86_64/"
           },
           {
             "type": "heading",

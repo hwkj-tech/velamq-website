@@ -158,6 +158,23 @@ describe('HanNet homepage', () => {
     expect(screen.queryByText('npm create velamq@latest edge-project')).not.toBeInTheDocument()
   })
 
+  it('searches documentation and opens the selected result', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('link', { name: '文档' }))
+
+    const searchbox = screen.getByRole('searchbox', { name: '浏览 VelaMQ 文档、规则、API' })
+    await user.type(searchbox, 'Linux 服务')
+
+    expect(searchbox).toHaveValue('Linux 服务')
+    const result = screen.getByRole('option', { name: /Linux 安装与服务管理/ })
+    await user.click(result)
+
+    expect(screen.getByRole('heading', { level: 3, name: 'Linux 安装与服务管理' })).toBeInTheDocument()
+    expect(searchbox).toHaveValue('')
+  })
+
   it('switches the rendered content between Chinese and English', async () => {
     const user = userEvent.setup()
     render(<App />)

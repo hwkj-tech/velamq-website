@@ -28,6 +28,7 @@ import {
   type ReactNode,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import './App.css'
@@ -67,6 +68,7 @@ const localeOptions: Locale[] = ['zh', 'en']
 const languageMenuId = 'site-language-menu'
 const docsMenuId = 'site-docs-menu'
 const docsVersionMenuId = 'docs-version-menu'
+const docsSearchResultsId = 'docs-search-results'
 const siteAssetBase = import.meta.env.BASE_URL || './'
 
 type ContactFormState = {
@@ -357,6 +359,24 @@ const branchContainsDocument = (branch: DocsNavBranch, documentId: string) => {
   return branch.children.some((entry) => entry.type === 'doc' && entry.id === documentId)
 }
 
+const docsBlockSearchText = (block: VelaMQDocBlock) => {
+  switch (block.type) {
+    case 'heading':
+    case 'paragraph':
+      return block.text
+    case 'list':
+      return block.items.join(' ')
+    case 'code':
+      return block.code
+    case 'table':
+      return [...block.headers, ...block.rows.flat()].join(' ')
+    case 'image':
+      return block.alt
+    case 'video':
+      return block.title
+  }
+}
+
 const resolveDocsLink = (href: string, currentDocumentId: string, docsCatalog: VelaMQDocsCatalog) => {
   if (/^(https?:|mailto:|#)/.test(href)) {
     return undefined
@@ -554,6 +574,8 @@ function App() {
   const [isDocsMenuOpen, setIsDocsMenuOpen] = useState(false)
   const [isDocsVersionMenuOpen, setIsDocsVersionMenuOpen] = useState(false)
   const [expandedDocsBranches, setExpandedDocsBranches] = useState<string[]>([])
+  const [docsSearchQuery, setDocsSearchQuery] = useState('')
+  const docsSearchInputRef = useRef<HTMLInputElement>(null)
 
   const copy = translations[locale]
   const docsCatalogs = useMemo<Record<ProductId, VelaMQDocsCatalog>>(
@@ -587,6 +609,44 @@ function App() {
     () => docsCatalog.documents[activeDocsTopic] ?? docsCatalog.documents[docsCatalog.defaultDocumentId],
     [activeDocsTopic, docsCatalog.defaultDocumentId, docsCatalog.documents],
   )
+  const docsSearchResults = useMemo(() => {
+    const query = docsSearchQuery.trim().toLocaleLowerCase()
+
+    if (!query) {
+      return []
+    }
+
+    const terms = query.split(/\s+/).filter(Boolean)
+
+    return Object.values(docsCatalog.documents)
+      .map((document) => {
+        const title = document.title.toLocaleLowerCase()
+        const summary = document.summary.toLocaleLowerCase()
+        const sourcePath = document.sourcePath.toLocaleLowerCase()
+        const content = document.blocks.map(docsBlockSearchText).join(' ').toLocaleLowerCase()
+        const searchableText = `${title} ${summary} ${sourcePath} ${content}`
+        let score = 5
+
+        if (!terms.every((term) => searchableText.includes(term))) {
+          score = -1
+        } else if (title === query) {
+          score = 0
+        } else if (title.startsWith(query)) {
+          score = 1
+        } else if (terms.every((term) => title.includes(term))) {
+          score = 2
+        } else if (terms.every((term) => summary.includes(term))) {
+          score = 3
+        } else if (terms.every((term) => sourcePath.includes(term))) {
+          score = 4
+        }
+
+        return { document, score }
+      })
+      .filter((result) => result.score >= 0)
+      .sort((left, right) => left.score - right.score || left.document.title.localeCompare(right.document.title))
+      .slice(0, 8)
+  }, [docsCatalog.documents, docsSearchQuery])
   const docsNavGroups = useMemo(() => buildDocsNavGroups(docsCatalog), [docsCatalog])
   const activeDocsBranchKeys = useMemo(() => {
     const keys = new Set<string>()
@@ -642,6 +702,20 @@ function App() {
       return
     }
   }, [copy.lang, locale])
+
+  useEffect(() => {
+    const focusDocsSearch = (event: globalThis.KeyboardEvent) => {
+      if (activeView !== 'docs' || !(event.metaKey || event.ctrlKey) || event.key.toLocaleLowerCase() !== 'k') {
+        return
+      }
+
+      event.preventDefault()
+      docsSearchInputRef.current?.focus()
+    }
+
+    window.addEventListener('keydown', focusDocsSearch)
+    return () => window.removeEventListener('keydown', focusDocsSearch)
+  }, [activeView])
 
   const activateView = (view: ViewId) => {
     setActiveView(view)
@@ -710,6 +784,7 @@ function App() {
     setActiveDocsTopic(nextCatalog.defaultDocumentId)
     setActiveDocsVersion(nextCatalog.versions[0]?.id ?? 'v1.0.0')
     setExpandedDocsBranches([])
+    setDocsSearchQuery('')
     setIsDocsMenuOpen(false)
     activateView('docs')
   }
@@ -727,6 +802,25 @@ function App() {
         article.scrollIntoView({ block: 'start' })
       }
     })
+  }
+
+  const selectDocsSearchResult = (documentId: string) => {
+    selectDocsTopic(documentId)
+    setDocsSearchQuery('')
+    docsSearchInputRef.current?.blur()
+  }
+
+  const handleDocsSearchKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Escape') {
+      setDocsSearchQuery('')
+      event.currentTarget.blur()
+      return
+    }
+
+    if (event.key === 'Enter' && docsSearchResults[0]) {
+      event.preventDefault()
+      selectDocsSearchResult(docsSearchResults[0].document.id)
+    }
   }
 
   const handleDocsMenuKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -1196,10 +1290,48 @@ function App() {
             </article>
 
             <div className="docs-rail">
-              <div className="docs-search" role="search" aria-label={docsCatalog.searchPlaceholder}>
-                <Search size={16} strokeWidth={1.8} aria-hidden="true" />
-                <span>{docsCatalog.searchPlaceholder}</span>
-                <kbd>⌘K</kbd>
+              <div className="docs-search-shell">
+                <div className="docs-search" role="search" aria-label={docsCatalog.searchPlaceholder}>
+                  <Search size={16} strokeWidth={1.8} aria-hidden="true" />
+                  <input
+                    aria-controls={docsSearchQuery.trim() ? docsSearchResultsId : undefined}
+                    aria-expanded={docsSearchQuery.trim() ? true : undefined}
+                    aria-label={docsCatalog.searchPlaceholder}
+                    autoComplete="off"
+                    onChange={(event) => setDocsSearchQuery(event.currentTarget.value)}
+                    onKeyDown={handleDocsSearchKeyDown}
+                    placeholder={docsCatalog.searchPlaceholder}
+                    ref={docsSearchInputRef}
+                    type="search"
+                    value={docsSearchQuery}
+                  />
+                  <kbd>⌘K</kbd>
+                </div>
+                {docsSearchQuery.trim() && (
+                  <div
+                    className="docs-search-results"
+                    id={docsSearchResultsId}
+                    role="listbox"
+                    aria-label={locale === 'zh' ? '文档搜索结果' : 'Documentation search results'}
+                  >
+                    {docsSearchResults.length > 0 ? (
+                      docsSearchResults.map(({ document }) => (
+                        <button
+                          aria-selected={document.id === selectedDocsDocument.id}
+                          key={document.id}
+                          onClick={() => selectDocsSearchResult(document.id)}
+                          role="option"
+                          type="button"
+                        >
+                          <span>{document.title}</span>
+                          <small>{document.sourcePath}</small>
+                        </button>
+                      ))
+                    ) : (
+                      <p role="status">{locale === 'zh' ? '没有找到相关文档' : 'No matching documentation'}</p>
+                    )}
+                  </div>
+                )}
               </div>
               <aside className="docs-toc" aria-label={docsCatalog.tocLabel}>
                 <h3>{docsCatalog.tocLabel}</h3>

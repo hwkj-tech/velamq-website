@@ -9900,6 +9900,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "生产部署建议"
           },
           {
+            "id": "linux-服务管理",
+            "level": 3,
+            "text": "Linux 服务管理"
+          },
+          {
             "id": "从源码构建",
             "level": 2,
             "text": "从源码构建"
@@ -10109,11 +10114,253 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "ordered": false,
             "items": [
               "使用独立的数据目录和日志目录，避免和临时解压目录混用。",
+              "Linux 生产环境建议使用 systemd 托管 VelaMQ，配置 `Restart=on-failure`、`LimitNOFILE=1048576` 和开机自启。",
               "将 `config.toml` 纳入配置管理，升级安装包时不要直接覆盖生产配置。",
               "控制台建议只对内网开放，公网访问需通过 HTTPS 网关和身份认证保护。",
               "MQTT 生产接入建议启用 TLS、账号认证和 ACL。",
               "升级前备份 `config.toml`、数据目录、License 文件和关键审计记录。"
             ]
+          },
+          {
+            "type": "heading",
+            "id": "linux-服务管理",
+            "level": 3,
+            "text": "Linux 服务管理"
+          },
+          {
+            "type": "paragraph",
+            "text": "以下示例假设安装包已经解压到 `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`。"
+          },
+          {
+            "type": "heading",
+            "id": "目录规划",
+            "level": 4,
+            "text": "目录规划"
+          },
+          {
+            "type": "paragraph",
+            "text": "生产环境建议把程序目录、数据目录、日志目录和配置文件分开管理："
+          },
+          {
+            "type": "table",
+            "headers": [
+              "路径",
+              "用途"
+            ],
+            "rows": [
+              [
+                "`/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`",
+                "当前版本程序目录"
+              ],
+              [
+                "`/opt/velamq/current`",
+                "指向当前版本的软链接，systemd 固定引用该路径"
+              ],
+              [
+                "`/etc/velamq/config.toml`",
+                "生产配置文件"
+              ],
+              [
+                "`/var/lib/velamq`",
+                "数据目录，建议挂载持久化磁盘"
+              ],
+              [
+                "`/var/log/velamq`",
+                "日志目录，如配置文件启用文件日志"
+              ],
+              [
+                "`/etc/velamq/velamq.lic`",
+                "License 文件，如启用商业授权"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "初始化目录："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo mkdir -p /opt/velamq /etc/velamq /var/lib/velamq /var/log/velamq\nsudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq /var/lib/velamq /var/log/velamq\nsudo cp /opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml /etc/velamq/config.toml\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo chown velamq:velamq /etc/velamq/config.toml\nsudo chmod 640 /etc/velamq/config.toml"
+          },
+          {
+            "type": "paragraph",
+            "text": "在 `config.toml` 中把数据目录、日志目录等生产路径指向持久化目录，避免升级安装包时误删运行数据。"
+          },
+          {
+            "type": "heading",
+            "id": "创建-systemd-服务",
+            "level": 4,
+            "text": "创建 systemd 服务"
+          },
+          {
+            "type": "paragraph",
+            "text": "创建 `/etc/systemd/system/velamq.service`："
+          },
+          {
+            "type": "code",
+            "language": "ini",
+            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/current\nEnvironment=VELAMQ_CONFIG_FILE=/etc/velamq/config.toml\nEnvironment=VELAMQ_LICENSE_FILE=/etc/velamq/velamq.lic\nExecStart=/opt/velamq/current/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\nTimeoutStopSec=30\nKillSignal=SIGTERM\n\n[Install]\nWantedBy=multi-user.target"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果暂时不使用 License，可以删除 `VELAMQ_LICENSE_FILE` 这一行。"
+          },
+          {
+            "type": "heading",
+            "id": "启动停止与开机自启",
+            "level": 4,
+            "text": "启动、停止与开机自启"
+          },
+          {
+            "type": "paragraph",
+            "text": "加载并启动服务："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "常用服务命令："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl start velamq\nsudo systemctl stop velamq\nsudo systemctl restart velamq\nsudo systemctl reload-or-restart velamq\nsudo systemctl disable velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "查看日志："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -f\nsudo journalctl -u velamq --since \"1 hour ago\"\nsudo journalctl -u velamq -n 200 --no-pager"
+          },
+          {
+            "type": "heading",
+            "id": "配置变更",
+            "level": 4,
+            "text": "配置变更"
+          },
+          {
+            "type": "paragraph",
+            "text": "修改 `/etc/velamq/config.toml` 后，建议先备份再重启："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo vi /etc/velamq/config.toml\nsudo systemctl restart velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果服务没有正常启动，查看最近日志："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -n 200 --no-pager"
+          },
+          {
+            "type": "heading",
+            "id": "服务更新",
+            "level": 4,
+            "text": "服务更新"
+          },
+          {
+            "type": "paragraph",
+            "text": "升级前建议准备一个短暂停机窗口，并完成备份："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl stop velamq\nsudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo tar -czf /opt/velamq/velamq-backup-$(date +%Y%m%d%H%M%S).tgz /etc/velamq /var/lib/velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "下载并解压新安装包，例如 `0.0.2`："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.2-linux-musl-x86_64.zip\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
+          },
+          {
+            "type": "paragraph",
+            "text": "切换当前版本软链接并启动："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo ln -sfn /opt/velamq/velamqd-0.0.2-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl start velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "验证控制台、MQTT 端口和日志："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "curl -I http://127.0.0.1:8080/\nsudo journalctl -u velamq -n 100 --no-pager"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果新版本需要新增配置项，把新包中的 `config.toml` 与 `/etc/velamq/config.toml` 对比后再合并，不要直接覆盖生产配置。"
+          },
+          {
+            "type": "heading",
+            "id": "回滚版本",
+            "level": 4,
+            "text": "回滚版本"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果升级后出现异常，可以把软链接切回旧版本："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl stop velamq\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl restart velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果配置也需要回滚："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo cp /etc/velamq/config.toml.YYYYmmddHHMMSS.bak /etc/velamq/config.toml\nsudo chown velamq:velamq /etc/velamq/config.toml\nsudo systemctl restart velamq"
+          },
+          {
+            "type": "heading",
+            "id": "卸载服务",
+            "level": 4,
+            "text": "卸载服务"
+          },
+          {
+            "type": "paragraph",
+            "text": "停止服务并取消开机自启："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl disable --now velamq\nsudo rm -f /etc/systemd/system/velamq.service\nsudo systemctl daemon-reload"
+          },
+          {
+            "type": "paragraph",
+            "text": "如需彻底删除程序和数据，确认备份后再移除目录："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo rm -rf /opt/velamq\nsudo rm -rf /etc/velamq\nsudo rm -rf /var/lib/velamq\nsudo rm -rf /var/log/velamq"
           },
           {
             "type": "heading",
@@ -10338,6 +10585,42 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "VELAMQ_CONFIG_FILE=./config.toml ./bin/velamqd"
+          },
+          {
+            "type": "paragraph",
+            "text": "Linux 服务器建议使用 systemd 托管，便于开机自启、异常重启和统一日志管理。以下示例假设安装目录为 `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.1-linux-musl-x86_64"
+          },
+          {
+            "type": "paragraph",
+            "text": "创建 `/etc/systemd/system/velamq.service`："
+          },
+          {
+            "type": "code",
+            "language": "ini",
+            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nEnvironment=VELAMQ_CONFIG_FILE=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml\nExecStart=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\n\n[Install]\nWantedBy=multi-user.target"
+          },
+          {
+            "type": "paragraph",
+            "text": "启动并设置开机自启："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "查看运行日志："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -f"
           },
           {
             "type": "paragraph",
@@ -23074,6 +23357,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "Production notes"
           },
           {
+            "id": "linux-service-management",
+            "level": 3,
+            "text": "Linux service management"
+          },
+          {
             "id": "build-from-source",
             "level": 2,
             "text": "Build from source"
@@ -23283,11 +23571,253 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "ordered": false,
             "items": [
               "Use dedicated data and log directories instead of temporary extraction paths.",
+              "For Linux production deployments, manage VelaMQ with systemd and configure `Restart=on-failure`, `LimitNOFILE=1048576`, and boot startup.",
               "Keep `config.toml` under configuration management, and do not overwrite production configuration during upgrades.",
               "Keep the console private. Public access should go through an HTTPS gateway and identity protection.",
               "Enable TLS, authentication, and ACL for production MQTT access.",
               "Before upgrades, back up `config.toml`, data directories, License files, and key audit records."
             ]
+          },
+          {
+            "type": "heading",
+            "id": "linux-service-management",
+            "level": 3,
+            "text": "Linux service management"
+          },
+          {
+            "type": "paragraph",
+            "text": "The following example assumes the package is extracted to `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`."
+          },
+          {
+            "type": "heading",
+            "id": "directory-layout",
+            "level": 4,
+            "text": "Directory layout"
+          },
+          {
+            "type": "paragraph",
+            "text": "For production, keep program files, data, logs, and configuration separate:"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Path",
+              "Purpose"
+            ],
+            "rows": [
+              [
+                "`/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`",
+                "Current version program directory"
+              ],
+              [
+                "`/opt/velamq/current`",
+                "Symlink to the active version, referenced by systemd"
+              ],
+              [
+                "`/etc/velamq/config.toml`",
+                "Production configuration file"
+              ],
+              [
+                "`/var/lib/velamq`",
+                "Data directory, preferably on persistent storage"
+              ],
+              [
+                "`/var/log/velamq`",
+                "Log directory, if file logging is enabled"
+              ],
+              [
+                "`/etc/velamq/velamq.lic`",
+                "License file, if commercial licensing is enabled"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Initialize directories:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo mkdir -p /opt/velamq /etc/velamq /var/lib/velamq /var/log/velamq\nsudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq /var/lib/velamq /var/log/velamq\nsudo cp /opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml /etc/velamq/config.toml\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo chown velamq:velamq /etc/velamq/config.toml\nsudo chmod 640 /etc/velamq/config.toml"
+          },
+          {
+            "type": "paragraph",
+            "text": "Set data and log paths in `config.toml` to persistent directories so upgrades do not remove runtime data."
+          },
+          {
+            "type": "heading",
+            "id": "create-the-systemd-service",
+            "level": 4,
+            "text": "Create the systemd service"
+          },
+          {
+            "type": "paragraph",
+            "text": "Create `/etc/systemd/system/velamq.service`:"
+          },
+          {
+            "type": "code",
+            "language": "ini",
+            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/current\nEnvironment=VELAMQ_CONFIG_FILE=/etc/velamq/config.toml\nEnvironment=VELAMQ_LICENSE_FILE=/etc/velamq/velamq.lic\nExecStart=/opt/velamq/current/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\nTimeoutStopSec=30\nKillSignal=SIGTERM\n\n[Install]\nWantedBy=multi-user.target"
+          },
+          {
+            "type": "paragraph",
+            "text": "Remove the `VELAMQ_LICENSE_FILE` line if no License file is used."
+          },
+          {
+            "type": "heading",
+            "id": "start-stop-and-boot-startup",
+            "level": 4,
+            "text": "Start, stop, and boot startup"
+          },
+          {
+            "type": "paragraph",
+            "text": "Load and start the service:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "Common service commands:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl start velamq\nsudo systemctl stop velamq\nsudo systemctl restart velamq\nsudo systemctl reload-or-restart velamq\nsudo systemctl disable velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "Inspect logs:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -f\nsudo journalctl -u velamq --since \"1 hour ago\"\nsudo journalctl -u velamq -n 200 --no-pager"
+          },
+          {
+            "type": "heading",
+            "id": "configuration-changes",
+            "level": 4,
+            "text": "Configuration changes"
+          },
+          {
+            "type": "paragraph",
+            "text": "Back up `/etc/velamq/config.toml` before editing, then restart:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo vi /etc/velamq/config.toml\nsudo systemctl restart velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the service fails to start, inspect recent logs:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -n 200 --no-pager"
+          },
+          {
+            "type": "heading",
+            "id": "service-update",
+            "level": 4,
+            "text": "Service update"
+          },
+          {
+            "type": "paragraph",
+            "text": "Before upgrading, schedule a short maintenance window and create backups:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl stop velamq\nsudo cp /etc/velamq/config.toml /etc/velamq/config.toml.$(date +%Y%m%d%H%M%S).bak\nsudo tar -czf /opt/velamq/velamq-backup-$(date +%Y%m%d%H%M%S).tgz /etc/velamq /var/lib/velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "Download and extract the new package, for example `0.0.2`:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "cd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.2-linux-musl-x86_64.zip\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.2-linux-musl-x86_64"
+          },
+          {
+            "type": "paragraph",
+            "text": "Switch the active symlink and start:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo ln -sfn /opt/velamq/velamqd-0.0.2-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl start velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "Verify the console, MQTT port, and logs:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "curl -I http://127.0.0.1:8080/\nsudo journalctl -u velamq -n 100 --no-pager"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the new version adds configuration options, compare the new package's `config.toml` with `/etc/velamq/config.toml` and merge manually. Do not overwrite production configuration directly."
+          },
+          {
+            "type": "heading",
+            "id": "rollback",
+            "level": 4,
+            "text": "Rollback"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the upgrade fails, switch the symlink back to the previous version:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl stop velamq\nsudo ln -sfn /opt/velamq/velamqd-0.0.1-linux-musl-x86_64 /opt/velamq/current\nsudo systemctl restart velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "If configuration must be rolled back:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo cp /etc/velamq/config.toml.YYYYmmddHHMMSS.bak /etc/velamq/config.toml\nsudo chown velamq:velamq /etc/velamq/config.toml\nsudo systemctl restart velamq"
+          },
+          {
+            "type": "heading",
+            "id": "uninstall-service",
+            "level": 4,
+            "text": "Uninstall service"
+          },
+          {
+            "type": "paragraph",
+            "text": "Stop the service and disable boot startup:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl disable --now velamq\nsudo rm -f /etc/systemd/system/velamq.service\nsudo systemctl daemon-reload"
+          },
+          {
+            "type": "paragraph",
+            "text": "To remove program files and data, confirm backups first:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo rm -rf /opt/velamq\nsudo rm -rf /etc/velamq\nsudo rm -rf /var/lib/velamq\nsudo rm -rf /var/log/velamq"
           },
           {
             "type": "heading",
@@ -23512,6 +24042,42 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "code",
             "language": "bash",
             "code": "VELAMQ_CONFIG_FILE=./config.toml ./bin/velamqd"
+          },
+          {
+            "type": "paragraph",
+            "text": "For Linux servers, use systemd to manage startup, automatic restart, and journald logs. The following example assumes the package is installed at `/opt/velamq/velamqd-0.0.1-linux-musl-x86_64`:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo useradd --system --home /opt/velamq --shell /usr/sbin/nologin velamq 2>/dev/null || true\nsudo chown -R velamq:velamq /opt/velamq/velamqd-0.0.1-linux-musl-x86_64"
+          },
+          {
+            "type": "paragraph",
+            "text": "Create `/etc/systemd/system/velamq.service`:"
+          },
+          {
+            "type": "code",
+            "language": "ini",
+            "code": "[Unit]\nDescription=VelaMQ Broker\nAfter=network-online.target\nWants=network-online.target\n\n[Service]\nType=simple\nUser=velamq\nGroup=velamq\nWorkingDirectory=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nEnvironment=VELAMQ_CONFIG_FILE=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/config.toml\nExecStart=/opt/velamq/velamqd-0.0.1-linux-musl-x86_64/bin/velamqd\nRestart=on-failure\nRestartSec=5\nLimitNOFILE=1048576\n\n[Install]\nWantedBy=multi-user.target"
+          },
+          {
+            "type": "paragraph",
+            "text": "Start the service and enable it on boot:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo systemctl daemon-reload\nsudo systemctl enable --now velamq\nsudo systemctl status velamq"
+          },
+          {
+            "type": "paragraph",
+            "text": "Follow logs:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo journalctl -u velamq -f"
           },
           {
             "type": "paragraph",

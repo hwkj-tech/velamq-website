@@ -245,6 +245,10 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 3, name: '安装包下载' })).toBeInTheDocument()
     expect(screen.getAllByText('velamqd-0.0.1-windows-x86_64.zip').length).toBeGreaterThan(0)
     expect(screen.getByText('https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 4, name: 'Linux 服务管理' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 4, name: '服务更新' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 4, name: '回滚版本' })).toBeInTheDocument()
+    expect(screen.getAllByText(/sudo systemctl enable --now velamq/).length).toBeGreaterThan(0)
 
     await user.click(screen.getByRole('button', { name: '展开 规则引擎' }))
     await user.click(screen.getByRole('button', { name: '规则引擎总览' }))

@@ -5843,13 +5843,6 @@
   letter-spacing: 0;
 }
 
-.docs-article__lede {
-  margin: 18px 0 0;
-  color: var(--color-muted);
-  font-size: 17px;
-  line-height: 1.72;
-}
-
 .docs-command {
   margin-top: 24px;
   padding: 11px 13px;
@@ -6833,7 +6826,6 @@ html {
   letter-spacing: -0.035em;
 }
 
-.docs-article__lede,
 .docs-topic-header p,
 .docs-section p {
   color: rgba(215, 230, 226, 0.74);
@@ -7912,68 +7904,10 @@ textarea::placeholder {
   max-width: 890px;
 }
 
-.docs-article-hero {
-  margin-bottom: 30px;
-}
-
 .docs-page--manual .docs-article h2 {
   max-width: 760px;
   font-size: clamp(42px, 4.8vw, 68px);
   line-height: 0.98;
-}
-
-.docs-page--manual .docs-article__lede {
-  max-width: 780px;
-  color: rgba(215, 230, 226, 0.72);
-}
-
-.docs-page--manual .docs-command {
-  max-width: 780px;
-  border: 1px solid rgba(148, 255, 229, 0.11);
-  border-radius: 8px;
-  background:
-    linear-gradient(90deg, rgba(116, 247, 210, 0.055) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(116, 247, 210, 0.04) 1px, transparent 1px),
-    rgba(2, 8, 7, 0.92);
-  background-size: 24px 24px, 24px 24px, auto;
-}
-
-.docs-compact-header {
-  display: flex;
-  max-width: 780px;
-  min-width: 0;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 18px;
-  overflow: hidden;
-  color: rgba(215, 230, 226, 0.58);
-  font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
-  font-size: 12px;
-  font-weight: 740;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.docs-compact-header span {
-  min-width: 0;
-  flex: 0 0 auto;
-  padding: 5px 8px;
-  border: 1px solid rgba(148, 255, 229, 0.12);
-  border-radius: 7px;
-  background: rgba(2, 15, 12, 0.62);
-}
-
-.docs-compact-header span:first-of-type {
-  color: #74f7d2;
-}
-
-.docs-compact-header span:last-of-type {
-  flex: 1 1 auto;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-transform: none;
-  letter-spacing: 0;
 }
 
 .docs-page--manual .docs-document-panel {
@@ -7990,22 +7924,8 @@ textarea::placeholder {
   border-bottom: 1px solid rgba(148, 255, 229, 0.1);
 }
 
-.docs-document-path {
-  display: inline-flex;
-  min-height: 26px;
-  align-items: center;
-  padding: 0 9px;
-  color: #74f7d2;
-  border: 1px solid rgba(116, 247, 210, 0.18);
-  border-radius: 6px;
-  background: rgba(116, 247, 210, 0.055);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 700;
-}
-
 .docs-document-header h3 {
-  margin: 20px 0 0;
+  margin: 0;
   color: #f8fffd;
   font-size: clamp(34px, 4vw, 52px);
   line-height: 1.04;
@@ -8358,7 +8278,6 @@ h4.docs-doc-heading {
     font-size: 30px;
   }
 
-  .docs-page--manual .docs-article__lede,
   .docs-document-header p,
   .docs-doc-paragraph,
   .docs-doc-list {

@@ -17,7 +17,6 @@ import {
   Search,
   Server,
   ShieldCheck,
-  Terminal,
   Workflow,
 } from 'lucide-react'
 import {
@@ -587,7 +586,6 @@ function App() {
     () => docsCatalog.documents[activeDocsTopic] ?? docsCatalog.documents[docsCatalog.defaultDocumentId],
     [activeDocsTopic, docsCatalog.defaultDocumentId, docsCatalog.documents],
   )
-  const isDocsLandingDocument = selectedDocsDocument.id === docsCatalog.defaultDocumentId
   const docsNavGroups = useMemo(() => buildDocsNavGroups(docsCatalog), [docsCatalog])
   const activeDocsBranchKeys = useMemo(() => {
     const keys = new Set<string>()
@@ -1163,32 +1161,12 @@ function App() {
             </aside>
 
             <article className="docs-article">
-              {isDocsLandingDocument ? (
-                <div className="docs-article-hero">
-                  <p className="section-code">{docsCatalog.eyebrow}</p>
-                  <h2 id="docs-title">{docsCatalog.title}</h2>
-                  <p className="docs-article__lede">{docsCatalog.body}</p>
-
-                  <div className="docs-command" aria-label={docsCatalog.commandLabel}>
-                    <Terminal size={17} strokeWidth={1.8} aria-hidden="true" />
-                    <span>$</span>
-                    <code>{selectedDocsVersion.command}</code>
-                  </div>
-                </div>
-              ) : (
-                <div className="docs-compact-header">
-                  <h2 className="visually-hidden" id="docs-title">
-                    {docsCatalog.title}
-                  </h2>
-                  <span>{docsCatalog.eyebrow}</span>
-                  <span>{selectedDocsVersionLabel}</span>
-                  <span>{selectedDocsDocument.sourcePath}</span>
-                </div>
-              )}
+              <h2 className="visually-hidden" id="docs-title">
+                {docsCatalog.title}
+              </h2>
 
               <div className="docs-topic-panel docs-document-panel">
                 <div className="docs-document-header">
-                  <span className="docs-document-path">{selectedDocsDocument.sourcePath}</span>
                   <h3 id={`${selectedDocsDocument.id}-title`}>{selectedDocsDocument.title}</h3>
                   {selectedDocsDocument.summary && <p>{selectedDocsDocument.summary}</p>}
                 </div>

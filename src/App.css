@@ -7642,6 +7642,17 @@ textarea::placeholder {
 }
 
 /* VelaMQ documentation, Rig-inspired reading system */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .docs-page--manual {
   width: min(1500px, calc(100% - 48px));
   grid-template-columns: 292px minmax(0, 1fr) 220px;
@@ -7901,6 +7912,10 @@ textarea::placeholder {
   max-width: 890px;
 }
 
+.docs-article-hero {
+  margin-bottom: 30px;
+}
+
 .docs-page--manual .docs-article h2 {
   max-width: 760px;
   font-size: clamp(42px, 4.8vw, 68px);
@@ -7923,8 +7938,46 @@ textarea::placeholder {
   background-size: 24px 24px, 24px 24px, auto;
 }
 
+.docs-compact-header {
+  display: flex;
+  max-width: 780px;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  color: rgba(215, 230, 226, 0.58);
+  font-family: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+  font-size: 12px;
+  font-weight: 740;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.docs-compact-header span {
+  min-width: 0;
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid rgba(148, 255, 229, 0.12);
+  border-radius: 7px;
+  background: rgba(2, 15, 12, 0.62);
+}
+
+.docs-compact-header span:first-of-type {
+  color: #74f7d2;
+}
+
+.docs-compact-header span:last-of-type {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 .docs-page--manual .docs-document-panel {
-  margin-top: 30px;
+  margin-top: 0;
   overflow: visible;
   border: 0;
   background: transparent;

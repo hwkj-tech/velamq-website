@@ -237,6 +237,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 3, name: '快速启动' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: '一、选择安装包' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: '三、启动服务' })).toBeInTheDocument()
+    expect(screen.queryByLabelText('当前版本快速启动')).not.toBeInTheDocument()
     expect(screen.getAllByText(/https:\/\/velamq\.obs\.cn-east-3\.myhuaweicloud\.com\/velamqd-0\.0\.1/).length).toBeGreaterThan(0)
 
     await user.click(screen.getByRole('button', { name: '安装包下载' }))

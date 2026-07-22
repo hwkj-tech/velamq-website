@@ -7911,13 +7911,17 @@ textarea::placeholder {
   min-height: 31px;
   justify-content: flex-start;
   gap: 7px;
-  margin-left: 2px;
-  padding: 0 8px;
+  margin-left: 0;
+  padding: 0 9px;
   color: rgba(234, 255, 251, 0.62);
   border: 0;
   background: transparent;
   font-size: 12px;
   font-weight: 720;
+}
+
+.docs-page--manual .docs-nav-parent > span {
+  order: 0;
 }
 
 .docs-page--manual .docs-nav-parent:hover,
@@ -7931,7 +7935,9 @@ textarea::placeholder {
 }
 
 .docs-page--manual .docs-nav-parent__chevron {
+  order: 1;
   flex: 0 0 auto;
+  margin-left: auto;
   color: rgba(160, 194, 185, 0.68);
   transition: transform 160ms ease;
 }

@@ -656,7 +656,7 @@ const buildCatalog = (locale, docsDir) => {
           locale === 'zh'
             ? '当前官网文档版本，内容来源于 velamq-rs-doc，并按官网文档系统重新排版。'
             : 'Current website documentation version, migrated from velamq-rs-doc and restyled for the website docs system.',
-        command: 'VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd',
+        command: 'curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip && unzip velamqd-0.0.1-linux-musl-x86_64.zip && cd velamqd-0.0.1-linux-musl-x86_64 && ./start.sh',
       },
     ],
     groups: buildGroups(documents, locale),

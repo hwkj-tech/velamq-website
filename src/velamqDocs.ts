@@ -64,7 +64,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "status": "stable",
         "date": "VelaMQ v1.0.0",
         "note": "当前官网文档版本，内容来源于 velamq-rs-doc，并按官网文档系统重新排版。",
-        "command": "VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
+        "command": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip && unzip velamqd-0.0.1-linux-musl-x86_64.zip && cd velamqd-0.0.1-linux-musl-x86_64 && ./start.sh"
       }
     ],
     "groups": [
@@ -139,7 +139,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "install/package",
-            "label": "打包发布",
+            "label": "安装包下载",
             "depth": 0
           }
         ]
@@ -9855,35 +9855,275 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "install/package": {
         "id": "install/package",
-        "title": "打包发布",
-        "summary": "仓库内置 `deploy/package.sh`，会构建前端、编译 `velamqd`，并为目标平台生成 zip 包。",
+        "title": "安装包下载",
+        "summary": "VelaMQ 提供面向 macOS、Linux 和 Windows 的便携 zip 安装包。安装包包含服务端二进制、默认配置、控制台静态资源和启动脚本，适合评估、PoC、边缘节点和单机生产部署起步。",
         "sourcePath": "install/package.md",
         "headings": [
           {
-            "id": "按操作系统选择运行包",
+            "id": "当前版本",
             "level": 2,
-            "text": "按操作系统选择运行包"
+            "text": "当前版本"
           },
           {
-            "id": "常用参数",
+            "id": "下载地址",
             "level": 2,
-            "text": "常用参数"
+            "text": "下载地址"
           },
           {
-            "id": "产物结构",
+            "id": "平台选择建议",
             "level": 2,
-            "text": "产物结构"
+            "text": "平台选择建议"
           },
           {
-            "id": "交叉编译",
+            "id": "安装包结构",
             "level": 2,
-            "text": "交叉编译"
+            "text": "安装包结构"
+          },
+          {
+            "id": "macos-linux-安装",
+            "level": 2,
+            "text": "macOS / Linux 安装"
+          },
+          {
+            "id": "windows-安装",
+            "level": 2,
+            "text": "Windows 安装"
+          },
+          {
+            "id": "启动与访问",
+            "level": 2,
+            "text": "启动与访问"
+          },
+          {
+            "id": "生产部署建议",
+            "level": 2,
+            "text": "生产部署建议"
+          },
+          {
+            "id": "从源码构建",
+            "level": 2,
+            "text": "从源码构建"
           }
         ],
         "blocks": [
           {
             "type": "paragraph",
-            "text": "仓库内置 `deploy/package.sh`，会构建前端、编译 `velamqd`，并为目标平台生成 zip 包。"
+            "text": "VelaMQ 提供面向 macOS、Linux 和 Windows 的便携 zip 安装包。安装包包含服务端二进制、默认配置、控制台静态资源和启动脚本，适合评估、PoC、边缘节点和单机生产部署起步。"
+          },
+          {
+            "type": "heading",
+            "id": "当前版本",
+            "level": 2,
+            "text": "当前版本"
+          },
+          {
+            "type": "paragraph",
+            "text": "当前公开下载版本："
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "0.0.1"
+          },
+          {
+            "type": "heading",
+            "id": "下载地址",
+            "level": 2,
+            "text": "下载地址"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "平台",
+              "文件名",
+              "下载地址"
+            ],
+            "rows": [
+              [
+                "macOS Apple Silicon",
+                "`velamqd-0.0.1-macos-aarch64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
+              ],
+              [
+                "macOS Intel",
+                "`velamqd-0.0.1-macos-x86_64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
+              ],
+              [
+                "Linux ARM64 musl",
+                "`velamqd-0.0.1-linux-musl-aarch64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
+              ],
+              [
+                "Linux x86_64 musl",
+                "`velamqd-0.0.1-linux-musl-x86_64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
+              ],
+              [
+                "Windows x86_64",
+                "`velamqd-0.0.1-windows-x86_64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Linux musl 包适合大多数 Linux 发行版，依赖更少，便于在服务器、容器和边缘主机上部署。"
+          },
+          {
+            "type": "heading",
+            "id": "平台选择建议",
+            "level": 2,
+            "text": "平台选择建议"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "部署机器",
+              "推荐安装包"
+            ],
+            "rows": [
+              [
+                "MacBook / Mac mini，Apple Silicon 芯片",
+                "`velamqd-0.0.1-macos-aarch64.zip`"
+              ],
+              [
+                "Intel Mac",
+                "`velamqd-0.0.1-macos-x86_64.zip`"
+              ],
+              [
+                "Intel / AMD Linux 服务器",
+                "`velamqd-0.0.1-linux-musl-x86_64.zip`"
+              ],
+              [
+                "ARM Linux 服务器、国产 ARM 云主机",
+                "`velamqd-0.0.1-linux-musl-aarch64.zip`"
+              ],
+              [
+                "Windows 服务器或本地 Windows 测试机",
+                "`velamqd-0.0.1-windows-x86_64.zip`"
+              ]
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "安装包结构",
+            "level": 2,
+            "text": "安装包结构"
+          },
+          {
+            "type": "paragraph",
+            "text": "解压后的目录通常包含："
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "`bin/velamqd` 或 `bin/velamqd.exe`：VelaMQ 服务端进程。",
+              "`config.toml`：默认配置文件。",
+              "`static/`：管理控制台静态资源。",
+              "`sql/`：初始化或升级所需 SQL 资源。",
+              "`start.sh`：macOS / Linux 启动脚本。",
+              "`start.bat`：Windows 启动脚本。",
+              "`README.md`：安装包说明。"
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "macos-linux-安装",
+            "level": 2,
+            "text": "macOS / Linux 安装"
+          },
+          {
+            "type": "paragraph",
+            "text": "下载后解压到固定目录："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./start.sh bin/velamqd\n./start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Linux 服务器示例："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./start.sh bin/velamqd\n./start.sh"
+          },
+          {
+            "type": "heading",
+            "id": "windows-安装",
+            "level": 2,
+            "text": "Windows 安装"
+          },
+          {
+            "type": "paragraph",
+            "text": "PowerShell 示例："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\start.bat"
+          },
+          {
+            "type": "heading",
+            "id": "启动与访问",
+            "level": 2,
+            "text": "启动与访问"
+          },
+          {
+            "type": "paragraph",
+            "text": "启动脚本会默认使用安装目录下的 `config.toml`："
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "macOS / Linux：`VELAMQ_CONFIG_FILE=$PACKAGE_DIR/config.toml`",
+              "Windows：`VELAMQ_CONFIG_FILE=%PACKAGE_DIR%\\config.toml`"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "启动成功后访问："
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "http://127.0.0.1:8080/"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果部署在远程服务器上，把 `127.0.0.1` 替换为服务器 IP 或域名，并确认防火墙、云安全组和反向代理已放通。"
+          },
+          {
+            "type": "heading",
+            "id": "生产部署建议",
+            "level": 2,
+            "text": "生产部署建议"
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "使用独立的数据目录和日志目录，避免和临时解压目录混用。",
+              "将 `config.toml` 纳入配置管理，升级安装包时不要直接覆盖生产配置。",
+              "控制台建议只对内网开放，公网访问需通过 HTTPS 网关和身份认证保护。",
+              "MQTT 生产接入建议启用 TLS、账号认证和 ACL。",
+              "升级前备份 `config.toml`、数据目录、License 文件和关键审计记录。"
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "从源码构建",
+            "level": 2,
+            "text": "从源码构建"
+          },
+          {
+            "type": "paragraph",
+            "text": "如需自行打包，可以使用源码仓库中的 `deploy/package.sh`："
           },
           {
             "type": "code",
@@ -9891,131 +10131,147 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "cd /Users/lulu/Work/velamq-rs\nbash deploy/package.sh"
           },
           {
-            "type": "heading",
-            "id": "按操作系统选择运行包",
-            "level": 2,
-            "text": "按操作系统选择运行包"
-          },
-          {
             "type": "paragraph",
-            "text": "`deploy/package.sh` 输出的运行包统一命名为："
+            "text": "常用参数："
           },
           {
             "type": "code",
-            "language": "text",
-            "code": "dist/velamqd-{version}-{platform}.zip"
+            "language": "bash",
+            "code": "# 指定版本号\nVERSION=0.0.1 bash deploy/package.sh\n\n# 只打当前机器可运行的包\nTARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# 构建 Linux x86_64 和 Linux ARM64\nTARGETS=\"x86_64-unknown-linux-musl aarch64-unknown-linux-musl\" bash deploy/package.sh"
+          }
+        ]
+      },
+      "install/quick-start": {
+        "id": "install/quick-start",
+        "title": "快速启动",
+        "summary": "本指南适用于第一次安装 VelaMQ 的评估、测试和单机部署。你可以直接下载对应操作系统的安装包，解压后启动服务，再通过控制台完成管理员初始化和第一个 MQTT 端点配置。",
+        "sourcePath": "install/quick-start.md",
+        "headings": [
+          {
+            "id": "适用场景",
+            "level": 2,
+            "text": "适用场景"
+          },
+          {
+            "id": "一选择安装包",
+            "level": 2,
+            "text": "一、选择安装包"
+          },
+          {
+            "id": "二下载并解压",
+            "level": 2,
+            "text": "二、下载并解压"
+          },
+          {
+            "id": "三启动服务",
+            "level": 2,
+            "text": "三、启动服务"
+          },
+          {
+            "id": "四放通端口",
+            "level": 2,
+            "text": "四、放通端口"
+          },
+          {
+            "id": "五创建第一个-mqtt-端点",
+            "level": 2,
+            "text": "五、创建第一个 MQTT 端点"
+          },
+          {
+            "id": "六验证消息收发",
+            "level": 2,
+            "text": "六、验证消息收发"
+          },
+          {
+            "id": "七控制台验证",
+            "level": 2,
+            "text": "七、控制台验证"
+          },
+          {
+            "id": "八常见问题",
+            "level": 2,
+            "text": "八、常见问题"
+          },
+          {
+            "id": "macos-提示无法打开",
+            "level": 3,
+            "text": "macOS 提示无法打开"
+          },
+          {
+            "id": "linux-提示权限不足",
+            "level": 3,
+            "text": "Linux 提示权限不足"
+          },
+          {
+            "id": "端口被占用",
+            "level": 3,
+            "text": "端口被占用"
+          }
+        ],
+        "blocks": [
+          {
+            "type": "heading",
+            "id": "适用场景",
+            "level": 2,
+            "text": "适用场景"
           },
           {
             "type": "paragraph",
-            "text": "按部署机器的操作系统和 CPU 架构选择对应包即可。"
+            "text": "本指南适用于第一次安装 VelaMQ 的评估、测试和单机部署。你可以直接下载对应操作系统的安装包，解压后启动服务，再通过控制台完成管理员初始化和第一个 MQTT 端点配置。"
+          },
+          {
+            "type": "heading",
+            "id": "一选择安装包",
+            "level": 2,
+            "text": "一、选择安装包"
+          },
+          {
+            "type": "paragraph",
+            "text": "根据部署机器的操作系统和 CPU 架构选择安装包："
           },
           {
             "type": "table",
             "headers": [
-              "部署机器",
-              "CPU 架构",
-              "下载/交付包",
-              "启动脚本"
+              "平台",
+              "适用机器",
+              "下载地址"
             ],
             "rows": [
               [
-                "Linux 服务器",
-                "x86_64 / amd64",
-                "`velamqd-{version}-linux-x86_64.zip`",
-                "`start.sh`"
-              ],
-              [
-                "Linux 服务器",
-                "ARM64 / aarch64",
-                "`velamqd-{version}-linux-aarch64.zip`",
-                "`start.sh`"
+                "macOS Apple Silicon",
+                "M1 / M2 / M3 / M4",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
               ],
               [
                 "macOS Intel",
-                "x86_64",
-                "`velamqd-{version}-macos-x86_64.zip`",
-                "`start.sh`"
+                "Intel Mac",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
               ],
               [
-                "macOS Apple Silicon",
-                "arm64 / aarch64",
-                "`velamqd-{version}-macos-aarch64.zip`",
-                "`start.sh`"
+                "Linux ARM64",
+                "ARM 服务器、国产 ARM 云主机",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
               ],
               [
-                "Windows 服务器",
-                "x86_64 / amd64",
-                "`velamqd-{version}-windows-x86_64.zip`",
-                "`start.bat`"
+                "Linux x86_64",
+                "Intel / AMD Linux 服务器",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
+              ],
+              [
+                "Windows x86_64",
+                "Windows 10/11、Windows Server",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
               ]
             ]
           },
           {
             "type": "paragraph",
-            "text": "选择原则："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Intel / AMD 服务器通常选择 `x86_64` 包。",
-              "ARM 服务器、国产 ARM 云主机或 Apple Silicon 机器选择 `aarch64` 包。",
-              "Windows 包内二进制为 `bin/velamqd.exe`，其他平台为 `bin/velamqd`。",
-              "默认便携包使用 `--no-default-features` 构建，不依赖 Oracle Instant Client。",
-              "需要 Oracle OCI 数据源时，用 `ENABLE_ORACLE_OCI=1` 单独构建对应平台包。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "常用参数",
-            "level": 2,
-            "text": "常用参数"
+            "text": "如果不确定当前机器架构："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "# 只打本机平台\nTARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# 指定版本号\nVERSION=3.0.0 bash deploy/package.sh\n\n# 本机包保留 Oracle OCI feature\nENABLE_ORACLE_OCI=1 TARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# 只构建 Linux x86_64 和 Linux ARM64 包\nTARGETS=\"x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu\" bash deploy/package.sh"
-          },
-          {
-            "type": "heading",
-            "id": "产物结构",
-            "level": 2,
-            "text": "产物结构"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认产物位于："
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "dist/velamqd-{version}-{platform}.zip"
-          },
-          {
-            "type": "paragraph",
-            "text": "zip 内包含："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`bin/velamqd` 或 `bin/velamqd.exe`",
-              "`static/`",
-              "`sql/`",
-              "`config.toml`",
-              "`README.md`",
-              "`start.sh` 或 `start.bat`",
-              "`deploy/README.md`"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "解压后可以直接从包目录启动。"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "unzip dist/velamqd-3.0.0-linux-x86_64.zip -d /opt/velamq\ncd /opt/velamq/velamqd-3.0.0-linux-x86_64\n./start.sh"
+            "code": "uname -m"
           },
           {
             "type": "paragraph",
@@ -10024,23 +10280,86 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "powershell",
-            "code": "Expand-Archive .\\velamqd-3.0.0-windows-x86_64.zip -DestinationPath .\\velamq\ncd .\\velamq\\velamqd-3.0.0-windows-x86_64\n.\\start.bat"
+            "code": "$env:PROCESSOR_ARCHITECTURE"
+          },
+          {
+            "type": "heading",
+            "id": "二下载并解压",
+            "level": 2,
+            "text": "二、下载并解压"
           },
           {
             "type": "paragraph",
-            "text": "启动脚本会设置默认配置文件路径："
+            "text": "macOS Apple Silicon："
           },
           {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "macOS / Linux：`VELAMQ_CONFIG_FILE=$PACKAGE_DIR/config.toml`",
-              "Windows：`VELAMQ_CONFIG_FILE=%PACKAGE_DIR%config.toml`"
-            ]
+            "type": "code",
+            "language": "bash",
+            "code": "mkdir -p ~/velamq && cd ~/velamq\ncurl -L -o velamqd-0.0.1-macos-aarch64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64"
           },
           {
             "type": "paragraph",
-            "text": "启动后默认访问控制台："
+            "text": "Linux x86_64："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -o velamqd-0.0.1-linux-musl-x86_64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64"
+          },
+          {
+            "type": "paragraph",
+            "text": "Windows PowerShell："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64"
+          },
+          {
+            "type": "heading",
+            "id": "三启动服务",
+            "level": 2,
+            "text": "三、启动服务"
+          },
+          {
+            "type": "paragraph",
+            "text": "macOS / Linux："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "chmod +x ./start.sh bin/velamqd\n./start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果需要手动指定配置文件："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "VELAMQ_CONFIG_FILE=./config.toml ./bin/velamqd"
+          },
+          {
+            "type": "paragraph",
+            "text": "Windows PowerShell："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": ".\\start.bat"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果需要手动指定配置文件："
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$env:VELAMQ_CONFIG_FILE=\".\\config.toml\"\n.\\bin\\velamqd.exe"
+          },
+          {
+            "type": "paragraph",
+            "text": "服务启动后，默认控制台地址为："
           },
           {
             "type": "code",
@@ -10048,152 +10367,68 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "http://127.0.0.1:8080/"
           },
           {
+            "type": "paragraph",
+            "text": "首次启动如果没有控制台用户，会进入创建管理员页面。建议使用强密码，并妥善保存管理员账号。"
+          },
+          {
             "type": "heading",
-            "id": "交叉编译",
+            "id": "四放通端口",
             "level": 2,
-            "text": "交叉编译"
+            "text": "四、放通端口"
           },
           {
             "type": "paragraph",
-            "text": "macOS 上构建 Linux / Windows 非本机目标时，需要 Docker 和 `cross`。建议使用 Git 版本 `cross`："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cargo uninstall cross 2>/dev/null\ncargo install cross --git https://github.com/cross-rs/cross"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认脚本使用 `--no-default-features`，让发布包不依赖 Oracle Instant Client。需要 Oracle OCI 时显式设置 `ENABLE_ORACLE_OCI=1`。"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认目标与构建主机有关："
+            "text": "评估环境通常至少需要访问："
           },
           {
             "type": "table",
             "headers": [
-              "构建主机",
-              "默认目标"
+              "端口",
+              "用途"
             ],
             "rows": [
               [
-                "macOS",
-                "`macos-x86_64`、`macos-aarch64`、`linux-x86_64`、`linux-aarch64`、`windows-x86_64`"
+                "`8080`",
+                "管理控制台与 HTTP API"
               ],
               [
-                "Linux / Windows",
-                "`linux-x86_64`、`linux-aarch64`、`windows-x86_64`"
+                "`1883`",
+                "MQTT TCP 接入端口"
+              ],
+              [
+                "`8083`",
+                "MQTT WebSocket 接入端口，按实际配置启用"
               ]
             ]
           },
           {
             "type": "paragraph",
-            "text": "如果只需要当前机器可运行的包，使用 `TARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\"` 可以减少构建时间。"
-          }
-        ]
-      },
-      "install/quick-start": {
-        "id": "install/quick-start",
-        "title": "快速启动",
-        "summary": "如果本机没有 Oracle OCI 环境，建议关闭默认 feature：",
-        "sourcePath": "install/quick-start.md",
-        "headings": [
-          {
-            "id": "环境要求",
-            "level": 2,
-            "text": "环境要求"
-          },
-          {
-            "id": "启动服务",
-            "level": 2,
-            "text": "启动服务"
-          },
-          {
-            "id": "创建第一个-mqtt-端点",
-            "level": 2,
-            "text": "创建第一个 MQTT 端点"
-          },
-          {
-            "id": "快速验证",
-            "level": 2,
-            "text": "快速验证"
-          }
-        ],
-        "blocks": [
-          {
-            "type": "heading",
-            "id": "环境要求",
-            "level": 2,
-            "text": "环境要求"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Rust stable toolchain",
-              "Node.js 18+ 和 npm",
-              "`cmake`",
-              "如需多平台打包：Docker 和 `cross`"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "启动服务",
-            "level": 2,
-            "text": "启动服务"
+            "text": "Linux 防火墙示例："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs\nVELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
+            "code": "sudo ufw allow 8080/tcp\nsudo ufw allow 1883/tcp"
           },
           {
             "type": "paragraph",
-            "text": "如果本机没有 Oracle OCI 环境，建议关闭默认 feature："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd --no-default-features"
-          },
-          {
-            "type": "paragraph",
-            "text": "只想做 Rust 侧迭代并跳过前端构建："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "VELAMQ_SKIP_WEB_BUILD=1 cargo build -p velamqd --no-default-features"
-          },
-          {
-            "type": "paragraph",
-            "text": "启动后，浏览器打开："
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "http://127.0.0.1:8080/"
-          },
-          {
-            "type": "paragraph",
-            "text": "首次启动如果没有控制台用户，会进入创建管理员页面。"
+            "text": "生产环境建议把控制台放在内网或网关后面，并通过反向代理开启 HTTPS。"
           },
           {
             "type": "heading",
-            "id": "创建第一个-mqtt-端点",
+            "id": "五创建第一个-mqtt-端点",
             "level": 2,
-            "text": "创建第一个 MQTT 端点"
+            "text": "五、创建第一个 MQTT 端点"
           },
           {
             "type": "paragraph",
-            "text": "进入“监听端点”页面，添加 TCP 端点："
+            "text": "进入控制台的“监听端点”页面，添加 TCP 端点："
           },
           {
             "type": "table",
             "headers": [
               "字段",
-              "示例"
+              "建议值"
             ],
             "rows": [
               [
@@ -10214,7 +10449,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               ],
               [
                 "TLS",
-                "关闭"
+                "评估环境可关闭，生产环境建议开启"
               ],
               [
                 "启用",
@@ -10224,32 +10459,111 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "保存后，Broker 会刷新监听器。客户端即可连接："
+            "text": "保存后，Broker 会刷新监听器。"
+          },
+          {
+            "type": "heading",
+            "id": "六验证消息收发",
+            "level": 2,
+            "text": "六、验证消息收发"
+          },
+          {
+            "type": "paragraph",
+            "text": "安装 `mosquitto-clients` 后，可以用命令行验证发布订阅："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "mosquitto_pub -h 127.0.0.1 -p 1883 -t devices/demo/state -m '{\"online\":true}'\nmosquitto_sub -h 127.0.0.1 -p 1883 -t 'devices/+/state'"
-          },
-          {
-            "type": "heading",
-            "id": "快速验证",
-            "level": 2,
-            "text": "快速验证"
+            "code": "mosquitto_sub -h 127.0.0.1 -p 1883 -t 'devices/+/state'"
           },
           {
             "type": "paragraph",
-            "text": "控制台中可以依次查看："
+            "text": "另开一个终端发布消息："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mosquitto_pub -h 127.0.0.1 -p 1883 -t devices/demo/state -m '{\"online\":true,\"temp\":26.5}'"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果订阅端能收到 JSON 消息，说明 MQTT 接入链路已经可用。"
+          },
+          {
+            "type": "heading",
+            "id": "七控制台验证",
+            "level": 2,
+            "text": "七、控制台验证"
+          },
+          {
+            "type": "paragraph",
+            "text": "完成消息收发后，建议依次检查："
           },
           {
             "type": "list",
             "ordered": false,
             "items": [
-              "仪表盘：连接数、消息计数、资源计数。",
-              "连接管理：在线 MQTT 客户端。",
-              "监控指标：连接、消息、流量、规则、认证、ACL 和资源曲线。",
-              "操作审计：管理 API 操作记录。"
+              "仪表盘：确认连接数、消息计数和服务状态正常。",
+              "连接管理：查看在线 MQTT 客户端、协议版本和会话信息。",
+              "监控指标：检查连接、吞吐、延迟、规则和认证指标。",
+              "设备认证与 ACL：为生产环境配置账号、证书或访问控制策略。",
+              "数据源与规则引擎：把设备事件路由到业务系统、数据库、消息队列或 Webhook。"
             ]
+          },
+          {
+            "type": "heading",
+            "id": "八常见问题",
+            "level": 2,
+            "text": "八、常见问题"
+          },
+          {
+            "type": "heading",
+            "id": "macos-提示无法打开",
+            "level": 3,
+            "text": "macOS 提示无法打开"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果系统提示安装包来自未知开发者，可以先给二进制增加执行权限，再移除隔离属性："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "chmod +x ./bin/velamqd ./start.sh\nxattr -dr com.apple.quarantine .\n./start.sh"
+          },
+          {
+            "type": "heading",
+            "id": "linux-提示权限不足",
+            "level": 3,
+            "text": "Linux 提示权限不足"
+          },
+          {
+            "type": "paragraph",
+            "text": "确认当前用户对安装目录有读写权限，或把安装目录放到当前用户目录下："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mkdir -p ~/velamq"
+          },
+          {
+            "type": "heading",
+            "id": "端口被占用",
+            "level": 3,
+            "text": "端口被占用"
+          },
+          {
+            "type": "paragraph",
+            "text": "检查端口占用："
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "lsof -i :8080\nlsof -i :1883"
+          },
+          {
+            "type": "paragraph",
+            "text": "如需更换端口，编辑 `config.toml` 后重启服务。"
           }
         ]
       },
@@ -11388,9 +11702,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "本机 zip 包"
           },
           {
-            "id": "多平台-zip-包",
+            "id": "多平台安装包",
             "level": 3,
-            "text": "多平台 zip 包"
+            "text": "多平台安装包"
           },
           {
             "id": "单机部署",
@@ -11461,7 +11775,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "运行包按部署机器的操作系统和 CPU 架构选择，完整说明见[打包发布](../install/package)。"
+            "text": "运行包按部署机器的操作系统和 CPU 架构选择，完整说明见[安装包下载](../install/package)。"
           },
           {
             "type": "heading",
@@ -11485,13 +11799,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "多平台-zip-包",
+            "id": "多平台安装包",
             "level": 3,
-            "text": "多平台 zip 包"
+            "text": "多平台安装包"
           },
           {
             "type": "paragraph",
-            "text": "面向 macOS、Linux、Windows，依赖 `cross` 和 Docker。"
+            "text": "面向 macOS、Linux、Windows，下载后解压即可启动。"
           },
           {
             "type": "heading",
@@ -11515,7 +11829,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "**Linux x86_64**`velamqd-3.0.0-linux-x86_64.zip` **Linux ARM64**`velamqd-3.0.0-linux-aarch64.zip` **macOS Intel**`velamqd-3.0.0-macos-x86_64.zip` **macOS Apple Silicon**`velamqd-3.0.0-macos-aarch64.zip` **Windows x86_64**`velamqd-3.0.0-windows-x86_64.zip`"
+            "text": "**Linux x86_64**`velamqd-0.0.1-linux-musl-x86_64.zip` **Linux ARM64**`velamqd-0.0.1-linux-musl-aarch64.zip` **macOS Intel**`velamqd-0.0.1-macos-x86_64.zip` **macOS Apple Silicon**`velamqd-0.0.1-macos-aarch64.zip` **Windows x86_64**`velamqd-0.0.1-windows-x86_64.zip`"
           },
           {
             "type": "heading",
@@ -11536,7 +11850,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs\nVELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
+            "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./start.sh"
           },
           {
             "type": "paragraph",
@@ -12977,7 +13291,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "status": "stable",
         "date": "VelaMQ v1.0.0",
         "note": "Current website documentation version, migrated from velamq-rs-doc and restyled for the website docs system.",
-        "command": "VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
+        "command": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip && unzip velamqd-0.0.1-linux-musl-x86_64.zip && cd velamqd-0.0.1-linux-musl-x86_64 && ./start.sh"
       }
     ],
     "groups": [
@@ -13040,7 +13354,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "install/quick-start",
-            "label": "快速启动",
+            "label": "Quick Start",
             "depth": 0
           },
           {
@@ -13052,7 +13366,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "install/package",
-            "label": "打包发布",
+            "label": "Package Downloads",
             "depth": 0
           }
         ]
@@ -22715,35 +23029,275 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "install/package": {
         "id": "install/package",
-        "title": "打包发布",
-        "summary": "仓库内置 `deploy/package.sh`，会构建前端、编译 `velamqd`，并为目标平台生成 zip 包。",
+        "title": "Package Downloads",
+        "summary": "VelaMQ provides portable zip packages for macOS, Linux, and Windows. Each package includes the server binary, default configuration, console static assets, and startup scripts. It is suitable for evaluation, PoC, edge nodes, and the first step of single-node production deployment.",
         "sourcePath": "install/package.md",
         "headings": [
           {
-            "id": "按操作系统选择运行包",
+            "id": "current-version",
             "level": 2,
-            "text": "按操作系统选择运行包"
+            "text": "Current version"
           },
           {
-            "id": "常用参数",
+            "id": "download-urls",
             "level": 2,
-            "text": "常用参数"
+            "text": "Download URLs"
           },
           {
-            "id": "产物结构",
+            "id": "platform-selection",
             "level": 2,
-            "text": "产物结构"
+            "text": "Platform selection"
           },
           {
-            "id": "交叉编译",
+            "id": "package-layout",
             "level": 2,
-            "text": "交叉编译"
+            "text": "Package layout"
+          },
+          {
+            "id": "macos-linux-installation",
+            "level": 2,
+            "text": "macOS / Linux installation"
+          },
+          {
+            "id": "windows-installation",
+            "level": 2,
+            "text": "Windows installation"
+          },
+          {
+            "id": "start-and-access",
+            "level": 2,
+            "text": "Start and access"
+          },
+          {
+            "id": "production-notes",
+            "level": 2,
+            "text": "Production notes"
+          },
+          {
+            "id": "build-from-source",
+            "level": 2,
+            "text": "Build from source"
           }
         ],
         "blocks": [
           {
             "type": "paragraph",
-            "text": "仓库内置 `deploy/package.sh`，会构建前端、编译 `velamqd`，并为目标平台生成 zip 包。"
+            "text": "VelaMQ provides portable zip packages for macOS, Linux, and Windows. Each package includes the server binary, default configuration, console static assets, and startup scripts. It is suitable for evaluation, PoC, edge nodes, and the first step of single-node production deployment."
+          },
+          {
+            "type": "heading",
+            "id": "current-version",
+            "level": 2,
+            "text": "Current version"
+          },
+          {
+            "type": "paragraph",
+            "text": "Current public download version:"
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "0.0.1"
+          },
+          {
+            "type": "heading",
+            "id": "download-urls",
+            "level": 2,
+            "text": "Download URLs"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Platform",
+              "File",
+              "Download URL"
+            ],
+            "rows": [
+              [
+                "macOS Apple Silicon",
+                "`velamqd-0.0.1-macos-aarch64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
+              ],
+              [
+                "macOS Intel",
+                "`velamqd-0.0.1-macos-x86_64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
+              ],
+              [
+                "Linux ARM64 musl",
+                "`velamqd-0.0.1-linux-musl-aarch64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
+              ],
+              [
+                "Linux x86_64 musl",
+                "`velamqd-0.0.1-linux-musl-x86_64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
+              ],
+              [
+                "Windows x86_64",
+                "`velamqd-0.0.1-windows-x86_64.zip`",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "The Linux musl packages work well for most Linux distributions and have fewer runtime dependencies, which makes them easier to deploy on servers, containers, and edge hosts."
+          },
+          {
+            "type": "heading",
+            "id": "platform-selection",
+            "level": 2,
+            "text": "Platform selection"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Target machine",
+              "Recommended package"
+            ],
+            "rows": [
+              [
+                "MacBook / Mac mini with Apple Silicon",
+                "`velamqd-0.0.1-macos-aarch64.zip`"
+              ],
+              [
+                "Intel Mac",
+                "`velamqd-0.0.1-macos-x86_64.zip`"
+              ],
+              [
+                "Intel / AMD Linux server",
+                "`velamqd-0.0.1-linux-musl-x86_64.zip`"
+              ],
+              [
+                "ARM Linux server or ARM cloud host",
+                "`velamqd-0.0.1-linux-musl-aarch64.zip`"
+              ],
+              [
+                "Windows Server or local Windows test machine",
+                "`velamqd-0.0.1-windows-x86_64.zip`"
+              ]
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "package-layout",
+            "level": 2,
+            "text": "Package layout"
+          },
+          {
+            "type": "paragraph",
+            "text": "After extraction, the package usually contains:"
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "`bin/velamqd` or `bin/velamqd.exe`: VelaMQ server process.",
+              "`config.toml`: default configuration file.",
+              "`static/`: management console static assets.",
+              "`sql/`: initialization or migration SQL resources.",
+              "`start.sh`: macOS / Linux startup script.",
+              "`start.bat`: Windows startup script.",
+              "`README.md`: package notes."
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "macos-linux-installation",
+            "level": 2,
+            "text": "macOS / Linux installation"
+          },
+          {
+            "type": "paragraph",
+            "text": "Download and extract to a fixed directory:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x ./start.sh bin/velamqd\n./start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "Linux server example:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\nsudo chmod +x ./start.sh bin/velamqd\n./start.sh"
+          },
+          {
+            "type": "heading",
+            "id": "windows-installation",
+            "level": 2,
+            "text": "Windows installation"
+          },
+          {
+            "type": "paragraph",
+            "text": "PowerShell example:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64\n.\\start.bat"
+          },
+          {
+            "type": "heading",
+            "id": "start-and-access",
+            "level": 2,
+            "text": "Start and access"
+          },
+          {
+            "type": "paragraph",
+            "text": "The startup scripts use the package-local `config.toml` by default:"
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "macOS / Linux: `VELAMQ_CONFIG_FILE=$PACKAGE_DIR/config.toml`",
+              "Windows: `VELAMQ_CONFIG_FILE=%PACKAGE_DIR%\\config.toml`"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "After startup, open:"
+          },
+          {
+            "type": "code",
+            "language": "text",
+            "code": "http://127.0.0.1:8080/"
+          },
+          {
+            "type": "paragraph",
+            "text": "For a remote server, replace `127.0.0.1` with the server IP or domain name, and make sure the firewall, cloud security group, and reverse proxy allow access."
+          },
+          {
+            "type": "heading",
+            "id": "production-notes",
+            "level": 2,
+            "text": "Production notes"
+          },
+          {
+            "type": "list",
+            "ordered": false,
+            "items": [
+              "Use dedicated data and log directories instead of temporary extraction paths.",
+              "Keep `config.toml` under configuration management, and do not overwrite production configuration during upgrades.",
+              "Keep the console private. Public access should go through an HTTPS gateway and identity protection.",
+              "Enable TLS, authentication, and ACL for production MQTT access.",
+              "Before upgrades, back up `config.toml`, data directories, License files, and key audit records."
+            ]
+          },
+          {
+            "type": "heading",
+            "id": "build-from-source",
+            "level": 2,
+            "text": "Build from source"
+          },
+          {
+            "type": "paragraph",
+            "text": "To build packages yourself, use `deploy/package.sh` from the source repository:"
           },
           {
             "type": "code",
@@ -22751,284 +23305,235 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "cd /Users/lulu/Work/velamq-rs\nbash deploy/package.sh"
           },
           {
-            "type": "heading",
-            "id": "按操作系统选择运行包",
-            "level": 2,
-            "text": "按操作系统选择运行包"
-          },
-          {
             "type": "paragraph",
-            "text": "`deploy/package.sh` 输出的运行包统一命名为："
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "dist/velamqd-{version}-{platform}.zip"
-          },
-          {
-            "type": "paragraph",
-            "text": "按部署机器的操作系统和 CPU 架构选择对应包即可。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "部署机器",
-              "CPU 架构",
-              "下载/交付包",
-              "启动脚本"
-            ],
-            "rows": [
-              [
-                "Linux 服务器",
-                "x86_64 / amd64",
-                "`velamqd-{version}-linux-x86_64.zip`",
-                "`start.sh`"
-              ],
-              [
-                "Linux 服务器",
-                "ARM64 / aarch64",
-                "`velamqd-{version}-linux-aarch64.zip`",
-                "`start.sh`"
-              ],
-              [
-                "macOS Intel",
-                "x86_64",
-                "`velamqd-{version}-macos-x86_64.zip`",
-                "`start.sh`"
-              ],
-              [
-                "macOS Apple Silicon",
-                "arm64 / aarch64",
-                "`velamqd-{version}-macos-aarch64.zip`",
-                "`start.sh`"
-              ],
-              [
-                "Windows 服务器",
-                "x86_64 / amd64",
-                "`velamqd-{version}-windows-x86_64.zip`",
-                "`start.bat`"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "选择原则："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Intel / AMD 服务器通常选择 `x86_64` 包。",
-              "ARM 服务器、国产 ARM 云主机或 Apple Silicon 机器选择 `aarch64` 包。",
-              "Windows 包内二进制为 `bin/velamqd.exe`，其他平台为 `bin/velamqd`。",
-              "默认便携包使用 `--no-default-features` 构建，不依赖 Oracle Instant Client。",
-              "需要 Oracle OCI 数据源时，用 `ENABLE_ORACLE_OCI=1` 单独构建对应平台包。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "常用参数",
-            "level": 2,
-            "text": "常用参数"
+            "text": "Common parameters:"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "# 只打本机平台\nTARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# 指定版本号\nVERSION=3.0.0 bash deploy/package.sh\n\n# 本机包保留 Oracle OCI feature\nENABLE_ORACLE_OCI=1 TARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# 只构建 Linux x86_64 和 Linux ARM64 包\nTARGETS=\"x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu\" bash deploy/package.sh"
-          },
-          {
-            "type": "heading",
-            "id": "产物结构",
-            "level": 2,
-            "text": "产物结构"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认产物位于："
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "dist/velamqd-{version}-{platform}.zip"
-          },
-          {
-            "type": "paragraph",
-            "text": "zip 内包含："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`bin/velamqd` 或 `bin/velamqd.exe`",
-              "`static/`",
-              "`sql/`",
-              "`config.toml`",
-              "`README.md`",
-              "`start.sh` 或 `start.bat`",
-              "`deploy/README.md`"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "解压后可以直接从包目录启动。"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "unzip dist/velamqd-3.0.0-linux-x86_64.zip -d /opt/velamq\ncd /opt/velamq/velamqd-3.0.0-linux-x86_64\n./start.sh"
-          },
-          {
-            "type": "paragraph",
-            "text": "Windows PowerShell："
-          },
-          {
-            "type": "code",
-            "language": "powershell",
-            "code": "Expand-Archive .\\velamqd-3.0.0-windows-x86_64.zip -DestinationPath .\\velamq\ncd .\\velamq\\velamqd-3.0.0-windows-x86_64\n.\\start.bat"
-          },
-          {
-            "type": "paragraph",
-            "text": "启动脚本会设置默认配置文件路径："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "macOS / Linux：`VELAMQ_CONFIG_FILE=$PACKAGE_DIR/config.toml`",
-              "Windows：`VELAMQ_CONFIG_FILE=%PACKAGE_DIR%config.toml`"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "启动后默认访问控制台："
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "http://127.0.0.1:8080/"
-          },
-          {
-            "type": "heading",
-            "id": "交叉编译",
-            "level": 2,
-            "text": "交叉编译"
-          },
-          {
-            "type": "paragraph",
-            "text": "macOS 上构建 Linux / Windows 非本机目标时，需要 Docker 和 `cross`。建议使用 Git 版本 `cross`："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "cargo uninstall cross 2>/dev/null\ncargo install cross --git https://github.com/cross-rs/cross"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认脚本使用 `--no-default-features`，让发布包不依赖 Oracle Instant Client。需要 Oracle OCI 时显式设置 `ENABLE_ORACLE_OCI=1`。"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认目标与构建主机有关："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "构建主机",
-              "默认目标"
-            ],
-            "rows": [
-              [
-                "macOS",
-                "`macos-x86_64`、`macos-aarch64`、`linux-x86_64`、`linux-aarch64`、`windows-x86_64`"
-              ],
-              [
-                "Linux / Windows",
-                "`linux-x86_64`、`linux-aarch64`、`windows-x86_64`"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "如果只需要当前机器可运行的包，使用 `TARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\"` 可以减少构建时间。"
+            "code": "# Specify version\nVERSION=0.0.1 bash deploy/package.sh\n\n# Build only the current host target\nTARGETS=\"$(rustc -vV | sed -n 's/^host: //p')\" bash deploy/package.sh\n\n# Build Linux x86_64 and Linux ARM64\nTARGETS=\"x86_64-unknown-linux-musl aarch64-unknown-linux-musl\" bash deploy/package.sh"
           }
         ]
       },
       "install/quick-start": {
         "id": "install/quick-start",
-        "title": "快速启动",
-        "summary": "如果本机没有 Oracle OCI 环境，建议关闭默认 feature：",
+        "title": "Quick Start",
+        "summary": "Use this guide for first-time VelaMQ evaluation, testing, and single-node deployment. Download the package that matches your operating system, start the service, initialize the administrator account, and create the first MQTT listener from the console.",
         "sourcePath": "install/quick-start.md",
         "headings": [
           {
-            "id": "环境要求",
+            "id": "when-to-use-this-guide",
             "level": 2,
-            "text": "环境要求"
+            "text": "When to use this guide"
           },
           {
-            "id": "启动服务",
+            "id": "1-choose-a-package",
             "level": 2,
-            "text": "启动服务"
+            "text": "1. Choose a package"
           },
           {
-            "id": "创建第一个-mqtt-端点",
+            "id": "2-download-and-extract",
             "level": 2,
-            "text": "创建第一个 MQTT 端点"
+            "text": "2. Download and extract"
           },
           {
-            "id": "快速验证",
+            "id": "3-start-the-service",
             "level": 2,
-            "text": "快速验证"
+            "text": "3. Start the service"
+          },
+          {
+            "id": "4-open-required-ports",
+            "level": 2,
+            "text": "4. Open required ports"
+          },
+          {
+            "id": "5-create-the-first-mqtt-listener",
+            "level": 2,
+            "text": "5. Create the first MQTT listener"
+          },
+          {
+            "id": "6-verify-publish-and-subscribe",
+            "level": 2,
+            "text": "6. Verify publish and subscribe"
+          },
+          {
+            "id": "7-validate-in-the-console",
+            "level": 2,
+            "text": "7. Validate in the console"
+          },
+          {
+            "id": "8-troubleshooting",
+            "level": 2,
+            "text": "8. Troubleshooting"
+          },
+          {
+            "id": "macos-blocks-the-executable",
+            "level": 3,
+            "text": "macOS blocks the executable"
+          },
+          {
+            "id": "linux-permission-denied",
+            "level": 3,
+            "text": "Linux permission denied"
+          },
+          {
+            "id": "port-already-in-use",
+            "level": 3,
+            "text": "Port already in use"
           }
         ],
         "blocks": [
           {
             "type": "heading",
-            "id": "环境要求",
+            "id": "when-to-use-this-guide",
             "level": 2,
-            "text": "环境要求"
+            "text": "When to use this guide"
           },
           {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Rust stable toolchain",
-              "Node.js 18+ 和 npm",
-              "`cmake`",
-              "如需多平台打包：Docker 和 `cross`"
-            ]
+            "type": "paragraph",
+            "text": "Use this guide for first-time VelaMQ evaluation, testing, and single-node deployment. Download the package that matches your operating system, start the service, initialize the administrator account, and create the first MQTT listener from the console."
           },
           {
             "type": "heading",
-            "id": "启动服务",
+            "id": "1-choose-a-package",
             "level": 2,
-            "text": "启动服务"
+            "text": "1. Choose a package"
+          },
+          {
+            "type": "paragraph",
+            "text": "Select the package for your operating system and CPU architecture:"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Platform",
+              "Target machine",
+              "Download URL"
+            ],
+            "rows": [
+              [
+                "macOS Apple Silicon",
+                "M1 / M2 / M3 / M4",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip`"
+              ],
+              [
+                "macOS Intel",
+                "Intel Mac",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip`"
+              ],
+              [
+                "Linux ARM64",
+                "ARM servers and ARM cloud hosts",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip`"
+              ],
+              [
+                "Linux x86_64",
+                "Intel / AMD Linux servers",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip`"
+              ],
+              [
+                "Windows x86_64",
+                "Windows 10/11 and Windows Server",
+                "`https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip`"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Check the current CPU architecture:"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs\nVELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
+            "code": "uname -m"
           },
           {
             "type": "paragraph",
-            "text": "如果本机没有 Oracle OCI 环境，建议关闭默认 feature："
+            "text": "Windows PowerShell:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$env:PROCESSOR_ARCHITECTURE"
+          },
+          {
+            "type": "heading",
+            "id": "2-download-and-extract",
+            "level": 2,
+            "text": "2. Download and extract"
+          },
+          {
+            "type": "paragraph",
+            "text": "macOS Apple Silicon:"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd --no-default-features"
+            "code": "mkdir -p ~/velamq && cd ~/velamq\ncurl -L -o velamqd-0.0.1-macos-aarch64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64"
           },
           {
             "type": "paragraph",
-            "text": "只想做 Rust 侧迭代并跳过前端构建："
+            "text": "Linux x86_64:"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "VELAMQ_SKIP_WEB_BUILD=1 cargo build -p velamqd --no-default-features"
+            "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -o velamqd-0.0.1-linux-musl-x86_64.zip https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64"
           },
           {
             "type": "paragraph",
-            "text": "启动后，浏览器打开："
+            "text": "Windows PowerShell:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "mkdir C:\\velamq\ncd C:\\velamq\nInvoke-WebRequest -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive .\\velamqd-0.0.1-windows-x86_64.zip -DestinationPath .\\velamqd-0.0.1-windows-x86_64\ncd .\\velamqd-0.0.1-windows-x86_64"
+          },
+          {
+            "type": "heading",
+            "id": "3-start-the-service",
+            "level": 2,
+            "text": "3. Start the service"
+          },
+          {
+            "type": "paragraph",
+            "text": "macOS / Linux:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "chmod +x ./start.sh bin/velamqd\n./start.sh"
+          },
+          {
+            "type": "paragraph",
+            "text": "To start with an explicit config file:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "VELAMQ_CONFIG_FILE=./config.toml ./bin/velamqd"
+          },
+          {
+            "type": "paragraph",
+            "text": "Windows PowerShell:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": ".\\start.bat"
+          },
+          {
+            "type": "paragraph",
+            "text": "To start with an explicit config file:"
+          },
+          {
+            "type": "code",
+            "language": "powershell",
+            "code": "$env:VELAMQ_CONFIG_FILE=\".\\config.toml\"\n.\\bin\\velamqd.exe"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open the console after the service starts:"
           },
           {
             "type": "code",
@@ -23037,27 +23542,71 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "首次启动如果没有控制台用户，会进入创建管理员页面。"
+            "text": "If no console user exists, VelaMQ opens the administrator setup page. Use a strong password and keep the administrator account safe."
           },
           {
             "type": "heading",
-            "id": "创建第一个-mqtt-端点",
+            "id": "4-open-required-ports",
             "level": 2,
-            "text": "创建第一个 MQTT 端点"
+            "text": "4. Open required ports"
           },
           {
             "type": "paragraph",
-            "text": "进入“监听端点”页面，添加 TCP 端点："
+            "text": "An evaluation environment usually needs:"
           },
           {
             "type": "table",
             "headers": [
-              "字段",
-              "示例"
+              "Port",
+              "Purpose"
             ],
             "rows": [
               [
-                "名称",
+                "`8080`",
+                "Management console and HTTP API"
+              ],
+              [
+                "`1883`",
+                "MQTT TCP listener"
+              ],
+              [
+                "`8083`",
+                "MQTT WebSocket listener, if enabled"
+              ]
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "Linux firewall example:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "sudo ufw allow 8080/tcp\nsudo ufw allow 1883/tcp"
+          },
+          {
+            "type": "paragraph",
+            "text": "For production, keep the console on a private network or behind a gateway, and enable HTTPS through a reverse proxy."
+          },
+          {
+            "type": "heading",
+            "id": "5-create-the-first-mqtt-listener",
+            "level": 2,
+            "text": "5. Create the first MQTT listener"
+          },
+          {
+            "type": "paragraph",
+            "text": "Open the console, go to \"Listeners\", and create a TCP listener:"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Field",
+              "Recommended value"
+            ],
+            "rows": [
+              [
+                "Name",
                 "`mqtt-tcp`"
               ],
               [
@@ -23070,46 +23619,125 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               ],
               [
                 "WebSocket",
-                "关闭"
+                "Disabled"
               ],
               [
                 "TLS",
-                "关闭"
+                "Disabled for evaluation, enabled for production"
               ],
               [
-                "启用",
-                "开启"
+                "Enabled",
+                "On"
               ]
             ]
           },
           {
             "type": "paragraph",
-            "text": "保存后，Broker 会刷新监听器。客户端即可连接："
+            "text": "After saving, the broker reloads listeners."
+          },
+          {
+            "type": "heading",
+            "id": "6-verify-publish-and-subscribe",
+            "level": 2,
+            "text": "6. Verify publish and subscribe"
+          },
+          {
+            "type": "paragraph",
+            "text": "Install `mosquitto-clients`, then subscribe:"
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "mosquitto_pub -h 127.0.0.1 -p 1883 -t devices/demo/state -m '{\"online\":true}'\nmosquitto_sub -h 127.0.0.1 -p 1883 -t 'devices/+/state'"
-          },
-          {
-            "type": "heading",
-            "id": "快速验证",
-            "level": 2,
-            "text": "快速验证"
+            "code": "mosquitto_sub -h 127.0.0.1 -p 1883 -t 'devices/+/state'"
           },
           {
             "type": "paragraph",
-            "text": "控制台中可以依次查看："
+            "text": "Open another terminal and publish:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mosquitto_pub -h 127.0.0.1 -p 1883 -t devices/demo/state -m '{\"online\":true,\"temp\":26.5}'"
+          },
+          {
+            "type": "paragraph",
+            "text": "If the subscriber receives the JSON payload, the MQTT path is working."
+          },
+          {
+            "type": "heading",
+            "id": "7-validate-in-the-console",
+            "level": 2,
+            "text": "7. Validate in the console"
+          },
+          {
+            "type": "paragraph",
+            "text": "After message verification, check:"
           },
           {
             "type": "list",
             "ordered": false,
             "items": [
-              "仪表盘：连接数、消息计数、资源计数。",
-              "连接管理：在线 MQTT 客户端。",
-              "监控指标：连接、消息、流量、规则、认证、ACL 和资源曲线。",
-              "操作审计：管理 API 操作记录。"
+              "Dashboard: connection count, message count, and service health.",
+              "Connections: online MQTT clients, protocol version, and session details.",
+              "Metrics: connection, throughput, latency, rule, authentication, and ACL metrics.",
+              "Authentication and ACL: configure accounts, certificates, or access control for production.",
+              "Data sources and rules: route device events to business systems, databases, message queues, or Webhooks."
             ]
+          },
+          {
+            "type": "heading",
+            "id": "8-troubleshooting",
+            "level": 2,
+            "text": "8. Troubleshooting"
+          },
+          {
+            "type": "heading",
+            "id": "macos-blocks-the-executable",
+            "level": 3,
+            "text": "macOS blocks the executable"
+          },
+          {
+            "type": "paragraph",
+            "text": "If macOS reports that the package cannot be opened, grant execute permission and remove quarantine attributes:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "chmod +x ./bin/velamqd ./start.sh\nxattr -dr com.apple.quarantine .\n./start.sh"
+          },
+          {
+            "type": "heading",
+            "id": "linux-permission-denied",
+            "level": 3,
+            "text": "Linux permission denied"
+          },
+          {
+            "type": "paragraph",
+            "text": "Make sure the current user can read and write the installation directory, or install under your home directory:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "mkdir -p ~/velamq"
+          },
+          {
+            "type": "heading",
+            "id": "port-already-in-use",
+            "level": 3,
+            "text": "Port already in use"
+          },
+          {
+            "type": "paragraph",
+            "text": "Check occupied ports:"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "lsof -i :8080\nlsof -i :1883"
+          },
+          {
+            "type": "paragraph",
+            "text": "Edit `config.toml` and restart the service if you need to change ports."
           }
         ]
       },
@@ -24202,9 +24830,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "本机 zip 包"
           },
           {
-            "id": "多平台-zip-包",
+            "id": "多平台安装包",
             "level": 3,
-            "text": "多平台 zip 包"
+            "text": "多平台安装包"
           },
           {
             "id": "单机部署",
@@ -24275,7 +24903,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "运行包按部署机器的操作系统和 CPU 架构选择，完整说明见[打包发布](../install/package)。"
+            "text": "运行包按部署机器的操作系统和 CPU 架构选择，完整说明见[安装包下载](../install/package)。"
           },
           {
             "type": "heading",
@@ -24299,13 +24927,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "多平台-zip-包",
+            "id": "多平台安装包",
             "level": 3,
-            "text": "多平台 zip 包"
+            "text": "多平台安装包"
           },
           {
             "type": "paragraph",
-            "text": "面向 macOS、Linux、Windows，依赖 `cross` 和 Docker。"
+            "text": "面向 macOS、Linux、Windows，下载后解压即可启动。"
           },
           {
             "type": "heading",
@@ -24329,7 +24957,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "**Linux x86_64**`velamqd-3.0.0-linux-x86_64.zip` **Linux ARM64**`velamqd-3.0.0-linux-aarch64.zip` **macOS Intel**`velamqd-3.0.0-macos-x86_64.zip` **macOS Apple Silicon**`velamqd-3.0.0-macos-aarch64.zip` **Windows x86_64**`velamqd-3.0.0-windows-x86_64.zip`"
+            "text": "**Linux x86_64**`velamqd-0.0.1-linux-musl-x86_64.zip` **Linux ARM64**`velamqd-0.0.1-linux-musl-aarch64.zip` **macOS Intel**`velamqd-0.0.1-macos-x86_64.zip` **macOS Apple Silicon**`velamqd-0.0.1-macos-aarch64.zip` **Windows x86_64**`velamqd-0.0.1-windows-x86_64.zip`"
           },
           {
             "type": "heading",
@@ -24350,7 +24978,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs\nVELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd"
+            "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./start.sh"
           },
           {
             "type": "paragraph",

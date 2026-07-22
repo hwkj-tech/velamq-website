@@ -144,7 +144,7 @@ describe('HanNet homepage', () => {
     await user.click(within(nav).getByRole('link', { name: '文档' }))
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
     expect(screen.getByText('浏览 VelaMQ 文档、规则、API')).toBeInTheDocument()
-    expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
+    expect(screen.getByText(/velamqd-0\.0\.1-linux-musl-x86_64\.zip/)).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '版本: v1.0.0' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: '快速启动' })).toBeInTheDocument()
@@ -229,14 +229,21 @@ describe('HanNet homepage', () => {
     expect(screen.queryByRole('heading', { level: 3, name: '快速启动' })).not.toBeInTheDocument()
 
     expect(screen.getByRole('button', { name: '版本: v1.0.0' })).toBeInTheDocument()
-    expect(screen.getByText('VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd')).toBeInTheDocument()
+    expect(screen.getByText(/velamqd-0\.0\.1-linux-musl-x86_64\.zip/)).toBeInTheDocument()
     expect(screen.queryByText(/内容来源于 velamq-rs-doc/)).not.toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: '快速启动' }))
 
     expect(screen.getByRole('heading', { level: 3, name: '快速启动' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: '启动服务' })).toBeInTheDocument()
-    expect(screen.getAllByText(/VELAMQ_CONFIG_FILE=config.toml cargo run -p velamqd/).length).toBeGreaterThan(0)
+    expect(screen.getByRole('heading', { level: 3, name: '一、选择安装包' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: '三、启动服务' })).toBeInTheDocument()
+    expect(screen.getAllByText(/https:\/\/velamq\.obs\.cn-east-3\.myhuaweicloud\.com\/velamqd-0\.0\.1/).length).toBeGreaterThan(0)
+
+    await user.click(screen.getByRole('button', { name: '安装包下载' }))
+
+    expect(screen.getByRole('heading', { level: 3, name: '安装包下载' })).toBeInTheDocument()
+    expect(screen.getAllByText('velamqd-0.0.1-windows-x86_64.zip').length).toBeGreaterThan(0)
+    expect(screen.getByText('https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip')).toBeInTheDocument()
 
     await user.click(screen.getByRole('button', { name: '展开 规则引擎' }))
     await user.click(screen.getByRole('button', { name: '规则引擎总览' }))

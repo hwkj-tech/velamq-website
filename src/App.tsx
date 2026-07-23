@@ -567,7 +567,7 @@ function App() {
   const [activeView, setActiveView] = useState<ViewId>(() => viewFromHash(window.location.hash))
   const [activeProduct, setActiveProduct] = useState<ProductId>('velamq')
   const [activeDocsProduct, setActiveDocsProduct] = useState<ProductId>('velamq')
-  const [activeDocsVersion, setActiveDocsVersion] = useState('v1.0.0')
+  const [activeDocsVersion, setActiveDocsVersion] = useState(velamqDocs.zh.versions[0]?.id ?? 'v0.0.1')
   const [activeDocsTopic, setActiveDocsTopic] = useState(velamqDocs.zh.defaultDocumentId)
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
@@ -782,7 +782,7 @@ function App() {
     const nextCatalog = docsCatalogs[product]
     setActiveDocsProduct(product)
     setActiveDocsTopic(nextCatalog.defaultDocumentId)
-    setActiveDocsVersion(nextCatalog.versions[0]?.id ?? 'v1.0.0')
+    setActiveDocsVersion(nextCatalog.versions[0]?.id ?? 'v0.0.1')
     setExpandedDocsBranches([])
     setDocsSearchQuery('')
     setIsDocsMenuOpen(false)

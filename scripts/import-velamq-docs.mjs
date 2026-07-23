@@ -9,6 +9,8 @@ const defaultDocsRoot = fs.existsSync('/Users/lulu/Work/velamq-rs-doc')
 const sourceRoot = process.env.VELAMQ_DOCS_ROOT ?? defaultDocsRoot
 const outputFile = path.join(repoRoot, 'src/velamqDocs.ts')
 const assetOutputDir = path.join(repoRoot, 'public/velamq-docs')
+const currentVelaMQVersion = '0.0.1'
+const currentVelaMQVersionLabel = `v${currentVelaMQVersion}`
 
 const zhDocsDir = path.join(sourceRoot, 'docs')
 const enDocsDir = path.join(sourceRoot, 'i18n/en/docusaurus-plugin-content-docs/version-3.0.0')
@@ -273,6 +275,9 @@ const normalizeProductText = (text) =>
     .replace(/FLUXMQD/g, 'VELAMQD')
     .replace(/FLUXMQ_/g, 'VELAMQ_')
     .replace(/fluxmq/g, 'velamq')
+    .replace(/VelaMQ 3\.0/g, `VelaMQ ${currentVelaMQVersion}`)
+    .replace(/\b3\.0\.0\b/g, currentVelaMQVersion)
+    .replace(/\b3\.1\.0\b/g, '0.0.2')
 
 const preprocessBody = (body) => {
   let normalized = body
@@ -637,8 +642,8 @@ const buildCatalog = (locale, docsDir) => {
     eyebrow: 'VelaMQ Docs',
     body:
       locale === 'zh'
-        ? '从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，官网统一以 v1.0.0 版本维护。'
-        : 'VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation migrated from velamq-rs-doc and maintained here as version v1.0.0.',
+        ? `从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，当前对应正式发布版本 ${currentVelaMQVersionLabel}。`
+        : `VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation for the current ${currentVelaMQVersionLabel} release.`,
     searchPlaceholder: locale === 'zh' ? '浏览 VelaMQ 文档、规则、API' : 'Browse VelaMQ docs, rules and APIs',
     sidebarLabel: locale === 'zh' ? 'VelaMQ 文档目录' : 'VelaMQ documentation navigation',
     tocLabel: locale === 'zh' ? '本页内容' : 'On this page',
@@ -648,14 +653,14 @@ const buildCatalog = (locale, docsDir) => {
     defaultDocumentId: documents['product/introduction'] ? 'product/introduction' : Object.keys(documents)[0],
     versions: [
       {
-        id: 'v1.0.0',
-        label: 'v1.0.0',
+        id: currentVelaMQVersionLabel,
+        label: currentVelaMQVersionLabel,
         status: 'stable',
-        date: 'VelaMQ v1.0.0',
+        date: `VelaMQ ${currentVelaMQVersionLabel}`,
         note:
           locale === 'zh'
-            ? '当前官网文档版本，内容来源于 velamq-rs-doc，并按官网文档系统重新排版。'
-            : 'Current website documentation version, migrated from velamq-rs-doc and restyled for the website docs system.',
+            ? `当前官网文档与 VelaMQ ${currentVelaMQVersionLabel} 安装包及源码版本保持一致。`
+            : `Current documentation aligned with the VelaMQ ${currentVelaMQVersionLabel} packages and source release.`,
         command: 'curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip && unzip velamqd-0.0.1-linux-musl-x86_64.zip && cd velamqd-0.0.1-linux-musl-x86_64 && ./start.sh',
       },
     ],

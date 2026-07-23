@@ -49,7 +49,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "productName": "VelaMQ",
     "title": "VelaMQ 文档中心",
     "eyebrow": "VelaMQ Docs",
-    "body": "从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，官网统一以 v1.0.0 版本维护。",
+    "body": "从 velamq-rs-doc 迁移而来的 VelaMQ 产品、安装、功能、API、规则引擎、数据源和运维手册，当前对应正式发布版本 v0.0.1。",
     "searchPlaceholder": "浏览 VelaMQ 文档、规则、API",
     "sidebarLabel": "VelaMQ 文档目录",
     "tocLabel": "本页内容",
@@ -59,11 +59,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "defaultDocumentId": "product/introduction",
     "versions": [
       {
-        "id": "v1.0.0",
-        "label": "v1.0.0",
+        "id": "v0.0.1",
+        "label": "v0.0.1",
         "status": "stable",
-        "date": "VelaMQ v1.0.0",
-        "note": "当前官网文档版本，内容来源于 velamq-rs-doc，并按官网文档系统重新排版。",
+        "date": "VelaMQ v0.0.1",
+        "note": "当前官网文档与 VelaMQ v0.0.1 安装包及源码版本保持一致。",
         "command": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip && unzip velamqd-0.0.1-linux-musl-x86_64.zip && cd velamqd-0.0.1-linux-musl-x86_64 && ./start.sh"
       }
     ],
@@ -485,7 +485,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "FAQ": {
         "id": "FAQ",
         "title": "FAQ",
-        "summary": "VelaMQ 3.0 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。",
+        "summary": "VelaMQ 0.0.1 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。",
         "sourcePath": "FAQ.md",
         "headings": [
           {
@@ -533,7 +533,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。"
+            "text": "VelaMQ 0.0.1 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。"
           },
           {
             "type": "heading",
@@ -543,7 +543,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "不需要作为 VelaMQ 3.0 的 Broker 管理库。当前运行态和管理配置以本地 RocksDB 为状态机，集群复制通过 Storage Raft 完成。PostgreSQL、MySQL、SQLite 仍可作为规则动作或认证 SQL 数据源使用。"
+            "text": "不需要作为 VelaMQ 0.0.1 的 Broker 管理库。当前运行态和管理配置以本地 RocksDB 为状态机，集群复制通过 Storage Raft 完成。PostgreSQL、MySQL、SQLite 仍可作为规则动作或认证 SQL 数据源使用。"
           },
           {
             "type": "heading",
@@ -1209,7 +1209,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "api/prometheus": {
         "id": "api/prometheus",
         "title": "Prometheus 指标",
-        "summary": "VelaMQ 3.0 暴露 Prometheus 文本指标：",
+        "summary": "VelaMQ 0.0.1 暴露 Prometheus 文本指标：",
         "sourcePath": "api/prometheus.md",
         "headings": [
           {
@@ -1231,7 +1231,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 暴露 Prometheus 文本指标："
+            "text": "VelaMQ 0.0.1 暴露 Prometheus 文本指标："
           },
           {
             "type": "code",
@@ -1447,7 +1447,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证页面截图",
+            "alt": "VelaMQ 0.0.1 设备认证页面截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -1544,7 +1544,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 Config 认证示例截图",
+            "alt": "VelaMQ 0.0.1 Config 认证示例截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -1578,7 +1578,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 HTTP 认证示例截图",
+            "alt": "VelaMQ 0.0.1 HTTP 认证示例截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -1666,7 +1666,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 SQL 认证示例截图",
+            "alt": "VelaMQ 0.0.1 SQL 认证示例截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -1800,7 +1800,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 鉴权加密配置截图",
+            "alt": "VelaMQ 0.0.1 鉴权加密配置截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -1888,7 +1888,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 访问控制页面截图",
+            "alt": "VelaMQ 0.0.1 访问控制页面截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -1982,7 +1982,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 判定语义截图",
+            "alt": "VelaMQ 0.0.1 ACL 判定语义截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -2010,7 +2010,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 示例截图",
+            "alt": "VelaMQ 0.0.1 ACL 示例截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -2052,7 +2052,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 控制台操作截图",
+            "alt": "VelaMQ 0.0.1 ACL 控制台操作截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -2171,7 +2171,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理页面截图",
+            "alt": "VelaMQ 0.0.1 证书管理页面截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -2241,7 +2241,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/cluster": {
         "id": "guide/cluster",
         "title": "集群",
-        "summary": "VelaMQ 3.0 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。",
+        "summary": "VelaMQ 0.0.1 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。",
         "sourcePath": "guide/cluster.md",
         "headings": [
           {
@@ -2283,11 +2283,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。"
+            "text": "VelaMQ 0.0.1 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 集群概览所在仪表盘截图",
+            "alt": "VelaMQ 0.0.1 集群概览所在仪表盘截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -2530,7 +2530,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费页面截图",
+            "alt": "VelaMQ 0.0.1 指令消费页面截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -2592,7 +2592,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费页面截图",
+            "alt": "VelaMQ 0.0.1 指令消费页面截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -2653,7 +2653,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户页面截图",
+            "alt": "VelaMQ 0.0.1 控制台用户页面截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -2719,7 +2719,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 操作审计页面截图",
+            "alt": "VelaMQ 0.0.1 操作审计页面截图",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
@@ -2768,7 +2768,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘页面截图",
+            "alt": "VelaMQ 0.0.1 仪表盘页面截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -2882,7 +2882,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 数据管理与存储状态入口截图",
+            "alt": "VelaMQ 0.0.1 数据管理与存储状态入口截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -3974,7 +3974,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/datasources/object-search-loki": {
         "id": "guide/datasources/object-search-loki",
         "title": "对象存储、搜索与 Loki",
-        "summary": "VelaMQ 3.0 支持把规则命中的消息写入 S3 兼容对象存储、Elasticsearch、OpenSearch 和 Grafana Loki。这类数据源适合归档、检索和日志流场景。",
+        "summary": "VelaMQ 0.0.1 支持把规则命中的消息写入 S3 兼容对象存储、Elasticsearch、OpenSearch 和 Grafana Loki。这类数据源适合归档、检索和日志流场景。",
         "sourcePath": "guide/datasources/object-search-loki.md",
         "headings": [
           {
@@ -4021,7 +4021,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 支持把规则命中的消息写入 S3 兼容对象存储、Elasticsearch、OpenSearch 和 Grafana Loki。这类数据源适合归档、检索和日志流场景。"
+            "text": "VelaMQ 0.0.1 支持把规则命中的消息写入 S3 兼容对象存储、Elasticsearch、OpenSearch 和 Grafana Loki。这类数据源适合归档、检索和日志流场景。"
           },
           {
             "type": "image",
@@ -4351,7 +4351,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/datasources/overview": {
         "id": "guide/datasources/overview",
         "title": "数据源总览",
-        "summary": "数据源是 VelaMQ 3.0 连接外部系统的统一抽象。认证 SQL、HTTP Webhook、规则动作、离线消息和指令链路都会复用数据源配置。",
+        "summary": "数据源是 VelaMQ 0.0.1 连接外部系统的统一抽象。认证 SQL、HTTP Webhook、规则动作、离线消息和指令链路都会复用数据源配置。",
         "sourcePath": "guide/datasources/overview.md",
         "headings": [
           {
@@ -4388,7 +4388,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "数据源是 VelaMQ 3.0 连接外部系统的统一抽象。认证 SQL、HTTP Webhook、规则动作、离线消息和指令链路都会复用数据源配置。"
+            "text": "数据源是 VelaMQ 0.0.1 连接外部系统的统一抽象。认证 SQL、HTTP Webhook、规则动作、离线消息和指令链路都会复用数据源配置。"
           },
           {
             "type": "image",
@@ -6009,7 +6009,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/endpoints": {
         "id": "guide/endpoints",
         "title": "监听端点",
-        "summary": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 3.0 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。",
+        "summary": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 0.0.1 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。",
         "sourcePath": "guide/endpoints.md",
         "headings": [
           {
@@ -6036,11 +6036,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 3.0 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。"
+            "text": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 0.0.1 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点页面截图",
+            "alt": "VelaMQ 0.0.1 监听端点页面截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -6179,7 +6179,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 连接管理页面截图",
+            "alt": "VelaMQ 0.0.1 连接管理页面截图",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
@@ -6286,7 +6286,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标页面截图",
+            "alt": "VelaMQ 0.0.1 监控指标页面截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
@@ -6386,7 +6386,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -6732,7 +6732,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -6862,7 +6862,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎示例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -6972,7 +6972,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎和动态函数配置入口截图",
+            "alt": "VelaMQ 0.0.1 规则引擎和动态函数配置入口截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -7250,7 +7250,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -7428,7 +7428,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/rule-engine/offline": {
         "id": "guide/rule-engine/offline",
         "title": "离线消息",
-        "summary": "VelaMQ 3.0 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。",
+        "summary": "VelaMQ 0.0.1 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。",
         "sourcePath": "guide/rule-engine/offline.md",
         "headings": [
           {
@@ -7470,12 +7470,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。"
+            "text": "VelaMQ 0.0.1 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。"
           },
           {
             "type": "heading",
@@ -7558,7 +7558,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎示例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -7587,7 +7587,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎示例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -7631,7 +7631,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/rule-engine/overview": {
         "id": "guide/rule-engine/overview",
         "title": "规则引擎总览",
-        "summary": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 3.0 的消息路由与数据集成核心。",
+        "summary": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 0.0.1 的消息路由与数据集成核心。",
         "sourcePath": "guide/rule-engine/overview.md",
         "headings": [
           {
@@ -7663,11 +7663,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 3.0 的消息路由与数据集成核心。"
+            "text": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 0.0.1 的消息路由与数据集成核心。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -7843,7 +7843,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎与 Outbox 管理页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎与 Outbox 管理页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -8164,7 +8164,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -8393,7 +8393,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点页面截图",
+            "alt": "VelaMQ 0.0.1 监听端点页面截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -8460,7 +8460,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 WebSocket 端点页面截图",
+            "alt": "VelaMQ 0.0.1 WebSocket 端点页面截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -8513,7 +8513,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理页面截图",
+            "alt": "VelaMQ 0.0.1 证书管理页面截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -8578,7 +8578,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证页面截图",
+            "alt": "VelaMQ 0.0.1 设备认证页面截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -8650,7 +8650,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 HTTP 认证配置页面截图",
+            "alt": "VelaMQ 0.0.1 HTTP 认证配置页面截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -8734,7 +8734,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 访问控制页面截图",
+            "alt": "VelaMQ 0.0.1 访问控制页面截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -8820,7 +8820,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -8915,7 +8915,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎 Webhook 案例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎 Webhook 案例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -8975,7 +8975,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 数据源页面截图",
+            "alt": "VelaMQ 0.0.1 数据源页面截图",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
@@ -9054,12 +9054,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费页面截图",
+            "alt": "VelaMQ 0.0.1 指令消费页面截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
             "type": "paragraph",
-            "text": "目标：业务系统写入 Kafka topic，VelaMQ 3.0 消费后下发到设备 MQTT topic。"
+            "text": "目标：业务系统写入 Kafka topic，VelaMQ 0.0.1 消费后下发到设备 MQTT topic。"
           },
           {
             "type": "paragraph",
@@ -9147,7 +9147,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 连接管理页面截图",
+            "alt": "VelaMQ 0.0.1 连接管理页面截图",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
@@ -9191,7 +9191,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户页面截图",
+            "alt": "VelaMQ 0.0.1 控制台用户页面截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -9234,7 +9234,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘 License 页面截图",
+            "alt": "VelaMQ 0.0.1 仪表盘 License 页面截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -9278,12 +9278,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标页面截图",
+            "alt": "VelaMQ 0.0.1 监控指标页面截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
             "type": "paragraph",
-            "text": "目标：把 VelaMQ 3.0 指标接入外部监控系统并配置告警。"
+            "text": "目标：把 VelaMQ 0.0.1 指标接入外部监控系统并配置告警。"
           },
           {
             "type": "paragraph",
@@ -9342,7 +9342,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 集群概览页面截图",
+            "alt": "VelaMQ 0.0.1 集群概览页面截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -9402,7 +9402,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 操作审计页面截图",
+            "alt": "VelaMQ 0.0.1 操作审计页面截图",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
@@ -9444,7 +9444,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎 AI 助手案例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎 AI 助手案例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -9495,14 +9495,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "index": {
         "id": "index",
-        "title": "VelaMQ 3.0 文档中心",
-        "summary": "VelaMQ 3.0 的产品说明、部署指南、控制台功能手册、API、监控运维与演示素材。",
+        "title": "VelaMQ 0.0.1 文档中心",
+        "summary": "VelaMQ 0.0.1 的产品说明、部署指南、控制台功能手册、API、监控运维与演示素材。",
         "sourcePath": "index.mdx",
         "headings": [
           {
-            "id": "velamq-30-文档中心",
+            "id": "velamq-001-文档中心",
             "level": 1,
-            "text": "VelaMQ 3.0 文档中心"
+            "text": "VelaMQ 0.0.1 文档中心"
           },
           {
             "id": "快速入口",
@@ -9543,13 +9543,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "heading",
-            "id": "velamq-30-文档中心",
+            "id": "velamq-001-文档中心",
             "level": 1,
-            "text": "VelaMQ 3.0 文档中心"
+            "text": "VelaMQ 0.0.1 文档中心"
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 的产品说明、部署指南、控制台功能手册、API、监控运维与演示素材。"
+            "text": "VelaMQ 0.0.1 的产品说明、部署指南、控制台功能手册、API、监控运维与演示素材。"
           },
           {
             "type": "paragraph",
@@ -11233,7 +11233,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "operations/storage": {
         "id": "operations/storage",
         "title": "存储与数据库",
-        "summary": "VelaMQ 3.0 以本地 RocksDB 为 Broker 状态机。单机模式直接读写本地 RocksDB；集群模式通过 Storage Raft 复制元数据和管理配置，并通过 shard 副本承载 retained、session、delayed 等较大的 keyspace。",
+        "summary": "VelaMQ 0.0.1 以本地 RocksDB 为 Broker 状态机。单机模式直接读写本地 RocksDB；集群模式通过 Storage Raft 复制元数据和管理配置，并通过 shard 副本承载 retained、session、delayed 等较大的 keyspace。",
         "sourcePath": "operations/storage.md",
         "headings": [
           {
@@ -11275,11 +11275,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 以本地 RocksDB 为 Broker 状态机。单机模式直接读写本地 RocksDB；集群模式通过 Storage Raft 复制元数据和管理配置，并通过 shard 副本承载 retained、session、delayed 等较大的 keyspace。"
+            "text": "VelaMQ 0.0.1 以本地 RocksDB 为 Broker 状态机。单机模式直接读写本地 RocksDB；集群模式通过 Storage Raft 复制元数据和管理配置，并通过 shard 副本承载 retained、session、delayed 等较大的 keyspace。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 Storage Raft 与存储概览页面截图",
+            "alt": "VelaMQ 0.0.1 Storage Raft 与存储概览页面截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -11690,7 +11690,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/architecture": {
         "id": "product/architecture",
         "title": "系统架构",
-        "summary": "VelaMQ 3.0 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。",
+        "summary": "VelaMQ 0.0.1 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。",
         "sourcePath": "product/architecture.md",
         "headings": [
           {
@@ -11772,7 +11772,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。"
+            "text": "VelaMQ 0.0.1 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。"
           },
           {
             "type": "heading",
@@ -12192,7 +12192,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/basic-info": {
         "id": "product/basic-info",
         "title": "基本信息",
-        "summary": "VelaMQ 3.0 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。",
+        "summary": "VelaMQ 0.0.1 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。",
         "sourcePath": "product/basic-info.md",
         "headings": [
           {
@@ -12258,11 +12258,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。"
+            "text": "VelaMQ 0.0.1 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。"
           },
           {
             "type": "paragraph",
-            "text": "当前版本 **3.0.0** 发布文档快照"
+            "text": "当前版本 **0.0.1** 发布文档快照"
           },
           {
             "type": "paragraph",
@@ -12284,7 +12284,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "产品名称**VelaMQ 3.0** 实现语言**Rust 2024 edition** Web 控制台**React + Ant Design + Vite** 管理服务**Axum + 控制台静态资源** 集群存储**RocksDB + Storage Raft** 控制台认证**API 开启时强制 JWT 登录** Prometheus**`/-/metrics`**"
+            "text": "产品名称**VelaMQ 0.0.1** 实现语言**Rust 2024 edition** Web 控制台**React + Ant Design + Vite** 管理服务**Axum + 控制台静态资源** 集群存储**RocksDB + Storage Raft** 控制台认证**API 开启时强制 JWT 登录** Prometheus**`/-/metrics`**"
           },
           {
             "type": "heading",
@@ -12460,7 +12460,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点功能截图",
+            "alt": "VelaMQ 0.0.1 监听端点功能截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -12481,7 +12481,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户功能截图",
+            "alt": "VelaMQ 0.0.1 控制台用户功能截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -12502,12 +12502,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证功能截图",
+            "alt": "VelaMQ 0.0.1 设备认证功能截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 访问控制功能截图",
+            "alt": "VelaMQ 0.0.1 访问控制功能截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -12529,12 +12529,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 数据源功能截图",
+            "alt": "VelaMQ 0.0.1 数据源功能截图",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎功能截图",
+            "alt": "VelaMQ 0.0.1 规则引擎功能截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -12588,7 +12588,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费功能截图",
+            "alt": "VelaMQ 0.0.1 指令消费功能截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -12617,7 +12617,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理功能截图",
+            "alt": "VelaMQ 0.0.1 证书管理功能截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -12643,12 +12643,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘功能截图",
+            "alt": "VelaMQ 0.0.1 仪表盘功能截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标功能截图",
+            "alt": "VelaMQ 0.0.1 监控指标功能截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
@@ -12667,7 +12667,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/demo": {
         "id": "product/demo",
         "title": "演示视频与截图",
-        "summary": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 3.0 实例，创建示例控制台数据，并采集控制台核心页面。",
+        "summary": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 0.0.1 实例，创建示例控制台数据，并采集控制台核心页面。",
         "sourcePath": "product/demo.md",
         "headings": [
           {
@@ -12689,7 +12689,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 3.0 实例，创建示例控制台数据，并采集控制台核心页面。"
+            "text": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 0.0.1 实例，创建示例控制台数据，并采集控制台核心页面。"
           },
           {
             "type": "heading",
@@ -12718,7 +12718,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘截图",
+            "alt": "VelaMQ 0.0.1 仪表盘截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -12727,7 +12727,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点截图",
+            "alt": "VelaMQ 0.0.1 监听端点截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -12736,7 +12736,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 连接管理截图",
+            "alt": "VelaMQ 0.0.1 连接管理截图",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
@@ -12745,7 +12745,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 数据源截图",
+            "alt": "VelaMQ 0.0.1 数据源截图",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
@@ -12754,7 +12754,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎截图",
+            "alt": "VelaMQ 0.0.1 规则引擎截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -12763,7 +12763,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费截图",
+            "alt": "VelaMQ 0.0.1 指令消费截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -12772,7 +12772,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证截图",
+            "alt": "VelaMQ 0.0.1 设备认证截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -12781,7 +12781,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 截图",
+            "alt": "VelaMQ 0.0.1 ACL 截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -12790,7 +12790,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理截图",
+            "alt": "VelaMQ 0.0.1 证书管理截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -12799,7 +12799,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标截图",
+            "alt": "VelaMQ 0.0.1 监控指标截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
@@ -12808,7 +12808,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 操作审计截图",
+            "alt": "VelaMQ 0.0.1 操作审计截图",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
@@ -12817,7 +12817,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户截图",
+            "alt": "VelaMQ 0.0.1 控制台用户截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -13207,9 +13207,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "sourcePath": "product/introduction.mdx",
         "headings": [
           {
-            "id": "velamq-30",
+            "id": "velamq-001",
             "level": 1,
-            "text": "VelaMQ 3.0"
+            "text": "VelaMQ 0.0.1"
           },
           {
             "id": "架构总览",
@@ -13249,9 +13249,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "velamq-30",
+            "id": "velamq-001",
             "level": 1,
-            "text": "VelaMQ 3.0"
+            "text": "VelaMQ 0.0.1"
           },
           {
             "type": "paragraph",
@@ -13277,7 +13277,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 分层架构图",
+            "alt": "VelaMQ 0.0.1 分层架构图",
             "src": "/velamq-docs/img/architecture/velamq-3-architecture.svg"
           },
           {
@@ -13331,7 +13331,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/license": {
         "id": "product/license",
         "title": "License 与授权",
-        "summary": "VelaMQ 3.0 同时包含开源仓库 License 和运行时产品授权两层概念。",
+        "summary": "VelaMQ 0.0.1 同时包含开源仓库 License 和运行时产品授权两层概念。",
         "sourcePath": "product/license.md",
         "headings": [
           {
@@ -13378,11 +13378,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 同时包含开源仓库 License 和运行时产品授权两层概念。"
+            "text": "VelaMQ 0.0.1 同时包含开源仓库 License 和运行时产品授权两层概念。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 License 面板所在仪表盘截图",
+            "alt": "VelaMQ 0.0.1 License 面板所在仪表盘截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -13591,7 +13591,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/versioning": {
         "id": "product/versioning",
         "title": "版本管理",
-        "summary": "VelaMQ 3.0 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `3.0.0`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。",
+        "summary": "VelaMQ 0.0.1 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `0.0.1`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。",
         "sourcePath": "product/versioning.md",
         "headings": [
           {
@@ -13623,13 +13623,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `3.0.0`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。"
+            "text": "VelaMQ 0.0.1 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `0.0.1`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。"
           },
           {
             "type": "list",
             "ordered": false,
             "items": [
-              "`3.0.0`：来自 `versioned_docs/version-3.0.0/`，默认路径为 `/`。",
+              "`0.0.1`：来自 `versioned_docs/version-0.0.1/`，默认路径为 `/`。",
               "`docs/`：作为下一版本的编辑源，不直接作为导航里的独立版本发布。"
             ]
           },
@@ -13659,12 +13659,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
                 "已发布版本列表，新版本会追加到这里。"
               ],
               [
-                "`versioned_docs/version-3.0.0/`",
-                "当前默认版本 `3.0.0` 的文档快照，站点路径为 `/`。"
+                "`versioned_docs/version-0.0.1/`",
+                "当前默认版本 `0.0.1` 的文档快照，站点路径为 `/`。"
               ],
               [
-                "`versioned_sidebars/version-3.0.0-sidebars.json`",
-                "当前默认版本 `3.0.0` 的导航快照。"
+                "`versioned_sidebars/version-0.0.1-sidebars.json`",
+                "当前默认版本 `0.0.1` 的导航快照。"
               ]
             ]
           },
@@ -13676,12 +13676,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "当 VelaMQ 3.0 发布新版本，例如 `3.1.0`，先确认 `docs/` 已经更新到该版本对应内容，然后执行："
+            "text": "当 VelaMQ 0.0.1 发布新版本，例如 `0.0.2`，先确认 `docs/` 已经更新到该版本对应内容，然后执行："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs-doc\nnpm run docs:version 3.1.0"
+            "code": "cd /Users/lulu/Work/velamq-rs-doc\nnpm run docs:version 0.0.2"
           },
           {
             "type": "paragraph",
@@ -13691,8 +13691,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "list",
             "ordered": true,
             "items": [
-              "把当前 `docs/` 复制到 `versioned_docs/version-3.1.0/`。",
-              "把当前 `sidebars.js` 复制到 `versioned_sidebars/version-3.1.0-sidebars.json`。",
+              "把当前 `docs/` 复制到 `versioned_docs/version-0.0.2/`。",
+              "把当前 `sidebars.js` 复制到 `versioned_sidebars/version-0.0.2-sidebars.json`。",
               "更新 `versions.json`。"
             ]
           },
@@ -13703,7 +13703,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "js",
-            "code": "includeCurrentVersion: false,\nlastVersion: '3.1.0',\nversions: {\n  '3.1.0': {\n    label: '3.1.0',\n    path: '',\n    banner: 'none',\n  },\n  '3.0.0': {\n    label: '3.0.0',\n    path: '3.0.0',\n    banner: 'none',\n  },\n}"
+            "code": "includeCurrentVersion: false,\nlastVersion: '0.0.2',\nversions: {\n  '0.0.2': {\n    label: '0.0.2',\n    path: '',\n    banner: 'none',\n  },\n  '0.0.1': {\n    label: '0.0.1',\n    path: '0.0.1',\n    banner: 'none',\n  },\n}"
           },
           {
             "type": "heading",
@@ -13736,16 +13736,16 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ],
             "rows": [
               [
-                "3.0.0 当前默认版本",
+                "0.0.1 当前默认版本",
                 "`/`"
               ],
               [
-                "未来 3.1.0 默认版本",
+                "未来 0.0.2 默认版本",
                 "`/`"
               ],
               [
-                "未来 3.0.0 历史版本",
-                "`/3.0.0/`"
+                "未来 0.0.1 历史版本",
+                "`/0.0.1/`"
               ]
             ]
           },
@@ -13757,8 +13757,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "list",
             "ordered": false,
             "items": [
-              "当前 3.0.0 功能清单：`/product/feature-list`",
-              "未来发布 3.1.0 后，3.0.0 历史功能清单：`/3.0.0/product/feature-list`"
+              "当前 0.0.1 功能清单：`/product/feature-list`",
+              "未来发布 0.0.2 后，0.0.1 历史功能清单：`/0.0.1/product/feature-list`"
             ]
           },
           {
@@ -13795,7 +13795,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "productName": "VelaMQ",
     "title": "VelaMQ Documentation",
     "eyebrow": "VelaMQ Docs",
-    "body": "VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation migrated from velamq-rs-doc and maintained here as version v1.0.0.",
+    "body": "VelaMQ product, installation, feature, API, rule engine, data source, and operations documentation for the current v0.0.1 release.",
     "searchPlaceholder": "Browse VelaMQ docs, rules and APIs",
     "sidebarLabel": "VelaMQ documentation navigation",
     "tocLabel": "On this page",
@@ -13805,11 +13805,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
     "defaultDocumentId": "product/introduction",
     "versions": [
       {
-        "id": "v1.0.0",
-        "label": "v1.0.0",
+        "id": "v0.0.1",
+        "label": "v0.0.1",
         "status": "stable",
-        "date": "VelaMQ v1.0.0",
-        "note": "Current website documentation version, migrated from velamq-rs-doc and restyled for the website docs system.",
+        "date": "VelaMQ v0.0.1",
+        "note": "Current documentation aligned with the VelaMQ v0.0.1 packages and source release.",
         "command": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip && unzip velamqd-0.0.1-linux-musl-x86_64.zip && cd velamqd-0.0.1-linux-musl-x86_64 && ./start.sh"
       }
     ],
@@ -14231,7 +14231,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "FAQ": {
         "id": "FAQ",
         "title": "FAQ",
-        "summary": "VelaMQ 3.0 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。",
+        "summary": "VelaMQ 0.0.1 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。",
         "sourcePath": "FAQ.md",
         "headings": [
           {
@@ -14279,7 +14279,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。"
+            "text": "VelaMQ 0.0.1 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。"
           },
           {
             "type": "heading",
@@ -14289,7 +14289,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "不需要作为 VelaMQ 3.0 的 Broker 管理库。当前运行态和管理配置以本地 RocksDB 为状态机，集群复制通过 Storage Raft 完成。PostgreSQL、MySQL、SQLite 仍可作为规则动作或认证 SQL 数据源使用。"
+            "text": "不需要作为 VelaMQ 0.0.1 的 Broker 管理库。当前运行态和管理配置以本地 RocksDB 为状态机，集群复制通过 Storage Raft 完成。PostgreSQL、MySQL、SQLite 仍可作为规则动作或认证 SQL 数据源使用。"
           },
           {
             "type": "heading",
@@ -14955,7 +14955,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "api/prometheus": {
         "id": "api/prometheus",
         "title": "Prometheus 指标",
-        "summary": "VelaMQ 3.0 暴露 Prometheus 文本指标：",
+        "summary": "VelaMQ 0.0.1 暴露 Prometheus 文本指标：",
         "sourcePath": "api/prometheus.md",
         "headings": [
           {
@@ -14977,7 +14977,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 暴露 Prometheus 文本指标："
+            "text": "VelaMQ 0.0.1 暴露 Prometheus 文本指标："
           },
           {
             "type": "code",
@@ -15193,7 +15193,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证页面截图",
+            "alt": "VelaMQ 0.0.1 设备认证页面截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -15290,7 +15290,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 Config 认证示例截图",
+            "alt": "VelaMQ 0.0.1 Config 认证示例截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -15324,7 +15324,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 HTTP 认证示例截图",
+            "alt": "VelaMQ 0.0.1 HTTP 认证示例截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -15412,7 +15412,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 SQL 认证示例截图",
+            "alt": "VelaMQ 0.0.1 SQL 认证示例截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -15546,7 +15546,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 鉴权加密配置截图",
+            "alt": "VelaMQ 0.0.1 鉴权加密配置截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -15634,7 +15634,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 访问控制页面截图",
+            "alt": "VelaMQ 0.0.1 访问控制页面截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -15728,7 +15728,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 判定语义截图",
+            "alt": "VelaMQ 0.0.1 ACL 判定语义截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -15756,7 +15756,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 示例截图",
+            "alt": "VelaMQ 0.0.1 ACL 示例截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -15798,7 +15798,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 控制台操作截图",
+            "alt": "VelaMQ 0.0.1 ACL 控制台操作截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -15917,7 +15917,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理页面截图",
+            "alt": "VelaMQ 0.0.1 证书管理页面截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -15987,7 +15987,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/cluster": {
         "id": "guide/cluster",
         "title": "集群",
-        "summary": "VelaMQ 3.0 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。",
+        "summary": "VelaMQ 0.0.1 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。",
         "sourcePath": "guide/cluster.md",
         "headings": [
           {
@@ -16029,11 +16029,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。"
+            "text": "VelaMQ 0.0.1 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 集群概览所在仪表盘截图",
+            "alt": "VelaMQ 0.0.1 集群概览所在仪表盘截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -16276,7 +16276,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费页面截图",
+            "alt": "VelaMQ 0.0.1 指令消费页面截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -16338,7 +16338,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费页面截图",
+            "alt": "VelaMQ 0.0.1 指令消费页面截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -16399,7 +16399,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户页面截图",
+            "alt": "VelaMQ 0.0.1 控制台用户页面截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -16465,7 +16465,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 操作审计页面截图",
+            "alt": "VelaMQ 0.0.1 操作审计页面截图",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
@@ -16514,7 +16514,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘页面截图",
+            "alt": "VelaMQ 0.0.1 仪表盘页面截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -16628,7 +16628,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 Data Management and dashboard screenshot",
+            "alt": "VelaMQ 0.0.1 Data Management and dashboard screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -17711,7 +17711,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/datasources/object-search-loki": {
         "id": "guide/datasources/object-search-loki",
         "title": "Object Storage, Search, and Loki",
-        "summary": "VelaMQ 3.0 can write rule-matched messages to S3-compatible object storage, Elasticsearch, OpenSearch, and Grafana Loki. These data sources are useful for archiving, search, and log streams.",
+        "summary": "VelaMQ 0.0.1 can write rule-matched messages to S3-compatible object storage, Elasticsearch, OpenSearch, and Grafana Loki. These data sources are useful for archiving, search, and log streams.",
         "sourcePath": "guide/datasources/object-search-loki.md",
         "headings": [
           {
@@ -17758,7 +17758,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 can write rule-matched messages to S3-compatible object storage, Elasticsearch, OpenSearch, and Grafana Loki. These data sources are useful for archiving, search, and log streams."
+            "text": "VelaMQ 0.0.1 can write rule-matched messages to S3-compatible object storage, Elasticsearch, OpenSearch, and Grafana Loki. These data sources are useful for archiving, search, and log streams."
           },
           {
             "type": "image",
@@ -18088,7 +18088,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/datasources/overview": {
         "id": "guide/datasources/overview",
         "title": "Data Sources Overview",
-        "summary": "Data sources are VelaMQ 3.0's unified abstraction for connecting to external systems. SQL authentication, HTTP webhooks, rule actions, offline-message workflows, and command pipelines all reuse data-source configuration.",
+        "summary": "Data sources are VelaMQ 0.0.1's unified abstraction for connecting to external systems. SQL authentication, HTTP webhooks, rule actions, offline-message workflows, and command pipelines all reuse data-source configuration.",
         "sourcePath": "guide/datasources/overview.md",
         "headings": [
           {
@@ -18120,7 +18120,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "Data sources are VelaMQ 3.0's unified abstraction for connecting to external systems. SQL authentication, HTTP webhooks, rule actions, offline-message workflows, and command pipelines all reuse data-source configuration."
+            "text": "Data sources are VelaMQ 0.0.1's unified abstraction for connecting to external systems. SQL authentication, HTTP webhooks, rule actions, offline-message workflows, and command pipelines all reuse data-source configuration."
           },
           {
             "type": "image",
@@ -19706,7 +19706,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/endpoints": {
         "id": "guide/endpoints",
         "title": "监听端点",
-        "summary": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 3.0 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。",
+        "summary": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 0.0.1 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。",
         "sourcePath": "guide/endpoints.md",
         "headings": [
           {
@@ -19733,11 +19733,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 3.0 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。"
+            "text": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 0.0.1 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点页面截图",
+            "alt": "VelaMQ 0.0.1 监听端点页面截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -19876,7 +19876,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 连接管理页面截图",
+            "alt": "VelaMQ 0.0.1 连接管理页面截图",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
@@ -19983,7 +19983,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标页面截图",
+            "alt": "VelaMQ 0.0.1 监控指标页面截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
@@ -20083,7 +20083,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -20429,7 +20429,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -20559,7 +20559,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎示例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -20669,7 +20669,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎和动态函数配置入口截图",
+            "alt": "VelaMQ 0.0.1 规则引擎和动态函数配置入口截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -20947,7 +20947,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -21125,7 +21125,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/rule-engine/offline": {
         "id": "guide/rule-engine/offline",
         "title": "离线消息",
-        "summary": "VelaMQ 3.0 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。",
+        "summary": "VelaMQ 0.0.1 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。",
         "sourcePath": "guide/rule-engine/offline.md",
         "headings": [
           {
@@ -21167,12 +21167,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。"
+            "text": "VelaMQ 0.0.1 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。"
           },
           {
             "type": "heading",
@@ -21255,7 +21255,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎示例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -21284,7 +21284,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎示例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -21328,7 +21328,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "guide/rule-engine/overview": {
         "id": "guide/rule-engine/overview",
         "title": "规则引擎总览",
-        "summary": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 3.0 的消息路由与数据集成核心。",
+        "summary": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 0.0.1 的消息路由与数据集成核心。",
         "sourcePath": "guide/rule-engine/overview.md",
         "headings": [
           {
@@ -21360,11 +21360,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 3.0 的消息路由与数据集成核心。"
+            "text": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 0.0.1 的消息路由与数据集成核心。"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -21540,7 +21540,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 rule engine and outbox management screenshot",
+            "alt": "VelaMQ 0.0.1 rule engine and outbox management screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -21857,7 +21857,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -22086,7 +22086,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点页面截图",
+            "alt": "VelaMQ 0.0.1 监听端点页面截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -22153,7 +22153,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 WebSocket 端点页面截图",
+            "alt": "VelaMQ 0.0.1 WebSocket 端点页面截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -22206,7 +22206,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理页面截图",
+            "alt": "VelaMQ 0.0.1 证书管理页面截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -22271,7 +22271,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证页面截图",
+            "alt": "VelaMQ 0.0.1 设备认证页面截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -22343,7 +22343,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 HTTP 认证配置页面截图",
+            "alt": "VelaMQ 0.0.1 HTTP 认证配置页面截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -22427,7 +22427,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 访问控制页面截图",
+            "alt": "VelaMQ 0.0.1 访问控制页面截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -22513,7 +22513,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎页面截图",
+            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -22608,7 +22608,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎 Webhook 案例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎 Webhook 案例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -22668,7 +22668,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 数据源页面截图",
+            "alt": "VelaMQ 0.0.1 数据源页面截图",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
@@ -22747,12 +22747,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费页面截图",
+            "alt": "VelaMQ 0.0.1 指令消费页面截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
             "type": "paragraph",
-            "text": "目标：业务系统写入 Kafka topic，VelaMQ 3.0 消费后下发到设备 MQTT topic。"
+            "text": "目标：业务系统写入 Kafka topic，VelaMQ 0.0.1 消费后下发到设备 MQTT topic。"
           },
           {
             "type": "paragraph",
@@ -22840,7 +22840,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 连接管理页面截图",
+            "alt": "VelaMQ 0.0.1 连接管理页面截图",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
@@ -22884,7 +22884,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户页面截图",
+            "alt": "VelaMQ 0.0.1 控制台用户页面截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -22927,7 +22927,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘 License 页面截图",
+            "alt": "VelaMQ 0.0.1 仪表盘 License 页面截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -22971,12 +22971,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标页面截图",
+            "alt": "VelaMQ 0.0.1 监控指标页面截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
             "type": "paragraph",
-            "text": "目标：把 VelaMQ 3.0 指标接入外部监控系统并配置告警。"
+            "text": "目标：把 VelaMQ 0.0.1 指标接入外部监控系统并配置告警。"
           },
           {
             "type": "paragraph",
@@ -23035,7 +23035,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 集群概览页面截图",
+            "alt": "VelaMQ 0.0.1 集群概览页面截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -23095,7 +23095,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 操作审计页面截图",
+            "alt": "VelaMQ 0.0.1 操作审计页面截图",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
@@ -23137,7 +23137,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎 AI 助手案例截图",
+            "alt": "VelaMQ 0.0.1 规则引擎 AI 助手案例截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -23188,14 +23188,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "index": {
         "id": "index",
-        "title": "VelaMQ 3.0 Documentation",
-        "summary": "Product overview, deployment guides, console feature manuals, API references, operations notes, and demo assets for VelaMQ 3.0.",
+        "title": "VelaMQ 0.0.1 Documentation",
+        "summary": "Product overview, deployment guides, console feature manuals, API references, operations notes, and demo assets for VelaMQ 0.0.1.",
         "sourcePath": "index.mdx",
         "headings": [
           {
-            "id": "velamq-30-documentation",
+            "id": "velamq-001-documentation",
             "level": 1,
-            "text": "VelaMQ 3.0 Documentation"
+            "text": "VelaMQ 0.0.1 Documentation"
           },
           {
             "id": "quick-links",
@@ -23236,13 +23236,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "heading",
-            "id": "velamq-30-documentation",
+            "id": "velamq-001-documentation",
             "level": 1,
-            "text": "VelaMQ 3.0 Documentation"
+            "text": "VelaMQ 0.0.1 Documentation"
           },
           {
             "type": "paragraph",
-            "text": "Product overview, deployment guides, console feature manuals, API references, operations notes, and demo assets for VelaMQ 3.0."
+            "text": "Product overview, deployment guides, console feature manuals, API references, operations notes, and demo assets for VelaMQ 0.0.1."
           },
           {
             "type": "paragraph",
@@ -24832,7 +24832,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "operations/storage": {
         "id": "operations/storage",
         "title": "Storage and Database",
-        "summary": "VelaMQ 3.0 uses local RocksDB as the broker state machine. Single-node mode reads and writes local RocksDB directly. Cluster mode replicates metadata and management configuration through Storage Raft, while shard replicas carry larger keyspaces such as retained messages, sessions, and delayed messages.",
+        "summary": "VelaMQ 0.0.1 uses local RocksDB as the broker state machine. Single-node mode reads and writes local RocksDB directly. Cluster mode replicates metadata and management configuration through Storage Raft, while shard replicas carry larger keyspaces such as retained messages, sessions, and delayed messages.",
         "sourcePath": "operations/storage.md",
         "headings": [
           {
@@ -24864,11 +24864,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 uses local RocksDB as the broker state machine. Single-node mode reads and writes local RocksDB directly. Cluster mode replicates metadata and management configuration through Storage Raft, while shard replicas carry larger keyspaces such as retained messages, sessions, and delayed messages."
+            "text": "VelaMQ 0.0.1 uses local RocksDB as the broker state machine. Single-node mode reads and writes local RocksDB directly. Cluster mode replicates metadata and management configuration through Storage Raft, while shard replicas carry larger keyspaces such as retained messages, sessions, and delayed messages."
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 Storage Raft and storage overview screenshot",
+            "alt": "VelaMQ 0.0.1 Storage Raft and storage overview screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -25243,7 +25243,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/architecture": {
         "id": "product/architecture",
         "title": "系统架构",
-        "summary": "VelaMQ 3.0 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。",
+        "summary": "VelaMQ 0.0.1 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。",
         "sourcePath": "product/architecture.md",
         "headings": [
           {
@@ -25325,7 +25325,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。"
+            "text": "VelaMQ 0.0.1 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。"
           },
           {
             "type": "heading",
@@ -25745,7 +25745,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/basic-info": {
         "id": "product/basic-info",
         "title": "基本信息",
-        "summary": "VelaMQ 3.0 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。",
+        "summary": "VelaMQ 0.0.1 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。",
         "sourcePath": "product/basic-info.md",
         "headings": [
           {
@@ -25811,11 +25811,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。"
+            "text": "VelaMQ 0.0.1 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。"
           },
           {
             "type": "paragraph",
-            "text": "当前版本 **3.0.0** 发布文档快照"
+            "text": "当前版本 **0.0.1** 发布文档快照"
           },
           {
             "type": "paragraph",
@@ -25837,7 +25837,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "产品名称**VelaMQ 3.0** 实现语言**Rust 2024 edition** Web 控制台**React + Ant Design + Vite** 管理服务**Axum + 控制台静态资源** 集群存储**RocksDB + Storage Raft** 控制台认证**API 开启时强制 JWT 登录** Prometheus**`/-/metrics`**"
+            "text": "产品名称**VelaMQ 0.0.1** 实现语言**Rust 2024 edition** Web 控制台**React + Ant Design + Vite** 管理服务**Axum + 控制台静态资源** 集群存储**RocksDB + Storage Raft** 控制台认证**API 开启时强制 JWT 登录** Prometheus**`/-/metrics`**"
           },
           {
             "type": "heading",
@@ -26013,7 +26013,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点功能截图",
+            "alt": "VelaMQ 0.0.1 监听端点功能截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -26034,7 +26034,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户功能截图",
+            "alt": "VelaMQ 0.0.1 控制台用户功能截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -26055,12 +26055,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证功能截图",
+            "alt": "VelaMQ 0.0.1 设备认证功能截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 访问控制功能截图",
+            "alt": "VelaMQ 0.0.1 访问控制功能截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -26082,12 +26082,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 数据源功能截图",
+            "alt": "VelaMQ 0.0.1 数据源功能截图",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎功能截图",
+            "alt": "VelaMQ 0.0.1 规则引擎功能截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -26141,7 +26141,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费功能截图",
+            "alt": "VelaMQ 0.0.1 指令消费功能截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -26170,7 +26170,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理功能截图",
+            "alt": "VelaMQ 0.0.1 证书管理功能截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -26196,12 +26196,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘功能截图",
+            "alt": "VelaMQ 0.0.1 仪表盘功能截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标功能截图",
+            "alt": "VelaMQ 0.0.1 监控指标功能截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
@@ -26220,7 +26220,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/demo": {
         "id": "product/demo",
         "title": "演示视频与截图",
-        "summary": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 3.0 实例，创建示例控制台数据，并采集控制台核心页面。",
+        "summary": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 0.0.1 实例，创建示例控制台数据，并采集控制台核心页面。",
         "sourcePath": "product/demo.md",
         "headings": [
           {
@@ -26242,7 +26242,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 3.0 实例，创建示例控制台数据，并采集控制台核心页面。"
+            "text": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 0.0.1 实例，创建示例控制台数据，并采集控制台核心页面。"
           },
           {
             "type": "heading",
@@ -26271,7 +26271,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 仪表盘截图",
+            "alt": "VelaMQ 0.0.1 仪表盘截图",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -26280,7 +26280,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监听端点截图",
+            "alt": "VelaMQ 0.0.1 监听端点截图",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
@@ -26289,7 +26289,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 连接管理截图",
+            "alt": "VelaMQ 0.0.1 连接管理截图",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
@@ -26298,7 +26298,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 数据源截图",
+            "alt": "VelaMQ 0.0.1 数据源截图",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
@@ -26307,7 +26307,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 规则引擎截图",
+            "alt": "VelaMQ 0.0.1 规则引擎截图",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -26316,7 +26316,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 指令消费截图",
+            "alt": "VelaMQ 0.0.1 指令消费截图",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
@@ -26325,7 +26325,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 设备认证截图",
+            "alt": "VelaMQ 0.0.1 设备认证截图",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
@@ -26334,7 +26334,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 ACL 截图",
+            "alt": "VelaMQ 0.0.1 ACL 截图",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
@@ -26343,7 +26343,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 证书管理截图",
+            "alt": "VelaMQ 0.0.1 证书管理截图",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
@@ -26352,7 +26352,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 监控指标截图",
+            "alt": "VelaMQ 0.0.1 监控指标截图",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
@@ -26361,7 +26361,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 操作审计截图",
+            "alt": "VelaMQ 0.0.1 操作审计截图",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
@@ -26370,7 +26370,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 控制台用户截图",
+            "alt": "VelaMQ 0.0.1 控制台用户截图",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
@@ -26760,9 +26760,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "sourcePath": "product/introduction.mdx",
         "headings": [
           {
-            "id": "velamq-30",
+            "id": "velamq-001",
             "level": 1,
-            "text": "VelaMQ 3.0"
+            "text": "VelaMQ 0.0.1"
           },
           {
             "id": "architecture-overview",
@@ -26802,9 +26802,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "velamq-30",
+            "id": "velamq-001",
             "level": 1,
-            "text": "VelaMQ 3.0"
+            "text": "VelaMQ 0.0.1"
           },
           {
             "type": "paragraph",
@@ -26830,7 +26830,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 layered architecture",
+            "alt": "VelaMQ 0.0.1 layered architecture",
             "src": "/velamq-docs/img/architecture/velamq-3-architecture.svg"
           },
           {
@@ -26884,7 +26884,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/license": {
         "id": "product/license",
         "title": "License and Authorization",
-        "summary": "VelaMQ 3.0 has two license concepts: the open-source repository license and the runtime product license.",
+        "summary": "VelaMQ 0.0.1 has two license concepts: the open-source repository license and the runtime product license.",
         "sourcePath": "product/license.md",
         "headings": [
           {
@@ -26931,11 +26931,11 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 has two license concepts: the open-source repository license and the runtime product license."
+            "text": "VelaMQ 0.0.1 has two license concepts: the open-source repository license and the runtime product license."
           },
           {
             "type": "image",
-            "alt": "VelaMQ 3.0 dashboard license panel screenshot",
+            "alt": "VelaMQ 0.0.1 dashboard license panel screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -27140,7 +27140,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "product/versioning": {
         "id": "product/versioning",
         "title": "版本管理",
-        "summary": "VelaMQ 3.0 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `3.0.0`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。",
+        "summary": "VelaMQ 0.0.1 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `0.0.1`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。",
         "sourcePath": "product/versioning.md",
         "headings": [
           {
@@ -27172,13 +27172,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "paragraph",
-            "text": "VelaMQ 3.0 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `3.0.0`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。"
+            "text": "VelaMQ 0.0.1 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `0.0.1`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。"
           },
           {
             "type": "list",
             "ordered": false,
             "items": [
-              "`3.0.0`：来自 `versioned_docs/version-3.0.0/`，默认路径为 `/`。",
+              "`0.0.1`：来自 `versioned_docs/version-0.0.1/`，默认路径为 `/`。",
               "`docs/`：作为下一版本的编辑源，不直接作为导航里的独立版本发布。"
             ]
           },
@@ -27208,12 +27208,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
                 "已发布版本列表，新版本会追加到这里。"
               ],
               [
-                "`versioned_docs/version-3.0.0/`",
-                "当前默认版本 `3.0.0` 的文档快照，站点路径为 `/`。"
+                "`versioned_docs/version-0.0.1/`",
+                "当前默认版本 `0.0.1` 的文档快照，站点路径为 `/`。"
               ],
               [
-                "`versioned_sidebars/version-3.0.0-sidebars.json`",
-                "当前默认版本 `3.0.0` 的导航快照。"
+                "`versioned_sidebars/version-0.0.1-sidebars.json`",
+                "当前默认版本 `0.0.1` 的导航快照。"
               ]
             ]
           },
@@ -27225,12 +27225,12 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "paragraph",
-            "text": "当 VelaMQ 3.0 发布新版本，例如 `3.1.0`，先确认 `docs/` 已经更新到该版本对应内容，然后执行："
+            "text": "当 VelaMQ 0.0.1 发布新版本，例如 `0.0.2`，先确认 `docs/` 已经更新到该版本对应内容，然后执行："
           },
           {
             "type": "code",
             "language": "bash",
-            "code": "cd /Users/lulu/Work/velamq-rs-doc\nnpm run docs:version 3.1.0"
+            "code": "cd /Users/lulu/Work/velamq-rs-doc\nnpm run docs:version 0.0.2"
           },
           {
             "type": "paragraph",
@@ -27240,8 +27240,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "list",
             "ordered": true,
             "items": [
-              "把当前 `docs/` 复制到 `versioned_docs/version-3.1.0/`。",
-              "把当前 `sidebars.js` 复制到 `versioned_sidebars/version-3.1.0-sidebars.json`。",
+              "把当前 `docs/` 复制到 `versioned_docs/version-0.0.2/`。",
+              "把当前 `sidebars.js` 复制到 `versioned_sidebars/version-0.0.2-sidebars.json`。",
               "更新 `versions.json`。"
             ]
           },
@@ -27252,7 +27252,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "code",
             "language": "js",
-            "code": "includeCurrentVersion: false,\nlastVersion: '3.1.0',\nversions: {\n  '3.1.0': {\n    label: '3.1.0',\n    path: '',\n    banner: 'none',\n  },\n  '3.0.0': {\n    label: '3.0.0',\n    path: '3.0.0',\n    banner: 'none',\n  },\n}"
+            "code": "includeCurrentVersion: false,\nlastVersion: '0.0.2',\nversions: {\n  '0.0.2': {\n    label: '0.0.2',\n    path: '',\n    banner: 'none',\n  },\n  '0.0.1': {\n    label: '0.0.1',\n    path: '0.0.1',\n    banner: 'none',\n  },\n}"
           },
           {
             "type": "heading",
@@ -27285,16 +27285,16 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ],
             "rows": [
               [
-                "3.0.0 当前默认版本",
+                "0.0.1 当前默认版本",
                 "`/`"
               ],
               [
-                "未来 3.1.0 默认版本",
+                "未来 0.0.2 默认版本",
                 "`/`"
               ],
               [
-                "未来 3.0.0 历史版本",
-                "`/3.0.0/`"
+                "未来 0.0.1 历史版本",
+                "`/0.0.1/`"
               ]
             ]
           },
@@ -27306,8 +27306,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "type": "list",
             "ordered": false,
             "items": [
-              "当前 3.0.0 功能清单：`/product/feature-list`",
-              "未来发布 3.1.0 后，3.0.0 历史功能清单：`/3.0.0/product/feature-list`"
+              "当前 0.0.1 功能清单：`/product/feature-list`",
+              "未来发布 0.0.2 后，0.0.1 历史功能清单：`/0.0.1/product/feature-list`"
             ]
           },
           {

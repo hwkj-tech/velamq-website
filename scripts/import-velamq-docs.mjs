@@ -278,16 +278,22 @@ const normalizeProductText = (text) =>
     .replace(/VelaMQ 3\.0/g, `VelaMQ ${currentVelaMQVersion}`)
     .replace(/\b3\.0\.0\b/g, currentVelaMQVersion)
     .replace(/\b3\.1\.0\b/g, '0.0.2')
+    .replace(/velamq-3-architecture\.svg/g, 'velamq-architecture.svg')
 
 const preprocessBody = (body) => {
   let normalized = body
+    .replace(/<h1>\s*(?:FluxMQ|VelaMQ)(?:\s+\d+(?:\.\d+)*)?\s*<\/h1>/g, '<h1>VelaMQ</h1>')
     .replace(/<Screenshot\s+name="([^"]+)"\s+alt="([^"]+)"\s*\/>/g, (_, name, alt) => {
       screenshotNames.add(name)
       return `\n![${normalizeProductText(alt)}](/velamq-docs/img/screenshots/${name}.png)\n`
     })
     .replace(/<video[\s\S]*?src="([^"]+)"[\s\S]*?\/>/g, (_, src) => `\n@@VIDEO|${rewriteAssetPath(src)}|VelaMQ demo video@@\n`)
     .replace(/<img[\s\S]*?src="([^"]+)"[\s\S]*?alt="([^"]+)"[\s\S]*?\/>/g, (_, src, alt) => {
-      return `\n![${normalizeProductText(alt)}](${rewriteAssetPath(src)})\n`
+      const normalizedAlt = normalizeProductText(alt)
+      const displayAlt = src.includes('architecture/')
+        ? normalizedAlt.replace(`VelaMQ ${currentVelaMQVersion}`, 'VelaMQ')
+        : normalizedAlt
+      return `\n![${displayAlt}](${rewriteAssetPath(src)})\n`
     })
 
   const output = []
@@ -669,6 +675,134 @@ const buildCatalog = (locale, docsDir) => {
   }
 }
 
+const createArchitectureSvg = () => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">VelaMQ layered architecture</title>
+  <desc id="desc">VelaMQ access, message core, control plane, rule engine, storage, cluster and observability architecture.</desc>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#7cf7d7" stroke-opacity=".055"/>
+    </pattern>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1L9 5 1 9Z" fill="#67efd0"/>
+    </marker>
+    <style>
+      .frame{fill:#061612;stroke:#2c5a4f;stroke-width:1.5}
+      .panel{fill:#081e19;stroke:#285447;stroke-width:1.4}
+      .panel-accent{fill:#0a241e;stroke:#56d9bc;stroke-width:1.6}
+      .rail{fill:#071b16;stroke:#224a3f;stroke-width:1.2}
+      .eyebrow{fill:#65e7c8;font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:2px}
+      .title{fill:#f2fffb;font:700 32px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+      .label{fill:#eafff9;font:700 19px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+      .body{fill:#8fa8a1;font:14px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+      .mono{fill:#70e8cd;font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:1px}
+      .line{fill:none;stroke:#67efd0;stroke-width:2;stroke-opacity:.64;marker-end:url(#arrow)}
+      .line-cyan{fill:none;stroke:#54c8ed;stroke-width:2;stroke-opacity:.58;marker-end:url(#arrow)}
+      .pulse{stroke-dasharray:8 12;animation:flow 2.8s linear infinite}
+      .dot{fill:#72f4d5;filter:url(#glow)}
+      .dot-alt{fill:#a8df63;filter:url(#glow)}
+      @keyframes flow{to{stroke-dashoffset:-40}}
+      @media(prefers-reduced-motion:reduce){.pulse{animation:none}}
+    </style>
+  </defs>
+
+  <rect class="frame" x="1" y="1" width="1278" height="718" rx="22"/>
+  <rect x="1" y="1" width="1278" height="718" rx="22" fill="url(#grid)"/>
+  <path d="M1 92H1279" stroke="#2a5147"/>
+  <circle cx="34" cy="47" r="6" fill="#ff6969"/>
+  <circle cx="56" cy="47" r="6" fill="#ffc85d"/>
+  <circle cx="78" cy="47" r="6" fill="#6ceccb"/>
+  <text class="eyebrow" x="112" y="51">REALTIME MESSAGE INFRASTRUCTURE</text>
+  <text class="title" x="640" y="56" text-anchor="middle">VelaMQ Architecture</text>
+  <circle class="dot" cx="1190" cy="47" r="5"/>
+  <text class="eyebrow" x="1210" y="51">LIVE</text>
+
+  <text class="eyebrow" x="58" y="132">ACCESS LAYER</text>
+  <rect class="panel" x="58" y="152" width="224" height="82" rx="12"/>
+  <text class="mono" x="80" y="179">DEVICE CONNECT</text>
+  <text class="label" x="80" y="207">MQTT / WS / TLS</text>
+  <rect class="panel" x="58" y="250" width="224" height="82" rx="12"/>
+  <text class="mono" x="80" y="277">MOBILE TRANSPORT</text>
+  <text class="label" x="80" y="305">MQTT over QUIC</text>
+  <rect class="panel" x="58" y="348" width="224" height="82" rx="12"/>
+  <text class="mono" x="80" y="375">EDGE INTERFACE</text>
+  <text class="label" x="80" y="403">HTTP / Webhook</text>
+
+  <text class="eyebrow" x="382" y="132">MESSAGE CORE</text>
+  <rect class="panel-accent" x="382" y="152" width="300" height="278" rx="16"/>
+  <circle class="dot" cx="532" cy="205" r="8"/>
+  <path d="M485 276L520 241 548 261 581 221" fill="none" stroke="#70f0d2" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="485" cy="276" r="7" fill="#54c8ed"/>
+  <circle cx="520" cy="241" r="7" fill="#70f0d2"/>
+  <circle cx="548" cy="261" r="7" fill="#a8df63"/>
+  <circle cx="581" cy="221" r="7" fill="#70f0d2"/>
+  <text class="title" x="532" y="328" text-anchor="middle">VelaMQ</text>
+  <text class="body" x="532" y="358" text-anchor="middle">Broker · Router · Rule Runtime</text>
+  <rect class="rail" x="414" y="382" width="98" height="30" rx="7"/>
+  <text class="mono" x="463" y="402" text-anchor="middle">SESSION</text>
+  <rect class="rail" x="522" y="382" width="128" height="30" rx="7"/>
+  <text class="mono" x="586" y="402" text-anchor="middle">DELIVERY</text>
+
+  <text class="eyebrow" x="782" y="132">CONTROL &amp; EXECUTION</text>
+  <rect class="panel" x="782" y="152" width="440" height="82" rx="12"/>
+  <text class="mono" x="806" y="179">CONTROL PLANE</text>
+  <text class="label" x="806" y="207">Console · API · RBAC · Audit</text>
+  <rect class="panel" x="782" y="250" width="210" height="82" rx="12"/>
+  <text class="mono" x="806" y="277">STREAM PROCESSING</text>
+  <text class="label" x="806" y="305">SQL Rule Engine</text>
+  <rect class="panel" x="1012" y="250" width="210" height="82" rx="12"/>
+  <text class="mono" x="1036" y="277">SECURITY</text>
+  <text class="label" x="1036" y="305">Auth · ACL</text>
+  <rect class="panel" x="782" y="348" width="210" height="82" rx="12"/>
+  <text class="mono" x="806" y="375">INTEGRATION</text>
+  <text class="label" x="806" y="403">Data Sources</text>
+  <rect class="panel" x="1012" y="348" width="210" height="82" rx="12"/>
+  <text class="mono" x="1036" y="375">OPERATIONS</text>
+  <text class="label" x="1036" y="403">Metrics · Alerts</text>
+
+  <path class="line pulse" d="M282 193H370"/>
+  <path class="line pulse" d="M282 291C328 291 334 252 370 252"/>
+  <path class="line-cyan pulse" d="M282 389C328 389 338 338 370 338"/>
+  <path class="line pulse" d="M682 193H770"/>
+  <path class="line pulse" d="M682 286H770"/>
+  <path class="line-cyan pulse" d="M682 389H770"/>
+  <circle class="dot" cx="370" cy="193" r="5"/>
+  <circle class="dot-alt" cx="770" cy="286" r="5"/>
+
+  <text class="eyebrow" x="58" y="486">DURABLE DATA &amp; CLUSTER FABRIC</text>
+  <rect class="rail" x="58" y="508" width="276" height="116" rx="14"/>
+  <text class="mono" x="82" y="542">LOCAL STATE</text>
+  <text class="label" x="82" y="574">RocksDB Storage</text>
+  <text class="body" x="82" y="600">session · retained · metadata</text>
+  <rect class="rail" x="354" y="508" width="276" height="116" rx="14"/>
+  <text class="mono" x="378" y="542">REPLICATION</text>
+  <text class="label" x="378" y="574">Storage Raft</text>
+  <text class="body" x="378" y="600">shard · replica · failover</text>
+  <rect class="rail" x="650" y="508" width="276" height="116" rx="14"/>
+  <text class="mono" x="674" y="542">DATA PIPELINE</text>
+  <text class="label" x="674" y="574">SQL · MQ · Object</text>
+  <text class="body" x="674" y="600">route · transform · persist</text>
+  <rect class="rail" x="946" y="508" width="276" height="116" rx="14"/>
+  <text class="mono" x="970" y="542">OBSERVABILITY</text>
+  <text class="label" x="970" y="574">Prometheus · Logs</text>
+  <text class="body" x="970" y="600">metrics · traces · audit</text>
+  <path class="line pulse" d="M532 430V476C532 494 492 494 492 502"/>
+  <path class="line-cyan pulse" d="M887 430V476C887 494 788 494 788 502"/>
+  <path class="line pulse" d="M1117 430V502"/>
+
+  <text class="body" x="58" y="676">MQTT 3.1.1 / 5.0</text>
+  <text class="body" x="244" y="676">QUIC</text>
+  <text class="body" x="330" y="676">WebSocket</text>
+  <text class="body" x="470" y="676">SQL Rules</text>
+  <text class="body" x="590" y="676">AI Insight</text>
+  <text class="body" x="710" y="676">Open API</text>
+  <text class="body" x="822" y="676">Cluster</text>
+  <text class="body" x="920" y="676">Prometheus</text>
+</svg>`
+
 const createProductAssetAliases = () => {
   const visit = (dir) => {
     for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -683,9 +817,15 @@ const createProductAssetAliases = () => {
         continue
       }
 
-      const aliasPath = path.join(dir, entry.name.replaceAll('fluxmq', 'velamq'))
+      const aliasName = entry.name === 'fluxmq-3-architecture.svg'
+        ? 'velamq-architecture.svg'
+        : entry.name.replaceAll('fluxmq', 'velamq')
+      const aliasPath = path.join(dir, aliasName)
       if (entry.name.endsWith('.svg')) {
-        fs.writeFileSync(aliasPath, normalizeProductText(fs.readFileSync(entryPath, 'utf8')))
+        const svg = entry.name === 'fluxmq-3-architecture.svg'
+          ? createArchitectureSvg()
+          : normalizeProductText(fs.readFileSync(entryPath, 'utf8'))
+        fs.writeFileSync(aliasPath, svg)
       } else if (!fs.existsSync(aliasPath)) {
         fs.copyFileSync(entryPath, aliasPath)
       }

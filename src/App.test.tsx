@@ -248,6 +248,12 @@ describe('HanNet homepage', () => {
     expect(screen.queryByRole('heading', { level: 3, name: '快速启动' })).not.toBeInTheDocument()
 
     expect(screen.getByRole('button', { name: '版本: v0.0.1' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ' })).toBeInTheDocument()
+    expect(screen.queryByText('VelaMQ 3.0')).not.toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'VelaMQ 分层架构图' })).toHaveAttribute(
+      'src',
+      './velamq-docs/img/architecture/velamq-architecture.svg',
+    )
     expect(screen.queryByText(/内容来源于 velamq-rs-doc/)).not.toBeInTheDocument()
     expect(screen.queryByText('product/introduction.mdx')).not.toBeInTheDocument()
 

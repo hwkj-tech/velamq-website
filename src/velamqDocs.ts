@@ -13207,9 +13207,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "sourcePath": "product/introduction.mdx",
         "headings": [
           {
-            "id": "velamq-001",
+            "id": "velamq",
             "level": 1,
-            "text": "VelaMQ 0.0.1"
+            "text": "VelaMQ"
           },
           {
             "id": "架构总览",
@@ -13249,9 +13249,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "velamq-001",
+            "id": "velamq",
             "level": 1,
-            "text": "VelaMQ 0.0.1"
+            "text": "VelaMQ"
           },
           {
             "type": "paragraph",
@@ -13277,8 +13277,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 分层架构图",
-            "src": "/velamq-docs/img/architecture/velamq-3-architecture.svg"
+            "alt": "VelaMQ 分层架构图",
+            "src": "/velamq-docs/img/architecture/velamq-architecture.svg"
           },
           {
             "type": "heading",
@@ -26760,9 +26760,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "sourcePath": "product/introduction.mdx",
         "headings": [
           {
-            "id": "velamq-001",
+            "id": "velamq",
             "level": 1,
-            "text": "VelaMQ 0.0.1"
+            "text": "VelaMQ"
           },
           {
             "id": "architecture-overview",
@@ -26802,9 +26802,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "heading",
-            "id": "velamq-001",
+            "id": "velamq",
             "level": 1,
-            "text": "VelaMQ 0.0.1"
+            "text": "VelaMQ"
           },
           {
             "type": "paragraph",
@@ -26830,8 +26830,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 layered architecture",
-            "src": "/velamq-docs/img/architecture/velamq-3-architecture.svg"
+            "alt": "VelaMQ layered architecture",
+            "src": "/velamq-docs/img/architecture/velamq-architecture.svg"
           },
           {
             "type": "heading",

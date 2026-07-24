@@ -6,6 +6,17 @@ import App from './App'
 import { velamqDocs } from './velamqDocs'
 
 describe('HanNet homepage', () => {
+  const chooseDocsProduct = async (
+    user: ReturnType<typeof userEvent.setup>,
+    navLabel: '文档' | 'Docs',
+    productLabel: 'VelaMQ' | 'VelaMQ Bench' = 'VelaMQ',
+  ) => {
+    const nav = screen.getByRole('navigation', { name: navLabel === '文档' ? '主导航' : 'Main navigation' })
+    await user.click(within(nav).getByRole('link', { name: navLabel }))
+    const menu = screen.getByRole('menu', { name: navLabel })
+    await user.click(within(menu).getByText(productLabel, { selector: 'span' }).closest('button')!)
+  }
+
   beforeEach(() => {
     window.history.replaceState(null, '', '/')
     window.localStorage.clear()
@@ -53,6 +64,30 @@ describe('HanNet homepage', () => {
       'https://beian.miit.gov.cn/',
     )
     expect(screen.getByText('velamq.com')).toBeInTheDocument()
+  })
+
+  it('waits for a docs product selection before opening documentation', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    const nav = screen.getByRole('navigation', { name: '主导航' })
+    const docsTrigger = within(nav).getByRole('link', { name: '文档' })
+    await user.click(docsTrigger)
+
+    expect(docsTrigger).toHaveAttribute('aria-expanded', 'true')
+    expect(screen.getByRole('heading', { level: 1, name: /设备数据接入与业务协同平台/ })).toBeInTheDocument()
+    expect(screen.queryByRole('heading', { level: 2, name: /文档中心/ })).not.toBeInTheDocument()
+
+    const menu = screen.getByRole('menu', { name: '文档' })
+    const velamqItem = within(menu).getByText('VelaMQ', { selector: 'span' }).closest('button')!
+    const benchItem = within(menu).getByText('VelaMQ Bench', { selector: 'span' }).closest('button')!
+    expect(velamqItem).not.toHaveClass('is-selected')
+    expect(benchItem).not.toHaveClass('is-selected')
+
+    await user.click(benchItem)
+
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Bench 文档中心' })).toBeInTheDocument()
+    expect(docsTrigger).toHaveAttribute('aria-expanded', 'false')
   })
 
   it('renders a contact sales form that creates a prefilled email link', async () => {
@@ -141,7 +176,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByText('流程保护')).toBeInTheDocument()
     expect(screen.queryByText('车联网消息通道')).not.toBeInTheDocument()
 
-    await user.click(within(nav).getByRole('link', { name: '文档' }))
+    await chooseDocsProduct(user, '文档')
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
     expect(screen.getByRole('search', { name: '浏览 VelaMQ 文档、规则、API' })).toBeInTheDocument()
     expect(within(screen.getByRole('complementary', { name: 'VelaMQ 文档目录' })).queryByRole('search')).not.toBeInTheDocument()
@@ -162,7 +197,7 @@ describe('HanNet homepage', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('link', { name: '文档' }))
+    await chooseDocsProduct(user, '文档')
 
     const searchbox = screen.getByRole('searchbox', { name: '浏览 VelaMQ 文档、规则、API' })
     await user.type(searchbox, 'Linux 服务')
@@ -209,7 +244,7 @@ describe('HanNet homepage', () => {
     await user.click(screen.getByRole('tab', { name: 'VelaMQ Bench' }))
     expect(screen.getByText(/Capacity assessment and launch validation/)).toBeInTheDocument()
 
-    await user.click(within(nav).getByRole('link', { name: 'Docs' }))
+    await chooseDocsProduct(user, 'Docs')
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Documentation' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Version: v0.0.1' })).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 3, name: 'Product Introduction' })).toBeInTheDocument()
@@ -242,7 +277,7 @@ describe('HanNet homepage', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('link', { name: '文档' }))
+    await chooseDocsProduct(user, '文档')
 
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { level: 3, name: '快速启动' })).not.toBeInTheDocument()
@@ -314,7 +349,7 @@ describe('HanNet homepage', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('link', { name: '文档' }))
+    await chooseDocsProduct(user, '文档')
 
     expect(screen.queryByRole('button', { name: 'Linux 安装与服务管理' })).not.toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: '展开 快速开始' }))

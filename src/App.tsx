@@ -884,7 +884,6 @@ function App() {
                       href={item.href}
                       onClick={(event) => {
                         event.preventDefault()
-                        activateView('docs')
                         setIsDocsMenuOpen((isOpen) => !isOpen)
                       }}
                     >
@@ -895,7 +894,7 @@ function App() {
                       <div className="nav-docs-menu__panel" id={docsMenuId} role="menu" aria-label={item.label}>
                         {docsProductOptions.map((product) => (
                           <button
-                            className={product.id === activeDocsProduct ? 'is-selected' : undefined}
+                            className={activeView === 'docs' && product.id === activeDocsProduct ? 'is-selected' : undefined}
                             key={product.id}
                             onClick={() => selectDocsProduct(product.id)}
                             role="menuitem"

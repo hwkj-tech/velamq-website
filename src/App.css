@@ -144,6 +144,8 @@
 
 .product-tab__velamq-icon,
 .product-card__velamq-icon,
+.product-tab__velaedge-icon,
+.product-card__velaedge-icon,
 .flow-visual__core-icon,
 .solution-flow-panel__hub-icon,
 .solution-scenario-visual__hub-icon,
@@ -156,6 +158,11 @@
 .product-tab__velamq-icon {
   width: 26px;
   height: 26px;
+}
+
+.product-tab__velaedge-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .brand-mark__text {
@@ -2344,6 +2351,12 @@
   width: 34px;
   height: 34px;
   filter: drop-shadow(0 8px 14px rgba(0, 137, 123, 0.16));
+}
+
+.product-card__velaedge-icon {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 8px 18px rgba(85, 168, 255, 0.16));
 }
 
 .product-card__label,
@@ -7387,6 +7400,7 @@ textarea::placeholder {
 
 .flow-business-hub .flow-visual__core-icon,
 .product-card__velamq-icon,
+.product-card__velaedge-icon,
 .solution-flow-panel__hub-icon,
 .solution-scenario-visual__hub-icon,
 .vehicle-solution-visual__hub-icon {
@@ -8683,7 +8697,7 @@ h4.docs-doc-heading {
   }
 
   #product .product-selector {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

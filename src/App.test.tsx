@@ -9,7 +9,7 @@ describe('HanNet homepage', () => {
   const chooseDocsProduct = async (
     user: ReturnType<typeof userEvent.setup>,
     navLabel: '文档' | 'Docs',
-    productLabel: 'VelaMQ' | 'VelaMQ Bench' = 'VelaMQ',
+    productLabel: 'VelaMQ' | 'VelaMQ Bench' | 'VelaEdge' = 'VelaMQ',
   ) => {
     const nav = screen.getByRole('navigation', { name: navLabel === '文档' ? '主导航' : 'Main navigation' })
     await user.click(within(nav).getByRole('link', { name: navLabel }))
@@ -81,12 +81,16 @@ describe('HanNet homepage', () => {
     const menu = screen.getByRole('menu', { name: '文档' })
     const velamqItem = within(menu).getByText('VelaMQ', { selector: 'span' }).closest('button')!
     const benchItem = within(menu).getByText('VelaMQ Bench', { selector: 'span' }).closest('button')!
+    const edgeItem = within(menu).getByText('VelaEdge', { selector: 'span' }).closest('button')!
     expect(velamqItem).not.toHaveClass('is-selected')
     expect(benchItem).not.toHaveClass('is-selected')
+    expect(edgeItem).not.toHaveClass('is-selected')
 
-    await user.click(benchItem)
+    await user.click(edgeItem)
 
-    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Bench 文档中心' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaEdge 文档中心' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '版本: v0.1.0' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaEdge 产品概览' })).toBeInTheDocument()
     expect(docsTrigger).toHaveAttribute('aria-expanded', 'false')
   })
 
@@ -121,6 +125,7 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 2, name: '产品矩阵' })).toBeInTheDocument()
     expect(screen.getByRole('tab', { name: 'VelaMQ' })).toHaveAttribute('aria-selected', 'true')
     expect(screen.getByRole('tab', { name: 'VelaMQ Bench' })).toHaveAttribute('aria-selected', 'false')
+    expect(screen.getByRole('tab', { name: 'VelaEdge' })).toHaveAttribute('aria-selected', 'false')
     expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ' })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: 'VelaMQ 产品图标' })).toBeInTheDocument()
     expect(screen.getByText(/设备消息与规则协同平台/)).toBeInTheDocument()
@@ -132,6 +137,15 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('tab', { name: 'VelaMQ Bench' })).toHaveAttribute('aria-selected', 'true')
     expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ Bench' })).toBeInTheDocument()
     expect(screen.getByText(/容量评估与上线验证工具/)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('tab', { name: 'VelaEdge' }))
+
+    expect(screen.getByRole('tab', { name: 'VelaMQ Bench' })).toHaveAttribute('aria-selected', 'false')
+    expect(screen.getByRole('tab', { name: 'VelaEdge' })).toHaveAttribute('aria-selected', 'true')
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaEdge' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'VelaEdge 产品图标' })).toBeInTheDocument()
+    expect(screen.getByText(/云边协同设备智能平台/)).toBeInTheDocument()
+    expect(screen.getByText('云边协同产品 · 开发中')).toBeInTheDocument()
   })
 
   it('navigates from footer links', async () => {
@@ -142,6 +156,10 @@ describe('HanNet homepage', () => {
 
     expect(screen.getByRole('heading', { level: 2, name: '产品矩阵' })).toBeInTheDocument()
     expect(screen.getByRole('tab', { name: 'VelaMQ Bench' })).toHaveAttribute('aria-selected', 'true')
+
+    await user.click(screen.getByRole('link', { name: 'VelaEdge' }))
+
+    expect(screen.getByRole('tab', { name: 'VelaEdge' })).toHaveAttribute('aria-selected', 'true')
 
     await user.click(screen.getByRole('link', { name: '文档中心' }))
 
@@ -243,11 +261,13 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'Products' })).toBeInTheDocument()
     await user.click(screen.getByRole('tab', { name: 'VelaMQ Bench' }))
     expect(screen.getByText(/Capacity assessment and launch validation/)).toBeInTheDocument()
+    await user.click(screen.getByRole('tab', { name: 'VelaEdge' }))
+    expect(screen.getByText(/Cloud-edge device intelligence platform/)).toBeInTheDocument()
 
-    await chooseDocsProduct(user, 'Docs')
-    expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ Documentation' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Version: v0.0.1' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: 'Product Introduction' })).toBeInTheDocument()
+    await chooseDocsProduct(user, 'Docs', 'VelaEdge')
+    expect(screen.getByRole('heading', { level: 2, name: 'VelaEdge Documentation' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Version: v0.1.0' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaEdge Overview' })).toBeInTheDocument()
 
     await user.click(within(nav).getByRole('link', { name: 'Contact' }))
     expect(screen.getByRole('heading', { level: 2, name: 'Contact sales' })).toBeInTheDocument()

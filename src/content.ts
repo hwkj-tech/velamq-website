@@ -3,10 +3,10 @@ export const companyDisplayName = '翰网科技'
 
 export type Locale = 'zh' | 'en'
 export type ViewId = 'home' | 'product' | 'solutions' | 'platform' | 'docs' | 'support' | 'company' | 'contact'
-export type ProductId = 'velamq' | 'velamq-bench'
+export type ProductId = 'velamq' | 'velamq-bench' | 'velaedge'
 
 export const viewIds: ViewId[] = ['home', 'product', 'solutions', 'platform', 'docs', 'support', 'company', 'contact']
-export const productIds: ProductId[] = ['velamq', 'velamq-bench']
+export const productIds: ProductId[] = ['velamq', 'velamq-bench', 'velaedge']
 
 export const salesEmail = 'sales@hanwang.tech'
 export const mailTo = `mailto:${salesEmail}`
@@ -71,7 +71,7 @@ export const translations = {
     productPage: {
       eyebrow: '产品矩阵',
       title: '产品矩阵',
-      intro: 'VelaMQ 与 VelaMQ Bench 分别覆盖设备数据接入和上线验证，共同构成翰网科技的业务协同产品线。',
+      intro: 'VelaMQ、VelaMQ Bench 与 VelaEdge 分别覆盖消息协同、上线验证和云边设备智能，构成翰网科技的设备数据产品线。',
       selectorLabel: '选择产品',
       capabilityEyebrow: '核心功能',
       capabilityTitle: '为海量设备连接而设计',
@@ -93,6 +93,14 @@ export const translations = {
         summary: '容量评估与上线验证工具',
         text: '围绕真实业务场景做容量评估、稳定性验证和上线报告，帮助团队在扩容、迁移和发布前更有把握。',
         tags: ['容量评估', '上线验证', '报告输出'],
+      },
+      {
+        id: 'velaedge',
+        name: 'VelaEdge',
+        label: '云边协同产品 · 开发中',
+        summary: '云边协同设备智能平台',
+        text: '以 Rust 构建设备协议采集、边缘计算、离线存储和云端配置治理，并通过受治理的 AI 辅助提升设备接入与运维效率。',
+        tags: ['协议采集', '边云协同', 'AI 辅助'],
       },
     ],
     capabilities: [
@@ -462,7 +470,7 @@ export const translations = {
     companyPage: {
       title: '与翰网科技一起打通设备数据与业务流程',
       body: '南京翰网科技有限公司专注于设备数据接入、业务规则协同与企业级运营支持。',
-      facts: ['独立公司品牌', 'VelaMQ 产品线', '交付与上线支持'],
+      facts: ['独立公司品牌', 'VelaMQ 与 VelaEdge 产品线', '交付与上线支持'],
     },
     contactPage: {
       eyebrow: '联系我们',
@@ -495,7 +503,7 @@ export const translations = {
       href: 'https://beian.miit.gov.cn/',
     },
     footerColumns: [
-      { title: '产品', links: ['VelaMQ', 'VelaMQ Bench', '规则自动化', '数据看板'] },
+      { title: '产品', links: ['VelaMQ', 'VelaMQ Bench', 'VelaEdge', '规则自动化', '数据看板'] },
       { title: '资源', links: ['文档中心', '方案沟通', '接入评估', '服务支持'] },
       { title: '公司', links: ['关于我们', '联系方式', '服务支持', companyName] },
     ],
@@ -567,7 +575,7 @@ export const translations = {
     productPage: {
       eyebrow: 'Products',
       title: 'Products',
-      intro: 'VelaMQ and VelaMQ Bench cover device data access and launch validation as two focused product lines.',
+      intro: 'VelaMQ, VelaMQ Bench and VelaEdge cover message collaboration, launch validation and cloud-edge device intelligence.',
       selectorLabel: 'Select product',
       capabilityEyebrow: 'Core capabilities',
       capabilityTitle: 'Designed for large-scale device connectivity',
@@ -589,6 +597,14 @@ export const translations = {
         summary: 'Capacity assessment and launch validation tool',
         text: 'Validates capacity, stability and release readiness around real business scenarios before scaling, migration or production launch.',
         tags: ['Capacity assessment', 'Launch validation', 'Report output'],
+      },
+      {
+        id: 'velaedge',
+        name: 'VelaEdge',
+        label: 'Cloud-edge product · In development',
+        summary: 'Cloud-edge device intelligence platform',
+        text: 'Uses Rust for protocol collection, edge computation, offline storage and cloud configuration governance, with governed AI assistance for device onboarding and operations.',
+        tags: ['Protocol collection', 'Cloud-edge sync', 'AI assistance'],
       },
     ],
     capabilities: [
@@ -958,7 +974,7 @@ export const translations = {
     companyPage: {
       title: 'Connect device data with business workflows',
       body: 'Nanjing Hanwang Technology Co., Ltd. focuses on device data access, business rule collaboration and enterprise operational support.',
-      facts: ['Independent company brand', 'VelaMQ product line', 'Delivery and launch support'],
+      facts: ['Independent company brand', 'VelaMQ and VelaEdge products', 'Delivery and launch support'],
     },
     contactPage: {
       eyebrow: 'Contact',
@@ -991,7 +1007,7 @@ export const translations = {
       href: 'https://beian.miit.gov.cn/',
     },
     footerColumns: [
-      { title: 'Products', links: ['VelaMQ', 'VelaMQ Bench', 'Rule automation', 'Dashboards'] },
+      { title: 'Products', links: ['VelaMQ', 'VelaMQ Bench', 'VelaEdge', 'Rule automation', 'Dashboards'] },
       { title: 'Resources', links: ['Documentation', 'Solution discussion', 'Access assessment', 'Service support'] },
       { title: 'Company', links: ['About', 'Contact', 'Support', companyName] },
     ],

@@ -37,6 +37,7 @@ import { BrandMark } from './components/BrandMark'
 import { ClusterDiagram } from './components/ClusterDiagram'
 import { HeroMotionField } from './components/HeroMotionField'
 import { SolutionScenarioVisual } from './components/SolutionScenarioVisual'
+import { VelaEdgeIcon } from './components/VelaEdgeIcon'
 import { VelaMQIcon } from './components/VelaMQIcon'
 import {
   companyName,
@@ -56,10 +57,11 @@ import {
   type VelaMQDocNavEntry,
   type VelaMQDocsCatalog,
 } from './velamqDocs'
+import { createVelaEdgeDocsCatalog } from './velaedgeDocs'
 
 const capabilityIcons = [Server, Workflow, Database, Activity, ShieldCheck, Cable]
 const solutionIcons = [Factory, Car, Building2, Landmark]
-const productIcons = [Server, Gauge]
+const productIcons = [Server, Gauge, Cloud]
 const resourceIcons = [BookOpen, Database, Activity, Cloud]
 const localeStorageKey = 'hannet-locale'
 const contactHref = '#contact'
@@ -296,6 +298,7 @@ const createBenchDocsCatalog = (locale: Locale): VelaMQDocsCatalog => {
 const footerTargetByLabel: Record<string, FooterTarget> = {
   VelaMQ: { view: 'product', product: 'velamq' },
   'VelaMQ Bench': { view: 'product', product: 'velamq-bench' },
+  VelaEdge: { view: 'product', product: 'velaedge' },
   规则自动化: { view: 'platform' },
   数据看板: { view: 'platform' },
   文档中心: { view: 'docs' },
@@ -582,6 +585,7 @@ function App() {
     () => ({
       velamq: velamqDocs[locale],
       'velamq-bench': createBenchDocsCatalog(locale),
+      velaedge: createVelaEdgeDocsCatalog(locale),
     }),
     [locale],
   )
@@ -1045,6 +1049,8 @@ function App() {
                     >
                       {product.id === 'velamq' ? (
                         <VelaMQIcon className="product-tab__velamq-icon" />
+                      ) : product.id === 'velaedge' ? (
+                        <VelaEdgeIcon className="product-tab__velaedge-icon" />
                       ) : (
                         <Icon size={20} strokeWidth={1.8} aria-hidden="true" />
                       )}
@@ -1066,6 +1072,11 @@ function App() {
                       <VelaMQIcon
                         className="product-card__velamq-icon"
                         label={locale === 'zh' ? 'VelaMQ 产品图标' : 'VelaMQ product icon'}
+                      />
+                    ) : selectedProduct.id === 'velaedge' ? (
+                      <VelaEdgeIcon
+                        className="product-card__velaedge-icon"
+                        label={locale === 'zh' ? 'VelaEdge 产品图标' : 'VelaEdge product icon'}
                       />
                     ) : (
                       <SelectedProductIcon size={22} strokeWidth={1.8} aria-hidden="true" />

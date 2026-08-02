@@ -8,7 +8,7 @@ export type ProductId = 'velamq' | 'velamq-bench' | 'velaedge'
 export const viewIds: ViewId[] = ['home', 'product', 'solutions', 'platform', 'docs', 'support', 'company', 'contact']
 export const productIds: ProductId[] = ['velamq', 'velamq-bench', 'velaedge']
 
-export const salesEmail = 'sales@hanwang.tech'
+export const salesEmail = 'velamq@hanwangtech.cn'
 export const mailTo = `mailto:${salesEmail}`
 
 export const viewFromHash = (hash: string): ViewId => {

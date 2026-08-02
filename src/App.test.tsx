@@ -110,7 +110,7 @@ describe('HanNet homepage', () => {
 
     const sendLink = screen.getByRole('link', { name: '发送邮件' })
 
-    expect(sendLink).toHaveAttribute('href', expect.stringContaining('mailto:sales@hanwang.tech'))
+    expect(sendLink).toHaveAttribute('href', expect.stringContaining('mailto:velamq@hanwangtech.cn'))
     expect(sendLink).toHaveAttribute('href', expect.stringContaining('subject='))
     expect(sendLink).toHaveAttribute('href', expect.stringContaining(encodeURIComponent('翰网科技官网咨询 - 刘先生')))
     expect(sendLink).toHaveAttribute('href', expect.stringContaining(encodeURIComponent('想了解 VelaMQ 和 VelaMQ Bench 的上线方案')))

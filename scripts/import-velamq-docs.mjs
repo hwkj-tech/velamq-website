@@ -12,6 +12,118 @@ const assetOutputDir = path.join(repoRoot, 'public/velamq-docs')
 const currentVelaMQVersion = '0.0.1'
 const currentVelaMQVersionLabel = `v${currentVelaMQVersion}`
 
+const englishCategoryLabels = {
+  产品总览: 'Product',
+  安装部署: 'Install',
+  快速开始: 'Quick Start',
+  功能指南: 'Guides',
+  数据源: 'Data Sources',
+  基础输出与接口: 'Core Outputs and Interfaces',
+  'SQL 数据库': 'SQL Databases',
+  消息队列: 'Message Queues',
+  'NoSQL 与缓存': 'NoSQL and Cache',
+  时序与协议: 'Time Series and Protocols',
+  规则引擎: 'Rule Engine',
+  'API 与集成': 'API and Integrations',
+  运维手册: 'Operations',
+}
+
+const englishDocumentTitles = {
+  FAQ: 'FAQ',
+  index: 'VelaMQ Documentation',
+  'api/management-api': 'Management API Examples',
+  'api/overview': 'API Overview',
+  'api/prometheus': 'Prometheus Metrics',
+  'guide/auth-acl': 'Device Authentication and ACL',
+  'guide/certificates': 'Certificate Management',
+  'guide/cluster': 'Cluster Management',
+  'guide/commands': 'Command Consumption',
+  'guide/console-security': 'Console Users and Audit',
+  'guide/dashboard': 'Dashboard',
+  'guide/data-management': 'Data Management',
+  'guide/datasources/http': 'HTTP Data Source',
+  'guide/datasources/influxdb': 'InfluxDB Data Source',
+  'guide/datasources/kafka': 'Kafka Data Source',
+  'guide/datasources/log': 'Log Data Source',
+  'guide/datasources/mongodb': 'MongoDB Data Source',
+  'guide/datasources/mqtt': 'MQTT Data Source',
+  'guide/datasources/object-search-loki': 'Object Storage, Search, and Loki',
+  'guide/datasources/overview': 'Data Sources Overview',
+  'guide/datasources/pulsar': 'Pulsar Data Source',
+  'guide/datasources/rabbitmq': 'RabbitMQ Data Source',
+  'guide/datasources/redis': 'Redis Data Source',
+  'guide/datasources/rocketmq': 'RocketMQ Data Source',
+  'guide/datasources/sql': 'SQL Data Source Guide',
+  'guide/datasources/sql-clickhouse': 'ClickHouse Data Source',
+  'guide/datasources/sql-mysql': 'MySQL and MariaDB Data Source',
+  'guide/datasources/sql-oracle': 'Oracle Data Source',
+  'guide/datasources/sql-postgresql': 'PostgreSQL Data Source',
+  'guide/datasources/sql-sqlite': 'SQLite Data Source',
+  'guide/datasources/sql-tdengine': 'TDengine Data Source',
+  'guide/endpoints': 'Listener Endpoints',
+  'guide/metrics-connections': 'Connections and Metrics',
+  'guide/rule-engine/actions': 'Rule Action Types',
+  'guide/rule-engine/events-sql': 'Events and SQL',
+  'guide/rule-engine/functions': 'Dynamic Functions',
+  'guide/rule-engine/monitoring-troubleshooting': 'Rule Monitoring and Troubleshooting',
+  'guide/rule-engine/offline': 'Offline Messages',
+  'guide/rule-engine/overview': 'Rule Engine Overview',
+  'guide/rule-engine/reliability-outbox': 'Rule Reliability and Outbox',
+  'guide/rule-engine/templates': 'Template Variables',
+  'guide/use-cases': 'Feature Use Cases',
+  'install/config': 'Configuration',
+  'install/linux': 'Linux Installation and Service Management',
+  'install/macos': 'macOS Installation and Service Management',
+  'install/package': 'Package Downloads',
+  'install/quick-start': 'Quick Start',
+  'install/windows': 'Windows Installation and Service Management',
+  'operations/monitoring': 'Monitoring and Operations',
+  'operations/storage': 'Storage and Database',
+  'operations/troubleshooting': 'Troubleshooting',
+  'product/architecture': 'System Architecture',
+  'product/basic-info': 'Product Basics',
+  'product/core-features': 'Core Features',
+  'product/demo': 'Demos and Screenshots',
+  'product/feature-list': 'Feature Matrix',
+  'product/introduction': 'Product Introduction',
+  'product/license': 'License and Authorization',
+  'product/versioning': 'Version Management',
+}
+
+const containsHanText = (value) => /[\u3400-\u9fff]/.test(value)
+
+const createEnglishDocumentOverview = (id, title) => {
+  if (id.startsWith('guide/datasources/')) {
+    return `${title} explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.`
+  }
+
+  if (id.startsWith('guide/rule-engine/')) {
+    return `${title} covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.`
+  }
+
+  if (id.startsWith('api/')) {
+    return `${title} documents the management interfaces, authentication requirements, request formats, and operational examples for VelaMQ.`
+  }
+
+  if (id.startsWith('install/')) {
+    return `${title} provides release-specific installation, configuration, service lifecycle, update, and verification guidance.`
+  }
+
+  if (id.startsWith('operations/')) {
+    return `${title} provides production guidance for operating, observing, maintaining, and troubleshooting a VelaMQ deployment.`
+  }
+
+  if (id.startsWith('product/')) {
+    return `${title} describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries.`
+  }
+
+  if (id === 'FAQ') {
+    return 'Answers to common VelaMQ deployment, configuration, rule engine, storage, console, and operations questions.'
+  }
+
+  return `${title} provides configuration, usage, validation, and operational guidance for VelaMQ.`
+}
+
 const zhDocsDir = path.join(sourceRoot, 'docs')
 const enDocsDir = path.join(sourceRoot, 'i18n/en/docusaurus-plugin-content-docs/version-3.0.0')
 const sidebarPath = path.join(sourceRoot, 'sidebars.js')
@@ -183,7 +295,12 @@ const translateCategory = (locale, label) => {
     return label
   }
 
-  return enTranslations[`sidebar.docs.category.${label}`]?.message ?? label
+  const translated = enTranslations[`sidebar.docs.category.${label}`]?.message
+  if (translated && !containsHanText(translated)) {
+    return translated
+  }
+
+  return englishCategoryLabels[label] ?? 'Documentation'
 }
 
 const walkDocFiles = (dir) => {
@@ -557,6 +674,56 @@ const loadDocuments = (docsDir) => {
   return documents
 }
 
+const localizeEnglishMediaBlock = (block, title) => {
+  if (block.type === 'image') {
+    return { ...block, alt: `${title} screenshot` }
+  }
+
+  if (block.type === 'video') {
+    return { ...block, title: `${title} video` }
+  }
+
+  return block
+}
+
+const localizeEnglishDocument = (document) => {
+  const title = englishDocumentTitles[document.id] ?? document.title
+  const localizedBlocks = document.blocks.map((block) => localizeEnglishMediaBlock(block, title))
+  const hasUntranslatedContent = containsHanText(JSON.stringify({
+    title: document.title,
+    summary: document.summary,
+    blocks: localizedBlocks,
+  }))
+
+  if (!hasUntranslatedContent) {
+    return { ...document, title, blocks: localizedBlocks }
+  }
+
+  const referenceBlocks = localizedBlocks.filter((block) => !containsHanText(JSON.stringify(block)))
+  const overview = createEnglishDocumentOverview(document.id, title)
+  const blocks = [
+    { type: 'heading', id: 'overview', level: 2, text: 'Overview' },
+    { type: 'paragraph', text: overview },
+  ]
+
+  if (referenceBlocks.length > 0) {
+    blocks.push(
+      { type: 'heading', id: 'examples-and-reference', level: 2, text: 'Examples and Reference' },
+      ...referenceBlocks,
+    )
+  }
+
+  return {
+    ...document,
+    title,
+    summary: overview,
+    headings: blocks
+      .filter((block) => block.type === 'heading' && block.level <= 3)
+      .map(({ id, level, text }) => ({ id, level, text })),
+    blocks,
+  }
+}
+
 const docLabel = (documents, id) => documents[id]?.title ?? id
 
 const sidebarContainsDoc = (items = [], id) =>
@@ -639,7 +806,12 @@ const buildGroups = (documents, locale) => {
 }
 
 const buildCatalog = (locale, docsDir) => {
-  const documents = loadDocuments(docsDir)
+  const importedDocuments = loadDocuments(docsDir)
+  const documents = locale === 'en'
+    ? Object.fromEntries(
+        Object.entries(importedDocuments).map(([id, document]) => [id, localizeEnglishDocument(document)]),
+      )
+    : importedDocuments
 
   return {
     locale,

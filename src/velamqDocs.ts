@@ -13826,25 +13826,25 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "product/basic-info",
-            "label": "基本信息",
+            "label": "Product Basics",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "product/architecture",
-            "label": "系统架构",
+            "label": "System Architecture",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "product/feature-list",
-            "label": "功能清单",
+            "label": "Feature Matrix",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "product/core-features",
-            "label": "核心功能",
+            "label": "Core Features",
             "depth": 0
           },
           {
@@ -13856,13 +13856,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "product/versioning",
-            "label": "版本管理",
+            "label": "Version Management",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "product/demo",
-            "label": "演示视频与截图",
+            "label": "Demos and Screenshots",
             "depth": 0
           }
         ]
@@ -13902,7 +13902,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "install/config",
-            "label": "配置说明",
+            "label": "Configuration",
             "depth": 0
           }
         ]
@@ -13913,7 +13913,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/dashboard",
-            "label": "仪表盘",
+            "label": "Dashboard",
             "depth": 0
           },
           {
@@ -13925,19 +13925,19 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/use-cases",
-            "label": "功能使用案例",
+            "label": "Feature Use Cases",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "guide/endpoints",
-            "label": "监听端点",
+            "label": "Listener Endpoints",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "guide/auth-acl",
-            "label": "设备认证与 ACL",
+            "label": "Device Authentication and ACL",
             "depth": 0
           },
           {
@@ -13959,13 +13959,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/datasources/log",
-            "label": "Log 数据源",
+            "label": "Log Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/http",
-            "label": "HTTP 数据源",
+            "label": "HTTP Data Source",
             "depth": 2
           },
           {
@@ -13982,43 +13982,43 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/datasources/sql",
-            "label": "SQL 数据源通用说明",
+            "label": "SQL Data Source Guide",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/sql-postgresql",
-            "label": "PostgreSQL 数据源",
+            "label": "PostgreSQL Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/sql-mysql",
-            "label": "MySQL / MariaDB 数据源",
+            "label": "MySQL and MariaDB Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/sql-sqlite",
-            "label": "SQLite 数据源",
+            "label": "SQLite Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/sql-clickhouse",
-            "label": "ClickHouse 数据源",
+            "label": "ClickHouse Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/sql-tdengine",
-            "label": "TDengine 数据源",
+            "label": "TDengine Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/sql-oracle",
-            "label": "Oracle 数据源",
+            "label": "Oracle Data Source",
             "depth": 2
           },
           {
@@ -14029,25 +14029,25 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/datasources/kafka",
-            "label": "Kafka 数据源",
+            "label": "Kafka Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/pulsar",
-            "label": "Pulsar 数据源",
+            "label": "Pulsar Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/rocketmq",
-            "label": "RocketMQ 数据源",
+            "label": "RocketMQ Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/rabbitmq",
-            "label": "RabbitMQ 数据源",
+            "label": "RabbitMQ Data Source",
             "depth": 2
           },
           {
@@ -14058,13 +14058,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/datasources/redis",
-            "label": "Redis 数据源",
+            "label": "Redis Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/mongodb",
-            "label": "MongoDB 数据源",
+            "label": "MongoDB Data Source",
             "depth": 2
           },
           {
@@ -14075,13 +14075,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/datasources/influxdb",
-            "label": "InfluxDB 数据源",
+            "label": "InfluxDB Data Source",
             "depth": 2
           },
           {
             "type": "doc",
             "id": "guide/datasources/mqtt",
-            "label": "MQTT 数据源",
+            "label": "MQTT Data Source",
             "depth": 2
           },
           {
@@ -14092,31 +14092,31 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/rule-engine/overview",
-            "label": "规则引擎总览",
+            "label": "Rule Engine Overview",
             "depth": 1
           },
           {
             "type": "doc",
             "id": "guide/rule-engine/events-sql",
-            "label": "事件与 SQL",
+            "label": "Events and SQL",
             "depth": 1
           },
           {
             "type": "doc",
             "id": "guide/rule-engine/templates",
-            "label": "模板变量",
+            "label": "Template Variables",
             "depth": 1
           },
           {
             "type": "doc",
             "id": "guide/rule-engine/actions",
-            "label": "动作类型",
+            "label": "Rule Action Types",
             "depth": 1
           },
           {
             "type": "doc",
             "id": "guide/rule-engine/functions",
-            "label": "动态函数",
+            "label": "Dynamic Functions",
             "depth": 1
           },
           {
@@ -14128,43 +14128,43 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "guide/rule-engine/offline",
-            "label": "离线消息",
+            "label": "Offline Messages",
             "depth": 1
           },
           {
             "type": "doc",
             "id": "guide/rule-engine/monitoring-troubleshooting",
-            "label": "监控与排错",
+            "label": "Rule Monitoring and Troubleshooting",
             "depth": 1
           },
           {
             "type": "doc",
             "id": "guide/commands",
-            "label": "指令消费",
+            "label": "Command Consumption",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "guide/certificates",
-            "label": "证书管理",
+            "label": "Certificate Management",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "guide/metrics-connections",
-            "label": "连接与监控指标",
+            "label": "Connections and Metrics",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "guide/cluster",
-            "label": "集群",
+            "label": "Cluster Management",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "guide/console-security",
-            "label": "控制台用户与审计",
+            "label": "Console Users and Audit",
             "depth": 0
           }
         ]
@@ -14175,19 +14175,19 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "api/overview",
-            "label": "API 概览",
+            "label": "API Overview",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "api/management-api",
-            "label": "管理 API 示例",
+            "label": "Management API Examples",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "api/prometheus",
-            "label": "Prometheus 指标",
+            "label": "Prometheus Metrics",
             "depth": 0
           }
         ]
@@ -14204,13 +14204,13 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           {
             "type": "doc",
             "id": "operations/monitoring",
-            "label": "监控运维",
+            "label": "Monitoring and Operations",
             "depth": 0
           },
           {
             "type": "doc",
             "id": "operations/troubleshooting",
-            "label": "故障排查",
+            "label": "Troubleshooting",
             "depth": 0
           }
         ]
@@ -14231,222 +14231,64 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       "FAQ": {
         "id": "FAQ",
         "title": "FAQ",
-        "summary": "VelaMQ 0.0.1 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。",
+        "summary": "Answers to common VelaMQ deployment, configuration, rule engine, storage, console, and operations questions.",
         "sourcePath": "FAQ.md",
         "headings": [
           {
-            "id": "为什么启动配置里没有-mqtt-端口",
+            "id": "overview",
             "level": 2,
-            "text": "为什么启动配置里没有 MQTT 端口？"
+            "text": "Overview"
           },
           {
-            "id": "现在还需要-sqlitepostgresql-或-mysql-做管理库吗",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "现在还需要 SQLite、PostgreSQL 或 MySQL 做管理库吗？"
-          },
-          {
-            "id": "控制台登录是否可以关闭",
-            "level": 2,
-            "text": "控制台登录是否可以关闭？"
-          },
-          {
-            "id": "没有-license-会怎样",
-            "level": 2,
-            "text": "没有 License 会怎样？"
-          },
-          {
-            "id": "规则引擎的离线消息怎么做",
-            "level": 2,
-            "text": "规则引擎的离线消息怎么做？"
-          },
-          {
-            "id": "rule-outbox-和离线消息是一回事吗",
-            "level": 2,
-            "text": "Rule Outbox 和离线消息是一回事吗？"
-          },
-          {
-            "id": "文档截图如何更新",
-            "level": 2,
-            "text": "文档截图如何更新？"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
             "type": "heading",
-            "id": "为什么启动配置里没有-mqtt-端口",
+            "id": "overview",
             "level": 2,
-            "text": "为什么启动配置里没有 MQTT 端口？"
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 0.0.1 把 MQTT 监听端点放到控制台管理，并随管理数据持久化。这样可以在不改启动配置的情况下新增、停用或调整 TCP、WebSocket、TLS 端点。"
+            "text": "Answers to common VelaMQ deployment, configuration, rule engine, storage, console, and operations questions."
           },
           {
             "type": "heading",
-            "id": "现在还需要-sqlitepostgresql-或-mysql-做管理库吗",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "现在还需要 SQLite、PostgreSQL 或 MySQL 做管理库吗？"
-          },
-          {
-            "type": "paragraph",
-            "text": "不需要作为 VelaMQ 0.0.1 的 Broker 管理库。当前运行态和管理配置以本地 RocksDB 为状态机，集群复制通过 Storage Raft 完成。PostgreSQL、MySQL、SQLite 仍可作为规则动作或认证 SQL 数据源使用。"
-          },
-          {
-            "type": "heading",
-            "id": "控制台登录是否可以关闭",
-            "level": 2,
-            "text": "控制台登录是否可以关闭？"
-          },
-          {
-            "type": "paragraph",
-            "text": "当 `[api] enabled = true` 时，JWT 控制台登录会被强制开启，不能匿名访问管理接口。"
-          },
-          {
-            "type": "heading",
-            "id": "没有-license-会怎样",
-            "level": 2,
-            "text": "没有 License 会怎样？"
-          },
-          {
-            "type": "paragraph",
-            "text": "未找到有效 License 时会回退到社区版默认额度，默认最大 100 并发连接。实际状态可在仪表盘 License 面板查看。"
-          },
-          {
-            "type": "heading",
-            "id": "规则引擎的离线消息怎么做",
-            "level": 2,
-            "text": "规则引擎的离线消息怎么做？"
-          },
-          {
-            "type": "paragraph",
-            "text": "离线消息由规则处理，例如选择 `$EVENT.OFFLINE` 事件，并配置 `OFFLINE_*`、`SAVE_*`、`REDIS` 等动作。不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。"
-          },
-          {
-            "type": "heading",
-            "id": "rule-outbox-和离线消息是一回事吗",
-            "level": 2,
-            "text": "Rule Outbox 和离线消息是一回事吗？"
-          },
-          {
-            "type": "paragraph",
-            "text": "不是。Rule Outbox 缓存的是外部规则动作失败后的重试记录；离线消息面向 MQTT 设备离线后的业务消息补偿。两者都保存在 RocksDB，但语义和页面入口不同。"
-          },
-          {
-            "type": "heading",
-            "id": "文档截图如何更新",
-            "level": 2,
-            "text": "文档截图如何更新？"
-          },
-          {
-            "type": "paragraph",
-            "text": "在文档项目执行："
+            "text": "Examples and Reference"
           },
           {
             "type": "code",
             "language": "bash",
             "code": "cd /Users/lulu/Work/velamq-rs-doc\nnpm run capture:demo"
-          },
-          {
-            "type": "paragraph",
-            "text": "脚本会重新生成 `static/img/screenshots` 和 `static/videos` 下的素材。"
           }
         ]
       },
       "api/management-api": {
         "id": "api/management-api",
-        "title": "管理 API 示例",
-        "summary": "`PUT /api/endpoints` 使用全量替换语义。",
+        "title": "Management API Examples",
+        "summary": "Management API Examples documents the management interfaces, authentication requirements, request formats, and operational examples for VelaMQ.",
         "sourcePath": "api/management-api.md",
         "headings": [
           {
-            "id": "创建监听端点",
+            "id": "overview",
             "level": 2,
-            "text": "创建监听端点"
+            "text": "Overview"
           },
           {
-            "id": "新增数据源",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "新增数据源"
-          },
-          {
-            "id": "新增规则",
-            "level": 2,
-            "text": "新增规则"
-          },
-          {
-            "id": "新增-acl-规则",
-            "level": 2,
-            "text": "新增 ACL 规则"
-          },
-          {
-            "id": "查询-acl-规则",
-            "level": 2,
-            "text": "查询 ACL 规则"
-          },
-          {
-            "id": "更新-acl-规则",
-            "level": 2,
-            "text": "更新 ACL 规则"
-          },
-          {
-            "id": "删除-acl-规则",
-            "level": 2,
-            "text": "删除 ACL 规则"
-          },
-          {
-            "id": "新增-config-认证提供方",
-            "level": 2,
-            "text": "新增 Config 认证提供方"
-          },
-          {
-            "id": "新增-http-认证提供方",
-            "level": 2,
-            "text": "新增 HTTP 认证提供方"
-          },
-          {
-            "id": "新增-sql-认证提供方",
-            "level": 2,
-            "text": "新增 SQL 认证提供方"
-          },
-          {
-            "id": "查询连接",
-            "level": 2,
-            "text": "查询连接"
-          },
-          {
-            "id": "查询指标历史",
-            "level": 2,
-            "text": "查询指标历史"
-          },
-          {
-            "id": "查看-storage-raft",
-            "level": 2,
-            "text": "查看 Storage Raft"
-          },
-          {
-            "id": "查看-shard-副本",
-            "level": 2,
-            "text": "查看 Shard 副本"
-          },
-          {
-            "id": "数据管理",
-            "level": 2,
-            "text": "数据管理"
-          },
-          {
-            "id": "规则-dry-run",
-            "level": 2,
-            "text": "规则 Dry Run"
+            "text": "Examples and Reference"
           },
           {
             "id": "rule-outbox",
             "level": 2,
             "text": "Rule Outbox"
-          },
-          {
-            "id": "动态函数",
-            "level": 2,
-            "text": "动态函数"
           },
           {
             "id": "traffic-tap",
@@ -14456,8 +14298,20 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "以下示例假设："
+            "text": "Management API Examples documents the management interfaces, authentication requirements, request formats, and operational examples for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "code",
@@ -14465,25 +14319,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "BASE=http://127.0.0.1:8080/api\nTOKEN=eyJ...\nAUTH_HEADER=\"Authorization: Bearer ${TOKEN}\""
           },
           {
-            "type": "heading",
-            "id": "创建监听端点",
-            "level": 2,
-            "text": "创建监听端点"
-          },
-          {
-            "type": "paragraph",
-            "text": "`PUT /api/endpoints` 使用全量替换语义。"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X PUT \"$BASE/endpoints\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '[\n    {\n      \"name\": \"mqtt-tcp\",\n      \"host\": \"0.0.0.0\",\n      \"port\": 1883,\n      \"websocket\": false,\n      \"tls\": false,\n      \"enabled\": true,\n      \"proxy_protocol\": false\n    }\n  ]'"
-          },
-          {
-            "type": "heading",
-            "id": "新增数据源",
-            "level": 2,
-            "text": "新增数据源"
           },
           {
             "type": "code",
@@ -14491,36 +14329,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s -X POST \"$BASE/datasources\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"name\": \"local-log\",\n    \"source\": \"LOG\",\n    \"source_type\": {\n      \"Log\": {\n        \"path\": \"logs\",\n        \"file_name\": \"rule-actions.log\"\n      }\n    }\n  }'"
           },
           {
-            "type": "heading",
-            "id": "新增规则",
-            "level": 2,
-            "text": "新增规则"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "curl -s -X POST \"$BASE/rules\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"id\": \"rule-telemetry-log\",\n    \"name\": \"telemetry_to_log\",\n    \"desc\": \"设备状态消息写入本地日志\",\n    \"enabled\": true,\n    \"sql\": \"SELECT * FROM \\\"devices/+/state\\\"\",\n    \"actions\": [\n      {\n        \"id\": \"act-log\",\n        \"action_type\": \"SEND_LOG\",\n        \"source_name\": \"local-log\",\n        \"qos\": 0,\n        \"retain\": false,\n        \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n      }\n    ]\n  }'"
-          },
-          {
-            "type": "heading",
-            "id": "新增-acl-规则",
-            "level": 2,
-            "text": "新增 ACL 规则"
-          },
-          {
-            "type": "paragraph",
-            "text": "`POST /api/acl/rules` 每次新增一条规则，规则 ID 由后端自动生成。"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X POST \"$BASE/acl/rules\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"effect\": \"Allow\",\n    \"acl_type\": \"ClientId\",\n    \"action\": \"PubSub\",\n    \"topic\": \"devices/${client_id}/#\",\n    \"subject\": \"demo-[0-9]+\"\n  }'"
-          },
-          {
-            "type": "heading",
-            "id": "查询-acl-规则",
-            "level": 2,
-            "text": "查询 ACL 规则"
           },
           {
             "type": "code",
@@ -14528,21 +14339,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s \"$BASE/acl/rules?page=1&per_page=20&acl_type=ClientId&topic=devices\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "heading",
-            "id": "更新-acl-规则",
-            "level": 2,
-            "text": "更新 ACL 规则"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X PUT \"$BASE/acl/rules/acl-xxxx\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"effect\": \"Allow\",\n    \"acl_type\": \"ClientId\",\n    \"action\": \"Subscribe\",\n    \"topic\": \"devices/${client_id}/command/#\",\n    \"subject\": \"demo-[0-9]+\"\n  }'"
-          },
-          {
-            "type": "heading",
-            "id": "删除-acl-规则",
-            "level": 2,
-            "text": "删除 ACL 规则"
           },
           {
             "type": "code",
@@ -14550,21 +14349,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s -X DELETE \"$BASE/acl/rules/acl-xxxx\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "heading",
-            "id": "新增-config-认证提供方",
-            "level": 2,
-            "text": "新增 Config 认证提供方"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X POST \"$BASE/auth\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"name\": \"demo-config-auth\",\n    \"enabled\": true,\n    \"filter\": \"Client{^demo-.*}\",\n    \"source\": \"Config\",\n    \"users\": [\n      {\n        \"username\": \"demo\",\n        \"password\": \"secret\",\n        \"client_id_prefixes\": [\"demo-\"],\n        \"tags\": [\"lab\"]\n      }\n    ],\n    \"encrypt\": null,\n    \"availability\": {\n      \"failure_threshold\": 20,\n      \"recovery_cooldown_ms\": 5000\n    },\n    \"http\": null,\n    \"sql\": null\n  }'"
-          },
-          {
-            "type": "heading",
-            "id": "新增-http-认证提供方",
-            "level": 2,
-            "text": "新增 HTTP 认证提供方"
           },
           {
             "type": "code",
@@ -14572,21 +14359,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s -X POST \"$BASE/auth\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"name\": \"iam-http\",\n    \"enabled\": true,\n    \"filter\": \"Client{^prod-.*}\",\n    \"source\": \"Http\",\n    \"users\": [],\n    \"encrypt\": null,\n    \"availability\": {\n      \"failure_threshold\": 20,\n      \"recovery_cooldown_ms\": 5000\n    },\n    \"http\": {\n      \"data_source\": null,\n      \"url\": \"https://iam.example.com/mqtt/auth\",\n      \"method\": \"POST\",\n      \"headers\": [\n        { \"name\": \"Content-Type\", \"value\": \"application/json\" }\n      ],\n      \"params\": {\n        \"tenant\": \"${http_headers.x_tenant}\",\n        \"device\": \"${clientId}\"\n      },\n      \"timeout_ms\": 5000\n    },\n    \"sql\": null\n  }'"
           },
           {
-            "type": "heading",
-            "id": "新增-sql-认证提供方",
-            "level": 2,
-            "text": "新增 SQL 认证提供方"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X POST \"$BASE/auth\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"name\": \"sql-auth\",\n    \"enabled\": true,\n    \"filter\": null,\n    \"source\": \"Sql\",\n    \"users\": [],\n    \"encrypt\": {\n      \"algorithm\": \"Sha256\",\n      \"salt_mode\": \"Suffix\",\n      \"salt\": null\n    },\n    \"availability\": {\n      \"failure_threshold\": 20,\n      \"recovery_cooldown_ms\": 5000\n    },\n    \"http\": null,\n    \"sql\": {\n      \"data_source\": \"auth-postgres\",\n      \"query\": \"select password, salt, tags from mqtt_users where username = ${username} and client_id = ${clientId}\",\n      \"password_column\": \"password\",\n      \"salt_column\": \"salt\",\n      \"tags_column\": \"tags\"\n    }\n  }'"
-          },
-          {
-            "type": "heading",
-            "id": "查询连接",
-            "level": 2,
-            "text": "查询连接"
           },
           {
             "type": "code",
@@ -14594,21 +14369,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s \"$BASE/cluster/connections?page=1&per_page=20\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "heading",
-            "id": "查询指标历史",
-            "level": 2,
-            "text": "查询指标历史"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "now_ms=$(date +%s000)\nsince_ms=$((now_ms - 3600 * 1000))\n\ncurl -s \"$BASE/metrics/history?since_ms=${since_ms}&until_ms=${now_ms}&limit=240\" \\\n  -H \"$AUTH_HEADER\""
-          },
-          {
-            "type": "heading",
-            "id": "查看-storage-raft",
-            "level": 2,
-            "text": "查看 Storage Raft"
           },
           {
             "type": "code",
@@ -14616,23 +14379,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s \"$BASE/cluster/storage-raft\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "paragraph",
-            "text": "健康集群通常应只有一个 `leader`，并且 follower 的 `last_log_index` 与 `last_applied_log_id` 会在写入后收敛。"
-          },
-          {
-            "type": "heading",
-            "id": "查看-shard-副本",
-            "level": 2,
-            "text": "查看 Shard 副本"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s \"$BASE/cluster/shards\" \\\n  -H \"$AUTH_HEADER\""
-          },
-          {
-            "type": "paragraph",
-            "text": "下线节点前可先 drain："
           },
           {
             "type": "code",
@@ -14640,23 +14389,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s -X POST \"$BASE/cluster/shards/nodes/node-c/drain\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "heading",
-            "id": "数据管理",
-            "level": 2,
-            "text": "数据管理"
-          },
-          {
-            "type": "paragraph",
-            "text": "查询 retained 消息："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s \"$BASE/data-management/retained?limit=50&q=devices/\" \\\n  -H \"$AUTH_HEADER\""
-          },
-          {
-            "type": "paragraph",
-            "text": "查看 retained payload："
           },
           {
             "type": "code",
@@ -14664,17 +14399,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s \"$BASE/data-management/retained/devices%2Fdemo-1%2Fstate\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "paragraph",
-            "text": "查询持久会话："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s \"$BASE/data-management/sessions?limit=50&q=demo\" \\\n  -H \"$AUTH_HEADER\""
-          },
-          {
-            "type": "paragraph",
-            "text": "触发 RocksDB 备份："
           },
           {
             "type": "code",
@@ -14682,28 +14409,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s -X POST \"$BASE/data-management/storage/backup\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{}'"
           },
           {
-            "type": "paragraph",
-            "text": "触发 Storage Raft 快照："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X POST \"$BASE/data-management/storage/snapshot\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"compact\":true}'"
           },
           {
-            "type": "heading",
-            "id": "规则-dry-run",
-            "level": 2,
-            "text": "规则 Dry Run"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X POST \"$BASE/rules/dry-run\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"rule\": {\n      \"id\": \"rule-telemetry-log\",\n      \"name\": \"telemetry_to_log\",\n      \"enabled\": true,\n      \"sql\": \"SELECT * FROM \\\"devices/+/state\\\"\",\n      \"actions\": [\n        {\n          \"id\": \"act-log\",\n          \"action_type\": \"SEND_LOG\",\n          \"source_name\": \"local-log\",\n          \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n        }\n      ]\n    },\n    \"client_id\": \"demo-1\",\n    \"topic\": \"devices/demo-1/state\",\n    \"payload\": \"{\\\"temperature\\\":88}\"\n  }'"
-          },
-          {
-            "type": "paragraph",
-            "text": "Dry Run 用于验证 SQL 是否命中、模板是否可渲染、动作预览是否符合预期。"
           },
           {
             "type": "heading",
@@ -14712,17 +14425,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "Rule Outbox"
           },
           {
-            "type": "paragraph",
-            "text": "查询待重试记录："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s \"$BASE/rule-outbox?status=Pending&limit=200\" \\\n  -H \"$AUTH_HEADER\""
-          },
-          {
-            "type": "paragraph",
-            "text": "手动重试："
           },
           {
             "type": "code",
@@ -14730,41 +14435,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -s -X POST \"$BASE/rule-outbox/outbox-row-id/retry\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "paragraph",
-            "text": "删除记录："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X DELETE \"$BASE/rule-outbox/outbox-row-id\" \\\n  -H \"$AUTH_HEADER\""
           },
           {
-            "type": "heading",
-            "id": "动态函数",
-            "level": 2,
-            "text": "动态函数"
-          },
-          {
-            "type": "paragraph",
-            "text": "创建 Lua 函数："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "curl -s -X POST \"$BASE/functions\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"id\": \"\",\n    \"name\": \"温度告警判断\",\n    \"call_name\": \"is_hot\",\n    \"version\": \"v1\",\n    \"runtime\": \"Lua\",\n    \"output_type\": \"Bool\",\n    \"enabled\": true,\n    \"source_code\": \"return input.temperature > 80\",\n    \"module_bytes\": null,\n    \"entrypoint\": null,\n    \"timeout_ms\": 20,\n    \"max_memory_bytes\": 16777216,\n    \"max_output_bytes\": 262144,\n    \"sha256\": \"\",\n    \"created_at_ms\": 0,\n    \"updated_at_ms\": 0\n  }'"
-          },
-          {
-            "type": "paragraph",
-            "text": "测试草稿函数："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s -X POST \"$BASE/functions/test\" \\\n  -H \"$AUTH_HEADER\" \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n    \"call_name\": \"is_hot\",\n    \"input\": { \"temperature\": 88 }\n  }'"
-          },
-          {
-            "type": "paragraph",
-            "text": "函数可在模板中以 `${function::is_hot(input)}` 调用，也可在 SQL 表达式中以 `function('is_hot', input)` 调用。"
           },
           {
             "type": "heading",
@@ -14773,46 +14451,45 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "Traffic Tap"
           },
           {
-            "type": "paragraph",
-            "text": "Traffic Tap 通过 SSE 返回抓包事件，viewer 角色不可使用："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -N \"$BASE/traffic-taps/stream?client_id=demo-1&directions=both&packet_filter=publish&duration_secs=30&max_frame_bytes=4096\" \\\n  -H \"$AUTH_HEADER\""
-          },
-          {
-            "type": "paragraph",
-            "text": "返回事件包括 `meta`、`status`、`frame` 和 `summary`。每帧 payload 以 `bytes_base64` 返回，并受单帧和总字节上限保护。"
           }
         ]
       },
       "api/overview": {
         "id": "api/overview",
-        "title": "API 概览",
-        "summary": "管理 API 基于 Axum 暴露，默认前缀为 `/api`。除以下公开入口外，控制台开启认证后都需要 Bearer JWT：",
+        "title": "API Overview",
+        "summary": "API Overview documents the management interfaces, authentication requirements, request formats, and operational examples for VelaMQ.",
         "sourcePath": "api/overview.md",
         "headings": [
           {
-            "id": "认证",
+            "id": "overview",
             "level": 2,
-            "text": "认证"
+            "text": "Overview"
           },
           {
-            "id": "api-分组",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "API 分组"
-          },
-          {
-            "id": "错误格式",
-            "level": 2,
-            "text": "错误格式"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "管理 API 基于 Axum 暴露，默认前缀为 `/api`。除以下公开入口外，控制台开启认证后都需要 Bearer JWT："
+            "text": "API Overview documents the management interfaces, authentication requirements, request formats, and operational examples for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "list",
@@ -14826,158 +14503,50 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "heading",
-            "id": "认证",
-            "level": 2,
-            "text": "认证"
-          },
-          {
-            "type": "paragraph",
-            "text": "登录："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s http://127.0.0.1:8080/api/console/login \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"username\":\"admin\",\"password\":\"secret\"}'"
           },
           {
-            "type": "paragraph",
-            "text": "后续请求："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "curl -s http://127.0.0.1:8080/api/stats \\\n  -H \"Authorization: Bearer ${TOKEN}\""
-          },
-          {
-            "type": "heading",
-            "id": "api-分组",
-            "level": 2,
-            "text": "API 分组"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "分组",
-              "路径"
-            ],
-            "rows": [
-              [
-                "控制台认证",
-                "`/api/console/*`"
-              ],
-              [
-                "Broker 统计",
-                "`/api/stats`、`/api/system`"
-              ],
-              [
-                "License",
-                "`/api/license`、`/api/license/machine`"
-              ],
-              [
-                "Dashboard",
-                "`/api/dashboard/overview`"
-              ],
-              [
-                "集群",
-                "`/api/cluster`、`/api/cluster/metrics`、`/api/cluster/connections`、`/api/cluster/storage-raft`、`/api/cluster/shards`"
-              ],
-              [
-                "指标历史",
-                "`/api/metrics/history`"
-              ],
-              [
-                "数据管理",
-                "`/api/data-management/*`"
-              ],
-              [
-                "数据源",
-                "`/api/datasources`"
-              ],
-              [
-                "规则",
-                "`/api/rules`、`/api/rules/dry-run`"
-              ],
-              [
-                "Rule Outbox",
-                "`/api/rule-outbox`"
-              ],
-              [
-                "动态函数",
-                "`/api/functions`"
-              ],
-              [
-                "认证提供方",
-                "`/api/auth`"
-              ],
-              [
-                "ACL",
-                "`/api/acl/rules` 为当前单规则分页接口；`/api/acl` 保留策略兼容接口。"
-              ],
-              [
-                "监听端点",
-                "`/api/endpoints`"
-              ],
-              [
-                "证书",
-                "`/api/certificates/*`"
-              ],
-              [
-                "指令消费",
-                "`/api/commands`"
-              ],
-              [
-                "AI 助手",
-                "`/api/assistant/*`"
-              ],
-              [
-                "Traffic Tap",
-                "`/api/traffic-taps/stream`"
-              ],
-              [
-                "Prometheus",
-                "`/-/metrics`、`/api/metrics/prometheus`"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "错误格式",
-            "level": 2,
-            "text": "错误格式"
-          },
-          {
-            "type": "paragraph",
-            "text": "大多数写接口在失败时返回非 2xx 状态码和纯文本错误原因。前端会把响应文本直接展示为错误消息。"
           }
         ]
       },
       "api/prometheus": {
         "id": "api/prometheus",
-        "title": "Prometheus 指标",
-        "summary": "VelaMQ 0.0.1 暴露 Prometheus 文本指标：",
+        "title": "Prometheus Metrics",
+        "summary": "Prometheus Metrics documents the management interfaces, authentication requirements, request formats, and operational examples for VelaMQ.",
         "sourcePath": "api/prometheus.md",
         "headings": [
           {
-            "id": "prometheus-抓取配置",
+            "id": "overview",
             "level": 2,
-            "text": "Prometheus 抓取配置"
+            "text": "Overview"
           },
           {
-            "id": "主要指标族",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "主要指标族"
-          },
-          {
-            "id": "grafana-与告警",
-            "level": 2,
-            "text": "Grafana 与告警"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "VelaMQ 0.0.1 暴露 Prometheus 文本指标："
+            "text": "Prometheus Metrics documents the management interfaces, authentication requirements, request formats, and operational examples for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "code",
@@ -14985,88 +14554,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "/-/metrics\n/api/metrics/prometheus"
           },
           {
-            "type": "heading",
-            "id": "prometheus-抓取配置",
-            "level": 2,
-            "text": "Prometheus 抓取配置"
-          },
-          {
             "type": "code",
             "language": "yaml",
             "code": "scrape_configs:\n  - job_name: velamq\n    metrics_path: /-/metrics\n    static_configs:\n      - targets:\n          - 127.0.0.1:8080"
-          },
-          {
-            "type": "paragraph",
-            "text": "集群部署时建议抓取每一个 VelaMQ 节点。指标里包含稳定的 `node_id` 标签，Grafana 可按节点过滤或聚合。"
-          },
-          {
-            "type": "heading",
-            "id": "主要指标族",
-            "level": 2,
-            "text": "主要指标族"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "指标族",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`velamq_broker_*`",
-                "Broker 级连接、消息、订阅、规则、认证、ACL 计数。"
-              ],
-              [
-                "`velamq_session_*`",
-                "会话积压、in-flight 等实时 gauge。"
-              ],
-              [
-                "`velamq_mqtt_connections_total`",
-                "MQTT 连接生命周期结果。"
-              ],
-              [
-                "`velamq_mqtt_packets_total`",
-                "按 listener、transport、protocol、direction、packet type 统计报文。"
-              ],
-              [
-                "`velamq_mqtt_publish_total`",
-                "发布计数，包含 direction、QoS、retain 标签。"
-              ],
-              [
-                "`velamq_mqtt_drop_total`",
-                "丢弃计数，包含 listener、reason、QoS。"
-              ],
-              [
-                "`velamq_rule_action_*`",
-                "规则动作成功、失败、延迟和外部动作状态。"
-              ],
-              [
-                "`velamq_storage_raft_*`",
-                "Storage Raft 角色、term、log/applied index、转发、提交、快照状态。"
-              ],
-              [
-                "`velamq_storage_backup_*`",
-                "RocksDB backup 成功、失败和最近成功时间。"
-              ],
-              [
-                "`velamq_system_*`",
-                "主机资源指标。"
-              ],
-              [
-                "`velamq_process_*`",
-                "Broker 进程资源指标。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "grafana-与告警",
-            "level": 2,
-            "text": "Grafana 与告警"
-          },
-          {
-            "type": "paragraph",
-            "text": "源码仓库已提供："
           },
           {
             "type": "list",
@@ -15075,227 +14565,52 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
               "`monitoring/grafana/velamq-overview.json`",
               "`monitoring/prometheus/velamq-alerts.yml`"
             ]
-          },
-          {
-            "type": "paragraph",
-            "text": "告警规则覆盖："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "认证拒绝比例持续升高。",
-              "离线积压丢弃。",
-              "会话队列积压增长。",
-              "通用消息丢弃突增。",
-              "Storage Raft leader 异常、follower 心跳异常、转发或快照失败。",
-              "RocksDB 备份长时间未成功。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "阈值是起点，生产环境需要按连接规模和业务峰值调优。"
           }
         ]
       },
       "guide/auth-acl": {
         "id": "guide/auth-acl",
-        "title": "设备认证与 ACL",
-        "summary": "认证解决“谁可以连上来”，ACL 解决“连上来以后可以访问哪些 Topic”。当前版本的认证模型先按 `filter` 路由到认证提供方，再执行 Config / HTTP / SQL / SCRAM / LDAP / Redis 认证，并对外部认证源提供异常熔断与自动恢复。",
+        "title": "Device Authentication and ACL",
+        "summary": "Device Authentication and ACL provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/auth-acl.md",
         "headings": [
           {
-            "id": "设备认证",
+            "id": "overview",
             "level": 2,
-            "text": "设备认证"
+            "text": "Overview"
           },
           {
-            "id": "路由与执行顺序",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "路由与执行顺序"
-          },
-          {
-            "id": "config-认证示例",
-            "level": 2,
-            "text": "Config 认证示例"
-          },
-          {
-            "id": "http-认证示例",
-            "level": 2,
-            "text": "HTTP 认证示例"
-          },
-          {
-            "id": "sql-认证示例",
-            "level": 2,
-            "text": "SQL 认证示例"
-          },
-          {
-            "id": "scram-认证示例",
-            "level": 2,
-            "text": "SCRAM 认证示例"
-          },
-          {
-            "id": "ldap-认证示例",
-            "level": 2,
-            "text": "LDAP 认证示例"
-          },
-          {
-            "id": "redis-认证示例",
-            "level": 2,
-            "text": "Redis 认证示例"
-          },
-          {
-            "id": "密码加密",
-            "level": 2,
-            "text": "密码加密"
-          },
-          {
-            "id": "异常恢复",
-            "level": 2,
-            "text": "异常恢复"
-          },
-          {
-            "id": "acl-规则",
-            "level": 2,
-            "text": "ACL 规则"
-          },
-          {
-            "id": "acl-判定语义",
-            "level": 2,
-            "text": "ACL 判定语义"
-          },
-          {
-            "id": "acl-示例",
-            "level": 2,
-            "text": "ACL 示例"
-          },
-          {
-            "id": "acl-控制台操作",
-            "level": 2,
-            "text": "ACL 控制台操作"
-          },
-          {
-            "id": "排错清单",
-            "level": 2,
-            "text": "排错清单"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "认证解决“谁可以连上来”，ACL 解决“连上来以后可以访问哪些 Topic”。当前版本的认证模型先按 `filter` 路由到认证提供方，再执行 Config / HTTP / SQL / SCRAM / LDAP / Redis 认证，并对外部认证源提供异常熔断与自动恢复。"
+            "text": "Device Authentication and ACL provides configuration, usage, validation, and operational guidance for VelaMQ."
           },
           {
             "type": "heading",
-            "id": "设备认证",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "设备认证"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 设备认证页面截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "认证提供方的公共字段如下："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`name`",
-                "认证提供方名称，必须唯一。"
-              ],
-              [
-                "`enabled`",
-                "是否启用。未启用的提供方不会参与认证链路。"
-              ],
-              [
-                "`filter`",
-                "路由规则。留空表示匹配全部客户端。"
-              ],
-              [
-                "`source`",
-                "`Config`、`Http`、`Sql`、`Scram`、`Ldap` 或 `Redis`。"
-              ],
-              [
-                "`encrypt`",
-                "密码加密配置。Config 和 SQL 认证会使用。"
-              ],
-              [
-                "`availability`",
-                "外部认证源异常恢复配置，主要用于 HTTP 和 SQL。"
-              ],
-              [
-                "`status` / `last_error` / `recovery_at_ms`",
-                "列表页展示的运行状态，便于定位外部认证源异常。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "路由与执行顺序",
-            "level": 2,
-            "text": "路由与执行顺序"
-          },
-          {
-            "type": "paragraph",
-            "text": "认证提供方按配置顺序执行。每个提供方先判断 `filter` 是否匹配当前连接，再执行对应来源。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "filter",
-              "说明"
-            ],
-            "rows": [
-              [
-                "空",
-                "匹配全部客户端。"
-              ],
-              [
-                "`Client{^device-.*}`",
-                "用正则匹配 MQTT Client ID。"
-              ],
-              [
-                "`User{^admin-.*}`",
-                "用正则匹配 CONNECT 用户名。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "执行结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "匹配的提供方认证成功后立即放行。",
-              "匹配的提供方返回业务拒绝后，继续尝试后续匹配的提供方。",
-              "HTTP / SQL 提供方不可用时会被临时跳过，等待恢复周期后再尝试。",
-              "如果全局认证不是必需且没有任何可用匹配提供方，连接可被放行；生产环境建议保持认证必需。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "config-认证示例",
-            "level": 2,
-            "text": "Config 认证示例"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 Config 认证示例截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "Config 认证适合少量固定账号、边缘单机和快速验证。用户字段包括 `username`、`password`、`client_id_prefixes` 和 `tags`。"
           },
           {
             "type": "code",
@@ -15303,33 +14618,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"factory-config-auth\",\n  \"enabled\": true,\n  \"filter\": \"Client{^demo-.*}\",\n  \"source\": \"Config\",\n  \"users\": [\n    {\n      \"username\": \"demo\",\n      \"password\": \"secret\",\n      \"client_id_prefixes\": [\"demo-\"],\n      \"tags\": [\"factory-a\"]\n    }\n  ],\n  \"encrypt\": null,\n  \"availability\": {\n    \"failure_threshold\": 20,\n    \"recovery_cooldown_ms\": 5000\n  },\n  \"http\": null,\n  \"sql\": null\n}"
           },
           {
-            "type": "paragraph",
-            "text": "校验逻辑："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "CONNECT 必须携带用户名和密码。",
-              "`username` 命中用户后再校验密码。",
-              "`client_id_prefixes` 为空时不限制 Client ID；非空时 Client ID 必须以其中任一前缀开头。",
-              "认证成功后会把 `tags` 写入认证结果，供后续链路使用。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "http-认证示例",
-            "level": 2,
-            "text": "HTTP 认证示例"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 HTTP 认证示例截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "HTTP 认证当前直接在认证提供方中填写 URL、方法、请求头、请求参数和超时。它不再要求先绑定 HTTP 数据源。"
           },
           {
             "type": "code",
@@ -15337,87 +14628,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"iam-http\",\n  \"enabled\": true,\n  \"filter\": \"Client{^prod-.*}\",\n  \"source\": \"Http\",\n  \"users\": [],\n  \"encrypt\": null,\n  \"availability\": {\n    \"failure_threshold\": 20,\n    \"recovery_cooldown_ms\": 5000\n  },\n  \"http\": {\n    \"data_source\": null,\n    \"url\": \"https://iam.example.com/mqtt/auth\",\n    \"method\": \"POST\",\n    \"headers\": [\n      { \"name\": \"Content-Type\", \"value\": \"application/json\" },\n      { \"name\": \"X-Source\", \"value\": \"velamq-rs\" }\n    ],\n    \"params\": {\n      \"tenant\": \"${http_headers.x_tenant}\",\n      \"device\": \"${clientId}\",\n      \"source_ip\": \"${proxySourceIp}\"\n    },\n    \"timeout_ms\": 5000\n  },\n  \"sql\": null\n}"
           },
           {
-            "type": "paragraph",
-            "text": "默认请求体会包含连接上下文："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`clientId`",
-                "MQTT Client ID。"
-              ],
-              [
-                "`username` / `password`",
-                "CONNECT 中的用户名和密码。"
-              ],
-              [
-                "`clientIp` / `clientPort`",
-                "Broker 看到的客户端地址。"
-              ],
-              [
-                "`peerIp` / `peerPort`",
-                "对端连接地址。"
-              ],
-              [
-                "`transport`",
-                "`tcp` 或 `websocket`。"
-              ],
-              [
-                "`protocolVersion`",
-                "MQTT 协议版本。"
-              ],
-              [
-                "`httpRequestPath`",
-                "WebSocket 请求路径。"
-              ],
-              [
-                "`httpHeaders` / `httpHeadersList`",
-                "WebSocket HTTP Header。"
-              ],
-              [
-                "`proxyHeader`、`proxySourceIp`、`proxyDestinationIp`",
-                "启用 PROXY protocol 后解析出的代理信息。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "响应约定："
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"allow\": true,\n  \"username\": \"demo\",\n  \"tags\": [\"tenant:a\", \"tier:prod\"]\n}"
           },
           {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`2xx` 且空响应体：视为认证通过。",
-              "`2xx` 且非 JSON 响应体：兼容旧服务，视为认证通过。",
-              "`2xx` 且 `{\"allow\": false}` 或 `{\"authenticated\": false}`：正常业务拒绝，不会触发熔断。",
-              "非 `2xx`、超时、网络错误、响应读取失败：计入外部异常，连续达到 `failure_threshold` 后临时熔断。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "sql-认证示例",
-            "level": 2,
-            "text": "SQL 认证示例"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 SQL 认证示例截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "SQL 认证需要先在“数据源”中创建 SQL 数据源，然后在认证提供方里选择该数据源。查询结果至少要返回密码列，可选返回盐值列和标签列。"
           },
           {
             "type": "code",
@@ -15425,90 +14643,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"tenant-sql-auth\",\n  \"enabled\": true,\n  \"filter\": \"User{^device_.*}\",\n  \"source\": \"Sql\",\n  \"users\": [],\n  \"encrypt\": {\n    \"algorithm\": \"Sha256\",\n    \"salt_mode\": \"Suffix\",\n    \"salt\": null\n  },\n  \"availability\": {\n    \"failure_threshold\": 20,\n    \"recovery_cooldown_ms\": 5000\n  },\n  \"http\": null,\n  \"sql\": {\n    \"data_source\": \"auth-postgres\",\n    \"query\": \"select password, salt, tags from mqtt_users where username = ${username} and client_id = ${clientId}\",\n    \"password_column\": \"password\",\n    \"salt_column\": \"salt\",\n    \"tags_column\": \"tags\"\n  }\n}"
           },
           {
-            "type": "paragraph",
-            "text": "SQL 模板变量会被编译为参数化查询，避免把 CONNECT 字段直接拼进 SQL 字符串。常用变量包括："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "变量",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`${username}`",
-                "CONNECT 用户名。"
-              ],
-              [
-                "`${clientId}` / `${client_id}`",
-                "MQTT Client ID。"
-              ],
-              [
-                "`${clientIp}` / `${client_ip}`",
-                "客户端 IP。"
-              ],
-              [
-                "`${transport}`",
-                "连接类型。"
-              ],
-              [
-                "`${protocolVersion}`",
-                "MQTT 协议版本。"
-              ],
-              [
-                "`${httpRequestPath}`",
-                "WebSocket path。"
-              ],
-              [
-                "`${http_headers.x_tenant}`",
-                "WebSocket Header 点路径。"
-              ],
-              [
-                "`${httpHeader:x-tenant}`",
-                "兼容旧版 Header 写法。"
-              ],
-              [
-                "`${proxy_header.source_addr}`",
-                "PROXY protocol 结构化字段。"
-              ],
-              [
-                "`${proxy_header.ssl.client}`",
-                "PROXY SSL TLV 字段。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "如果 `salt_column` 返回盐值，则运行时盐值优先于 `encrypt.salt`。`tags_column` 可返回逗号分隔字符串，例如 `tenant:a,tier:prod`。"
-          },
-          {
-            "type": "heading",
-            "id": "scram-认证示例",
-            "level": 2,
-            "text": "SCRAM 认证示例"
-          },
-          {
-            "type": "paragraph",
-            "text": "SCRAM 认证适合已有 SCRAM 凭据表的场景。它通过 SQL 数据源查询 `stored_key`、`server_key`、`salt` 和 `iterations`。"
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"name\": \"scram-auth\",\n  \"enabled\": true,\n  \"filter\": \"Client{^prod-.*}\",\n  \"source\": \"Scram\",\n  \"users\": [],\n  \"encrypt\": null,\n  \"availability\": {\n    \"failure_threshold\": 20,\n    \"recovery_cooldown_ms\": 5000\n  },\n  \"scram\": {\n    \"data_source\": \"auth-postgres\",\n    \"query\": \"select stored_key, server_key, salt, iterations, tags from mqtt_scram_users where username = ${username}\",\n    \"stored_key_column\": \"stored_key\",\n    \"server_key_column\": \"server_key\",\n    \"salt_column\": \"salt\",\n    \"iterations_column\": \"iterations\",\n    \"tags_column\": \"tags\",\n    \"algorithm\": \"Sha256\",\n    \"encoding\": \"Base64\"\n  }\n}"
-          },
-          {
-            "type": "paragraph",
-            "text": "`algorithm` 可选 `Sha256` 或 `Sha512`，`encoding` 可选 `Base64` 或 `Hex`。"
-          },
-          {
-            "type": "heading",
-            "id": "ldap-认证示例",
-            "level": 2,
-            "text": "LDAP 认证示例"
-          },
-          {
-            "type": "paragraph",
-            "text": "LDAP 认证直接连接目录服务。`filter` 默认是 `(uid=${username})`，可按组织目录结构调整。"
           },
           {
             "type": "code",
@@ -15516,196 +14653,19 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"corp-ldap\",\n  \"enabled\": true,\n  \"filter\": null,\n  \"source\": \"Ldap\",\n  \"users\": [],\n  \"encrypt\": null,\n  \"availability\": {\n    \"failure_threshold\": 20,\n    \"recovery_cooldown_ms\": 5000\n  },\n  \"ldap\": {\n    \"url\": \"ldaps://ldap.example.com:636\",\n    \"bind_dn\": \"cn=velamq,ou=svc,dc=example,dc=com\",\n    \"bind_password\": \"secret\",\n    \"base_dn\": \"ou=devices,dc=example,dc=com\",\n    \"filter\": \"(uid=${username})\",\n    \"bind_dn_template\": null,\n    \"timeout_ms\": 5000,\n    \"tags_attribute\": \"description\"\n  }\n}"
           },
           {
-            "type": "paragraph",
-            "text": "如果目录允许按用户 DN 直接绑定，可使用 `bind_dn_template` 生成用户 DN；否则先用服务账号查询，再校验用户密码。"
-          },
-          {
-            "type": "heading",
-            "id": "redis-认证示例",
-            "level": 2,
-            "text": "Redis 认证示例"
-          },
-          {
-            "type": "paragraph",
-            "text": "Redis 认证适合把设备凭据缓存到 Redis hash。默认 key 模板为 `mqtt_user:${username}`，默认密码字段为 `password`。"
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"name\": \"redis-auth\",\n  \"enabled\": true,\n  \"filter\": \"Client{^edge-.*}\",\n  \"source\": \"Redis\",\n  \"users\": [],\n  \"encrypt\": {\n    \"algorithm\": \"Sha256\",\n    \"salt_mode\": \"Suffix\",\n    \"salt\": null\n  },\n  \"availability\": {\n    \"failure_threshold\": 20,\n    \"recovery_cooldown_ms\": 5000\n  },\n  \"redis\": {\n    \"data_source\": \"auth-redis\",\n    \"key\": \"mqtt_user:${username}\",\n    \"password_field\": \"password\",\n    \"salt_field\": \"salt\",\n    \"tags_field\": \"tags\"\n  }\n}"
           },
           {
-            "type": "paragraph",
-            "text": "`tags_field` 可返回逗号分隔字符串，用于后续规则或审计上下文。"
-          },
-          {
-            "type": "heading",
-            "id": "密码加密",
-            "level": 2,
-            "text": "密码加密"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 鉴权加密配置截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
-            "type": "paragraph",
-            "text": "密码加密配置用于 Config 和 SQL 认证。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "可选值",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`algorithm`",
-                "`None`、`Md5`、`Sha1`、`Sha256`、`Sha512`",
-                "`None` 表示明文比对。"
-              ],
-              [
-                "`salt_mode`",
-                "`Disable`、`Prefix`、`Suffix`",
-                "控制盐值拼接位置。"
-              ],
-              [
-                "`salt`",
-                "字符串或 `null`",
-                "静态盐。SQL 的 `salt_column` 会覆盖静态盐。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "哈希计算方式："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`Disable`：对输入密码直接计算。",
-              "`Prefix`：对 `salt + password` 计算。",
-              "`Suffix`：对 `password + salt` 计算。",
-              "比对时哈希大小写不敏感。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "异常恢复",
-            "level": 2,
-            "text": "异常恢复"
-          },
-          {
-            "type": "paragraph",
-            "text": "HTTP 和 SQL 认证源有可用性保护："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "默认值",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`failure_threshold`",
-                "`20`",
-                "连续外部异常次数。"
-              ],
-              [
-                "`recovery_cooldown_ms`",
-                "`5000`",
-                "熔断后的恢复等待时间。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "业务拒绝和密码不匹配不会触发熔断；只有外部系统异常、SQL 查询失败、HTTP 非 2xx、网络错误等会记录为外部异常。"
-          },
-          {
-            "type": "heading",
-            "id": "acl-规则",
-            "level": 2,
-            "text": "ACL 规则"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 访问控制页面截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/acl.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "ACL 当前控制台按“单条规则”分页维护，不再在页面上维护策略组，也不支持 HTTP / SQL ACL 来源。每次点击“添加 ACL 规则”只创建一条规则，后端自动生成 `acl-...` ID，保存后立即刷新运行时 ACL 并持久化到 RocksDB。"
-          },
-          {
-            "type": "paragraph",
-            "text": "列表能力："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "能力",
-              "说明"
-            ],
-            "rows": [
-              [
-                "分页",
-                "默认每页 20 条，后端最多允许 `per_page=200`。"
-              ],
-              [
-                "类型过滤",
-                "按 `All`、`User`、`ClientId`、`Ip` 过滤。"
-              ],
-              [
-                "Topic 搜索",
-                "对 `topic` 做大小写不敏感的模糊搜索。"
-              ],
-              [
-                "规则 ID",
-                "新增时自动生成；编辑和删除使用该 ID。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "当前规则作为管理配置写入 RocksDB，核心字段包括 `id`、`created_at_ms`、`effect`、`acl_type`、`action`、`topic`、`subject`。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`effect`",
-                "策略，`Allow` 或 `Deny`。"
-              ],
-              [
-                "`acl_type`",
-                "主体类型：`All`、`User`、`ClientId`、`Ip`。"
-              ],
-              [
-                "`subject`",
-                "匹配主体。`All` 固定为 `*`；`User` 和 `ClientId` 是整串正则；`Ip` 支持精确 IP 或 CIDR。"
-              ],
-              [
-                "`action`",
-                "动作：`Publish`、`Subscribe`、`PubSub`。`PubSub` 会同时作用于发布和订阅。"
-              ],
-              [
-                "`topic`",
-                "MQTT Topic Filter，可使用 `+`、`#` 和变量模板。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "Topic 模板支持："
           },
           {
             "type": "list",
@@ -15717,55 +14677,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "paragraph",
-            "text": "注意：ACL Topic 模板只支持上面的 snake_case 名称，不支持 `${clientId}`。"
-          },
-          {
-            "type": "heading",
-            "id": "acl-判定语义",
-            "level": 2,
-            "text": "ACL 判定语义"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 ACL 判定语义截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "ACL 未启用时直接放行。",
-              "连接注册时会根据当前规则生成客户端 ACL 快照。",
-              "`Deny` 和 `Allow` 会分别进入发布/订阅快照；`PubSub` 会拆成两边。",
-              "如果当前动作没有任何 Deny 规则，直接放行。",
-              "如果有 Deny 规则但当前 Topic 没命中 Deny，直接放行。",
-              "如果命中了 Deny，必须同时命中对应动作的 Allow 才会放行。",
-              "想做“默认拒绝”，需要添加一条 `Deny + All + PubSub + #` 兜底规则，再添加精确 Allow。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "这意味着 ACL 不是“第一条命中即结束”，规则创建顺序不会改变 Deny/Allow 的最终语义。"
-          },
-          {
-            "type": "heading",
-            "id": "acl-示例",
-            "level": 2,
-            "text": "ACL 示例"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 ACL 示例截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/acl.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "设备只能访问自己的命名空间，需要创建两条独立规则。"
-          },
-          {
-            "type": "paragraph",
-            "text": "兜底拒绝："
           },
           {
             "type": "code",
@@ -15773,306 +14692,101 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"effect\": \"Deny\",\n  \"acl_type\": \"All\",\n  \"subject\": \"*\",\n  \"action\": \"PubSub\",\n  \"topic\": \"#\"\n}"
           },
           {
-            "type": "paragraph",
-            "text": "允许设备访问自己的 Topic："
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"effect\": \"Allow\",\n  \"acl_type\": \"ClientId\",\n  \"subject\": \"device-[0-9]+\",\n  \"action\": \"PubSub\",\n  \"topic\": \"devices/${client_id}/#\"\n}"
           },
           {
-            "type": "paragraph",
-            "text": "验证："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "# 应允许\nmosquitto_pub -i device-001 -u demo -P secret -t devices/device-001/state -m '{}'\n\n# 应拒绝\nmosquitto_pub -i device-001 -u demo -P secret -t devices/device-002/state -m '{}'"
-          },
-          {
-            "type": "heading",
-            "id": "acl-控制台操作",
-            "level": 2,
-            "text": "ACL 控制台操作"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 ACL 控制台操作截图",
+            "alt": "Device Authentication and ACL screenshot",
             "src": "/velamq-docs/img/screenshots/acl.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "常用操作都在“访问控制”页面完成："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "操作",
-              "说明"
-            ],
-            "rows": [
-              [
-                "新增规则",
-                "点击“添加 ACL 规则”，填写 effect、acl_type、subject、action 和 topic 后保存。"
-              ],
-              [
-                "查询规则",
-                "使用类型过滤、Topic 搜索和分页定位目标规则。"
-              ],
-              [
-                "编辑规则",
-                "从列表进入编辑，修改动作、Topic 或主体匹配后保存。"
-              ],
-              [
-                "删除规则",
-                "删除前先确认是否存在默认拒绝或精确允许的依赖关系。"
-              ],
-              [
-                "验证规则",
-                "使用测试客户端发布和订阅目标 Topic，再观察 ACL 成功/失败指标。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "排错清单",
-            "level": 2,
-            "text": "排错清单"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "现象",
-              "优先检查"
-            ],
-            "rows": [
-              [
-                "认证提供方不可用",
-                "`last_error`、外部 HTTP 状态码、SQL 数据源状态、恢复时间。"
-              ],
-              [
-                "HTTP 明明拒绝却触发熔断",
-                "外部服务是否返回了非 `2xx`；正常拒绝应返回 `2xx + allow=false`。"
-              ],
-              [
-                "SQL 查询不到用户",
-                "SQL 模板变量是否为空，数据源是否可用，查询是否返回 `password_column`。"
-              ],
-              [
-                "哈希密码不匹配",
-                "算法、盐值位置、运行时盐值列、存储哈希大小写。"
-              ],
-              [
-                "ACL 放行过宽",
-                "是否缺少 `Deny + All + #` 兜底规则。"
-              ],
-              [
-                "ACL 正则不生效",
-                "`ClientId` 和 `User` 正则必须完整匹配主体。"
-              ],
-              [
-                "ACL Topic 占位符不生效",
-                "检查是否写成 `${clientId}`；当前只支持 `${client_id}`、`${username}`、`${client_ip}`。"
-              ],
-              [
-                "ACL 页面找不到旧策略组",
-                "当前控制台按单规则维护；旧策略组模型只保留兼容，不再作为页面主流程。"
-              ]
-            ]
           }
         ]
       },
       "guide/certificates": {
         "id": "guide/certificates",
-        "title": "证书管理",
-        "summary": "证书管理为 TLS 监听端点提供数据库化证书资产。",
+        "title": "Certificate Management",
+        "summary": "Certificate Management provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/certificates.md",
         "headings": [
           {
-            "id": "服务端证书",
+            "id": "overview",
             "level": 2,
-            "text": "服务端证书"
+            "text": "Overview"
           },
           {
-            "id": "客户端证书",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "客户端证书"
-          },
-          {
-            "id": "端点绑定",
-            "level": 2,
-            "text": "端点绑定"
-          },
-          {
-            "id": "注意事项",
-            "level": 2,
-            "text": "注意事项"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "证书管理为 TLS 监听端点提供数据库化证书资产。"
+            "text": "Certificate Management provides configuration, usage, validation, and operational guidance for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 证书管理页面截图",
+            "alt": "Certificate Management screenshot",
             "src": "/velamq-docs/img/screenshots/certificates.png"
-          },
-          {
-            "type": "heading",
-            "id": "服务端证书",
-            "level": 2,
-            "text": "服务端证书"
-          },
-          {
-            "type": "paragraph",
-            "text": "控制台支持："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "创建自签名服务端证书。",
-              "上传证书 PEM、私钥 PEM，可选上传 CA 证书和 CA 私钥。",
-              "下载证书 PEM 或归档包。",
-              "删除未被端点引用的证书。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "客户端证书",
-            "level": 2,
-            "text": "客户端证书"
-          },
-          {
-            "type": "paragraph",
-            "text": "当服务端证书具有 CA 能力时，可以为客户端签发证书。端点开启“要求客户端证书”后，客户端必须使用该 CA 签发的证书完成 TLS 握手。"
-          },
-          {
-            "type": "heading",
-            "id": "端点绑定",
-            "level": 2,
-            "text": "端点绑定"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "在“证书管理”创建或上传服务端证书。",
-              "在“监听端点”开启 TLS。",
-              "选择证书。",
-              "如需 mTLS，开启客户端证书校验。",
-              "保存端点并使用 MQTT TLS 客户端验证。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "注意事项",
-            "level": 2,
-            "text": "注意事项"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "上传私钥时确认 PEM 格式完整。",
-              "mTLS 需要 CA 私钥，只有普通服务端证书无法签发客户端证书。",
-              "生产证书建议使用正式 CA 或内部 CA，控制证书有效期和轮换流程。"
-            ]
           }
         ]
       },
       "guide/cluster": {
         "id": "guide/cluster",
-        "title": "集群",
-        "summary": "VelaMQ 0.0.1 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。",
+        "title": "Cluster Management",
+        "summary": "Cluster Management provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/cluster.md",
         "headings": [
           {
-            "id": "前置条件",
+            "id": "overview",
             "level": 2,
-            "text": "前置条件"
+            "text": "Overview"
           },
           {
-            "id": "单节点自举",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "单节点自举"
-          },
-          {
-            "id": "三节点示例",
-            "level": 2,
-            "text": "三节点示例"
-          },
-          {
-            "id": "角色模型",
-            "level": 2,
-            "text": "角色模型"
-          },
-          {
-            "id": "shard-副本",
-            "level": 2,
-            "text": "Shard 副本"
-          },
-          {
-            "id": "同步语义",
-            "level": 2,
-            "text": "同步语义"
-          },
-          {
-            "id": "运维检查",
-            "level": 2,
-            "text": "运维检查"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "VelaMQ 0.0.1 集群用于多节点订阅同步、远程投递、统一管理视图、Storage Raft 复制和 shard 副本查询。"
+            "text": "Cluster Management provides configuration, usage, validation, and operational guidance for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 集群概览所在仪表盘截图",
+            "alt": "Cluster Management screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
-          },
-          {
-            "type": "heading",
-            "id": "前置条件",
-            "level": 2,
-            "text": "前置条件"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "每个节点使用唯一 `cluster.node_id`。",
-              "每个节点的 `cluster.bind_addr` 和 `cluster.advertise_addr` 能被其他节点访问。",
-              "多节点同机部署时，每个节点使用不同 `api.bind_addr` 和 `rocksdb.data_dir`。",
-              "生产 voter 节点建议至少 3 个，避免单点存储复制风险。",
-              "如果开启 `[cluster.tls]`，所有节点证书需要由同一 CA 签发。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "单节点自举",
-            "level": 2,
-            "text": "单节点自举"
           },
           {
             "type": "code",
             "language": "toml",
             "code": "[cluster]\nnode_id = \"node-a\"\nbind_addr = \"0.0.0.0:50051\"\nadvertise_addr = \"http://127.0.0.1:50051\"\nseeds = []\nheartbeat_interval_secs = 5\nnode_timeout_secs = 20\n\n[cluster.raft]\nrole = \"voter\"\nread_consistency = \"voter_any\"\n\n[rocksdb]\ndata_dir = \"./data/rocksdb-node-a\"\nbackup_dir = \"./data/rocksdb-backups/node-a\""
-          },
-          {
-            "type": "paragraph",
-            "text": "`seeds = []` 表示该节点自举为单节点 voter。"
-          },
-          {
-            "type": "heading",
-            "id": "三节点示例",
-            "level": 2,
-            "text": "三节点示例"
           },
           {
             "type": "paragraph",
@@ -16093,197 +14807,50 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "[cluster]\nnode_id = \"node-b\"\nbind_addr = \"0.0.0.0:50052\"\nadvertise_addr = \"http://10.0.0.12:50052\"\nseeds = [\"http://10.0.0.11:50051\"]\n\n[cluster.raft]\nrole = \"voter\"\nread_consistency = \"voter_any\"\n\n[rocksdb]\ndata_dir = \"./data/rocksdb-node-b\"\nbackup_dir = \"./data/rocksdb-backups/node-b\""
           },
           {
-            "type": "paragraph",
-            "text": "Node C 使用相同模式，改为 `node-c`、端口 `50053` 和自己的 RocksDB 目录。"
-          },
-          {
-            "type": "paragraph",
-            "text": "只要 `cluster.seeds` 非空，节点就按集群模式启动；seed 不可达时不会退化成单节点 leader。生产三节点建议每个 voter 配置其他 voter 的地址作为 seed。"
-          },
-          {
-            "type": "heading",
-            "id": "角色模型",
-            "level": 2,
-            "text": "角色模型"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "角色",
-              "说明",
-              "适用场景"
-            ],
-            "rows": [
-              [
-                "`voter`",
-                "保存本地 RocksDB 副本，参与 Storage Raft 投票，可成为 leader。",
-                "核心存储节点。"
-              ],
-              [
-                "`client`",
-                "不保存本地 RocksDB 副本，加入集群后发现 voter 并代理读写。",
-                "接入节点、API 节点、边缘协调节点。"
-              ],
-              [
-                "`only_vote_store` voter",
-                "只作为存储副本和投票节点，不初始化运行态配置。",
-                "独立存储副本、降低接入面。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "shard-副本",
-            "level": 2,
-            "text": "Shard 副本"
-          },
-          {
-            "type": "paragraph",
-            "text": "`[cluster.shards]` 用于 retained、session、delayed 等大数据 keyspace："
-          },
-          {
             "type": "code",
             "language": "toml",
             "code": "[cluster.shards]\nenabled = true\nvirtual_shards = 256\nreplication_factor = 3\nlocal_data_store = true\nread_consistency = \"replica_any\"\nwrite_quorum = \"majority\"\npage_fanout_limit = 32\nrebalance_batch_rows = 2048\nrebalance_batch_bytes = 4194304"
-          },
-          {
-            "type": "paragraph",
-            "text": "控制台“集群 / Storage / Shards”区域展示 shard 路由、副本、lag 和节点承载状态。下线节点前先在页面中对目标节点执行 drain，让 shard 副本迁移到其他可承载数据的节点。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "配置 / 字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`enabled`",
-                "是否启用 sharded keyspace。关闭时 retained、session、delayed 使用本地存储路径。"
-              ],
-              [
-                "`virtual_shards`",
-                "虚拟 shard 数量。值越大分布越细，但路由元数据也更多。"
-              ],
-              [
-                "`replication_factor`",
-                "每个 shard 的副本数量。生产环境通常不低于 3。"
-              ],
-              [
-                "`local_data_store`",
-                "当前节点是否承载 shard 数据。接入节点可关闭，只代理请求。"
-              ],
-              [
-                "`read_consistency`",
-                "读取一致性：`replica_any` 延迟低，`primary` 更新更及时，`quorum` 一致性更强。"
-              ],
-              [
-                "`write_quorum`",
-                "写入确认策略。`majority` 在可靠性和延迟之间较均衡。"
-              ],
-              [
-                "`page_fanout_limit`",
-                "分页查询最多并发访问的 shard 数，避免大范围查询打满集群。"
-              ],
-              [
-                "`rebalance_batch_rows`",
-                "rebalance 单批迁移的最大行数。"
-              ],
-              [
-                "`rebalance_batch_bytes`",
-                "rebalance 单批迁移的最大字节数。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "页面中的 lag、primary、replica 和 drain 状态用于判断副本是否健康；drain 完成后再停止或移除节点。"
-          },
-          {
-            "type": "heading",
-            "id": "同步语义",
-            "level": 2,
-            "text": "同步语义"
-          },
-          {
-            "type": "paragraph",
-            "text": "direct subscription 的同步基于 first / last 边界："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "同一节点、同一 direct filter，从 0 到 1 时向其他节点广播一次 Upsert。",
-              "从 1 到 0 时向其他节点广播一次 Remove。",
-              "远端只维护“该节点对该 filter 感兴趣”的代表订阅，不复制每个 client 的完整 direct 行。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "这种设计减少跨节点同步量，同时保证远程发布能够找到有兴趣的节点。"
-          },
-          {
-            "type": "heading",
-            "id": "运维检查",
-            "level": 2,
-            "text": "运维检查"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "仪表盘集群区确认节点 reachable。",
-              "Storage Raft 表确认 exactly one leader。",
-              "Shards 表确认副本 lag 不持续增长。",
-              "连接管理确认连接聚合是否包含各节点。",
-              "Prometheus 按 `node_id` 标签抓取每个节点。",
-              "License 导入后检查每个节点 applied 状态。"
-            ]
           }
         ]
       },
       "guide/commands": {
         "id": "guide/commands",
-        "title": "指令消费",
-        "summary": "指令消费用于把外部消息系统中的命令转换为 MQTT 下行消息，适合设备控制、配置下发和远程操作。",
+        "title": "Command Consumption",
+        "summary": "Command Consumption provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/commands.md",
         "headings": [
           {
-            "id": "支持类型",
+            "id": "overview",
             "level": 2,
-            "text": "支持类型"
+            "text": "Overview"
           },
           {
-            "id": "配置项",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置项"
-          },
-          {
-            "id": "映射示例",
-            "level": 2,
-            "text": "映射示例"
-          },
-          {
-            "id": "运维建议",
-            "level": 2,
-            "text": "运维建议"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "paragraph",
-            "text": "指令消费用于把外部消息系统中的命令转换为 MQTT 下行消息，适合设备控制、配置下发和远程操作。"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
-            "type": "image",
-            "alt": "VelaMQ 0.0.1 指令消费页面截图",
-            "src": "/velamq-docs/img/screenshots/commands.png"
+            "type": "paragraph",
+            "text": "Command Consumption provides configuration, usage, validation, and operational guidance for VelaMQ."
           },
           {
             "type": "heading",
-            "id": "支持类型",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "支持类型"
+            "text": "Examples and Reference"
+          },
+          {
+            "type": "image",
+            "alt": "Command Consumption screenshot",
+            "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
             "type": "list",
@@ -16296,142 +14863,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "heading",
-            "id": "配置项",
-            "level": 2,
-            "text": "配置项"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "command_name",
-                "指令名称"
-              ],
-              [
-                "command",
-                "指令类型，例如 `KAFKA`"
-              ],
-              [
-                "status",
-                "是否启用"
-              ],
-              [
-                "properties",
-                "外部系统连接参数"
-              ],
-              [
-                "mapping.items",
-                "外部 topic 到 MQTT topic 的映射列表"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "映射示例",
-            "level": 2,
-            "text": "映射示例"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 指令消费页面截图",
+            "alt": "Command Consumption screenshot",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"topic\": \"device.commands\",\n  \"mqtt_topic\": \"devices/${deviceId}/command\",\n  \"qos\": 1,\n  \"retain\": false,\n  \"payload\": \"{\\\"action\\\":\\\"reboot\\\"}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "运维建议",
-            "level": 2,
-            "text": "运维建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "先停用指令，保存连接参数后再启用。",
-              "为不同环境使用不同 consumer group 或 client id。",
-              "指令失败时检查外部系统连接、topic 权限和 payload 模板。"
-            ]
           }
         ]
       },
       "guide/console-security": {
         "id": "guide/console-security",
-        "title": "控制台用户与审计",
-        "summary": "当控制台认证开启且没有任何用户时，浏览器会进入创建管理员向导。也可以通过环境变量预置管理员：",
+        "title": "Console Users and Audit",
+        "summary": "Console Users and Audit provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/console-security.md",
         "headings": [
           {
-            "id": "用户角色",
+            "id": "overview",
             "level": 2,
-            "text": "用户角色"
+            "text": "Overview"
           },
           {
-            "id": "首次初始化",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "首次初始化"
-          },
-          {
-            "id": "jwt-配置",
-            "level": 2,
-            "text": "JWT 配置"
-          },
-          {
-            "id": "审计日志",
-            "level": 2,
-            "text": "审计日志"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
             "type": "heading",
-            "id": "用户角色",
+            "id": "overview",
             "level": 2,
-            "text": "用户角色"
-          },
-          {
-            "type": "image",
-            "alt": "VelaMQ 0.0.1 控制台用户页面截图",
-            "src": "/velamq-docs/img/screenshots/users.png"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "角色",
-              "权限"
-            ],
-            "rows": [
-              [
-                "admin",
-                "管理所有控制台用户、读写所有配置。"
-              ],
-              [
-                "operator",
-                "可读写业务配置，但不能管理控制台用户。"
-              ],
-              [
-                "viewer",
-                "只读访问，不能修改配置。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "首次初始化",
-            "level": 2,
-            "text": "首次初始化"
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "当控制台认证开启且没有任何用户时，浏览器会进入创建管理员向导。也可以通过环境变量预置管理员："
+            "text": "Console Users and Audit provides configuration, usage, validation, and operational guidance for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
+          },
+          {
+            "type": "image",
+            "alt": "Console Users and Audit screenshot",
+            "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
             "type": "code",
@@ -16439,148 +14919,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "VELAMQ_CONSOLE_BOOTSTRAP_PASSWORD='change-me' \\\nVELAMQ_CONFIG_FILE=config.toml \\\n./velamqd"
           },
           {
-            "type": "paragraph",
-            "text": "此时默认创建用户名 `admin`。"
-          },
-          {
-            "type": "heading",
-            "id": "jwt-配置",
-            "level": 2,
-            "text": "JWT 配置"
-          },
-          {
             "type": "code",
             "language": "toml",
             "code": "[console]\nenabled = true\njwt_secret = \"change-me-in-production\"\njwt_hours = 12"
           },
           {
-            "type": "paragraph",
-            "text": "生产环境必须替换 `jwt_secret`，并控制 token 有效期。"
-          },
-          {
-            "type": "heading",
-            "id": "审计日志",
-            "level": 2,
-            "text": "审计日志"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 操作审计页面截图",
+            "alt": "Console Users and Audit screenshot",
             "src": "/velamq-docs/img/screenshots/audit.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "管理 API 会记录："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "时间",
-              "用户名",
-              "角色",
-              "HTTP method",
-              "API path",
-              "响应状态码"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "管理员可查看全部审计记录，其他角色只能查看自己产生的记录。审计数据持久化在 RocksDB 中，并随存储复制策略进入集群视图。"
           }
         ]
       },
       "guide/dashboard": {
         "id": "guide/dashboard",
-        "title": "仪表盘",
-        "summary": "仪表盘是控制台的运行总览页，适合第一时间判断 Broker 是否健康。",
+        "title": "Dashboard",
+        "summary": "Dashboard provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/dashboard.md",
         "headings": [
           {
-            "id": "重点区域",
+            "id": "overview",
             "level": 2,
-            "text": "重点区域"
+            "text": "Overview"
           },
           {
-            "id": "使用建议",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "使用建议"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "仪表盘是控制台的运行总览页，适合第一时间判断 Broker 是否健康。"
+            "text": "Dashboard provides configuration, usage, validation, and operational guidance for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 仪表盘页面截图",
+            "alt": "Dashboard screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
-          },
-          {
-            "type": "heading",
-            "id": "重点区域",
-            "level": 2,
-            "text": "重点区域"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "区域",
-              "用途"
-            ],
-            "rows": [
-              [
-                "Broker 计数",
-                "活跃连接、累计连接、消息收发、丢弃、订阅、保留消息等。"
-              ],
-              [
-                "事件统计",
-                "规则命中、规则成功/失败、认证成功/失败、ACL 成功/失败。"
-              ],
-              [
-                "资源盘点",
-                "监听端点、数据源、规则、ACL、认证、指令、证书、用户数量。"
-              ],
-              [
-                "系统资源",
-                "主机 CPU、内存、进程 RSS、进程启动时间。"
-              ],
-              [
-                "存储状态",
-                "RocksDB 配置、Storage Raft 角色、快照、备份和 command log。"
-              ],
-              [
-                "Shard 概览",
-                "分片副本分布、lag 和节点 drain 状态。"
-              ],
-              [
-                "License",
-                "当前授权来源、最大连接数、剩余额度和到期信息。"
-              ],
-              [
-                "集群概览",
-                "集群开启时展示本节点和 peer 节点状态。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "使用建议",
-            "level": 2,
-            "text": "使用建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "连接数突然升高时，先进入“连接管理”查看 Client ID、来源 IP、端点和协议版本。",
-              "消息丢弃或 ACL 失败升高时，检查“访问控制”和“监控指标”中的失败趋势。",
-              "规则失败升高时，进入“规则引擎”查看规则监控，再检查动作绑定的数据源状态。",
-              "Rule Outbox 增长时，优先查看最近错误和目标数据源状态。",
-              "Storage Raft 出现多个 leader 或无 leader 时，检查 seeds、gRPC 连通性和节点 ID。",
-              "License 剩余额度过低时，及时导入新 License 或减少异常连接。"
-            ]
           }
         ]
       },
@@ -16628,7 +15015,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 Data Management and dashboard screenshot",
+            "alt": "Data Management screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -16855,120 +15242,46 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "guide/datasources/http": {
         "id": "guide/datasources/http",
-        "title": "HTTP 数据源",
-        "summary": "HTTP 数据源用于 Webhook 和业务系统回调。当前版本的 HTTP 设备认证在“设备认证”页面直接填写 URL、请求头、模板参数和超时，不需要先创建 HTTP 数据源。",
+        "title": "HTTP Data Source",
+        "summary": "HTTP Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/http.md",
         "headings": [
           {
-            "id": "适用场景",
+            "id": "overview",
             "level": 2,
-            "text": "适用场景"
+            "text": "Overview"
           },
           {
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "webhook-动作示例",
-            "level": 2,
-            "text": "Webhook 动作示例"
-          },
-          {
-            "id": "外部认证用法",
-            "level": 2,
-            "text": "外部认证用法"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "HTTP 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/http.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "HTTP 数据源用于 Webhook 和业务系统回调。当前版本的 HTTP 设备认证在“设备认证”页面直接填写 URL、请求头、模板参数和超时，不需要先创建 HTTP 数据源。"
+            "text": "HTTP Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "适用场景",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "适用场景"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "告警消息推送到业务平台。",
-              "把设备事件通知到工单、告警或数据处理服务。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "字段说明",
-            "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`url`",
-                "`https://alarm.example.com/hooks/velamq`",
-                "请求地址。"
-              ],
-              [
-                "`method`",
-                "`POST`",
-                "HTTP 方法。"
-              ],
-              [
-                "`headers`",
-                "`Authorization`、`Content-Type`",
-                "请求头。"
-              ],
-              [
-                "`timeout_ms`",
-                "`3000`",
-                "总请求超时。"
-              ],
-              [
-                "`connect_timeout_ms`",
-                "`1000`",
-                "连接阶段超时。"
-              ],
-              [
-                "`verify_tls`",
-                "`true`",
-                "是否校验证书。生产建议开启。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "HTTP 数据源 配置截图",
+            "alt": "HTTP Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/http.png"
+          },
+          {
+            "type": "image",
+            "alt": "HTTP Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
@@ -16977,147 +15290,59 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"alarm-webhook\",\n  \"source\": \"WEBHOOK\",\n  \"source_type\": {\n    \"Http\": {\n      \"url\": \"https://alarm.example.com/hooks/velamq\",\n      \"method\": \"POST\",\n      \"headers\": [\n        { \"name\": \"Content-Type\", \"value\": \"application/json\" },\n        { \"name\": \"X-Source\", \"value\": \"velamq-rs\" }\n      ],\n      \"timeout_ms\": 3000,\n      \"connect_timeout_ms\": 1000,\n      \"verify_tls\": true\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "webhook-动作示例",
-            "level": 2,
-            "text": "Webhook 动作示例"
-          },
-          {
             "type": "image",
-            "alt": "HTTP 数据源 配置截图",
+            "alt": "HTTP Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/http.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-webhook\",\n  \"action_type\": \"SEND_WEBHOOK\",\n  \"source_name\": \"alarm-webhook\",\n  \"method\": \"POST\",\n  \"template\": \"{\\\"client_id\\\":\\\"${client_id}\\\",\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "外部认证用法",
-            "level": 2,
-            "text": "外部认证用法"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“设备认证”。",
-              "新增 HTTP 认证提供方。",
-              "在认证提供方内直接填写 URL、Method、Header、请求参数模板和超时。",
-              "配置连续异常阈值和恢复周期。",
-              "HTTP 数据源仍可用于规则引擎的 `SEND_WEBHOOK` 动作，但不是 HTTP 认证的必填前置条件。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`last_error` 为 timeout：调小规则命中量，检查外部服务延迟和网络。",
-              "TLS 错误：检查 CA 链，测试环境临时关闭 `verify_tls`，生产不要关闭。",
-              "认证结果异常：检查外部服务响应格式、状态码和字段映射。"
-            ]
           }
         ]
       },
       "guide/datasources/influxdb": {
         "id": "guide/datasources/influxdb",
-        "title": "InfluxDB 数据源",
-        "summary": "InfluxDB 数据源用于时序指标写入，适合设备遥测和运行指标。",
+        "title": "InfluxDB Data Source",
+        "summary": "InfluxDB Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/influxdb.md",
         "headings": [
           {
-            "id": "字段说明",
+            "id": "overview",
             "level": 2,
-            "text": "字段说明"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "InfluxDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "InfluxDB 数据源用于时序指标写入，适合设备遥测和运行指标。"
+            "text": "InfluxDB Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`url`",
-                "`https://influx.example.com`",
-                "InfluxDB 2.x 地址。"
-              ],
-              [
-                "`org`",
-                "`iot`",
-                "组织。"
-              ],
-              [
-                "`bucket`",
-                "`telemetry`",
-                "bucket。"
-              ],
-              [
-                "`token`",
-                "`...`",
-                "写入 token。"
-              ],
-              [
-                "`timeout_ms`",
-                "`10000`",
-                "请求超时。"
-              ],
-              [
-                "`verify_tls`",
-                "`true`",
-                "是否校验 TLS。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "InfluxDB 配置截图",
+            "alt": "InfluxDB Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
+          },
+          {
+            "type": "image",
+            "alt": "InfluxDB Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
@@ -17126,140 +15351,59 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-influx\",\n  \"source\": \"INFLUXDB\",\n  \"source_type\": {\n    \"InfluxDb\": {\n      \"url\": \"https://influx.example.com\",\n      \"org\": \"iot\",\n      \"bucket\": \"telemetry\",\n      \"token\": \"secret-token\",\n      \"timeout_ms\": 10000,\n      \"verify_tls\": true\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "InfluxDB 配置截图",
+            "alt": "InfluxDB Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/influxdb.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-influx\",\n  \"action_type\": \"SAVE_INFLUXDB\",\n  \"source_name\": \"telemetry-influx\",\n  \"measurement\": \"device_state\",\n  \"tags\": \"client_id=${client_id},topic=${topic}\",\n  \"template\": \"temperature=${payload.temperature},humidity=${payload.humidity}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "400 Bad Request：检查 line protocol、tag 转义和字段类型。",
-              "401 Unauthorized：检查 token 是否有 bucket 写权限。",
-              "高基数：避免把随机 ID、完整 payload 放入 tag。"
-            ]
           }
         ]
       },
       "guide/datasources/kafka": {
         "id": "guide/datasources/kafka",
-        "title": "Kafka 数据源",
-        "summary": "Kafka 数据源适合高吞吐消息流、实时计算和数据湖前置队列。",
+        "title": "Kafka Data Source",
+        "summary": "Kafka Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/kafka.md",
         "headings": [
           {
-            "id": "字段说明",
+            "id": "overview",
             "level": 2,
-            "text": "字段说明"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "Kafka 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "Kafka 数据源适合高吞吐消息流、实时计算和数据湖前置队列。"
+            "text": "Kafka Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`brokers`",
-                "`127.0.0.1:9092`",
-                "Kafka broker 列表。"
-              ],
-              [
-                "`client_id`",
-                "`velamq-rs`",
-                "Producer client id。"
-              ],
-              [
-                "`security_protocol`",
-                "`SASL_SSL`",
-                "安全协议。"
-              ],
-              [
-                "`sasl_mechanism`",
-                "`PLAIN`",
-                "SASL 机制。"
-              ],
-              [
-                "`acks`",
-                "`all`",
-                "写入确认级别。"
-              ],
-              [
-                "`compression`",
-                "`zstd`",
-                "压缩方式。"
-              ],
-              [
-                "`linger_ms`",
-                "`10`",
-                "聚合等待时间。"
-              ],
-              [
-                "`batch_bytes`",
-                "`1048576`",
-                "批量大小。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "Kafka 配置截图",
+            "alt": "Kafka Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
+          },
+          {
+            "type": "image",
+            "alt": "Kafka Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
@@ -17268,135 +15412,59 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-kafka\",\n  \"source\": \"KAFKA\",\n  \"source_type\": {\n    \"Kafka\": {\n      \"brokers\": \"127.0.0.1:9092\",\n      \"client_id\": \"velamq-rs\",\n      \"acks\": \"all\",\n      \"compression\": \"zstd\",\n      \"linger_ms\": 10,\n      \"batch_bytes\": 1048576\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "Kafka 配置截图",
+            "alt": "Kafka Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/kafka.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-kafka\",\n  \"action_type\": \"SEND_KAFKA\",\n  \"source_name\": \"telemetry-kafka\",\n  \"topic\": \"iot.telemetry\",\n  \"key\": \"${client_id}\",\n  \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "topic 不存在：按 Kafka 策略创建 topic 或开启自动创建。",
-              "写入超时：检查 broker、acks、ISR 和网络。",
-              "SASL 失败：检查安全协议、用户名、密码和机制。"
-            ]
           }
         ]
       },
       "guide/datasources/log": {
         "id": "guide/datasources/log",
-        "title": "Log 数据源",
-        "summary": "Log 数据源用于把规则命中的事件写入本地文件，是验证规则引擎最稳妥的第一步。",
+        "title": "Log Data Source",
+        "summary": "Log Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/log.md",
         "headings": [
           {
-            "id": "适用场景",
+            "id": "overview",
             "level": 2,
-            "text": "适用场景"
+            "text": "Overview"
           },
           {
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "规则动作示例",
-            "level": 2,
-            "text": "规则动作示例"
-          },
-          {
-            "id": "验证",
-            "level": 2,
-            "text": "验证"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "Log 数据源 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/log.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "Log 数据源用于把规则命中的事件写入本地文件，是验证规则引擎最稳妥的第一步。"
+            "text": "Log Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "适用场景",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "适用场景"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "新规则上线前验证 SQL 是否命中。",
-              "记录关键 MQTT 事件，例如连接、断开、告警、丢弃。",
-              "在没有外部数据库或消息队列时做本地审计。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "字段说明",
-            "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`path`",
-                "`logs`",
-                "日志目录。相对路径以进程启动目录为基准。"
-              ],
-              [
-                "`file_name`",
-                "`rule-actions.log`",
-                "日志文件名。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "Log 数据源 配置截图",
+            "alt": "Log Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/log.png"
+          },
+          {
+            "type": "image",
+            "alt": "Log Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
@@ -17405,14 +15473,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"local-rule-log\",\n  \"source\": \"LOG\",\n  \"source_type\": {\n    \"Log\": {\n      \"path\": \"logs\",\n      \"file_name\": \"rule-actions.log\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "规则动作示例",
-            "level": 2,
-            "text": "规则动作示例"
-          },
-          {
             "type": "image",
-            "alt": "Log 数据源 配置截图",
+            "alt": "Log Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/log.png"
           },
           {
@@ -17421,110 +15483,54 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"id\": \"act-log\",\n  \"action_type\": \"SEND_LOG\",\n  \"source_name\": \"local-rule-log\",\n  \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"client_id\\\":\\\"${client_id}\\\",\\\"payload\\\":${payload}}\"\n}"
           },
           {
-            "type": "heading",
-            "id": "验证",
-            "level": 2,
-            "text": "验证"
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "mosquitto_pub -h 127.0.0.1 -p 1883 \\\n  -t devices/device-001/state \\\n  -m '{\"temperature\":25.2}'\n\ntail -f logs/rule-actions.log"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "文件没有写入：检查规则是否启用、SQL 是否匹配、目录是否可写。",
-              "内容为空：检查模板变量，例如 `${payload}`、`${topic}`。",
-              "日志增长过快：给规则 SQL 加更窄的 Topic 或事件条件。"
-            ]
           }
         ]
       },
       "guide/datasources/mongodb": {
         "id": "guide/datasources/mongodb",
-        "title": "MongoDB 数据源",
-        "summary": "MongoDB 数据源适合半结构化消息、设备事件文档和灵活 payload 存储。",
+        "title": "MongoDB Data Source",
+        "summary": "MongoDB Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/mongodb.md",
         "headings": [
           {
-            "id": "字段说明",
+            "id": "overview",
             "level": 2,
-            "text": "字段说明"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "索引建议",
-            "level": 2,
-            "text": "索引建议"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "MongoDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "MongoDB 数据源适合半结构化消息、设备事件文档和灵活 payload 存储。"
+            "text": "MongoDB Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`connection_uri`",
-                "`mongodb://user:pass@127.0.0.1:27017/iot`",
-                "MongoDB URI。"
-              ],
-              [
-                "`database`",
-                "`iot`",
-                "默认数据库。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "MongoDB 配置截图",
+            "alt": "MongoDB Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
+          },
+          {
+            "type": "image",
+            "alt": "MongoDB Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
@@ -17533,14 +15539,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"event-mongodb\",\n  \"source\": \"MONGODB\",\n  \"source_type\": {\n    \"MongoDb\": {\n      \"connection_uri\": \"mongodb://127.0.0.1:27017/iot\",\n      \"database\": \"iot\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "MongoDB 配置截图",
+            "alt": "MongoDB Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/mongodb.png"
           },
           {
@@ -17549,125 +15549,54 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"id\": \"act-mongo\",\n  \"action_type\": \"SAVE_MONGODB\",\n  \"source_name\": \"event-mongodb\",\n  \"collection\": \"mqtt_events\",\n  \"template\": \"{\\\"client_id\\\":\\\"${client_id}\\\",\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n}"
           },
           {
-            "type": "heading",
-            "id": "索引建议",
-            "level": 2,
-            "text": "索引建议"
-          },
-          {
             "type": "code",
             "language": "javascript",
             "code": "db.mqtt_events.createIndex({ client_id: 1, created_at: -1 });\ndb.mqtt_events.createIndex({ topic: 1, created_at: -1 });"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "文档写入失败：确认模板输出合法 JSON 对象。",
-              "查询慢：为 client_id、topic、时间字段加索引。",
-              "URI 认证失败：检查 authSource 和用户权限。"
-            ]
           }
         ]
       },
       "guide/datasources/mqtt": {
         "id": "guide/datasources/mqtt",
-        "title": "MQTT 数据源",
-        "summary": "MQTT 数据源用于将消息转发到另一个 Broker，适合边云桥接和跨系统同步。",
+        "title": "MQTT Data Source",
+        "summary": "MQTT Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/mqtt.md",
         "headings": [
           {
-            "id": "字段说明",
+            "id": "overview",
             "level": 2,
-            "text": "字段说明"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "MQTT 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "MQTT 数据源用于将消息转发到另一个 Broker，适合边云桥接和跨系统同步。"
+            "text": "MQTT Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`broker_url`",
-                "`mqtt://127.0.0.1:1883`",
-                "目标 Broker 地址。"
-              ],
-              [
-                "`client_id`",
-                "`velamq-bridge`",
-                "转发客户端 ID。"
-              ],
-              [
-                "`username` / `password`",
-                "`bridge` / `secret`",
-                "目标 Broker 认证。"
-              ],
-              [
-                "`keep_alive_secs`",
-                "`60`",
-                "保活时间。"
-              ],
-              [
-                "`clean_start`",
-                "`true`",
-                "是否 clean start。"
-              ],
-              [
-                "`tls_insecure`",
-                "`false`",
-                "是否跳过 TLS 校验。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "MQTT 配置截图",
+            "alt": "MQTT Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
+          },
+          {
+            "type": "image",
+            "alt": "MQTT Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
@@ -17676,35 +15605,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"cloud-mqtt\",\n  \"source\": \"MQTT\",\n  \"source_type\": {\n    \"Mqtt\": {\n      \"broker_url\": \"mqtt://cloud.example.com:1883\",\n      \"client_id\": \"velamq-edge-bridge\",\n      \"username\": \"bridge\",\n      \"password\": \"secret\",\n      \"keep_alive_secs\": 60,\n      \"clean_start\": true,\n      \"tls_insecure\": false\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "MQTT 配置截图",
+            "alt": "MQTT Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/mqtt.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-forward\",\n  \"action_type\": \"SEND_MQTT\",\n  \"source_name\": \"cloud-mqtt\",\n  \"topic\": \"edge/${client_id}/state\",\n  \"qos\": 1,\n  \"retain\": false,\n  \"template\": \"${payload}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "桥接环路：避免源 Topic 和目标 Topic 相互触发。",
-              "认证失败：检查目标 Broker 用户、ACL 和 Client ID。",
-              "TLS 失败：检查证书链，不建议生产使用 `tls_insecure`。"
-            ]
           }
         ]
       },
@@ -17762,7 +15670,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "对象存储 / 搜索 / Loki 配置截图",
+            "alt": "Object Storage, Search, and Loki screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/object-search-loki.png"
           },
           {
@@ -18124,7 +16032,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "数据源总览 配置截图",
+            "alt": "Data Sources Overview screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/overview.png"
           },
           {
@@ -18310,7 +16218,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "数据源总览 配置截图",
+            "alt": "Data Sources Overview screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/overview.png"
           },
           {
@@ -18355,86 +16263,46 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "guide/datasources/pulsar": {
         "id": "guide/datasources/pulsar",
-        "title": "Pulsar 数据源",
-        "summary": "Pulsar 数据源适合多租户消息流、跨机房复制和大规模 topic 管理。",
+        "title": "Pulsar Data Source",
+        "summary": "Pulsar Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/pulsar.md",
         "headings": [
           {
-            "id": "字段说明",
+            "id": "overview",
             "level": 2,
-            "text": "字段说明"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "Pulsar 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "Pulsar 数据源适合多租户消息流、跨机房复制和大规模 topic 管理。"
+            "text": "Pulsar Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`service_url`",
-                "`pulsar://127.0.0.1:6650`",
-                "Pulsar service URL。"
-              ],
-              [
-                "`producer_name`",
-                "`velamq-rs`",
-                "Producer 名称。"
-              ],
-              [
-                "`token`",
-                "`...`",
-                "Token 认证。"
-              ],
-              [
-                "`username` / `password`",
-                "`user` / `secret`",
-                "用户名密码认证。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "Pulsar 配置截图",
+            "alt": "Pulsar Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
+          },
+          {
+            "type": "image",
+            "alt": "Pulsar Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
@@ -18443,80 +16311,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-pulsar\",\n  \"source\": \"PULSAR\",\n  \"source_type\": {\n    \"Pulsar\": {\n      \"service_url\": \"pulsar://127.0.0.1:6650\",\n      \"producer_name\": \"velamq-rs\",\n      \"token\": \"\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "Pulsar 配置截图",
+            "alt": "Pulsar Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/pulsar.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-pulsar\",\n  \"action_type\": \"SAVE_PULSAR\",\n  \"source_name\": \"telemetry-pulsar\",\n  \"topic\": \"persistent://public/default/iot-telemetry\",\n  \"key\": \"${client_id}\",\n  \"template\": \"${payload}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "topic 权限失败：检查 tenant、namespace、role 权限。",
-              "连接失败：检查 `service_url`、broker 暴露地址和认证方式。",
-              "延迟高：检查分区 topic、batch 和 broker 负载。"
-            ]
           }
         ]
       },
       "guide/datasources/rabbitmq": {
         "id": "guide/datasources/rabbitmq",
-        "title": "RabbitMQ 数据源",
-        "summary": "RabbitMQ 数据源用于 AMQP 队列、交换机和业务工作流。",
+        "title": "RabbitMQ Data Source",
+        "summary": "RabbitMQ Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/rabbitmq.md",
         "headings": [
           {
-            "id": "连接-uri",
+            "id": "overview",
             "level": 2,
-            "text": "连接 URI"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "RabbitMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "RabbitMQ 数据源用于 AMQP 队列、交换机和业务工作流。"
+            "text": "RabbitMQ Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "连接-uri",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "连接 URI"
+            "text": "Examples and Reference"
+          },
+          {
+            "type": "image",
+            "alt": "RabbitMQ Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "code",
@@ -18524,14 +16367,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "amqp://user:password@127.0.0.1:5672/%2f\namqps://user:password@rabbitmq.example.com:5671/%2f"
           },
           {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
             "type": "image",
-            "alt": "RabbitMQ 配置截图",
+            "alt": "RabbitMQ Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
@@ -18540,120 +16377,59 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"alarm-rabbitmq\",\n  \"source\": \"RABBIT_MQ\",\n  \"source_type\": {\n    \"RabbitMq\": {\n      \"connection_uri\": \"amqp://guest:guest@127.0.0.1:5672/%2f\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "RabbitMQ 配置截图",
+            "alt": "RabbitMQ Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/rabbitmq.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-amqp\",\n  \"action_type\": \"SEND_RABBIT_MQ\",\n  \"source_name\": \"alarm-rabbitmq\",\n  \"exchange\": \"iot.events\",\n  \"routing_key\": \"device.alarm\",\n  \"template\": \"${payload}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "连接失败：检查 vhost、用户名、密码和 TLS。",
-              "路由不到队列：检查 exchange、routing_key 和 binding。",
-              "消息堆积：检查消费者处理速度和队列 TTL。"
-            ]
           }
         ]
       },
       "guide/datasources/redis": {
         "id": "guide/datasources/redis",
-        "title": "Redis 数据源",
-        "summary": "Redis 数据源适合缓存、短期状态、轻量离线消息和规则动作写入。",
+        "title": "Redis Data Source",
+        "summary": "Redis Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/redis.md",
         "headings": [
           {
-            "id": "字段说明",
+            "id": "overview",
             "level": 2,
-            "text": "字段说明"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "离线消息",
-            "level": 2,
-            "text": "离线消息"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "Redis 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "Redis 数据源适合缓存、短期状态、轻量离线消息和规则动作写入。"
+            "text": "Redis Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`connection_url`",
-                "`redis://:password@127.0.0.1:6379/0`",
-                "Redis 连接地址。"
-              ],
-              [
-                "`database`",
-                "`0`",
-                "逻辑库编号。"
-              ],
-              [
-                "`pool_size`",
-                "`8`",
-                "连接池大小。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "Redis 配置截图",
+            "alt": "Redis Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/redis.png"
+          },
+          {
+            "type": "image",
+            "alt": "Redis Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
@@ -18662,115 +16438,59 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"state-redis\",\n  \"source\": \"REDIS\",\n  \"source_type\": {\n    \"Redis\": {\n      \"connection_url\": \"redis://127.0.0.1:6379/0\",\n      \"database\": 0,\n      \"pool_size\": 8\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "Redis 配置截图",
+            "alt": "Redis Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/redis.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-redis\",\n  \"action_type\": \"SEND_REDIS\",\n  \"source_name\": \"state-redis\",\n  \"key\": \"device:${client_id}:state\",\n  \"template\": \"${payload}\",\n  \"expire_time\": 3600\n}"
-          },
-          {
-            "type": "heading",
-            "id": "离线消息",
-            "level": 2,
-            "text": "离线消息"
-          },
-          {
-            "type": "paragraph",
-            "text": "`OFFLINE_REDIS` 可用于轻量离线消息。建议设置过期时间，避免无界增长。"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "写入失败：检查 Redis 地址、密码和 ACL。",
-              "key 不符合预期：检查模板变量是否存在。",
-              "内存增长：设置 `expire_time`，配置 Redis 淘汰策略。"
-            ]
           }
         ]
       },
       "guide/datasources/rocketmq": {
         "id": "guide/datasources/rocketmq",
-        "title": "RocketMQ 数据源",
-        "summary": "RocketMQ 数据源用于连接 RocketMQ Proxy，把 MQTT 事件写入企业消息总线。",
+        "title": "RocketMQ Data Source",
+        "summary": "RocketMQ Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/rocketmq.md",
         "headings": [
           {
-            "id": "字段说明",
+            "id": "overview",
             "level": 2,
-            "text": "字段说明"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "RocketMQ 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "RocketMQ 数据源用于连接 RocketMQ Proxy，把 MQTT 事件写入企业消息总线。"
+            "text": "RocketMQ Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "字段说明",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "字段说明"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`access_url`",
-                "`127.0.0.1:8081`",
-                "RocketMQ Proxy 访问地址。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "RocketMQ 配置截图",
+            "alt": "RocketMQ Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
+          },
+          {
+            "type": "image",
+            "alt": "RocketMQ Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
@@ -18779,99 +16499,59 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"event-rocketmq\",\n  \"source\": \"ROCKET_MQ\",\n  \"source_type\": {\n    \"RocketMq\": {\n      \"access_url\": \"127.0.0.1:8081\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "RocketMQ 配置截图",
+            "alt": "RocketMQ Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/rocketmq.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-rmq\",\n  \"action_type\": \"SEND_ROCKET_MQ\",\n  \"source_name\": \"event-rocketmq\",\n  \"topic\": \"iot_events\",\n  \"tag\": \"telemetry\",\n  \"key\": \"${client_id}\",\n  \"template\": \"${payload}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Proxy 不可达：检查 access_url、端口和网络。",
-              "topic 不存在：确认 RocketMQ topic 已创建。",
-              "tag 或 key 为空：检查模板变量和规则事件字段。"
-            ]
           }
         ]
       },
       "guide/datasources/sql-clickhouse": {
         "id": "guide/datasources/sql-clickhouse",
-        "title": "ClickHouse 数据源",
-        "summary": "ClickHouse 适合大规模遥测、消息日志和分析型查询。",
+        "title": "ClickHouse Data Source",
+        "summary": "ClickHouse Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/sql-clickhouse.md",
         "headings": [
           {
-            "id": "连接建议",
+            "id": "overview",
             "level": 2,
-            "text": "连接建议"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "表结构示例",
-            "level": 2,
-            "text": "表结构示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "ClickHouse Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
+          },
+          {
             "type": "image",
-            "alt": "ClickHouse 配置截图",
+            "alt": "ClickHouse Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
-            "type": "paragraph",
-            "text": "ClickHouse 适合大规模遥测、消息日志和分析型查询。"
-          },
-          {
-            "type": "heading",
-            "id": "连接建议",
-            "level": 2,
-            "text": "连接建议"
-          },
-          {
-            "type": "paragraph",
-            "text": "ClickHouse 通常使用 HTTP 连接地址，按部署方式填写 URL、数据库和认证信息。"
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
             "type": "image",
-            "alt": "ClickHouse 配置截图",
+            "alt": "ClickHouse Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
@@ -18880,14 +16560,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-clickhouse\",\n  \"source\": \"CLICKHOUSE\",\n  \"source_type\": {\n    \"Sql\": {\n      \"database_url\": \"http://default:password@127.0.0.1:8123/iot\",\n      \"max_connections\": 8,\n      \"sql_dialect\": \"clickhouse\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "表结构示例",
-            "level": 2,
-            "text": "表结构示例"
-          },
-          {
             "type": "image",
-            "alt": "ClickHouse 配置截图",
+            "alt": "ClickHouse Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
@@ -18896,85 +16570,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "CREATE TABLE mqtt_telemetry (\n  ts DateTime64(3),\n  client_id String,\n  topic String,\n  payload String\n) ENGINE = MergeTree\nORDER BY (topic, client_id, ts);"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "ClickHouse 配置截图",
+            "alt": "ClickHouse Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/clickhouse.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-ch\",\n  \"action_type\": \"SAVE_CLICKHOUSE\",\n  \"source_name\": \"telemetry-clickhouse\",\n  \"sql\": \"INSERT INTO mqtt_telemetry(ts, client_id, topic, payload) VALUES (now64(3), ${client_id}, ${topic}, ${payload})\",\n  \"batch\": true,\n  \"batch_size\": 5000,\n  \"batch_time\": 200\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "小批量频繁写入慢：增大 `batch_size` 和 `batch_time`。",
-              "查询慢：调整 `ORDER BY` 和分区字段。",
-              "payload 结构变化大：先以 String 写入，再用物化视图或下游任务解析。"
-            ]
           }
         ]
       },
       "guide/datasources/sql-mysql": {
         "id": "guide/datasources/sql-mysql",
-        "title": "MySQL / MariaDB 数据源",
-        "summary": "MySQL / MariaDB 适合传统业务库、设备状态表和离线消息表。",
+        "title": "MySQL and MariaDB Data Source",
+        "summary": "MySQL and MariaDB Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/sql-mysql.md",
         "headings": [
           {
-            "id": "连接-url",
+            "id": "overview",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "表结构示例",
-            "level": 2,
-            "text": "表结构示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "MySQL / MariaDB 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "MySQL / MariaDB 适合传统业务库、设备状态表和离线消息表。"
+            "text": "MySQL and MariaDB Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "连接-url",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Examples and Reference"
+          },
+          {
+            "type": "image",
+            "alt": "MySQL and MariaDB Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
@@ -18982,14 +16626,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "mysql://user:password@127.0.0.1:3306/iot"
           },
           {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
             "type": "image",
-            "alt": "MySQL / MariaDB 配置截图",
+            "alt": "MySQL and MariaDB Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
@@ -18998,14 +16636,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-mysql\",\n  \"source\": \"MYSQL\",\n  \"source_type\": {\n    \"Sql\": {\n      \"database_url\": \"mysql://velamq:secret@127.0.0.1:3306/iot\",\n      \"max_connections\": 16,\n      \"sql_dialect\": \"mysql\",\n      \"test_before_acquire\": true\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "表结构示例",
-            "level": 2,
-            "text": "表结构示例"
-          },
-          {
             "type": "image",
-            "alt": "MySQL / MariaDB 配置截图",
+            "alt": "MySQL and MariaDB Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
@@ -19014,99 +16646,59 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "CREATE TABLE mqtt_telemetry (\n  id BIGINT PRIMARY KEY AUTO_INCREMENT,\n  client_id VARCHAR(128) NOT NULL,\n  topic VARCHAR(512) NOT NULL,\n  payload JSON NOT NULL,\n  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP\n);"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "MySQL / MariaDB 配置截图",
+            "alt": "MySQL and MariaDB Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/mysql.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-mysql\",\n  \"action_type\": \"SAVE_MYSQL\",\n  \"source_name\": \"telemetry-mysql\",\n  \"sql\": \"INSERT INTO mqtt_telemetry(client_id, topic, payload) VALUES (${client_id}, ${topic}, ${payload})\",\n  \"batch\": true,\n  \"batch_size\": 1000,\n  \"batch_time\": 100\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "中文或特殊字符乱码：确认库、表、连接字符集为 `utf8mb4`。",
-              "JSON 字段写入失败：确认模板输出合法 JSON。",
-              "批量写入慢：检查主键、索引和 binlog 压力。"
-            ]
           }
         ]
       },
       "guide/datasources/sql-oracle": {
         "id": "guide/datasources/sql-oracle",
-        "title": "Oracle 数据源",
-        "summary": "Oracle 数据源用于企业既有业务库集成。便携发布包默认关闭 Oracle OCI 依赖，需要按运行环境启用。",
+        "title": "Oracle Data Source",
+        "summary": "Oracle Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/sql-oracle.md",
         "headings": [
           {
-            "id": "前置条件",
+            "id": "overview",
             "level": 2,
-            "text": "前置条件"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "Oracle 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "Oracle 数据源用于企业既有业务库集成。便携发布包默认关闭 Oracle OCI 依赖，需要按运行环境启用。"
+            "text": "Oracle Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "前置条件",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "前置条件"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "安装 Oracle Instant Client 或 OCI 运行环境。",
-              "构建时保留 Oracle feature。",
-              "确认 `LD_LIBRARY_PATH`、`DYLD_LIBRARY_PATH` 或系统库路径可找到 OCI。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "Oracle 配置截图",
+            "alt": "Oracle Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
+          },
+          {
+            "type": "image",
+            "alt": "Oracle Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
@@ -19115,90 +16707,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"enterprise-oracle\",\n  \"source\": \"ORACLE\",\n  \"source_type\": {\n    \"Sql\": {\n      \"database_url\": \"oracle://user:password@127.0.0.1:1521/XEPDB1\",\n      \"max_connections\": 8,\n      \"sql_dialect\": \"oracle\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "Oracle 配置截图",
+            "alt": "Oracle Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/oracle.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-oracle\",\n  \"action_type\": \"SAVE_ORACLE\",\n  \"source_name\": \"enterprise-oracle\",\n  \"sql\": \"INSERT INTO MQTT_EVENTS(CLIENT_ID, TOPIC, PAYLOAD) VALUES (${client_id}, ${topic}, ${payload})\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "启动时报 OCI 错误：确认运行库路径和架构匹配。",
-              "字符集异常：检查数据库字符集和客户端 NLS 配置。",
-              "发布包无法运行：默认打包关闭 OCI，如需 Oracle 使用 `ENABLE_ORACLE_OCI=1` 构建。"
-            ]
           }
         ]
       },
       "guide/datasources/sql-postgresql": {
         "id": "guide/datasources/sql-postgresql",
-        "title": "PostgreSQL 数据源",
-        "summary": "PostgreSQL 适合遥测落库、事件归档、离线消息和业务状态表。",
+        "title": "PostgreSQL Data Source",
+        "summary": "PostgreSQL Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/sql-postgresql.md",
         "headings": [
           {
-            "id": "连接-url",
+            "id": "overview",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "遥测落库案例",
-            "level": 2,
-            "text": "遥测落库案例"
-          },
-          {
-            "id": "离线消息案例",
-            "level": 2,
-            "text": "离线消息案例"
-          },
-          {
-            "id": "验证",
-            "level": 2,
-            "text": "验证"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "PostgreSQL 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "PostgreSQL 适合遥测落库、事件归档、离线消息和业务状态表。"
+            "text": "PostgreSQL Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "连接-url",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Examples and Reference"
+          },
+          {
+            "type": "image",
+            "alt": "PostgreSQL Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
             "type": "code",
@@ -19206,14 +16763,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "postgres://user:password@127.0.0.1:5432/iot"
           },
           {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
             "type": "image",
-            "alt": "PostgreSQL 配置截图",
+            "alt": "PostgreSQL Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
           },
           {
@@ -19222,19 +16773,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-postgres\",\n  \"source\": \"POSTGRESQL\",\n  \"source_type\": {\n    \"Sql\": {\n      \"database_url\": \"postgres://velamq:secret@127.0.0.1:5432/iot\",\n      \"max_connections\": 16,\n      \"sql_dialect\": \"postgres\",\n      \"test_before_acquire\": true\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "遥测落库案例",
-            "level": 2,
-            "text": "遥测落库案例"
-          },
-          {
             "type": "image",
-            "alt": "PostgreSQL 配置截图",
+            "alt": "PostgreSQL Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "建表："
           },
           {
             "type": "code",
@@ -19242,104 +16783,60 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "CREATE TABLE mqtt_telemetry (\n  id bigserial PRIMARY KEY,\n  client_id text NOT NULL,\n  topic text NOT NULL,\n  payload jsonb NOT NULL,\n  created_at timestamptz NOT NULL DEFAULT now()\n);"
           },
           {
-            "type": "paragraph",
-            "text": "动作："
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-pg\",\n  \"action_type\": \"SAVE_POSTGRESQL\",\n  \"source_name\": \"telemetry-postgres\",\n  \"sql\": \"INSERT INTO mqtt_telemetry(client_id, topic, payload) VALUES (${client_id}, ${topic}, ${payload})\",\n  \"batch\": true,\n  \"batch_size\": 1000,\n  \"batch_time\": 100\n}"
           },
           {
-            "type": "heading",
-            "id": "离线消息案例",
-            "level": 2,
-            "text": "离线消息案例"
-          },
-          {
             "type": "image",
-            "alt": "PostgreSQL 配置截图",
+            "alt": "PostgreSQL Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/postgresql.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "可用 `OFFLINE_POSTGRESQL` 处理 `$EVENT.OFFLINE`，使用 `sql` 存储，`query_sql` 拉取，`delete_sql` 在投递确认后删除。"
-          },
-          {
-            "type": "heading",
-            "id": "验证",
-            "level": 2,
-            "text": "验证"
           },
           {
             "type": "code",
             "language": "sql",
             "code": "SELECT client_id, topic, payload, created_at\nFROM mqtt_telemetry\nORDER BY id DESC\nLIMIT 10;"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`jsonb` 写入失败：确认 payload 模板输出合法 JSON。",
-              "写入延迟高：启用 batch，给时间字段和 client_id 建索引。",
-              "权限不足：确认账号有 `INSERT`、`SELECT`、`DELETE` 权限。"
-            ]
           }
         ]
       },
       "guide/datasources/sql-sqlite": {
         "id": "guide/datasources/sql-sqlite",
-        "title": "SQLite 数据源",
-        "summary": "SQLite 适合开发调试、演示、边缘节点本地落盘。不建议承载高并发生产写入。",
+        "title": "SQLite Data Source",
+        "summary": "SQLite Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/sql-sqlite.md",
         "headings": [
           {
-            "id": "连接-url",
+            "id": "overview",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "表结构示例",
-            "level": 2,
-            "text": "表结构示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "注意事项",
-            "level": 2,
-            "text": "注意事项"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "SQLite 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "SQLite 适合开发调试、演示、边缘节点本地落盘。不建议承载高并发生产写入。"
+            "text": "SQLite Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "连接-url",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Examples and Reference"
+          },
+          {
+            "type": "image",
+            "alt": "SQLite Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
@@ -19347,14 +16844,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "sqlite:./data/rules.db"
           },
           {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
             "type": "image",
-            "alt": "SQLite 配置截图",
+            "alt": "SQLite Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
@@ -19363,14 +16854,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"edge-sqlite\",\n  \"source\": \"SQLITE\",\n  \"source_type\": {\n    \"Sql\": {\n      \"database_url\": \"sqlite:./data/rules.db\",\n      \"max_connections\": 1,\n      \"sql_dialect\": \"sqlite\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "表结构示例",
-            "level": 2,
-            "text": "表结构示例"
-          },
-          {
             "type": "image",
-            "alt": "SQLite 配置截图",
+            "alt": "SQLite Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
@@ -19379,89 +16864,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "CREATE TABLE IF NOT EXISTS mqtt_events (\n  id INTEGER PRIMARY KEY AUTOINCREMENT,\n  client_id TEXT NOT NULL,\n  topic TEXT NOT NULL,\n  payload TEXT NOT NULL,\n  created_at_ms INTEGER NOT NULL\n);"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "SQLite 配置截图",
+            "alt": "SQLite Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/sqlite.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-sqlite\",\n  \"action_type\": \"SAVE_POSTGRESQL\",\n  \"source_name\": \"edge-sqlite\",\n  \"sql\": \"INSERT INTO mqtt_events(client_id, topic, payload, created_at_ms) VALUES (${client_id}, ${topic}, ${payload}, ${timestamp})\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "注意事项",
-            "level": 2,
-            "text": "注意事项"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "SQLite 单写者限制明显，高吞吐规则建议换 PostgreSQL 或 ClickHouse。",
-              "文件路径要放在持久化目录。",
-              "定期清理历史数据，避免边缘磁盘被打满。"
-            ]
           }
         ]
       },
       "guide/datasources/sql-tdengine": {
         "id": "guide/datasources/sql-tdengine",
-        "title": "TDengine 数据源",
-        "summary": "TDengine 适合 IoT 时序数据，尤其是设备遥测和指标上报。",
+        "title": "TDengine Data Source",
+        "summary": "TDengine Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/sql-tdengine.md",
         "headings": [
           {
-            "id": "连接-url",
+            "id": "overview",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Overview"
           },
           {
-            "id": "配置示例",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置示例"
-          },
-          {
-            "id": "超级表示例",
-            "level": 2,
-            "text": "超级表示例"
-          },
-          {
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "TDengine 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "TDengine 适合 IoT 时序数据，尤其是设备遥测和指标上报。"
+            "text": "TDengine Data Source explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "连接-url",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "连接 URL"
+            "text": "Examples and Reference"
           },
           {
-            "type": "paragraph",
-            "text": "常见 DSN："
+            "type": "image",
+            "alt": "TDengine Data Source screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
@@ -19469,14 +16920,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "taos://user:password@127.0.0.1:6030/iot\ntaos+ws://user:password@127.0.0.1:6041/iot"
           },
           {
-            "type": "heading",
-            "id": "配置示例",
-            "level": 2,
-            "text": "配置示例"
-          },
-          {
             "type": "image",
-            "alt": "TDengine 配置截图",
+            "alt": "TDengine Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
@@ -19485,14 +16930,8 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-tdengine\",\n  \"source\": \"TDENGINE\",\n  \"source_type\": {\n    \"Sql\": {\n      \"database_url\": \"taos+ws://root:taosdata@127.0.0.1:6041/iot\",\n      \"max_connections\": 8,\n      \"sql_dialect\": \"tdengine\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "超级表示例",
-            "level": 2,
-            "text": "超级表示例"
-          },
-          {
             "type": "image",
-            "alt": "TDengine 配置截图",
+            "alt": "TDengine Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
@@ -19501,146 +16940,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "CREATE STABLE telemetry (\n  ts TIMESTAMP,\n  temperature DOUBLE,\n  humidity DOUBLE,\n  raw NCHAR(1024)\n) TAGS (\n  client_id NCHAR(128),\n  topic NCHAR(512)\n);"
           },
           {
-            "type": "heading",
-            "id": "动作示例",
-            "level": 2,
-            "text": "动作示例"
-          },
-          {
             "type": "image",
-            "alt": "TDengine 配置截图",
+            "alt": "TDengine Data Source screenshot",
             "src": "/velamq-docs/img/screenshots/datasources/tdengine.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-td\",\n  \"action_type\": \"SAVE_TDENGINE\",\n  \"source_name\": \"telemetry-tdengine\",\n  \"sql\": \"INSERT INTO t_${client_id} USING telemetry TAGS (${client_id}, ${topic}) VALUES (now, ${payload.temperature}, ${payload.humidity}, ${payload})\",\n  \"batch\": true\n}"
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "子表名非法：对 client_id 做规范化，避免特殊字符。",
-              "写入类型错误：确认 payload 字段是数值而不是字符串。",
-              "标签过长：控制 Topic 和 Client ID 长度。"
-            ]
           }
         ]
       },
       "guide/datasources/sql": {
         "id": "guide/datasources/sql",
-        "title": "SQL 数据源通用说明",
-        "summary": "SQL 数据源覆盖 PostgreSQL、MySQL、SQLite、MSSQL、Oracle、ClickHouse、TDengine、达梦、Kingbase、IoTDB 等关系型或 SQL-like 后端。",
+        "title": "SQL Data Source Guide",
+        "summary": "SQL Data Source Guide explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery.",
         "sourcePath": "guide/datasources/sql.md",
         "headings": [
           {
-            "id": "通用字段",
+            "id": "overview",
             "level": 2,
-            "text": "通用字段"
+            "text": "Overview"
           },
           {
-            "id": "通用配置模板",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "通用配置模板"
-          },
-          {
-            "id": "sql-动作模板",
-            "level": 2,
-            "text": "SQL 动作模板"
-          },
-          {
-            "id": "建议表结构",
-            "level": 2,
-            "text": "建议表结构"
-          },
-          {
-            "id": "批量写入建议",
-            "level": 2,
-            "text": "批量写入建议"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "SQL 通用配置 配置截图",
-            "src": "/velamq-docs/img/screenshots/datasources/sql.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "SQL 数据源覆盖 PostgreSQL、MySQL、SQLite、MSSQL、Oracle、ClickHouse、TDengine、达梦、Kingbase、IoTDB 等关系型或 SQL-like 后端。"
+            "text": "SQL Data Source Guide explains how to configure the connector, bind it to a VelaMQ rule action, validate connectivity, and monitor delivery."
           },
           {
             "type": "heading",
-            "id": "通用字段",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "通用字段"
+            "text": "Examples and Reference"
           },
           {
-            "type": "table",
-            "headers": [
-              "字段",
-              "示例",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`database_url`",
-                "`postgres://user:pass@host:5432/db`",
-                "数据库连接 URL。"
-              ],
-              [
-                "`max_connections`",
-                "`8`",
-                "最大连接数。"
-              ],
-              [
-                "`min_connections`",
-                "`0`",
-                "最小空闲连接数。"
-              ],
-              [
-                "`acquire_timeout_secs`",
-                "`5`",
-                "获取连接超时。"
-              ],
-              [
-                "`idle_timeout_secs`",
-                "`600`",
-                "空闲连接回收时间。"
-              ],
-              [
-                "`max_lifetime_secs`",
-                "`1800`",
-                "连接最大生命周期。"
-              ],
-              [
-                "`test_before_acquire`",
-                "`true`",
-                "获取前是否测试连接。"
-              ],
-              [
-                "`sql_dialect`",
-                "`postgres`",
-                "方言，用于 UI 和动作筛选。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "通用配置模板",
-            "level": 2,
-            "text": "通用配置模板"
+            "type": "image",
+            "alt": "SQL Data Source Guide screenshot",
+            "src": "/velamq-docs/img/screenshots/datasources/sql.png"
           },
           {
             "type": "code",
@@ -19648,218 +16996,78 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"name\": \"telemetry-sql\",\n  \"source\": \"POSTGRESQL\",\n  \"source_type\": {\n    \"Sql\": {\n      \"database_url\": \"postgres://user:password@127.0.0.1:5432/iot\",\n      \"max_connections\": 8,\n      \"min_connections\": 0,\n      \"acquire_timeout_secs\": 5,\n      \"idle_timeout_secs\": 600,\n      \"max_lifetime_secs\": 1800,\n      \"test_before_acquire\": true,\n      \"sql_dialect\": \"postgres\"\n    }\n  }\n}"
           },
           {
-            "type": "heading",
-            "id": "sql-动作模板",
-            "level": 2,
-            "text": "SQL 动作模板"
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-save-sql\",\n  \"action_type\": \"SAVE_POSTGRESQL\",\n  \"source_name\": \"telemetry-sql\",\n  \"sql\": \"INSERT INTO mqtt_telemetry(client_id, topic, payload) VALUES (${client_id}, ${topic}, ${payload})\",\n  \"template\": \"${payload}\",\n  \"batch\": true,\n  \"batch_size\": 2000,\n  \"batch_time\": 50\n}"
           },
           {
-            "type": "heading",
-            "id": "建议表结构",
-            "level": 2,
-            "text": "建议表结构"
-          },
-          {
             "type": "code",
             "language": "sql",
             "code": "CREATE TABLE mqtt_telemetry (\n  id bigserial PRIMARY KEY,\n  client_id text NOT NULL,\n  topic text NOT NULL,\n  payload jsonb NOT NULL,\n  created_at timestamptz NOT NULL DEFAULT now()\n);"
-          },
-          {
-            "type": "heading",
-            "id": "批量写入建议",
-            "level": 2,
-            "text": "批量写入建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "高频遥测建议开启 `batch`。",
-              "`batch_size` 控制单批最大条数。",
-              "`batch_time` 控制等待窗口，单位毫秒。",
-              "延迟敏感的告警消息可关闭 batch。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "连接池耗尽：调大 `max_connections` 或降低规则并发。",
-              "字段类型不匹配：检查 `${payload}` 是否是 JSON 字符串、JSON 对象或普通文本。",
-              "语法错误：确认动作类型和 `sql_dialect` 匹配。",
-              "写入慢：检查索引、表分区、批量参数和数据库资源。"
-            ]
           }
         ]
       },
       "guide/endpoints": {
         "id": "guide/endpoints",
-        "title": "监听端点",
-        "summary": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 0.0.1 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。",
+        "title": "Listener Endpoints",
+        "summary": "Listener Endpoints provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/endpoints.md",
         "headings": [
           {
-            "id": "端点字段",
+            "id": "overview",
             "level": 2,
-            "text": "端点字段"
+            "text": "Overview"
           },
           {
-            "id": "配置流程",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "配置流程"
-          },
-          {
-            "id": "tls-端点",
-            "level": 2,
-            "text": "TLS 端点"
-          },
-          {
-            "id": "常见问题",
-            "level": 2,
-            "text": "常见问题"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "监听端点决定 MQTT 客户端如何接入 Broker。VelaMQ 0.0.1 不从启动配置读取 MQTT 端口，而是通过控制台端点配置动态管理。"
+            "text": "Listener Endpoints provides configuration, usage, validation, and operational guidance for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监听端点页面截图",
+            "alt": "Listener Endpoints screenshot",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
-          },
-          {
-            "type": "heading",
-            "id": "端点字段",
-            "level": 2,
-            "text": "端点字段"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "名称",
-                "端点唯一名称，会显示在连接列表和指标标签中。"
-              ],
-              [
-                "Host / Port",
-                "监听地址和端口。"
-              ],
-              [
-                "WebSocket",
-                "开启后使用 WebSocket upgrade，可配置 path。"
-              ],
-              [
-                "TLS",
-                "开启服务端 TLS，可绑定证书管理中的服务端证书。"
-              ],
-              [
-                "客户端证书校验",
-                "开启双向 TLS，需要服务端证书具有可签发客户端证书的 CA。"
-              ],
-              [
-                "Proxy Protocol",
-                "适合在负载均衡之后保留真实客户端地址。"
-              ],
-              [
-                "MQTT 5 限制",
-                "Topic Alias、最大报文、Receive Maximum。"
-              ],
-              [
-                "启动窗口",
-                "限制启动阶段接入洪峰，例如 10 秒内最多 1000 连接。"
-              ],
-              [
-                "启用",
-                "控制该端点是否参与监听。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "配置流程",
-            "level": 2,
-            "text": "配置流程"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“监听端点”。",
-              "新增 TCP、WebSocket 或 TLS 端点。",
-              "保存后等待监听器刷新。",
-              "在“连接管理”确认客户端接入。",
-              "在“监控指标”观察 listener 维度的连接与报文指标。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "tls-端点",
-            "level": 2,
-            "text": "TLS 端点"
-          },
-          {
-            "type": "paragraph",
-            "text": "推荐先在“证书管理”中创建或上传服务端证书，再回到端点页面绑定证书 ID。这样证书随 SQL 管理数据持久化，集群节点可以获得一致配置。"
-          },
-          {
-            "type": "heading",
-            "id": "常见问题",
-            "level": 2,
-            "text": "常见问题"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "端口被占用：换端口或停止旧进程后重新保存端点。",
-              "WebSocket 客户端连接失败：检查 path 是否与客户端一致。",
-              "双向 TLS 失败：确认证书具有 CA 能力，并且客户端证书由该 CA 签发。"
-            ]
           }
         ]
       },
       "guide/metrics-connections": {
         "id": "guide/metrics-connections",
-        "title": "连接与监控指标",
-        "summary": "管理员和操作员可以断开指定连接。集群模式下，连接管理页会聚合各节点连接，并把断开请求发送到持有连接的节点。",
+        "title": "Connections and Metrics",
+        "summary": "Connections and Metrics provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/metrics-connections.md",
         "headings": [
           {
-            "id": "连接管理",
+            "id": "overview",
             "level": 2,
-            "text": "连接管理"
+            "text": "Overview"
+          },
+          {
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "id": "traffic-tap",
             "level": 2,
             "text": "Traffic Tap"
-          },
-          {
-            "id": "连接监控",
-            "level": 2,
-            "text": "连接监控"
-          },
-          {
-            "id": "指标历史",
-            "level": 2,
-            "text": "指标历史"
           },
           {
             "id": "prometheus",
@@ -19870,97 +17078,30 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
         "blocks": [
           {
             "type": "heading",
-            "id": "连接管理",
+            "id": "overview",
             "level": 2,
-            "text": "连接管理"
+            "text": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "Connections and Metrics provides configuration, usage, validation, and operational guidance for VelaMQ."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 连接管理页面截图",
+            "alt": "Connections and Metrics screenshot",
             "src": "/velamq-docs/img/screenshots/connections.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "连接管理页面展示当前 MQTT 客户端："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Client ID",
-              "Username 和 tags",
-              "监听端点",
-              "协议版本",
-              "节点 ID",
-              "客户端地址",
-              "连接时间",
-              "MQTT 5 CONNECT / CONNACK 协商信息"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "管理员和操作员可以断开指定连接。集群模式下，连接管理页会聚合各节点连接，并把断开请求发送到持有连接的节点。"
           },
           {
             "type": "heading",
             "id": "traffic-tap",
             "level": 2,
             "text": "Traffic Tap"
-          },
-          {
-            "type": "paragraph",
-            "text": "Traffic Tap 用于临时抓取指定 Client ID 的 MQTT 报文片段，便于排查协议、Topic、QoS 和 payload 问题。"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "参数",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`client_id`",
-                "必填，目标连接的 Client ID。"
-              ],
-              [
-                "`connection_id`",
-                "可选，指定连接 ID；为空时匹配该 Client ID 的当前连接。"
-              ],
-              [
-                "`directions`",
-                "`in`、`out` 或 `both`。"
-              ],
-              [
-                "`packet_filter`",
-                "`all` 或特定报文类型过滤。"
-              ],
-              [
-                "`duration_secs`",
-                "抓取时长，最多 300 秒。"
-              ],
-              [
-                "`max_frame_bytes`",
-                "单帧最多抓取字节数。"
-              ],
-              [
-                "`max_total_bytes`",
-                "本次抓取最多返回字节数。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "控制台实时展示抓取状态、报文片段和汇总信息；payload 字节会以安全格式展示。viewer 角色不可使用 Traffic Tap。"
-          },
-          {
-            "type": "heading",
-            "id": "连接监控",
-            "level": 2,
-            "text": "连接监控"
-          },
-          {
-            "type": "paragraph",
-            "text": "连接详情中可以查看单连接实时计数："
           },
           {
             "type": "list",
@@ -19976,36 +17117,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "heading",
-            "id": "指标历史",
-            "level": 2,
-            "text": "指标历史"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监控指标页面截图",
+            "alt": "Connections and Metrics screenshot",
             "src": "/velamq-docs/img/screenshots/metrics.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "指标页面读取服务端历史采样，展示："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "连接与订阅",
-              "消息收发速率",
-              "流量",
-              "规则 QPS",
-              "认证和 ACL QPS",
-              "进程 CPU / RSS",
-              "主机 CPU / 内存"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "历史采样由服务端 sampler 写入 RocksDB。刚启动时可能出现 warmup 提示，等待一个采样周期即可。"
           },
           {
             "type": "heading",
@@ -20014,306 +17128,50 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "text": "Prometheus"
           },
           {
-            "type": "paragraph",
-            "text": "实时指标可从以下地址抓取："
-          },
-          {
             "type": "code",
             "language": "text",
             "code": "/-/metrics"
-          },
-          {
-            "type": "paragraph",
-            "text": "外部 Grafana dashboard 见源码仓库 `monitoring/grafana/velamq-overview.json`。"
           }
         ]
       },
       "guide/rule-engine/actions": {
         "id": "guide/rule-engine/actions",
-        "title": "动作类型",
-        "summary": "动作决定规则命中后做什么。一个规则可以配置多个动作。",
+        "title": "Rule Action Types",
+        "summary": "Rule Action Types covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.",
         "sourcePath": "guide/rule-engine/actions.md",
         "headings": [
           {
-            "id": "动作清单",
+            "id": "overview",
             "level": 2,
-            "text": "动作清单"
+            "text": "Overview"
           },
           {
-            "id": "公共字段",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "公共字段"
-          },
-          {
-            "id": "webhook-动作",
-            "level": 2,
-            "text": "Webhook 动作"
-          },
-          {
-            "id": "kafka-动作",
-            "level": 2,
-            "text": "Kafka 动作"
-          },
-          {
-            "id": "sql-动作",
-            "level": 2,
-            "text": "SQL 动作"
-          },
-          {
-            "id": "对象存储动作",
-            "level": 2,
-            "text": "对象存储动作"
-          },
-          {
-            "id": "搜索索引动作",
-            "level": 2,
-            "text": "搜索索引动作"
-          },
-          {
-            "id": "loki-动作",
-            "level": 2,
-            "text": "Loki 动作"
-          },
-          {
-            "id": "选择建议",
-            "level": 2,
-            "text": "选择建议"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
-            "src": "/velamq-docs/img/screenshots/rules.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "动作决定规则命中后做什么。一个规则可以配置多个动作。"
+            "text": "Rule Action Types covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks."
           },
           {
             "type": "heading",
-            "id": "动作清单",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "动作清单"
+            "text": "Examples and Reference"
           },
           {
-            "type": "table",
-            "headers": [
-              "动作",
-              "数据源",
-              "用途"
-            ],
-            "rows": [
-              [
-                "`SEND_LOG`",
-                "Log",
-                "写本地日志。"
-              ],
-              [
-                "`SEND_MQTT`",
-                "可不依赖数据源或 MQTT",
-                "转发到 MQTT Topic。"
-              ],
-              [
-                "`TOPIC_REWRITE`",
-                "无",
-                "Topic 改写或重发布。"
-              ],
-              [
-                "`SEND_WEBHOOK`",
-                "HTTP",
-                "调用 HTTP Webhook。"
-              ],
-              [
-                "`SAVE_MYSQL`",
-                "MySQL",
-                "写 MySQL / MariaDB。"
-              ],
-              [
-                "`SAVE_POSTGRESQL`",
-                "PostgreSQL",
-                "写 PostgreSQL。"
-              ],
-              [
-                "`SAVE_CLICKHOUSE`",
-                "ClickHouse",
-                "写 ClickHouse。"
-              ],
-              [
-                "`SAVE_ORACLE`",
-                "Oracle",
-                "写 Oracle。"
-              ],
-              [
-                "`SAVE_SQLSERVER`",
-                "SQL Server",
-                "写 SQL Server。"
-              ],
-              [
-                "`SAVE_TDENGINE`",
-                "TDengine",
-                "写 TDengine。"
-              ],
-              [
-                "`SEND_DM`",
-                "达梦",
-                "写达梦数据库。"
-              ],
-              [
-                "`SEND_KING_BASE`",
-                "Kingbase",
-                "写 Kingbase。"
-              ],
-              [
-                "`SEND_IOT_DB`",
-                "IoTDB",
-                "写 IoTDB。"
-              ],
-              [
-                "`SEND_KAFKA`",
-                "Kafka",
-                "写 Kafka topic。"
-              ],
-              [
-                "`SAVE_PULSAR`",
-                "Pulsar",
-                "写 Pulsar topic。"
-              ],
-              [
-                "`SEND_ROCKET_MQ`",
-                "RocketMQ",
-                "写 RocketMQ topic。"
-              ],
-              [
-                "`SEND_REDIS`",
-                "Redis",
-                "写 Redis key。"
-              ],
-              [
-                "`SAVE_MONGODB`",
-                "MongoDB",
-                "写 MongoDB collection。"
-              ],
-              [
-                "`SAVE_INFLUXDB`",
-                "InfluxDB",
-                "写 InfluxDB line protocol。"
-              ],
-              [
-                "`SEND_RABBIT_MQ`",
-                "RabbitMQ",
-                "写 AMQP exchange。"
-              ],
-              [
-                "`PUT_OBJECT`",
-                "S3 兼容对象存储",
-                "写对象归档。"
-              ],
-              [
-                "`SAVE_ELASTICSEARCH`",
-                "Elasticsearch",
-                "写搜索索引。"
-              ],
-              [
-                "`SAVE_OPENSEARCH`",
-                "OpenSearch",
-                "写搜索索引。"
-              ],
-              [
-                "`SEND_LOKI`",
-                "Loki",
-                "推送日志行。"
-              ],
-              [
-                "`OFFLINE_POSTGRESQL`",
-                "PostgreSQL",
-                "PostgreSQL 离线消息。"
-              ],
-              [
-                "`OFFLINE_MYSQL`",
-                "MySQL",
-                "MySQL 离线消息。"
-              ],
-              [
-                "`OFFLINE_ORACLE`",
-                "Oracle",
-                "Oracle 离线消息。"
-              ],
-              [
-                "`OFFLINE_REDIS`",
-                "Redis",
-                "Redis 离线消息。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "公共字段",
-            "level": 2,
-            "text": "公共字段"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`id`",
-                "动作 ID。"
-              ],
-              [
-                "`action_type`",
-                "动作类型。"
-              ],
-              [
-                "`source_name`",
-                "绑定数据源名称。"
-              ],
-              [
-                "`topic`",
-                "目标 topic 或 MQTT topic。"
-              ],
-              [
-                "`template`",
-                "输出模板。"
-              ],
-              [
-                "`sql`",
-                "SQL 写入语句。"
-              ],
-              [
-                "`key`",
-                "Kafka / RocketMQ / Redis 等 key。"
-              ],
-              [
-                "`bucket` / `object_key`",
-                "对象存储 bucket 和对象 key。"
-              ],
-              [
-                "`index` / `document_id`",
-                "Elasticsearch/OpenSearch 索引和文档 ID。"
-              ],
-              [
-                "`labels` / `tags`",
-                "Loki labels。"
-              ],
-              [
-                "`batch`",
-                "是否批量写入。"
-              ],
-              [
-                "`timeout_ms`",
-                "动作超时。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "webhook-动作",
-            "level": 2,
-            "text": "Webhook 动作"
+            "type": "image",
+            "alt": "Rule Action Types screenshot",
+            "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
             "type": "code",
@@ -20321,21 +17179,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"id\": \"act-webhook\",\n  \"action_type\": \"SEND_WEBHOOK\",\n  \"source_name\": \"alarm-webhook\",\n  \"method\": \"POST\",\n  \"headers\": [\n    { \"name\": \"Content-Type\", \"value\": \"application/json\" }\n  ],\n  \"template\": \"{\\\"client_id\\\":\\\"${client_id}\\\",\\\"payload\\\":${payload}}\"\n}"
           },
           {
-            "type": "heading",
-            "id": "kafka-动作",
-            "level": 2,
-            "text": "Kafka 动作"
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-kafka\",\n  \"action_type\": \"SEND_KAFKA\",\n  \"source_name\": \"telemetry-kafka\",\n  \"topic\": \"iot.telemetry\",\n  \"key\": \"${client_id}\",\n  \"template\": \"${payload}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "sql-动作",
-            "level": 2,
-            "text": "SQL 动作"
           },
           {
             "type": "code",
@@ -20343,21 +17189,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"id\": \"act-pg\",\n  \"action_type\": \"SAVE_POSTGRESQL\",\n  \"source_name\": \"telemetry-postgres\",\n  \"sql\": \"INSERT INTO mqtt_telemetry(client_id, topic, payload) VALUES (${client_id}, ${topic}, ${payload})\",\n  \"batch\": true,\n  \"batch_size\": 1000,\n  \"batch_time\": 100\n}"
           },
           {
-            "type": "heading",
-            "id": "对象存储动作",
-            "level": 2,
-            "text": "对象存储动作"
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-archive\",\n  \"action_type\": \"PUT_OBJECT\",\n  \"source_name\": \"archive-s3\",\n  \"bucket\": \"mqtt-archive\",\n  \"object_key\": \"devices/${client_id}/${timestamp}.json\",\n  \"content_type\": \"application/json\",\n  \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "搜索索引动作",
-            "level": 2,
-            "text": "搜索索引动作"
           },
           {
             "type": "code",
@@ -20365,95 +17199,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"id\": \"act-search\",\n  \"action_type\": \"SAVE_ELASTICSEARCH\",\n  \"source_name\": \"telemetry-es\",\n  \"index\": \"mqtt-telemetry\",\n  \"document_id\": \"${client_id}-${timestamp}\",\n  \"template\": \"{\\\"client_id\\\":\\\"${client_id}\\\",\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n}"
           },
           {
-            "type": "heading",
-            "id": "loki-动作",
-            "level": 2,
-            "text": "Loki 动作"
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-loki\",\n  \"action_type\": \"SEND_LOKI\",\n  \"source_name\": \"rule-loki\",\n  \"labels\": {\n    \"job\": \"velamq\",\n    \"client_id\": \"${client_id}\"\n  },\n  \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n}"
-          },
-          {
-            "type": "heading",
-            "id": "选择建议",
-            "level": 2,
-            "text": "选择建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "新规则先用 `SEND_LOG` 验证。",
-              "告警类消息优先 Webhook 或 RabbitMQ，延迟更可控。",
-              "大规模遥测优先 Kafka、ClickHouse 或 TDengine。",
-              "原始 payload 归档优先 S3 兼容对象存储，查询检索优先 Elasticsearch/OpenSearch，日志流优先 Loki。",
-              "离线消息用 `OFFLINE_*` 动作，不建议自己混写普通落库动作。"
-            ]
           }
         ]
       },
       "guide/rule-engine/events-sql": {
         "id": "guide/rule-engine/events-sql",
-        "title": "事件与 SQL",
-        "summary": "规则 SQL 用于选择要处理的 MQTT Topic 或系统事件。",
+        "title": "Events and SQL",
+        "summary": "Events and SQL covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.",
         "sourcePath": "guide/rule-engine/events-sql.md",
         "headings": [
           {
-            "id": "topic-规则",
+            "id": "overview",
             "level": 2,
-            "text": "Topic 规则"
+            "text": "Overview"
           },
           {
-            "id": "系统事件",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "系统事件"
-          },
-          {
-            "id": "sql-编写建议",
-            "level": 2,
-            "text": "SQL 编写建议"
-          },
-          {
-            "id": "常见示例",
-            "level": 2,
-            "text": "常见示例"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
-            "src": "/velamq-docs/img/screenshots/rules.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "规则 SQL 用于选择要处理的 MQTT Topic 或系统事件。"
+            "text": "Events and SQL covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks."
           },
           {
             "type": "heading",
-            "id": "topic-规则",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "Topic 规则"
+            "text": "Examples and Reference"
           },
           {
-            "type": "paragraph",
-            "text": "匹配设备状态："
+            "type": "image",
+            "alt": "Events and SQL screenshot",
+            "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
             "type": "code",
             "language": "sql",
             "code": "SELECT * FROM \"devices/+/state\""
-          },
-          {
-            "type": "paragraph",
-            "text": "匹配某一类产品："
           },
           {
             "type": "code",
@@ -20461,110 +17255,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "SELECT * FROM \"products/+/devices/+/telemetry\""
           },
           {
-            "type": "paragraph",
-            "text": "匹配子树："
-          },
-          {
             "type": "code",
             "language": "sql",
             "code": "SELECT * FROM \"devices/#\""
           },
           {
-            "type": "heading",
-            "id": "系统事件",
-            "level": 2,
-            "text": "系统事件"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "事件",
-              "说明",
-              "示例"
-            ],
-            "rows": [
-              [
-                "`$EVENT.PUBLISH`",
-                "发布消息事件",
-                "`SELECT * FROM \"$EVENT.PUBLISH\"`"
-              ],
-              [
-                "`$EVENT.CONNECT`",
-                "客户端连接",
-                "`SELECT * FROM \"$EVENT.CONNECT\"`"
-              ],
-              [
-                "`$EVENT.SUB`",
-                "订阅",
-                "`SELECT * FROM \"$EVENT.SUB\"`"
-              ],
-              [
-                "`$EVENT.UNSUB`",
-                "取消订阅",
-                "`SELECT * FROM \"$EVENT.UNSUB\"`"
-              ],
-              [
-                "`$EVENT.DISCONNECT`",
-                "主动断开",
-                "`SELECT * FROM \"$EVENT.DISCONNECT\"`"
-              ],
-              [
-                "`$EVENT.CLOSE`",
-                "连接关闭",
-                "`SELECT * FROM \"$EVENT.CLOSE\"`"
-              ],
-              [
-                "`$EVENT.PING`",
-                "心跳",
-                "`SELECT * FROM \"$EVENT.PING\"`"
-              ],
-              [
-                "`$EVENT.DELIVERED`",
-                "已投递",
-                "`SELECT * FROM \"$EVENT.DELIVERED\"`"
-              ],
-              [
-                "`$EVENT.OFFLINE`",
-                "离线消息",
-                "`SELECT * FROM \"$EVENT.OFFLINE\"`"
-              ],
-              [
-                "`$EVENT.DROP`",
-                "丢弃消息",
-                "`SELECT * FROM \"$EVENT.DROP\"`"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "sql-编写建议",
-            "level": 2,
-            "text": "SQL 编写建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Topic 使用双引号包裹。",
-              "先用窄 Topic 验证，再扩大到 `#`。",
-              "高流量 Topic 不要直接绑定慢外部动作。",
-              "连接、订阅、断开等系统事件适合写审计或监控。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "常见示例",
-            "level": 2,
-            "text": "常见示例"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
+            "alt": "Events and SQL screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "设备上线审计："
           },
           {
             "type": "code",
@@ -20572,17 +17270,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "SELECT * FROM \"$EVENT.CONNECT\""
           },
           {
-            "type": "paragraph",
-            "text": "告警 Webhook："
-          },
-          {
             "type": "code",
             "language": "sql",
             "code": "SELECT * FROM \"devices/+/alarm\""
-          },
-          {
-            "type": "paragraph",
-            "text": "设备状态落库："
           },
           {
             "type": "code",
@@ -20590,677 +17280,137 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "SELECT * FROM \"devices/+/state\""
           },
           {
-            "type": "paragraph",
-            "text": "离线消息查询："
-          },
-          {
             "type": "code",
             "language": "sql",
             "code": "SELECT * FROM \"$EVENT.OFFLINE\""
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "hit 一直是 0：检查 Topic 是否匹配，系统事件名是否正确。",
-              "命中太多：把 `#` 改为明确业务 Topic。",
-              "特殊字符 Topic：确认 Topic 字符串被双引号包裹。"
-            ]
           }
         ]
       },
       "guide/rule-engine/functions": {
         "id": "guide/rule-engine/functions",
-        "title": "动态函数",
-        "summary": "动态函数用于把可复用的业务逻辑从规则模板中抽出来。函数定义保存在 RocksDB，并随管理配置在集群中同步到规则引擎运行时。",
+        "title": "Dynamic Functions",
+        "summary": "Dynamic Functions covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.",
         "sourcePath": "guide/rule-engine/functions.md",
         "headings": [
           {
-            "id": "控制台位置",
+            "id": "overview",
             "level": 2,
-            "text": "控制台位置"
+            "text": "Overview"
           },
           {
-            "id": "基础配置",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "基础配置"
-          },
-          {
-            "id": "runtime-配置",
-            "level": 2,
-            "text": "Runtime 配置"
-          },
-          {
-            "id": "输出配置",
-            "level": 2,
-            "text": "输出配置"
-          },
-          {
-            "id": "资源限制",
-            "level": 2,
-            "text": "资源限制"
-          },
-          {
-            "id": "调用方式",
-            "level": 2,
-            "text": "调用方式"
-          },
-          {
-            "id": "测试流程",
-            "level": 2,
-            "text": "测试流程"
-          },
-          {
-            "id": "运维建议",
-            "level": 2,
-            "text": "运维建议"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "动态函数用于把可复用的业务逻辑从规则模板中抽出来。函数定义保存在 RocksDB，并随管理配置在集群中同步到规则引擎运行时。"
+            "text": "Dynamic Functions covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎和动态函数配置入口截图",
+            "alt": "Dynamic Functions screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "heading",
-            "id": "控制台位置",
-            "level": 2,
-            "text": "控制台位置"
-          },
-          {
-            "type": "paragraph",
-            "text": "进入“动态函数”页面后，可以新增、编辑、启停、删除和测试函数。建议先在函数页完成测试，再回到规则动作里引用。"
-          },
-          {
-            "type": "heading",
-            "id": "基础配置",
-            "level": 2,
-            "text": "基础配置"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "配置",
-              "说明",
-              "建议"
-            ],
-            "rows": [
-              [
-                "名称",
-                "控制台展示名称。",
-                "使用业务语义，例如“温度告警判断”。"
-              ],
-              [
-                "调用函数名",
-                "模板和规则 SQL 中使用的函数名。",
-                "只能使用字母、数字和下划线，且不能以数字开头。"
-              ],
-              [
-                "版本",
-                "函数版本标签。",
-                "修改逻辑时递增，例如 `v1`、`v2`，便于回溯。"
-              ],
-              [
-                "启用",
-                "是否进入规则引擎运行时。",
-                "新函数先关闭或在测试环境验证后再启用。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "runtime-配置",
-            "level": 2,
-            "text": "Runtime 配置"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "Runtime",
-              "输入变量",
-              "适用场景",
-              "注意事项"
-            ],
-            "rows": [
-              [
-                "Lua",
-                "`input`",
-                "简单判断、字段转换、布尔返回。",
-                "语法轻量，适合大多数边缘计算逻辑。"
-              ],
-              [
-                "Rhai",
-                "`input`",
-                "Rust 生态脚本、复杂表达式。",
-                "适合需要更强表达能力的场景。"
-              ],
-              [
-                "Wasm",
-                "`module_bytes` + `entrypoint`",
-                "复用已有 Wasm 模块或需要更强隔离。",
-                "需要确认入口函数和模块字节正确。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "输出配置",
-            "level": 2,
-            "text": "输出配置"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "输出类型",
-              "说明",
-              "常见用途"
-            ],
-            "rows": [
-              [
-                "String",
-                "返回字符串。",
-                "模板拼接、标签生成、告警等级。"
-              ],
-              [
-                "Bool",
-                "返回布尔值。",
-                "是否告警、是否满足过滤条件。"
-              ],
-              [
-                "I64",
-                "返回整数。",
-                "数值归一化、计数、等级。"
-              ],
-              [
-                "F64",
-                "返回浮点数。",
-                "温度、电压、比例等计算。"
-              ],
-              [
-                "Json",
-                "返回 JSON。",
-                "生成结构化字段或动作 payload 片段。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "资源限制",
-            "level": 2,
-            "text": "资源限制"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "配置",
-              "说明",
-              "默认思路"
-            ],
-            "rows": [
-              [
-                "单次超时",
-                "函数执行超过该时间即视为失败。",
-                "高流量规则保持较小值，例如 20ms。"
-              ],
-              [
-                "最大内存",
-                "函数运行可使用的内存上限。",
-                "防止脚本或 Wasm 模块占用过多资源。"
-              ],
-              [
-                "最大输出",
-                "函数返回文本的最大字节数。",
-                "防止函数生成过大的 payload。"
-              ],
-              [
-                "最大递归深度",
-                "Rhai 等脚本递归保护。",
-                "避免递归错误拖慢规则热路径。"
-              ],
-              [
-                "最大并发调用",
-                "全局函数调用并发上限。",
-                "高吞吐场景按 CPU 和延迟评估。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "调用方式",
-            "level": 2,
-            "text": "调用方式"
-          },
-          {
-            "type": "paragraph",
-            "text": "假设函数调用名为 `is_hot`："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "场景",
-              "写法"
-            ],
-            "rows": [
-              [
-                "模板变量",
-                "`${function::is_hot(input)}`"
-              ],
-              [
-                "SQL 表达式",
-                "`function('is_hot', input)`"
-              ],
-              [
-                "多参数",
-                "`function::is_hot(payload.temperature, client_id)`，多参数会组成数组传入。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "测试流程",
-            "level": 2,
-            "text": "测试流程"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "在动态函数页新增函数。",
-              "填写 Runtime、输出类型和源码。",
-              "在测试输入框粘贴代表性 JSON。",
-              "点击测试，确认输出值、输出文本和耗时。",
-              "保存并启用。",
-              "在规则 Dry Run 中验证函数被正确调用。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "运维建议",
-            "level": 2,
-            "text": "运维建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "函数应该保持短小、确定性和无外部副作用。",
-              "不要把慢 IO、复杂循环或大对象处理放进函数。",
-              "高流量规则中优先使用简单字段映射，函数用于真正需要复用的逻辑。",
-              "修改函数后同时观察规则监控和 Rule Outbox，避免函数错误导致动作失败堆积。"
-            ]
           }
         ]
       },
       "guide/rule-engine/monitoring-troubleshooting": {
         "id": "guide/rule-engine/monitoring-troubleshooting",
-        "title": "监控与排错",
-        "summary": "规则引擎排错建议从“是否命中”开始，再看“动作是否成功”。",
+        "title": "Rule Monitoring and Troubleshooting",
+        "summary": "Rule Monitoring and Troubleshooting covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.",
         "sourcePath": "guide/rule-engine/monitoring-troubleshooting.md",
         "headings": [
           {
-            "id": "监控指标",
+            "id": "overview",
             "level": 2,
-            "text": "监控指标"
+            "text": "Overview"
           },
           {
-            "id": "排查路径",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "排查路径"
-          },
-          {
-            "id": "1-hit-为-0",
-            "level": 3,
-            "text": "1. hit 为 0"
-          },
-          {
-            "id": "2-hit-有值但-success-为-0",
-            "level": 3,
-            "text": "2. hit 有值但 success 为 0"
-          },
-          {
-            "id": "3-fail-持续增长",
-            "level": 3,
-            "text": "3. fail 持续增长"
-          },
-          {
-            "id": "推荐上线流程",
-            "level": 2,
-            "text": "推荐上线流程"
-          },
-          {
-            "id": "常见问题",
-            "level": 2,
-            "text": "常见问题"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "Rule Monitoring and Troubleshooting covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
+          },
+          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
+            "alt": "Rule Monitoring and Troubleshooting screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "规则引擎排错建议从“是否命中”开始，再看“动作是否成功”。"
-          },
-          {
-            "type": "heading",
-            "id": "监控指标",
-            "level": 2,
-            "text": "监控指标"
-          },
-          {
-            "type": "paragraph",
-            "text": "规则详情和指标页面会关注："
-          },
-          {
-            "type": "table",
-            "headers": [
-              "指标",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`hits_total`",
-                "规则命中总数。"
-              ],
-              [
-                "`success_total`",
-                "动作执行成功总数。"
-              ],
-              [
-                "`fail_total`",
-                "动作执行失败总数。"
-              ],
-              [
-                "`qps`",
-                "当前规则命中速率。"
-              ],
-              [
-                "`rule_hits_total`",
-                "Broker 级规则命中计数。"
-              ],
-              [
-                "`rule_success_total`",
-                "Broker 级规则成功计数。"
-              ],
-              [
-                "`rule_fail_total`",
-                "Broker 级规则失败计数。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "排查路径",
-            "level": 2,
-            "text": "排查路径"
-          },
-          {
-            "type": "heading",
-            "id": "1-hit-为-0",
-            "level": 3,
-            "text": "1. hit 为 0"
-          },
-          {
-            "type": "paragraph",
-            "text": "检查："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "规则是否 enabled。",
-              "SQL Topic 是否匹配真实消息 Topic。",
-              "是否写错系统事件名。",
-              "MQTT 客户端是否真的发布到该端点。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "2-hit-有值但-success-为-0",
-            "level": 3,
-            "text": "2. hit 有值但 success 为 0"
-          },
-          {
-            "type": "paragraph",
-            "text": "检查："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "动作是否绑定了正确数据源。",
-              "动作类型是否和数据源类型匹配。",
-              "模板是否渲染为合法 JSON、SQL 或 line protocol。",
-              "外部系统是否可连接。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "3-fail-持续增长",
-            "level": 3,
-            "text": "3. fail 持续增长"
-          },
-          {
-            "type": "paragraph",
-            "text": "检查："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`velamq-error.log`。",
-              "数据源 `last_error`。",
-              "外部系统限流、认证、权限和容量。",
-              "`execution_timeout_ms` 是否过短。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "推荐上线流程",
-            "level": 2,
-            "text": "推荐上线流程"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "新规则先绑定 Log 动作。",
-              "发送一条测试 MQTT 消息。",
-              "确认 hit 和 success 增加。",
-              "检查日志模板输出。",
-              "再切换到真实数据源动作。",
-              "小流量观察后扩大 Topic 范围。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "常见问题",
-            "level": 2,
-            "text": "常见问题"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "问题",
-              "处理"
-            ],
-            "rows": [
-              [
-                "Webhook 超时",
-                "调整外部服务、设置更合理超时、降流。"
-              ],
-              [
-                "SQL 写入慢",
-                "开启 batch，优化索引，调整连接池。"
-              ],
-              [
-                "Kafka 写入失败",
-                "检查 topic、acks、SASL、broker 地址。"
-              ],
-              [
-                "Redis 内存增长",
-                "设置 `expire_time` 和淘汰策略。"
-              ],
-              [
-                "JSON 模板错误",
-                "先写 Log 验证渲染结果。"
-              ]
-            ]
           }
         ]
       },
       "guide/rule-engine/offline": {
         "id": "guide/rule-engine/offline",
-        "title": "离线消息",
-        "summary": "VelaMQ 0.0.1 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。",
+        "title": "Offline Messages",
+        "summary": "Offline Messages covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.",
         "sourcePath": "guide/rule-engine/offline.md",
         "headings": [
           {
-            "id": "设计思路",
+            "id": "overview",
             "level": 2,
-            "text": "设计思路"
+            "text": "Overview"
           },
           {
-            "id": "支持动作",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "支持动作"
-          },
-          {
-            "id": "sql-离线动作字段",
-            "level": 2,
-            "text": "SQL 离线动作字段"
-          },
-          {
-            "id": "postgresql-示例",
-            "level": 2,
-            "text": "PostgreSQL 示例"
-          },
-          {
-            "id": "redis-示例",
-            "level": 2,
-            "text": "Redis 示例"
-          },
-          {
-            "id": "运维建议",
-            "level": 2,
-            "text": "运维建议"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
-            "src": "/velamq-docs/img/screenshots/rules.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 0.0.1 的离线消息由规则引擎处理，不再由 Broker 内置 Redis/SQL 离线队列表或刷写线程负责。"
+            "text": "Offline Messages covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks."
           },
           {
             "type": "heading",
-            "id": "设计思路",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "设计思路"
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "客户端离线 / 订阅恢复\n  -> 触发 $EVENT.OFFLINE\n  -> OFFLINE_* 动作存储离线消息\n  -> 客户端重新上线或订阅时 query_sql 查询\n  -> 投递确认后 delete_sql 删除"
-          },
-          {
-            "type": "heading",
-            "id": "支持动作",
-            "level": 2,
-            "text": "支持动作"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "动作",
-              "存储"
-            ],
-            "rows": [
-              [
-                "`OFFLINE_POSTGRESQL`",
-                "PostgreSQL"
-              ],
-              [
-                "`OFFLINE_MYSQL`",
-                "MySQL"
-              ],
-              [
-                "`OFFLINE_ORACLE`",
-                "Oracle"
-              ],
-              [
-                "`OFFLINE_REDIS`",
-                "Redis"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "sql-离线动作字段",
-            "level": 2,
-            "text": "SQL 离线动作字段"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`sql`",
-                "存储离线消息。"
-              ],
-              [
-                "`query_sql`",
-                "客户端恢复时查询待投递消息。"
-              ],
-              [
-                "`delete_sql`",
-                "投递确认后删除消息。"
-              ],
-              [
-                "`expire_time`",
-                "可选过期时间。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "postgresql-示例",
-            "level": 2,
-            "text": "PostgreSQL 示例"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
+            "alt": "Offline Messages screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
-            "type": "paragraph",
-            "text": "建表："
+            "type": "image",
+            "alt": "Offline Messages screenshot",
+            "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
             "type": "code",
@@ -21268,226 +17418,60 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "CREATE TABLE mqtt_offline_messages (\n  id bigserial PRIMARY KEY,\n  client_id text NOT NULL,\n  topic text NOT NULL,\n  payload jsonb NOT NULL,\n  qos int NOT NULL,\n  created_at timestamptz NOT NULL DEFAULT now()\n);"
           },
           {
-            "type": "paragraph",
-            "text": "动作："
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-offline-pg\",\n  \"action_type\": \"OFFLINE_POSTGRESQL\",\n  \"source_name\": \"telemetry-postgres\",\n  \"sql\": \"INSERT INTO mqtt_offline_messages(client_id, topic, payload, qos) VALUES (${client_id}, ${topic}, ${payload}, ${qos})\",\n  \"query_sql\": \"SELECT id, topic, payload, qos FROM mqtt_offline_messages WHERE client_id = ${client_id} ORDER BY id ASC LIMIT 100\",\n  \"delete_sql\": \"DELETE FROM mqtt_offline_messages WHERE id = ${id}\"\n}"
           },
           {
-            "type": "heading",
-            "id": "redis-示例",
-            "level": 2,
-            "text": "Redis 示例"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎示例截图",
+            "alt": "Offline Messages screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
             "type": "code",
             "language": "json",
             "code": "{\n  \"id\": \"act-offline-redis\",\n  \"action_type\": \"OFFLINE_REDIS\",\n  \"source_name\": \"state-redis\",\n  \"key\": \"offline:${client_id}\",\n  \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload},\\\"qos\\\":${qos}}\",\n  \"expire_time\": 86400\n}"
-          },
-          {
-            "type": "heading",
-            "id": "运维建议",
-            "level": 2,
-            "text": "运维建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "离线消息必须设置容量或过期策略。",
-              "对长期离线设备做清理任务。",
-              "高价值消息使用 SQL，短期缓存使用 Redis。",
-              "通过 Prometheus 监控积压和 drop。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "重新上线没有消息：检查 `query_sql` 是否能查到数据。",
-              "重复投递：检查 `delete_sql` 是否在确认后执行成功。",
-              "表增长过快：增加过期清理或限制每个 client 的消息量。"
-            ]
           }
         ]
       },
       "guide/rule-engine/overview": {
         "id": "guide/rule-engine/overview",
-        "title": "规则引擎总览",
-        "summary": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 0.0.1 的消息路由与数据集成核心。",
+        "title": "Rule Engine Overview",
+        "summary": "Rule Engine Overview covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.",
         "sourcePath": "guide/rule-engine/overview.md",
         "headings": [
           {
-            "id": "工作模型",
+            "id": "overview",
             "level": 2,
-            "text": "工作模型"
+            "text": "Overview"
           },
           {
-            "id": "规则结构",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "规则结构"
-          },
-          {
-            "id": "最小规则",
-            "level": 2,
-            "text": "最小规则"
-          },
-          {
-            "id": "配置顺序建议",
-            "level": 2,
-            "text": "配置顺序建议"
-          },
-          {
-            "id": "运行保护",
-            "level": 2,
-            "text": "运行保护"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "规则引擎负责把 MQTT 消息和系统事件转换为外部动作，是 VelaMQ 0.0.1 的消息路由与数据集成核心。"
+            "text": "Rule Engine Overview covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
+            "alt": "Rule Engine Overview screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "heading",
-            "id": "工作模型",
-            "level": 2,
-            "text": "工作模型"
-          },
-          {
-            "type": "code",
-            "language": "text",
-            "code": "MQTT PUBLISH / 系统事件\n  -> 规则 SQL 匹配\n  -> 生成事件上下文\n  -> 顺序/异步执行动作链\n  -> 写数据源、Webhook、消息队列、对象存储、搜索索引、离线存储或 MQTT 转发\n  -> 失败动作按规则可靠性配置进入 Rule Outbox\n  -> 更新规则监控和错误日志"
-          },
-          {
-            "type": "heading",
-            "id": "规则结构",
-            "level": 2,
-            "text": "规则结构"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`id`",
-                "规则 ID，可由系统或调用方生成。"
-              ],
-              [
-                "`name`",
-                "规则名称，API 更新和监控使用它定位。"
-              ],
-              [
-                "`desc`",
-                "规则说明。"
-              ],
-              [
-                "`enabled`",
-                "是否启用。"
-              ],
-              [
-                "`sql`",
-                "事件选择 SQL，例如 `SELECT * FROM \"devices/+/state\"`。"
-              ],
-              [
-                "`actions`",
-                "命中后执行的动作列表。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "最小规则",
-            "level": 2,
-            "text": "最小规则"
-          },
-          {
-            "type": "code",
-            "language": "json",
-            "code": "{\n  \"id\": \"rule-telemetry-log\",\n  \"name\": \"telemetry_to_log\",\n  \"desc\": \"设备状态消息写入日志\",\n  \"enabled\": true,\n  \"sql\": \"SELECT * FROM \\\"devices/+/state\\\"\",\n  \"actions\": [\n    {\n      \"id\": \"act-log\",\n      \"action_type\": \"SEND_LOG\",\n      \"source_name\": \"local-rule-log\",\n      \"template\": \"{\\\"topic\\\":\\\"${topic}\\\",\\\"payload\\\":${payload}}\"\n    }\n  ]\n}"
-          },
-          {
-            "type": "heading",
-            "id": "配置顺序建议",
-            "level": 2,
-            "text": "配置顺序建议"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "先创建动作依赖的数据源。",
-              "用 Log 数据源验证规则 SQL。",
-              "使用 Dry Run 检查模板变量、动态函数和动作预览。",
-              "验证命中后再切换到数据库、Webhook、消息队列、对象存储或搜索动作。",
-              "设置规则描述和命名规范。",
-              "在规则监控中观察 hit、success、fail、QPS 和 Rule Outbox。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "运行保护",
-            "level": 2,
-            "text": "运行保护"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "参数",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`rules.execution_timeout_ms`",
-                "单个命中规则的执行超时时间。"
-              ],
-              [
-                "`rules.max_async_actions`",
-                "异步规则动作最大并发数。"
-              ],
-              [
-                "`action.timeout_ms`",
-                "单个动作可选超时。"
-              ],
-              [
-                "`batch` / `batch_size` / `batch_time`",
-                "SQL 和部分外部动作的批量写入参数。"
-              ],
-              [
-                "`rule_reliability.outbox_enabled`",
-                "是否缓存外部动作失败记录。"
-              ],
-              [
-                "`rule_reliability.functions.*`",
-                "动态函数开关、超时、内存、输出大小和并发限制。"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "生产环境建议保留执行超时，避免慢外部系统拖垮 MQTT 事件处理链路。"
           }
         ]
       },
@@ -21540,7 +17524,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 rule engine and outbox management screenshot",
+            "alt": "Rule Reliability and Outbox screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
@@ -21819,107 +17803,42 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "guide/rule-engine/templates": {
         "id": "guide/rule-engine/templates",
-        "title": "模板变量",
-        "summary": "模板用于把事件上下文渲染成日志、HTTP body、SQL 值、消息队列 payload 或 MQTT payload。",
+        "title": "Template Variables",
+        "summary": "Template Variables covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks.",
         "sourcePath": "guide/rule-engine/templates.md",
         "headings": [
           {
-            "id": "常用变量",
+            "id": "overview",
             "level": 2,
-            "text": "常用变量"
+            "text": "Overview"
           },
           {
-            "id": "json-body-模板",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "JSON body 模板"
-          },
-          {
-            "id": "sql-值模板",
-            "level": 2,
-            "text": "SQL 值模板"
-          },
-          {
-            "id": "mqtt-转发模板",
-            "level": 2,
-            "text": "MQTT 转发模板"
-          },
-          {
-            "id": "使用建议",
-            "level": 2,
-            "text": "使用建议"
-          },
-          {
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
-            "src": "/velamq-docs/img/screenshots/rules.png"
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "模板用于把事件上下文渲染成日志、HTTP body、SQL 值、消息队列 payload 或 MQTT payload。"
+            "text": "Template Variables covers the VelaMQ rule runtime, including configuration, validation, execution, reliability, and operational checks."
           },
           {
             "type": "heading",
-            "id": "常用变量",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "常用变量"
+            "text": "Examples and Reference"
           },
           {
-            "type": "table",
-            "headers": [
-              "变量",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`${topic}`",
-                "MQTT Topic。"
-              ],
-              [
-                "`${payload}`",
-                "原始 payload 或解析后的 JSON。"
-              ],
-              [
-                "`${client_id}`",
-                "客户端 ID。"
-              ],
-              [
-                "`${username}`",
-                "MQTT 用户名。"
-              ],
-              [
-                "`${timestamp}`",
-                "事件时间。"
-              ],
-              [
-                "`${qos}`",
-                "MQTT QoS。"
-              ],
-              [
-                "`${retain}`",
-                "retain 标记。"
-              ],
-              [
-                "`${payload.temperature}`",
-                "JSON payload 内字段。"
-              ],
-              [
-                "`${payload.deviceId}`",
-                "JSON payload 内设备 ID。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "json-body-模板",
-            "level": 2,
-            "text": "JSON body 模板"
+            "type": "image",
+            "alt": "Template Variables screenshot",
+            "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
             "type": "code",
@@ -21927,205 +17846,55 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"client_id\": \"${client_id}\",\n  \"topic\": \"${topic}\",\n  \"payload\": ${payload},\n  \"ts\": \"${timestamp}\"\n}"
           },
           {
-            "type": "heading",
-            "id": "sql-值模板",
-            "level": 2,
-            "text": "SQL 值模板"
-          },
-          {
             "type": "code",
             "language": "sql",
             "code": "INSERT INTO mqtt_telemetry(client_id, topic, payload)\nVALUES (${client_id}, ${topic}, ${payload})"
           },
           {
-            "type": "heading",
-            "id": "mqtt-转发模板",
-            "level": 2,
-            "text": "MQTT 转发模板"
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"from\": \"${client_id}\",\n  \"topic\": \"${topic}\",\n  \"data\": ${payload}\n}"
-          },
-          {
-            "type": "heading",
-            "id": "使用建议",
-            "level": 2,
-            "text": "使用建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "JSON 对象中 `${payload}` 不要再额外加引号。",
-              "普通字符串字段可以写成 `\"${client_id}\"`。",
-              "对高风险字段先写 Log 数据源验证渲染结果。",
-              "避免把密码、token 等敏感字段写入日志。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "排错",
-            "level": 2,
-            "text": "排错"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "输出 JSON 不合法：检查逗号、引号和 `${payload}` 是否重复加引号。",
-              "字段为空：确认原始事件中是否存在该字段。",
-              "SQL 类型错误：确认数据库字段类型和模板输出类型一致。"
-            ]
           }
         ]
       },
       "guide/use-cases": {
         "id": "guide/use-cases",
-        "title": "功能使用案例",
-        "summary": "本页把核心功能按真实运维场景组织成可执行案例。每个案例包含目标、前置条件、操作步骤和验证方式。",
+        "title": "Feature Use Cases",
+        "summary": "Feature Use Cases provides configuration, usage, validation, and operational guidance for VelaMQ.",
         "sourcePath": "guide/use-cases.md",
         "headings": [
           {
-            "id": "案例-1创建生产-mqtt-tcp-端点",
+            "id": "overview",
             "level": 2,
-            "text": "案例 1：创建生产 MQTT TCP 端点"
+            "text": "Overview"
           },
           {
-            "id": "案例-2创建-websocket-端点给浏览器客户端使用",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "案例 2：创建 WebSocket 端点给浏览器客户端使用"
-          },
-          {
-            "id": "案例-3开启-mtls-设备接入",
-            "level": 2,
-            "text": "案例 3：开启 mTLS 设备接入"
-          },
-          {
-            "id": "案例-4配置固定账号认证",
-            "level": 2,
-            "text": "案例 4：配置固定账号认证"
-          },
-          {
-            "id": "案例-5接入-http-认证服务",
-            "level": 2,
-            "text": "案例 5：接入 HTTP 认证服务"
-          },
-          {
-            "id": "案例-6按-client-id-限制-topic-权限",
-            "level": 2,
-            "text": "案例 6：按 Client ID 限制 Topic 权限"
-          },
-          {
-            "id": "案例-7把设备状态写入本地日志",
-            "level": 2,
-            "text": "案例 7：把设备状态写入本地日志"
-          },
-          {
-            "id": "案例-8告警消息转发到-webhook",
-            "level": 2,
-            "text": "案例 8：告警消息转发到 Webhook"
-          },
-          {
-            "id": "案例-9消息写入-postgresql",
-            "level": 2,
-            "text": "案例 9：消息写入 PostgreSQL"
-          },
-          {
-            "id": "案例-10将外部-kafka-指令下发到-mqtt",
-            "level": 2,
-            "text": "案例 10：将外部 Kafka 指令下发到 MQTT"
-          },
-          {
-            "id": "案例-11排查异常在线连接",
-            "level": 2,
-            "text": "案例 11：排查异常在线连接"
-          },
-          {
-            "id": "案例-12配置控制台用户分权",
-            "level": 2,
-            "text": "案例 12：配置控制台用户分权"
-          },
-          {
-            "id": "案例-13导入-license-并处理额度告警",
-            "level": 2,
-            "text": "案例 13：导入 License 并处理额度告警"
-          },
-          {
-            "id": "案例-14接入-prometheus-与-grafana",
-            "level": 2,
-            "text": "案例 14：接入 Prometheus 与 Grafana"
-          },
-          {
-            "id": "案例-15两节点集群部署",
-            "level": 2,
-            "text": "案例 15：两节点集群部署"
-          },
-          {
-            "id": "案例-16查看审计并追踪误操作",
-            "level": 2,
-            "text": "案例 16：查看审计并追踪误操作"
-          },
-          {
-            "id": "案例-17使用-ai-助手辅助填写规则",
-            "level": 2,
-            "text": "案例 17：使用 AI 助手辅助填写规则"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "本页把核心功能按真实运维场景组织成可执行案例。每个案例包含目标、前置条件、操作步骤和验证方式。"
+            "text": "Feature Use Cases provides configuration, usage, validation, and operational guidance for VelaMQ."
           },
           {
             "type": "heading",
-            "id": "案例-1创建生产-mqtt-tcp-端点",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "案例 1：创建生产 MQTT TCP 端点"
+            "text": "Examples and Reference"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监听端点页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：开放 `1883` 端口给内网设备接入，并限制重启后的连接洪峰。"
-          },
-          {
-            "type": "paragraph",
-            "text": "前置条件："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "已登录控制台。",
-              "账号角色为 `admin` 或 `operator`。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“监听端点”。",
-              "点击“添加端点”。",
-              "填写名称 `prod-tcp-1883`。",
-              "Host 填 `0.0.0.0`，Port 填 `1883`。",
-              "WebSocket 关闭，TLS 关闭。",
-              "启动窗口填 `10` 秒，窗口接入上限填 `1000`。",
-              "MQTT 5 Receive Maximum 可填 `64`，最大报文可填 `1048576`。",
-              "启用端点并保存。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
           },
           {
             "type": "code",
@@ -22133,53 +17902,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "mosquitto_pub -h 127.0.0.1 -p 1883 -t devices/demo/state -m '{\"online\":true}'\nmosquitto_sub -h 127.0.0.1 -p 1883 -t 'devices/+/state'"
           },
           {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "“连接管理”出现测试客户端。",
-              "“监控指标”连接数和消息收发曲线更新。",
-              "Prometheus 中 `listener` 标签包含 `prod-tcp-1883`。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-2创建-websocket-端点给浏览器客户端使用",
-            "level": 2,
-            "text": "案例 2：创建 WebSocket 端点给浏览器客户端使用"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 WebSocket 端点页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：浏览器或前端应用通过 WebSocket 连接 MQTT。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“监听端点”。",
-              "新增端点 `ws-mqtt`。",
-              "Host 填 `0.0.0.0`，Port 填 `8083`。",
-              "开启 WebSocket。",
-              "WebSocket path 填 `/mqtt`。",
-              "TLS 可按环境决定是否开启。",
-              "保存端点。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "客户端连接示例："
           },
           {
             "type": "code",
@@ -22187,64 +17912,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "import mqtt from 'mqtt';\n\nconst client = mqtt.connect('ws://127.0.0.1:8083/mqtt', {\n  clientId: 'web-demo-001',\n  username: 'demo',\n  password: 'secret',\n});\n\nclient.on('connect', () => {\n  client.publish('devices/web-demo-001/state', JSON.stringify({ online: true }));\n});"
           },
           {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "连接管理中协议来源显示该 WebSocket 端点。",
-              "若连接失败，优先检查 path 是否为 `/mqtt`。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-3开启-mtls-设备接入",
-            "level": 2,
-            "text": "案例 3：开启 mTLS 设备接入"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 证书管理页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/certificates.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：让设备必须携带客户端证书才能连接。"
-          },
-          {
-            "type": "paragraph",
-            "text": "前置条件："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "已创建或上传带 CA 能力的服务端证书。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“证书管理”。",
-              "创建自签名服务端证书，名称 `prod-server-ca`，Common Name 填域名。",
-              "在同一证书下签发客户端证书 `device-001`。",
-              "进入“监听端点”。",
-              "新增端点 `mqtts-8883`。",
-              "开启 TLS，选择 `prod-server-ca`。",
-              "开启“要求客户端证书”。",
-              "Port 填 `8883`，保存。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
           },
           {
             "type": "code",
@@ -22252,69 +17922,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "mosquitto_pub \\\n  -h 127.0.0.1 -p 8883 \\\n  --cafile ca.pem \\\n  --cert device-001.pem \\\n  --key device-001-key.pem \\\n  -t devices/device-001/state \\\n  -m '{\"online\":true}'"
           },
           {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "携带合法客户端证书时连接成功。",
-              "未携带客户端证书时 TLS 握手失败。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-4配置固定账号认证",
-            "level": 2,
-            "text": "案例 4：配置固定账号认证"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 设备认证页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：为小规模设备创建用户名密码认证。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“设备认证”。",
-              "点击“添加认证提供方”。",
-              "在来源选择页选择 `Config`。",
-              "名称填 `factory-config-auth`，启用开关保持开启。",
-              "过滤规则填 `Client{^demo-.*}`，只让 `demo-` 前缀设备进入该提供方。",
-              "添加用户："
-            ]
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "username：`demo`",
-              "password：`secret`",
-              "客户端 ID 前缀：`demo-`",
-              "标签：`factory-a`"
-            ]
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "鉴权加密算法选择 `None`。",
-              "保存。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
           },
           {
             "type": "code",
@@ -22322,63 +17932,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "mosquitto_pub \\\n  -h 127.0.0.1 -p 1883 \\\n  -i demo-sensor-001 \\\n  -u demo -P secret \\\n  -t devices/demo-sensor-001/state \\\n  -m '{\"ok\":true}'"
           },
           {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Client ID 以 `demo-` 开头时认证成功。",
-              "密码错误或 Client ID 前缀不匹配时认证失败。",
-              "认证列表中 `filter` 显示为 `Client{^demo-.*}`，状态为可用。",
-              "仪表盘认证成功/失败计数更新。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-5接入-http-认证服务",
-            "level": 2,
-            "text": "案例 5：接入 HTTP 认证服务"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 HTTP 认证配置页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：把 MQTT 登录校验交给现有业务认证服务。"
-          },
-          {
-            "type": "paragraph",
-            "text": "前置条件："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "外部认证服务能根据 username、password、client_id 返回校验结果。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“设备认证”。",
-              "点击“添加认证提供方”。",
-              "在来源选择页选择 `Http`。",
-              "名称填 `http-auth`，启用开关保持开启。",
-              "过滤规则按需填写，例如 `Client{^prod-.*}`；留空则匹配全部客户端。",
-              "URL 填 `https://iam.example.com/mqtt/auth`。",
-              "Method 选择 `POST`，超时填 `5000` 毫秒。",
-              "请求头添加 `Content-Type: application/json`。",
-              "请求参数按需添加模板字段："
-            ]
           },
           {
             "type": "list",
@@ -22390,61 +17946,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "异常恢复保持默认：连续异常 `20` 次，恢复周期 `5000ms`。",
-              "保存。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "外部认证服务响应示例："
-          },
-          {
             "type": "code",
             "language": "json",
             "code": "{\n  \"allow\": true,\n  \"username\": \"demo\",\n  \"tags\": [\"tenant:a\"]\n}"
           },
           {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "使用合法业务账号连接 MQTT。",
-              "人为让外部认证服务返回 `200 + {\"allow\": false}`，观察认证失败计数。",
-              "外部服务不可用时，检查提供方状态和 `last_error`。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-6按-client-id-限制-topic-权限",
-            "level": 2,
-            "text": "案例 6：按 Client ID 限制 Topic 权限"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 访问控制页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/acl.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：设备只能访问自己的 Topic 命名空间。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“访问控制”。",
-              "点击“添加 ACL 规则”，先新增兜底拒绝规则："
-            ]
           },
           {
             "type": "list",
@@ -22459,13 +17968,6 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "list",
-            "ordered": true,
-            "items": [
-              "保存后再次点击“添加 ACL 规则”，新增允许规则："
-            ]
-          },
-          {
-            "type": "list",
             "ordered": false,
             "items": [
               "effect：`Allow`",
@@ -22476,60 +17978,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "保存后在列表中按类型 `ClientId` 或 Topic `devices` 搜索，确认两条规则都存在。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "# 应允许\nmosquitto_pub -i device-001 -t devices/device-001/state -m '{}'\n\n# 应拒绝\nmosquitto_pub -i device-001 -t devices/device-002/state -m '{}'"
-          },
-          {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "自己命名空间下发布/订阅成功。",
-              "越权 Topic 失败。",
-              "`All` 类型规则的 subject 自动保持为 `*`。",
-              "“监控指标” ACL 成功/失败曲线变化。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-7把设备状态写入本地日志",
-            "level": 2,
-            "text": "案例 7：把设备状态写入本地日志"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：先用低风险方式验证规则引擎是否命中。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“数据源”，新增 Log 数据源："
-            ]
           },
           {
             "type": "list",
@@ -22542,24 +17993,10 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“规则引擎”，新增规则："
-            ]
-          },
-          {
-            "type": "list",
             "ordered": false,
             "items": [
               "name：`telemetry_to_log`",
               "sql：`SELECT * FROM \"devices/+/state\"`"
-            ]
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "添加动作："
             ]
           },
           {
@@ -22572,66 +18009,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "保存并启用。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "mosquitto_pub -h 127.0.0.1 -p 1883 \\\n  -t devices/device-001/state \\\n  -m '{\"temperature\":25.2}'\n\ntail -f logs/rule-actions.log"
           },
           {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "规则监控 hit 增加。",
-              "success 增加。",
-              "日志文件写入模板化内容。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-8告警消息转发到-webhook",
-            "level": 2,
-            "text": "案例 8：告警消息转发到 Webhook"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎 Webhook 案例截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：将 `devices/+/alarm` 消息推送到业务告警系统。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“数据源”，新增 HTTP 数据源 `alarm-webhook`。",
-              "URL 填 `https://alarm.example.com/hooks/velamq`。",
-              "Method 选择 `POST`。",
-              "Header 添加 `Content-Type: application/json`。",
-              "进入“规则引擎”，新增规则 `alarm_to_webhook`。",
-              "SQL 填 `SELECT * FROM \"devices/+/alarm\"`。",
-              "添加动作 `SEND_WEBHOOK`，绑定 `alarm-webhook`。",
-              "模板填写："
-            ]
           },
           {
             "type": "code",
@@ -22639,56 +18024,14 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "{\n  \"client_id\": \"${client_id}\",\n  \"topic\": \"${topic}\",\n  \"payload\": ${payload}\n}"
           },
           {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "mosquitto_pub -t devices/device-001/alarm -m '{\"level\":\"critical\",\"message\":\"overheat\"}'"
           },
           {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "业务告警系统收到 HTTP 请求。",
-              "规则监控 success 增加。",
-              "Webhook 超时时，规则 fail 增加并在日志中留下错误。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-9消息写入-postgresql",
-            "level": 2,
-            "text": "案例 9：消息写入 PostgreSQL"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 数据源页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/datasources.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：将遥测消息落库供 BI 或数据服务查询。"
-          },
-          {
-            "type": "paragraph",
-            "text": "前置条件："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "PostgreSQL 已创建表。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "建表示例："
           },
           {
             "type": "code",
@@ -22696,30 +18039,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "CREATE TABLE mqtt_telemetry (\n  id bigserial PRIMARY KEY,\n  client_id text NOT NULL,\n  topic text NOT NULL,\n  payload jsonb NOT NULL,\n  created_at timestamptz NOT NULL DEFAULT now()\n);"
           },
           {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "新增 SQL 数据源 `telemetry-postgres`。",
-              "`database_url` 填 `postgres://user:password@127.0.0.1:5432/iot`。",
-              "`sql_dialect` 选择 `postgres`。",
-              "新增规则 `telemetry_to_pg`。",
-              "SQL 填 `SELECT * FROM \"devices/+/state\"`。",
-              "动作选择 `SAVE_POSTGRESQL`，绑定 `telemetry-postgres`。",
-              "动作 SQL 示例："
-            ]
-          },
-          {
             "type": "code",
             "language": "sql",
             "code": "INSERT INTO mqtt_telemetry(client_id, topic, payload)\nVALUES (${client_id}, ${topic}, ${payload})"
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
           },
           {
             "type": "code",
@@ -22727,46 +18049,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "SELECT client_id, topic, payload, created_at\nFROM mqtt_telemetry\nORDER BY id DESC\nLIMIT 5;"
           },
           {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "MQTT 消息写入数据库。",
-              "数据源状态为可用。",
-              "规则失败时检查数据库权限、SQL 模板和字段类型。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-10将外部-kafka-指令下发到-mqtt",
-            "level": 2,
-            "text": "案例 10：将外部 Kafka 指令下发到 MQTT"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 指令消费页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/commands.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：业务系统写入 Kafka topic，VelaMQ 0.0.1 消费后下发到设备 MQTT topic。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“指令消费”。",
-              "新增指令 `device-command-stream`。",
-              "类型选择 `KAFKA`。",
-              "填写 Kafka 参数："
-            ]
           },
           {
             "type": "list",
@@ -22778,41 +18063,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "添加映射："
-            ]
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "外部 topic：`device.commands`",
-              "MQTT topic：`devices/${deviceId}/command`",
-              "QoS：`1`",
-              "retain：关闭"
-            ]
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "保存后启用。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
             "type": "code",
             "language": "bash",
             "code": "kafka-console-producer --bootstrap-server 127.0.0.1:9092 --topic device.commands\n>{\"deviceId\":\"device-001\",\"action\":\"reboot\"}"
-          },
-          {
-            "type": "paragraph",
-            "text": "订阅 MQTT："
           },
           {
             "type": "code",
@@ -22820,167 +18073,24 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "mosquitto_sub -t devices/device-001/command -q 1"
           },
           {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "MQTT 订阅端收到下行命令。",
-              "指令列表显示运行状态。",
-              "失败时查看 `last_error` 和日志。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-11排查异常在线连接",
-            "level": 2,
-            "text": "案例 11：排查异常在线连接"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 连接管理页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
-            "type": "paragraph",
-            "text": "目标：定位某个 Client ID 流量异常并强制断开。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“连接管理”。",
-              "搜索 Client ID。",
-              "打开连接详情。",
-              "查看协议版本、端点、节点、keep alive、MQTT 5 参数。",
-              "打开连接监控，观察 publish QPS、bytes in/out、inflight。",
-              "如果确认为异常，点击断开连接。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "客户端收到断开或触发重连。",
-              "连接列表中该连接消失。",
-              "审计日志记录断开操作。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-12配置控制台用户分权",
-            "level": 2,
-            "text": "案例 12：配置控制台用户分权"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 控制台用户页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
-            "type": "paragraph",
-            "text": "目标：让运维人员能改配置，审计人员只能查看。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "使用 admin 登录。",
-              "进入“控制台用户”。",
-              "创建用户 `ops`，角色选择 `operator`。",
-              "创建用户 `audit-viewer`，角色选择 `viewer`。",
-              "使用两个账号分别登录验证。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`operator` 可以新增端点、规则、数据源。",
-              "`viewer` 只能查看，页面显示只读状态。",
-              "用户创建和后续操作出现在“操作审计”。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-13导入-license-并处理额度告警",
-            "level": 2,
-            "text": "案例 13：导入 License 并处理额度告警"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 仪表盘 License 页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
-            "type": "paragraph",
-            "text": "目标：生产连接数接近社区版上限时导入正式授权。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入仪表盘，查看 License 面板。",
-              "如果 `remaining_connections` 较低，准备新的 `velamq.lic`。",
-              "点击顶部 License 图标。",
-              "导入 License 文件。",
-              "查看授权版本、最大连接数、到期时间和签名校验状态。",
-              "集群部署时确认每个节点导入结果。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "仪表盘最大连接数更新。",
-              "连接额度剩余值增加。",
-              "审计日志记录 License 导入请求。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-14接入-prometheus-与-grafana",
-            "level": 2,
-            "text": "案例 14：接入 Prometheus 与 Grafana"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监控指标页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/metrics.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：把 VelaMQ 0.0.1 指标接入外部监控系统并配置告警。"
-          },
-          {
-            "type": "paragraph",
-            "text": "Prometheus 配置："
           },
           {
             "type": "code",
@@ -22988,75 +18098,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "scrape_configs:\n  - job_name: velamq\n    metrics_path: /-/metrics\n    static_configs:\n      - targets:\n          - 127.0.0.1:8080"
           },
           {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "启动 Prometheus。",
-              "确认 targets 中 VelaMQ 为 up。",
-              "Grafana 导入 `monitoring/grafana/velamq-overview.json`。",
-              "Prometheus 加载 `monitoring/prometheus/velamq-alerts.yml`。",
-              "调整认证失败、ACL 失败、消息丢弃和队列积压阈值。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "在 Prometheus Targets 页面确认 VelaMQ target 为 `UP`。",
-              "在控制台“监控指标”确认连接、消息、认证和 ACL 曲线持续刷新。",
-              "Grafana 面板可以按 `node_id`、`listener`、`transport` 过滤。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Grafana 可以按 `node_id`、`listener`、`transport` 过滤。",
-              "告警规则可在 Prometheus rules 页面看到。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-15两节点集群部署",
-            "level": 2,
-            "text": "案例 15：两节点集群部署"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 集群概览页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：两个 Broker 节点通过 Storage Raft 复制管理配置，并支持跨节点投递。"
-          },
-          {
-            "type": "paragraph",
-            "text": "前置条件："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "节点之间 gRPC 地址互通。",
-              "每个节点使用不同 `cluster.node_id`、`cluster.bind_addr`、`cluster.advertise_addr` 和 `rocksdb.data_dir`。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "节点 1："
           },
           {
             "type": "code",
@@ -23064,131 +18108,25 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "[cluster]\nnode_id = \"node-1\"\nbind_addr = \"0.0.0.0:50051\"\nadvertise_addr = \"http://10.0.0.11:50051\"\nseeds = []\n\n[cluster.raft]\nrole = \"voter\"\nread_consistency = \"voter_any\"\n\n[rocksdb]\ndata_dir = \"./data/rocksdb-node-1\"\nbackup_dir = \"./data/rocksdb-backups/node-1\""
           },
           {
-            "type": "paragraph",
-            "text": "节点 2："
-          },
-          {
             "type": "code",
             "language": "toml",
             "code": "[cluster]\nnode_id = \"node-2\"\nbind_addr = \"0.0.0.0:50052\"\nadvertise_addr = \"http://10.0.0.12:50052\"\nseeds = [\"http://10.0.0.11:50051\"]\n\n[cluster.raft]\nrole = \"voter\"\nread_consistency = \"voter_any\"\n\n[rocksdb]\ndata_dir = \"./data/rocksdb-node-2\"\nbackup_dir = \"./data/rocksdb-backups/node-2\""
           },
           {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "在节点 1 连接订阅者，订阅 `devices/+/state`。",
-              "在节点 2 连接发布者，发布 `devices/a/state`。",
-              "订阅者应收到消息。",
-              "仪表盘集群区显示两个节点，Storage Raft 表显示一个 leader。",
-              "Prometheus 分别抓取两个节点。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-16查看审计并追踪误操作",
-            "level": 2,
-            "text": "案例 16：查看审计并追踪误操作"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 操作审计页面截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
-            "type": "paragraph",
-            "text": "目标：追踪某条配置是谁修改的。"
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“操作审计”。",
-              "按时间查看最近操作。",
-              "关注 method、path、status。",
-              "根据 path 和操作描述定位对应菜单，例如“监听端点”或“规则引擎”。",
-              "如果需要恢复配置，回到对应页面重新保存正确配置。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "预期结果："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "admin 可查看所有用户操作。",
-              "operator 和 viewer 只能查看自己的审计记录。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "案例-17使用-ai-助手辅助填写规则",
-            "level": 2,
-            "text": "案例 17：使用 AI 助手辅助填写规则"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎 AI 助手案例截图",
+            "alt": "Feature Use Cases screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "目标：在规则页面让 AI 助手根据当前页面给出配置建议。"
-          },
-          {
-            "type": "paragraph",
-            "text": "前置条件："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "服务端 `assistant.enabled` 已开启。",
-              "管理员已配置可用模型。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "操作步骤："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "进入“规则引擎”。",
-              "打开右下角 AI 助手。",
-              "提问：“帮我创建一条把 devices/+/state 写入 PostgreSQL 的规则，需要哪些字段？”",
-              "根据助手建议创建数据源、规则 SQL 和动作模板。",
-              "保存前人工检查 SQL、凭据和模板变量。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "验证方式："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "规则创建成功。",
-              "发送测试消息后规则 hit 和 success 增加。",
-              "数据库中出现测试数据。"
-            ]
           }
         ]
       },
       "index": {
         "id": "index",
-        "title": "VelaMQ 0.0.1 Documentation",
+        "title": "VelaMQ Documentation",
         "summary": "Product overview, deployment guides, console feature manuals, API references, operations notes, and demo assets for VelaMQ 0.0.1.",
         "sourcePath": "index.mdx",
         "headings": [
@@ -23322,149 +18260,37 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "install/config": {
         "id": "install/config",
-        "title": "配置说明",
-        "summary": "当前 VelaMQ 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。",
+        "title": "Configuration",
+        "summary": "Configuration provides release-specific installation, configuration, service lifecycle, update, and verification guidance.",
         "sourcePath": "install/config.md",
         "headings": [
           {
-            "id": "核心配置",
+            "id": "overview",
             "level": 2,
-            "text": "核心配置"
+            "text": "Overview"
           },
           {
-            "id": "最小单机配置",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "最小单机配置"
-          },
-          {
-            "id": "三节点配置要点",
-            "level": 2,
-            "text": "三节点配置要点"
-          },
-          {
-            "id": "分片与副本",
-            "level": 2,
-            "text": "分片与副本"
-          },
-          {
-            "id": "规则可靠性与函数",
-            "level": 2,
-            "text": "规则可靠性与函数"
-          },
-          {
-            "id": "生产建议",
-            "level": 2,
-            "text": "生产建议"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "paragraph",
-            "text": "配置加载顺序："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "设置了 `VELAMQ_CONFIG_FILE` 时，优先从指定 TOML 文件加载。",
-              "未设置时，从环境变量加载。"
-            ]
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "当前 VelaMQ 使用本地 RocksDB 作为 Broker 状态机，集群复制由 `[cluster]`、`[cluster.raft]` 和 `[cluster.shards]` 控制。MQTT 监听端点仍然通过控制台或管理 API 持久化，不写在启动配置里。"
+            "text": "Configuration provides release-specific installation, configuration, service lifecycle, update, and verification guidance."
           },
           {
             "type": "heading",
-            "id": "核心配置",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "核心配置"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "配置段",
-              "关键字段",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`[cluster]`",
-                "`node_id`、`bind_addr`、`advertise_addr`、`seeds`",
-                "节点发现、gRPC 通信、订阅同步、远程投递和 Storage Raft RPC。"
-              ],
-              [
-                "`[cluster.tls]`",
-                "`enabled`、`ca_cert`、`cert`、`key`、`server_name`",
-                "集群节点间 mTLS。"
-              ],
-              [
-                "`[cluster.raft]`",
-                "`role`、`read_consistency`、`only_vote_store`、`snapshot_every_entries`",
-                "RocksDB 元数据和管理配置的 Raft 复制策略。"
-              ],
-              [
-                "`[cluster.shards]`",
-                "`enabled`、`virtual_shards`、`replication_factor`、`write_quorum`",
-                "大数据 keyspace 的分片、副本和跨节点查询参数。"
-              ],
-              [
-                "`[rocksdb]`",
-                "`data_dir`、`backup_dir`、`backup_retention`、`write_buffer_size_mb`",
-                "本地 RocksDB 路径、备份和性能参数。"
-              ],
-              [
-                "`[session]`",
-                "`max_queued_messages`、`max_queued_bytes`",
-                "MQTT 持久会话离线队列上限。"
-              ],
-              [
-                "`[metrics]`",
-                "`sample_interval_secs`、`retention_days`",
-                "控制台指标历史采样和保留。"
-              ],
-              [
-                "`[api]`",
-                "`enabled`、`bind_addr`、`static_dir`",
-                "管理 API 和前端静态资源。"
-              ],
-              [
-                "`[console]`",
-                "`enabled`、`jwt_secret`、`jwt_hours`、`users`",
-                "控制台 JWT、RBAC 和初始用户。"
-              ],
-              [
-                "`[logging]`",
-                "`level`、`dir`、`info_file`、`error_file`、`event_sink_capacity`",
-                "服务日志、滚动文件和异步事件日志队列。"
-              ],
-              [
-                "`[trace]`",
-                "`enabled`、`capacity`",
-                "控制台诊断用内存 trace 环形缓冲。"
-              ],
-              [
-                "`[assistant]`",
-                "`enabled`、`request_timeout_secs`、`system_prompt`",
-                "控制台 AI 助手。"
-              ],
-              [
-                "`[rules]`",
-                "`execution_timeout_ms`、`max_async_actions`",
-                "规则执行超时和异步动作并发上限。"
-              ],
-              [
-                "`[rule_reliability]`",
-                "`outbox_enabled`、`worker_lanes`、`batch_size`、`functions`",
-                "规则动作失败 outbox、重试和动态函数限制。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "最小单机配置",
-            "level": 2,
-            "text": "最小单机配置"
+            "text": "Examples and Reference"
           },
           {
             "type": "code",
@@ -23472,52 +18298,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "[cluster]\nnode_id = \"node-1\"\nbind_addr = \"0.0.0.0:50051\"\nadvertise_addr = \"http://127.0.0.1:50051\"\nseeds = []\n\n[cluster.raft]\nrole = \"voter\"\nread_consistency = \"voter_any\"\nsnapshot_every_entries = 10000\n\n[rocksdb]\ndata_dir = \"./data/rocksdb\"\nbackup_dir = \"./data/rocksdb-backups\"\nbackup_retention = 7\n\n[session]\nmax_queued_messages = 1024\nmax_queued_bytes = 16777216\n\n[api]\nenabled = true\nbind_addr = \"0.0.0.0:8080\"\nstatic_dir = \"./static\"\n\n[console]\nenabled = true\njwt_secret = \"change-me-in-production\"\njwt_hours = 12\n\n[logging]\nlevel = \"info\"\ndir = \"logs\""
           },
           {
-            "type": "paragraph",
-            "text": "`seeds = []` 表示单节点自举。只要配置了 `cluster.seeds`，节点就按集群模式启动，不会在 seed 不可达时退化成单节点 leader。"
-          },
-          {
-            "type": "heading",
-            "id": "三节点配置要点",
-            "level": 2,
-            "text": "三节点配置要点"
-          },
-          {
-            "type": "paragraph",
-            "text": "每个节点必须使用不同的："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`cluster.node_id`",
-              "`cluster.bind_addr`",
-              "`cluster.advertise_addr`",
-              "`rocksdb.data_dir`",
-              "同机部署时还需要不同的 `api.bind_addr`"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "三节点 voter 通常互相配置至少一个已启动节点作为 seed："
-          },
-          {
             "type": "code",
             "language": "toml",
             "code": "[cluster]\nnode_id = \"node-b\"\nbind_addr = \"0.0.0.0:50052\"\nadvertise_addr = \"http://10.0.0.12:50052\"\nseeds = [\"http://10.0.0.11:50051\"]\n\n[cluster.raft]\nrole = \"voter\"\nread_consistency = \"voter_any\"\nonly_vote_store = false\n\n[rocksdb]\ndata_dir = \"./data/rocksdb-node-b\"\nbackup_dir = \"./data/rocksdb-backups/node-b\""
-          },
-          {
-            "type": "paragraph",
-            "text": "`role = \"client\"` 的节点不保存本地 RocksDB 副本，只通过已发现的 voter 代理读写；适合作为接入或 API 协调节点。`only_vote_store = true` 的 voter 只作为存储副本和投票节点，不初始化端点、数据源、认证、ACL、规则和命令等运行态配置。"
-          },
-          {
-            "type": "heading",
-            "id": "分片与副本",
-            "level": 2,
-            "text": "分片与副本"
-          },
-          {
-            "type": "paragraph",
-            "text": "`[cluster.shards]` 用于把 retained、session、delayed 等较大的 keyspace 分散到多个节点，Raft 只全量复制元数据和路由索引。"
           },
           {
             "type": "code",
@@ -23525,41 +18308,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "[cluster.shards]\nenabled = true\nvirtual_shards = 256\nreplication_factor = 3\nlocal_data_store = true\nread_consistency = \"replica_any\"\nwrite_quorum = \"majority\"\nquery_timeout_ms = 3000\npage_fanout_limit = 32"
           },
           {
-            "type": "paragraph",
-            "text": "上线后应尽量保持 `virtual_shards` 稳定；扩容或下线节点通过 shard 迁移和 drain 操作完成。"
-          },
-          {
-            "type": "heading",
-            "id": "规则可靠性与函数",
-            "level": 2,
-            "text": "规则可靠性与函数"
-          },
-          {
             "type": "code",
             "language": "toml",
             "code": "[rule_reliability]\noutbox_enabled = true\nworker_lanes = 4\nbatch_size = 200\nscan_interval_ms = 500\nmax_attempts = 8\nretention_days = 7\ndead_letter_retention_days = 30\nmax_payload_bytes = 1048576\ndefault_max_rows_per_action = 10000\ndefault_max_bytes_per_action = 1073741824\n\n[rule_reliability.functions]\nenabled = true\nrhai_enabled = true\nlua_enabled = true\nwasm_enabled = true\nmax_memory_bytes = 16777216\nmax_execution_ms = 20\nmax_output_bytes = 262144\nmax_functions = 256\nmax_recursion_depth = 32\nmax_concurrent_invocations = 64"
-          },
-          {
-            "type": "paragraph",
-            "text": "Outbox 用于缓存外部数据源动作失败后的可重试记录；动态函数可在规则模板和 SQL 中被调用。生产环境建议保留较小的函数超时和输出上限。"
-          },
-          {
-            "type": "heading",
-            "id": "生产建议",
-            "level": 2,
-            "text": "生产建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`console.jwt_secret` 必须替换为高强度随机值。",
-              "RocksDB `data_dir`、`backup_dir` 和日志目录应挂载到持久化磁盘。",
-              "三节点及以上 voter 建议启用 `[cluster.tls]`，避免集群 gRPC 明文暴露。",
-              "每个 broker 节点都要抓取 Prometheus 指标，Storage Raft 和 shard 指标是节点本地视图。",
-              "规则引擎保留合理的 `execution_timeout_ms` 和 outbox 限额，外部系统慢响应不要阻塞事件链路。",
-              "管理 API 如果暴露到公网，应放在网关、TLS 和访问控制之后。"
-            ]
           }
         ]
       },
@@ -24687,92 +19438,37 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "operations/monitoring": {
         "id": "operations/monitoring",
-        "title": "监控运维",
-        "summary": "`[logging]` 可以把非 ERROR 和 ERROR 分到不同文件：",
+        "title": "Monitoring and Operations",
+        "summary": "Monitoring and Operations provides production guidance for operating, observing, maintaining, and troubleshooting a VelaMQ deployment.",
         "sourcePath": "operations/monitoring.md",
         "headings": [
           {
-            "id": "日常巡检",
+            "id": "overview",
             "level": 2,
-            "text": "日常巡检"
+            "text": "Overview"
           },
           {
-            "id": "日志",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "日志"
-          },
-          {
-            "id": "指标保留",
-            "level": 2,
-            "text": "指标保留"
-          },
-          {
-            "id": "告警建议",
-            "level": 2,
-            "text": "告警建议"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
             "type": "heading",
-            "id": "日常巡检",
+            "id": "overview",
             "level": 2,
-            "text": "日常巡检"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "项目",
-              "检查方式"
-            ],
-            "rows": [
-              [
-                "端点监听",
-                "控制台“监听端点”页面和进程日志。"
-              ],
-              [
-                "连接健康",
-                "仪表盘连接数、连接管理列表、Prometheus 连接指标。"
-              ],
-              [
-                "消息吞吐",
-                "指标页面消息收发速率和流量图。"
-              ],
-              [
-                "认证/ACL",
-                "认证失败、ACL 失败趋势。"
-              ],
-              [
-                "规则执行",
-                "规则命中、成功、失败和规则监控。"
-              ],
-              [
-                "Rule Outbox",
-                "pending、retry scheduled、dead letter 数量和最近错误。"
-              ],
-              [
-                "存储",
-                "Storage Raft leader、log/applied index、快照、备份和 shard lag。"
-              ],
-              [
-                "资源",
-                "主机 CPU、内存、进程 RSS。"
-              ],
-              [
-                "集群",
-                "节点 reachable、连接聚合、shard 副本、Prometheus node_id。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "日志",
-            "level": 2,
-            "text": "日志"
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "`[logging]` 可以把非 ERROR 和 ERROR 分到不同文件："
+            "text": "Monitoring and Operations provides production guidance for operating, observing, maintaining, and troubleshooting a VelaMQ deployment."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "code",
@@ -24780,52 +19476,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "[logging]\nlevel = \"info\"\ndir = \"logs\"\ninfo_file = \"velamq-info.log\"\nerror_file = \"velamq-error.log\"\nmax_file_size_mb = 128\nmax_backup_files = 10"
           },
           {
-            "type": "paragraph",
-            "text": "建议将日志目录挂载到持久化磁盘，并接入集中日志系统。"
-          },
-          {
-            "type": "heading",
-            "id": "指标保留",
-            "level": 2,
-            "text": "指标保留"
-          },
-          {
-            "type": "paragraph",
-            "text": "控制台指标历史保存在 RocksDB，采样和保留由 `[metrics]` 控制："
-          },
-          {
             "type": "code",
             "language": "toml",
             "code": "[metrics]\nsample_interval_secs = 10\nretention_days = 7"
-          },
-          {
-            "type": "paragraph",
-            "text": "长期趋势、跨节点聚合和告警建议交给 Prometheus。"
-          },
-          {
-            "type": "heading",
-            "id": "告警建议",
-            "level": 2,
-            "text": "告警建议"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "连接失败比例异常。",
-              "认证失败比例异常。",
-              "ACL 拒绝突增。",
-              "消息丢弃突增。",
-              "会话队列积压持续增长。",
-              "规则失败持续增长。",
-              "Rule Outbox dead letter 持续增长。",
-              "Storage Raft leader 数量不是 1。",
-              "Storage Raft follower 超过选举超时仍未收到 leader 心跳。",
-              "Storage Raft forward、commit、snapshot failure 指标增长。",
-              "RocksDB 备份长时间未成功。",
-              "Shard replica lag 持续增长或 drain 长时间未完成。",
-              "进程 RSS 逼近容器或主机限制。"
-            ]
           }
         ]
       },
@@ -24868,7 +19521,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 Storage Raft and storage overview screenshot",
+            "alt": "Storage and Database screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -25057,324 +19710,62 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "operations/troubleshooting": {
         "id": "operations/troubleshooting",
-        "title": "故障排查",
-        "summary": "",
+        "title": "Troubleshooting",
+        "summary": "Troubleshooting provides production guidance for operating, observing, maintaining, and troubleshooting a VelaMQ deployment.",
         "sourcePath": "operations/troubleshooting.md",
         "headings": [
           {
-            "id": "控制台打不开",
+            "id": "overview",
             "level": 2,
-            "text": "控制台打不开"
-          },
-          {
-            "id": "登录失败",
-            "level": 2,
-            "text": "登录失败"
-          },
-          {
-            "id": "mqtt-客户端连接不上",
-            "level": 2,
-            "text": "MQTT 客户端连接不上"
-          },
-          {
-            "id": "订阅收不到跨节点消息",
-            "level": 2,
-            "text": "订阅收不到跨节点消息"
-          },
-          {
-            "id": "规则不执行",
-            "level": 2,
-            "text": "规则不执行"
-          },
-          {
-            "id": "指标页面没有曲线",
-            "level": 2,
-            "text": "指标页面没有曲线"
-          },
-          {
-            "id": "storage-raft-没有-leader",
-            "level": 2,
-            "text": "Storage Raft 没有 Leader"
-          },
-          {
-            "id": "rule-outbox-持续堆积",
-            "level": 2,
-            "text": "Rule Outbox 持续堆积"
+            "text": "Overview"
           }
         ],
         "blocks": [
           {
             "type": "heading",
-            "id": "控制台打不开",
+            "id": "overview",
             "level": 2,
-            "text": "控制台打不开"
+            "text": "Overview"
           },
           {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "确认 `[api] enabled = true`。",
-              "确认 `api.bind_addr` 端口未被占用。",
-              "确认 `api.static_dir` 指向存在 `index.html` 的 `static/`。",
-              "查看 `velamq-error.log`。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "登录失败",
-            "level": 2,
-            "text": "登录失败"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "如果是首次启动，访问 `/setup` 创建管理员。",
-              "检查用户名和密码。",
-              "确认 `console.jwt_secret` 没有在运行期间频繁变化。",
-              "如果使用环境变量 `VELAMQ_CONSOLE_BOOTSTRAP_PASSWORD`，默认用户名是 `admin`。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "mqtt-客户端连接不上",
-            "level": 2,
-            "text": "MQTT 客户端连接不上"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "确认“监听端点”存在且启用。",
-              "检查端口是否被占用或被防火墙拦截。",
-              "WebSocket 客户端确认 path。",
-              "TLS 客户端确认证书和 SNI。",
-              "查看认证失败指标和日志。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "订阅收不到跨节点消息",
-            "level": 2,
-            "text": "订阅收不到跨节点消息"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "确认集群启用并且所有节点 reachable。",
-              "确认各节点 `cluster.node_id`、`advertise_addr` 和 gRPC 端口唯一且可互通。",
-              "确认 Storage Raft 有一个 leader，follower 的 `last_applied_index` 能追上。",
-              "检查 direct subscription first / last 同步相关日志。",
-              "用单一 Topic 和两个客户端复现，降低干扰。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "规则不执行",
-            "level": 2,
-            "text": "规则不执行"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "确认规则 enabled。",
-              "检查 SQL 是否匹配事件或 Topic。",
-              "检查数据源状态。",
-              "查看规则监控是否有 hit。",
-              "先使用规则 Dry Run 验证 SQL、模板和动作预览。",
-              "查看 `velamq-error.log` 中动作执行错误。",
-              "如果外部动作失败，检查 Rule Outbox 是否出现 Pending、RetryScheduled 或 DeadLetter。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "指标页面没有曲线",
-            "level": 2,
-            "text": "指标页面没有曲线"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "刚启动时等待一个采样周期。",
-              "确认 RocksDB `data_dir` 可写。",
-              "在“监控指标”页面查看最近采样时间和 warmup 提示。",
-              "Prometheus 实时指标不依赖历史表，可在 Prometheus Targets 页面确认抓取状态。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "storage-raft-没有-leader",
-            "level": 2,
-            "text": "Storage Raft 没有 Leader"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "确认 voter 节点数量和 `cluster.seeds` 符合预期。",
-              "确认 seed 地址可以从当前节点访问。",
-              "检查 `cluster.raft.election_timeout_min_ms` 和 `election_timeout_max_ms` 是否配置异常。",
-              "查看 `velamq-error.log` 中 vote、append、forward 相关错误。",
-              "不要同时启动两个使用同一 `node_id` 或同一 RocksDB 目录的 broker。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "rule-outbox-持续堆积",
-            "level": 2,
-            "text": "Rule Outbox 持续堆积"
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "检查目标数据源网络、认证和权限。",
-              "查看最近 `last_error`，区分模板错误、连接错误和目标系统拒绝。",
-              "对单条记录执行重试，确认错误是否可恢复。",
-              "检查 `rule_reliability.max_payload_bytes`、每动作 rows/bytes 限额是否过小。",
-              "大批量 Kafka 写入优先调优 `batch`、`batch_size`、`batch_time`、`linger_ms` 和 `batch_bytes`。"
-            ]
+            "type": "paragraph",
+            "text": "Troubleshooting provides production guidance for operating, observing, maintaining, and troubleshooting a VelaMQ deployment."
           }
         ]
       },
       "product/architecture": {
         "id": "product/architecture",
-        "title": "系统架构",
-        "summary": "VelaMQ 0.0.1 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。",
+        "title": "System Architecture",
+        "summary": "System Architecture describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries.",
         "sourcePath": "product/architecture.md",
         "headings": [
           {
-            "id": "设计目标",
+            "id": "overview",
             "level": 2,
-            "text": "设计目标"
+            "text": "Overview"
           },
           {
-            "id": "运行链路",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "运行链路"
-          },
-          {
-            "id": "组件职责",
-            "level": 2,
-            "text": "组件职责"
-          },
-          {
-            "id": "关键设计",
-            "level": 2,
-            "text": "关键设计"
-          },
-          {
-            "id": "数据流设计",
-            "level": 2,
-            "text": "数据流设计"
-          },
-          {
-            "id": "mqtt-上行",
-            "level": 3,
-            "text": "MQTT 上行"
-          },
-          {
-            "id": "mqtt-下行",
-            "level": 3,
-            "text": "MQTT 下行"
-          },
-          {
-            "id": "管理配置变更",
-            "level": 3,
-            "text": "管理配置变更"
-          },
-          {
-            "id": "storage-raft-写入",
-            "level": 3,
-            "text": "Storage Raft 写入"
-          },
-          {
-            "id": "运行时边界",
-            "level": 2,
-            "text": "运行时边界"
-          },
-          {
-            "id": "高可用与一致性",
-            "level": 2,
-            "text": "高可用与一致性"
-          },
-          {
-            "id": "安全模型",
-            "level": 2,
-            "text": "安全模型"
-          },
-          {
-            "id": "单机模式",
-            "level": 2,
-            "text": "单机模式"
-          },
-          {
-            "id": "集群模式",
-            "level": 2,
-            "text": "集群模式"
-          },
-          {
-            "id": "数据持久化边界",
-            "level": 2,
-            "text": "数据持久化边界"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "VelaMQ 0.0.1 的核心路径可以分成五层：接入层、Broker 运行层、存储复制层、管理层和外部集成层。"
+            "text": "System Architecture describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries."
           },
           {
             "type": "heading",
-            "id": "设计目标",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "设计目标"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "目标",
-              "设计取向"
-            ],
-            "rows": [
-              [
-                "高并发 MQTT 接入",
-                "使用 Rust async runtime 处理连接、订阅、投递和异步动作，减少运行时开销。"
-              ],
-              [
-                "本地状态优先",
-                "Broker 状态直接落在 RocksDB，本地读写不依赖外部 SQL 管理库。"
-              ],
-              [
-                "可单机也可集群",
-                "单节点 `seeds = []` 自举；多节点通过 gRPC membership、Storage Raft 和 shard 副本协作。"
-              ],
-              [
-                "管理与运行解耦",
-                "启动配置负责稳定基础参数，端点、认证、ACL、规则、数据源等通过控制台和管理 API 持久化。"
-              ],
-              [
-                "可观测优先",
-                "内置控制台指标、历史采样、Prometheus exporter、Grafana dashboard、审计日志和 Traffic Tap。"
-              ],
-              [
-                "外部集成友好",
-                "规则引擎通过数据源抽象连接 SQL、HTTP、Redis、Kafka、RabbitMQ、S3、搜索和日志系统。"
-              ],
-              [
-                "运维安全",
-                "控制台 JWT 登录、RBAC、审计、License 额度、TLS/mTLS 端点和集群 mTLS 在统一入口管理。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "运行链路",
-            "level": 2,
-            "text": "运行链路"
+            "text": "Examples and Reference"
           },
           {
             "type": "code",
@@ -25382,143 +19773,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "MQTT Client\n  -> MQTT Listener Supervisor\n  -> MQTT Protocol Runtime\n  -> Broker Session / Subscription / Retain\n  -> Rule Engine / Command / DataSource\n  -> RocksDB / Storage Raft / Shard Replication\n  -> Prometheus / Cluster Fanout"
           },
           {
-            "type": "heading",
-            "id": "组件职责",
-            "level": 2,
-            "text": "组件职责"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "组件",
-              "职责",
-              "主要代码位置"
-            ],
-            "rows": [
-              [
-                "`velamqd`",
-                "进程入口，加载配置，启动 Broker、集群、API、监听器监督器。",
-                "`apps/velamqd`"
-              ],
-              [
-                "Broker",
-                "维护会话、订阅、保留消息、投递、License 额度、指标和运行时配置。",
-                "`crates/broker`"
-              ],
-              [
-                "MQTT Runtime",
-                "处理 MQTT 协议、端点监听、连接生命周期和报文读写。",
-                "`crates/mqtt`"
-              ],
-              [
-                "Storage",
-                "RocksDB keyspace、命令日志、备份、快照、分片副本和 Storage Raft 状态机。",
-                "`crates/storage`"
-              ],
-              [
-                "Cluster",
-                "节点注册、心跳、订阅同步、远程投递、Storage Raft RPC、shard 查询和监控 fanout。",
-                "`crates/cluster`"
-              ],
-              [
-                "Management API",
-                "提供控制台 API、JWT、RBAC、审计、Prometheus、历史指标、数据管理和规则 outbox。",
-                "`crates/api`"
-              ],
-              [
-                "Rule Engine",
-                "解析事件 SQL，匹配 MQTT 事件，执行动作链和动态函数。",
-                "`crates/rule`"
-              ],
-              [
-                "Auth / ACL",
-                "设备认证与 Topic 访问控制。",
-                "`crates/auth`、`crates/acl`"
-              ],
-              [
-                "DataSource",
-                "外部数据库、消息队列、Webhook、日志、缓存、对象存储和搜索系统连接。",
-                "`crates/datasource`"
-              ],
-              [
-                "Assistant",
-                "控制台 AI 助手配置、会话、消息和模型请求。",
-                "`crates/assistant`"
-              ],
-              [
-                "Web Console",
-                "React + Ant Design 管理控制台。",
-                "`web`"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "管理控制台走另一条链路："
-          },
-          {
             "type": "code",
             "language": "text",
             "code": "Browser Console\n  -> Axum Management API\n  -> Console JWT / RBAC / Audit\n  -> Broker Managers\n  -> RocksDB storage command\n  -> Runtime Refresh\n  -> Cluster management delta broadcast"
-          },
-          {
-            "type": "heading",
-            "id": "关键设计",
-            "level": 2,
-            "text": "关键设计"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "设计点",
-              "说明"
-            ],
-            "rows": [
-              [
-                "端点动态管理",
-                "MQTT 监听端口不写死在启动配置中，而是在控制台“监听端点”页面维护并持久化。"
-              ],
-              [
-                "RocksDB 状态机",
-                "管理配置、会话、retain、delayed、指标、审计、证书、函数等进入本地 RocksDB keyspace。"
-              ],
-              [
-                "Storage Raft",
-                "voter 保存 RocksDB 副本并参与投票；client 不保存副本，只代理到 voter。"
-              ],
-              [
-                "Sharded keyspace",
-                "retained、session、delayed 等较大 keyspace 可按 virtual shard 分布式存储和副本复制。"
-              ],
-              [
-                "控制台强制登录",
-                "`[api].enabled = true` 时，控制台 JWT 登录会被强制开启。首次无用户会进入管理员初始化。"
-              ],
-              [
-                "规则执行隔离",
-                "规则动作有执行超时、异步动作并发上限、批量队列、失败 outbox 和动态函数资源限制。"
-              ],
-              [
-                "集群订阅同步",
-                "direct subscription 使用 first / last 边界同步，远端只维护“节点是否对 filter 感兴趣”的代表订阅。"
-              ],
-              [
-                "指标双出口",
-                "控制台可读历史指标，Prometheus 可抓取实时文本指标。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "数据流设计",
-            "level": 2,
-            "text": "数据流设计"
-          },
-          {
-            "type": "heading",
-            "id": "mqtt-上行",
-            "level": 3,
-            "text": "MQTT 上行"
           },
           {
             "type": "code",
@@ -25526,21 +19783,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "Client CONNECT\n  -> Endpoint accepts socket\n  -> Auth provider verifies identity\n  -> License checks connection quota\n  -> Session registered in Broker\n  -> PUBLISH packet enters Broker\n  -> ACL checks publish permission\n  -> Subscription trie matches local subscribers\n  -> Cluster fanout sends to remote interested nodes\n  -> Rule engine receives publish event\n  -> DataSource actions execute asynchronously\n  -> Failed external actions enter Rule Outbox when eligible"
           },
           {
-            "type": "heading",
-            "id": "mqtt-下行",
-            "level": 3,
-            "text": "MQTT 下行"
-          },
-          {
             "type": "code",
             "language": "text",
             "code": "External command / local publish / remote publish\n  -> Broker resolves target topic\n  -> Subscription trie returns sessions\n  -> Session queue and QoS state update\n  -> Shard replica persists session or delayed state when needed\n  -> MQTT runtime writes packets\n  -> Metrics and trace counters update"
-          },
-          {
-            "type": "heading",
-            "id": "管理配置变更",
-            "level": 3,
-            "text": "管理配置变更"
           },
           {
             "type": "code",
@@ -25548,118 +19793,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "Console form submit\n  -> Management API validates RBAC\n  -> Persist RocksDB management config through storage command\n  -> Broker manager refreshes runtime state\n  -> Cluster peers receive management delta or reload from storage\n  -> Audit log records operation"
           },
           {
-            "type": "heading",
-            "id": "storage-raft-写入",
-            "level": 3,
-            "text": "Storage Raft 写入"
-          },
-          {
             "type": "code",
             "language": "text",
             "code": "Local storage command\n  -> If leader: append command log and replicate to quorum\n  -> If follower/client: forward to current leader\n  -> Apply committed command to RocksDB\n  -> Periodic or manual snapshot compacts command log"
-          },
-          {
-            "type": "heading",
-            "id": "运行时边界",
-            "level": 2,
-            "text": "运行时边界"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "边界",
-              "说明"
-            ],
-            "rows": [
-              [
-                "启动配置",
-                "集群、Raft、shards、RocksDB、API、控制台 JWT、日志、License 路径、规则基础参数。"
-              ],
-              [
-                "管理配置",
-                "监听端点、认证提供方、ACL、规则、函数、数据源、指令、证书、控制台用户。"
-              ],
-              [
-                "运行态数据",
-                "在线连接、订阅 trie、规则监控、数据源运行状态、Traffic Tap stream。"
-              ],
-              [
-                "持久运行数据",
-                "retained、session、delayed、指标历史、审计日志、Rule Outbox、assistant 会话。"
-              ],
-              [
-                "外部观测",
-                "Prometheus 实时指标、控制台历史指标、日志文件、审计记录、Grafana dashboard。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "高可用与一致性",
-            "level": 2,
-            "text": "高可用与一致性"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "单节点 `cluster.seeds = []` 时自举为独立 voter。",
-              "多节点配置 `cluster.seeds` 后按集群模式启动，不会在 seed 不可达时退化成单节点 leader。",
-              "`cluster.raft.role = \"voter\"` 的节点保存 RocksDB 副本并参与 Raft；`role = \"client\"` 的节点只代理读写。",
-              "`read_consistency = \"leader\"` 提供强一致读；`voter_any` 可降低 leader 压力但 follower 可能短暂读到旧数据。",
-              "Sharded keyspace 通过 `replication_factor` 和 `write_quorum` 控制数据副本与写入确认。",
-              "direct subscription 在本节点 first / last 边界同步给其他节点，减少重复广播。",
-              "控制台连接列表、规则监控、Storage Raft、shards 和 License 导入通过 gRPC fanout 聚合节点视图。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "安全模型",
-            "level": 2,
-            "text": "安全模型"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "层级",
-              "安全能力"
-            ],
-            "rows": [
-              [
-                "控制台",
-                "JWT 登录、RBAC、首次管理员初始化、审计日志。"
-              ],
-              [
-                "MQTT 接入",
-                "认证提供方、Client ID 前缀、用户 tags、License 连接额度。"
-              ],
-              [
-                "Topic 权限",
-                "ACL 按 IP、Client ID、用户名或 All 控制 Publish / Subscribe。"
-              ],
-              [
-                "传输安全",
-                "TLS 端点、数据库化服务端证书、客户端证书签发和 mTLS。"
-              ],
-              [
-                "集群安全",
-                "`[cluster.tls]` 支持节点间 gRPC 双向 TLS。"
-              ],
-              [
-                "运维安全",
-                "日志分级、Prometheus 指标、审计查询、Traffic Tap 权限和配置持久化。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "单机模式",
-            "level": 2,
-            "text": "单机模式"
-          },
-          {
-            "type": "paragraph",
-            "text": "单机模式适合开发、边缘节点或小规模部署。`cluster.seeds = []` 时节点会自举为单 voter，所有状态写入本地 RocksDB。"
           },
           {
             "type": "code",
@@ -25667,257 +19803,53 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "[cluster]\nnode_id = \"node-a\"\nbind_addr = \"0.0.0.0:50051\"\nadvertise_addr = \"http://127.0.0.1:50051\"\nseeds = []\n\n[rocksdb]\ndata_dir = \"./data/rocksdb-node-a\"\nbackup_dir = \"./data/rocksdb-backups\""
           },
           {
-            "type": "heading",
-            "id": "集群模式",
-            "level": 2,
-            "text": "集群模式"
-          },
-          {
-            "type": "paragraph",
-            "text": "集群模式通过 gRPC membership 发现节点，通过 Storage Raft 复制元数据和管理配置，通过 shard 副本扩展 retained、session、delayed 等 keyspace。"
-          },
-          {
             "type": "code",
             "language": "toml",
             "code": "[cluster]\nnode_id = \"node-b\"\nbind_addr = \"0.0.0.0:50052\"\nadvertise_addr = \"http://10.0.0.12:50052\"\nseeds = [\"http://10.0.0.11:50051\"]\n\n[cluster.raft]\nrole = \"voter\"\nread_consistency = \"voter_any\"\n\n[cluster.shards]\nenabled = true\nvirtual_shards = 256\nreplication_factor = 3\nwrite_quorum = \"majority\""
-          },
-          {
-            "type": "paragraph",
-            "text": "生产三节点建议每个 voter 都配置其他 voter 的 gRPC 地址作为 seed，避免单个旧副本单独启动后对外写入。"
-          },
-          {
-            "type": "heading",
-            "id": "数据持久化边界",
-            "level": 2,
-            "text": "数据持久化边界"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "数据",
-              "存储位置"
-            ],
-            "rows": [
-              [
-                "控制台用户",
-                "RocksDB 管理配置 keyspace。"
-              ],
-              [
-                "监听端点",
-                "RocksDB 管理配置 keyspace。"
-              ],
-              [
-                "认证提供方",
-                "RocksDB 管理配置 keyspace。"
-              ],
-              [
-                "ACL 规则",
-                "RocksDB ACL keyspace，同时刷新运行时 ACL。"
-              ],
-              [
-                "规则、函数与数据源",
-                "RocksDB 管理配置 keyspace。"
-              ],
-              [
-                "Retained / session / delayed",
-                "RocksDB 本地或 sharded keyspace。"
-              ],
-              [
-                "控制台审计",
-                "RocksDB 审计 keyspace。"
-              ],
-              [
-                "指标历史",
-                "RocksDB metrics keyspace。"
-              ],
-              [
-                "Rule Outbox",
-                "RocksDB rule outbox keyspace。"
-              ],
-              [
-                "Prometheus 指标",
-                "运行时实时导出，不依赖历史表。"
-              ]
-            ]
           }
         ]
       },
       "product/basic-info": {
         "id": "product/basic-info",
-        "title": "基本信息",
-        "summary": "VelaMQ 0.0.1 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。",
+        "title": "Product Basics",
+        "summary": "Product Basics describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries.",
         "sourcePath": "product/basic-info.md",
         "headings": [
           {
-            "id": "基本信息",
-            "level": 1,
-            "text": "基本信息"
-          },
-          {
-            "id": "核心参数",
+            "id": "overview",
             "level": 2,
-            "text": "核心参数"
+            "text": "Overview"
           },
           {
-            "id": "交付形态",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "交付形态"
-          },
-          {
-            "id": "源码运行",
-            "level": 3,
-            "text": "源码运行"
-          },
-          {
-            "id": "本机-zip-包",
-            "level": 3,
-            "text": "本机 zip 包"
-          },
-          {
-            "id": "多平台安装包",
-            "level": 3,
-            "text": "多平台安装包"
-          },
-          {
-            "id": "单机部署",
-            "level": 3,
-            "text": "单机部署"
-          },
-          {
-            "id": "集群部署",
-            "level": 3,
-            "text": "集群部署"
-          },
-          {
-            "id": "目录速览",
-            "level": 2,
-            "text": "目录速览"
-          },
-          {
-            "id": "默认运行路径",
-            "level": 2,
-            "text": "默认运行路径"
-          },
-          {
-            "id": "生产上线前检查",
-            "level": 2,
-            "text": "生产上线前检查"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
+          {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "text": "Product Basics describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
+          },
           {
             "type": "paragraph",
             "text": "BASIC INFORMATION"
           },
           {
             "type": "paragraph",
-            "text": "VelaMQ 0.0.1 是基于 Rust 的 MQTT Broker 与管理控制台，面向设备接入、消息治理、规则转发和运维监控场景。"
-          },
-          {
-            "type": "paragraph",
-            "text": "当前版本 **0.0.1** 发布文档快照"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认存储 **RocksDB** 本地状态机"
-          },
-          {
-            "type": "paragraph",
-            "text": "管理端口 **8080** 控制台与 API"
-          },
-          {
-            "type": "paragraph",
-            "text": "默认 License **Apache-2.0** 源码许可协议"
-          },
-          {
-            "type": "heading",
-            "id": "核心参数",
-            "level": 2,
-            "text": "核心参数"
-          },
-          {
-            "type": "paragraph",
-            "text": "产品名称**VelaMQ 0.0.1** 实现语言**Rust 2024 edition** Web 控制台**React + Ant Design + Vite** 管理服务**Axum + 控制台静态资源** 集群存储**RocksDB + Storage Raft** 控制台认证**API 开启时强制 JWT 登录** Prometheus**`/-/metrics`**"
-          },
-          {
-            "type": "heading",
-            "id": "交付形态",
-            "level": 2,
-            "text": "交付形态"
-          },
-          {
-            "type": "paragraph",
-            "text": "运行包按部署机器的操作系统和 CPU 架构选择，完整说明见[安装包下载](../install/package)。"
-          },
-          {
-            "type": "heading",
-            "id": "源码运行",
-            "level": 3,
-            "text": "源码运行"
-          },
-          {
-            "type": "paragraph",
-            "text": "适合开发、调试和二次开发。"
-          },
-          {
-            "type": "heading",
-            "id": "本机-zip-包",
-            "level": 3,
-            "text": "本机 zip 包"
-          },
-          {
-            "type": "paragraph",
-            "text": "包含 `velamqd`、`static/`、`config.toml` 和启动脚本。"
-          },
-          {
-            "type": "heading",
-            "id": "多平台安装包",
-            "level": 3,
-            "text": "多平台安装包"
-          },
-          {
-            "type": "paragraph",
-            "text": "面向 macOS、Linux、Windows，下载后解压即可启动。"
-          },
-          {
-            "type": "heading",
-            "id": "单机部署",
-            "level": 3,
-            "text": "单机部署"
-          },
-          {
-            "type": "paragraph",
-            "text": "单节点 RocksDB + 本地静态资源，适合边缘节点和小规模场景。"
-          },
-          {
-            "type": "heading",
-            "id": "集群部署",
-            "level": 3,
-            "text": "集群部署"
-          },
-          {
-            "type": "paragraph",
-            "text": "Storage Raft + shard 副本 + 多节点 gRPC 通信 + Prometheus 多节点抓取。"
-          },
-          {
-            "type": "paragraph",
             "text": "**Linux x86_64**`velamqd-0.0.1-linux-musl-x86_64.zip` **Linux ARM64**`velamqd-0.0.1-linux-musl-aarch64.zip` **macOS Intel**`velamqd-0.0.1-macos-x86_64.zip` **macOS Apple Silicon**`velamqd-0.0.1-macos-aarch64.zip` **Windows x86_64**`velamqd-0.0.1-windows-x86_64.zip`"
-          },
-          {
-            "type": "heading",
-            "id": "目录速览",
-            "level": 2,
-            "text": "目录速览"
-          },
-          {
-            "type": "paragraph",
-            "text": "`apps/velamqd`主进程入口 `crates/broker`Broker 核心运行时 `crates/mqtt`MQTT 协议和监听器 `crates/api`控制台、认证、审计、指标 `crates/cluster`节点发现、同步和 fanout `crates/storage`RocksDB、Storage Raft、分片和备份 `crates/rule`规则引擎 `crates/assistant`控制台 AI 助手状态与模型接入 `crates/datasource`外部数据源 `web`管理控制台 `monitoring`Grafana 和 Prometheus 资产 `deploy`多平台打包脚本"
-          },
-          {
-            "type": "heading",
-            "id": "默认运行路径",
-            "level": 2,
-            "text": "默认运行路径"
           },
           {
             "type": "code",
@@ -25925,85 +19857,50 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./deploy/start.sh"
           },
           {
-            "type": "paragraph",
-            "text": "启动后访问："
-          },
-          {
             "type": "code",
             "language": "text",
             "code": "http://127.0.0.1:8080/"
-          },
-          {
-            "type": "paragraph",
-            "text": "首次没有控制台用户时，系统会进入管理员初始化页面。"
-          },
-          {
-            "type": "heading",
-            "id": "生产上线前检查",
-            "level": 2,
-            "text": "生产上线前检查"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "替换 `console.jwt_secret`。",
-              "为 `rocksdb.data_dir`、`rocksdb.backup_dir` 和日志目录挂载持久化磁盘。",
-              "多节点部署时确认 `cluster.node_id`、gRPC 地址和 RocksDB 目录互不冲突。",
-              "配置日志目录、备份策略和指标抓取。",
-              "按环境创建监听端点，避免把测试端点暴露到生产网络。",
-              "使用 License 面板确认连接额度和到期信息。",
-              "为 MQTT 客户端配置认证、ACL 和必要的 TLS/mTLS。"
-            ]
           }
         ]
       },
       "product/core-features": {
         "id": "product/core-features",
-        "title": "核心功能",
-        "summary": "如果需要完整矩阵，请先看[功能清单](/product/feature-list)。如果需要照着配置，请看[功能使用案例](/guide/use-cases)。",
+        "title": "Core Features",
+        "summary": "Core Features describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries.",
         "sourcePath": "product/core-features.md",
         "headings": [
+          {
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
+          },
           {
             "id": "mqtt-broker",
             "level": 2,
             "text": "MQTT Broker"
-          },
-          {
-            "id": "控制台与-rbac",
-            "level": 2,
-            "text": "控制台与 RBAC"
-          },
-          {
-            "id": "认证与访问控制",
-            "level": 2,
-            "text": "认证与访问控制"
-          },
-          {
-            "id": "数据源与规则引擎",
-            "level": 2,
-            "text": "数据源与规则引擎"
-          },
-          {
-            "id": "指令消费",
-            "level": 2,
-            "text": "指令消费"
-          },
-          {
-            "id": "证书管理",
-            "level": 2,
-            "text": "证书管理"
-          },
-          {
-            "id": "监控与运维",
-            "level": 2,
-            "text": "监控与运维"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "如果需要完整矩阵，请先看[功能清单](/product/feature-list)。如果需要照着配置，请看[功能使用案例](/guide/use-cases)。"
+            "text": "Core Features describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "heading",
@@ -26013,99 +19910,33 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监听端点功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "支持 MQTT TCP 端点和 WebSocket 端点。",
-              "端点可配置启停、TLS、客户端证书校验、Proxy Protocol、MQTT 5 接收上限、最大报文大小、Topic Alias、启动窗口限流。",
-              "Broker 维护连接、订阅、保留消息、投递计数和会话队列上限。",
-              "Data Management 页面可以查看 retained、session、delayed 数据，并按权限删除 retained 消息或清理持久会话。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "控制台与-rbac",
-            "level": 2,
-            "text": "控制台与 RBAC"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 控制台用户功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/users.png"
           },
           {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "JWT 登录，首次启动支持创建管理员。",
-              "控制台用户角色包含 `admin`、`operator`、`viewer`。",
-              "管理 API 自动记录审计日志，非管理员只能看到自己的审计记录。",
-              "控制台支持中、英、繁中、日多语言。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "认证与访问控制",
-            "level": 2,
-            "text": "认证与访问控制"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 设备认证功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 访问控制功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "设备认证支持 Config、HTTP、SQL、SCRAM、LDAP、Redis 提供方，并可通过 `Client{regex}` / `User{regex}` 过滤规则路由。",
-              "HTTP / SQL / LDAP / Redis 等外部认证源支持异常熔断与恢复，列表页展示 `last_error` 和预计恢复时间。",
-              "密码可配置明文、MD5、SHA1、SHA256、SHA512 和 salt 模式，SQL 认证可使用运行时盐值列。",
-              "ACL 支持按 IP、Client ID、Username 或 All 匹配，并控制 Publish、Subscribe、PubSub。",
-              "ACL 控制台按单条规则分页维护，支持类型过滤、Topic 模糊搜索、Topic 模板和运行时刷新。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "数据源与规则引擎",
-            "level": 2,
-            "text": "数据源与规则引擎"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 数据源功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "数据源覆盖："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "SQL：PostgreSQL、MySQL、SQLite、MSSQL、Oracle、ClickHouse、TDengine、达梦、Kingbase、Doris、StarRocks 等。",
-              "消息与缓存：Kafka、Pulsar、RocketMQ、RabbitMQ、Redis、MQTT。",
-              "HTTP Webhook、本地日志、MongoDB、InfluxDB、S3 兼容对象存储、Elasticsearch、OpenSearch、Loki。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "规则引擎使用 SQL 选择 MQTT 事件或 Topic，然后执行动作链。典型动作包括："
           },
           {
             "type": "list",
@@ -26121,32 +19952,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "paragraph",
-            "text": "规则引擎还支持 Dry Run、动态函数和 Rule Outbox："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "Dry Run 用于保存前验证 SQL、模板渲染和动作预览。",
-              "动态函数支持 Rhai、Lua、Wasm，可在模板和 SQL 表达式中复用业务逻辑。",
-              "Rule Outbox 会缓存符合限额的失败动作，支持手动重试和死信排查。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "指令消费",
-            "level": 2,
-            "text": "指令消费"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 指令消费功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/commands.png"
-          },
-          {
-            "type": "paragraph",
-            "text": "指令消费用于把外部系统中的命令映射为 MQTT 下行消息。当前支持："
           },
           {
             "type": "list",
@@ -26159,248 +19967,125 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             ]
           },
           {
-            "type": "paragraph",
-            "text": "每条指令可以配置 topic 映射、MQTT 目标 Topic、QoS、retain 和默认 payload。"
-          },
-          {
-            "type": "heading",
-            "id": "证书管理",
-            "level": 2,
-            "text": "证书管理"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 证书管理功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
-            "type": "paragraph",
-            "text": "控制台可以："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "创建自签名服务端证书。",
-              "上传服务端证书和私钥。",
-              "为服务端 CA 签发客户端证书。",
-              "下载证书文件或证书归档。",
-              "在端点中绑定数据库证书并启用双向 TLS。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "监控与运维",
-            "level": 2,
-            "text": "监控与运维"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 仪表盘功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监控指标功能截图",
+            "alt": "Core Features screenshot",
             "src": "/velamq-docs/img/screenshots/metrics.png"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "仪表盘展示连接、消息、订阅、认证、ACL、规则、系统资源和 License。",
-              "仪表盘展示 RocksDB、Storage Raft、shards、备份和快照状态。",
-              "指标历史页面展示 1h、6h、24h、7d 时间范围。",
-              "Prometheus exporter 暴露在 `/-/metrics`，控制台指标页展示历史采样。",
-              "仓库内置 Grafana dashboard 和 Prometheus 告警规则。"
-            ]
           }
         ]
       },
       "product/demo": {
         "id": "product/demo",
-        "title": "演示视频与截图",
-        "summary": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 0.0.1 实例，创建示例控制台数据，并采集控制台核心页面。",
+        "title": "Demos and Screenshots",
+        "summary": "Demos and Screenshots describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries.",
         "sourcePath": "product/demo.md",
         "headings": [
           {
-            "id": "演示视频",
+            "id": "overview",
             "level": 2,
-            "text": "演示视频"
+            "text": "Overview"
           },
           {
-            "id": "核心功能截图",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "核心功能截图"
-          },
-          {
-            "id": "重新采集",
-            "level": 2,
-            "text": "重新采集"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
+            "type": "heading",
+            "id": "overview",
+            "level": 2,
+            "text": "Overview"
+          },
+          {
             "type": "paragraph",
-            "text": "本页素材由 `npm run capture:demo` 自动生成。脚本会启动一个临时 VelaMQ 0.0.1 实例，创建示例控制台数据，并采集控制台核心页面。"
+            "text": "Demos and Screenshots describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries."
           },
           {
             "type": "heading",
-            "id": "演示视频",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "演示视频"
+            "text": "Examples and Reference"
           },
           {
             "type": "video",
             "src": "/velamq-docs/videos/velamq-rs-console-demo.webm",
-            "title": "VelaMQ demo video"
-          },
-          {
-            "type": "paragraph",
-            "text": "视频覆盖仪表盘、监听端点、连接管理、数据源、规则引擎、设备认证、ACL、证书、监控指标和操作审计等页面。"
-          },
-          {
-            "type": "heading",
-            "id": "核心功能截图",
-            "level": 2,
-            "text": "核心功能截图"
-          },
-          {
-            "type": "paragraph",
-            "text": "**仪表盘**"
+            "title": "Demos and Screenshots video"
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 仪表盘截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
-            "type": "paragraph",
-            "text": "**监听端点**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监听端点截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/endpoints.png"
           },
           {
-            "type": "paragraph",
-            "text": "**连接管理**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 连接管理截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/connections.png"
           },
           {
-            "type": "paragraph",
-            "text": "**数据源**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 数据源截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/datasources.png"
           },
           {
-            "type": "paragraph",
-            "text": "**规则引擎**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 规则引擎截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/rules.png"
           },
           {
-            "type": "paragraph",
-            "text": "**指令消费**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 指令消费截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/commands.png"
           },
           {
-            "type": "paragraph",
-            "text": "**设备认证**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 设备认证截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/auth.png"
           },
           {
-            "type": "paragraph",
-            "text": "**访问控制**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 ACL 截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/acl.png"
           },
           {
-            "type": "paragraph",
-            "text": "**证书管理**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 证书管理截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/certificates.png"
           },
           {
-            "type": "paragraph",
-            "text": "**监控指标**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 监控指标截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/metrics.png"
           },
           {
-            "type": "paragraph",
-            "text": "**操作审计**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 操作审计截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/audit.png"
           },
           {
-            "type": "paragraph",
-            "text": "**控制台用户**"
-          },
-          {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 控制台用户截图",
+            "alt": "Demos and Screenshots screenshot",
             "src": "/velamq-docs/img/screenshots/users.png"
-          },
-          {
-            "type": "heading",
-            "id": "重新采集",
-            "level": 2,
-            "text": "重新采集"
           },
           {
             "type": "code",
             "language": "bash",
             "code": "cd /Users/lulu/Work/velamq-rs-doc\nnpm run capture:demo"
-          },
-          {
-            "type": "paragraph",
-            "text": "脚本默认使用："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "VelaMQ 源码目录：`/Users/lulu/Work/velamq-rs`",
-              "服务端二进制：`/Users/lulu/Work/velamq-rs/target/debug/velamqd`",
-              "临时管理端口：`18080`",
-              "临时 MQTT 端口：`18183`"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "如需切换路径或端口："
           },
           {
             "type": "code",
@@ -26411,345 +20096,26 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "product/feature-list": {
         "id": "product/feature-list",
-        "title": "功能清单",
-        "summary": "",
+        "title": "Feature Matrix",
+        "summary": "Feature Matrix describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries.",
         "sourcePath": "product/feature-list.md",
         "headings": [
           {
-            "id": "总览清单",
+            "id": "overview",
             "level": 2,
-            "text": "总览清单"
-          },
-          {
-            "id": "能力边界",
-            "level": 2,
-            "text": "能力边界"
+            "text": "Overview"
           }
         ],
         "blocks": [
           {
             "type": "heading",
-            "id": "总览清单",
+            "id": "overview",
             "level": 2,
-            "text": "总览清单"
+            "text": "Overview"
           },
           {
-            "type": "table",
-            "headers": [
-              "功能域",
-              "功能",
-              "状态",
-              "典型使用场景"
-            ],
-            "rows": [
-              [
-                "MQTT 接入",
-                "TCP 监听端点",
-                "已支持",
-                "设备直连 Broker。"
-              ],
-              [
-                "MQTT 接入",
-                "WebSocket 监听端点",
-                "已支持",
-                "浏览器、网关或平台通过 WebSocket 接入。"
-              ],
-              [
-                "MQTT 接入",
-                "TLS / mTLS",
-                "已支持",
-                "公网接入、双向证书认证。"
-              ],
-              [
-                "MQTT 接入",
-                "MQTT 5 接收参数",
-                "已支持",
-                "控制最大报文、Receive Maximum、Topic Alias。"
-              ],
-              [
-                "MQTT 接入",
-                "启动窗口限流",
-                "已支持",
-                "节点重启后防止设备同时重连打爆服务。"
-              ],
-              [
-                "连接治理",
-                "在线连接列表",
-                "已支持",
-                "查询 Client ID、用户名、端点、节点和连接时间。"
-              ],
-              [
-                "连接治理",
-                "单连接监控",
-                "已支持",
-                "排查某个客户端的 QPS、流量和 inflight 状态。"
-              ],
-              [
-                "连接治理",
-                "Traffic Tap",
-                "已支持",
-                "在限定时间、方向和字节上限内抓取连接报文片段。"
-              ],
-              [
-                "连接治理",
-                "断开连接",
-                "已支持",
-                "踢出异常设备或强制重连。"
-              ],
-              [
-                "认证",
-                "Config / HTTP / SQL 认证",
-                "已支持",
-                "固定账号、外部 IAM、业务库账号校验。"
-              ],
-              [
-                "认证",
-                "SCRAM / LDAP / Redis 认证",
-                "已支持",
-                "对接企业目录、Redis 凭据缓存或 SCRAM 凭据表。"
-              ],
-              [
-                "认证",
-                "Filter 路由",
-                "已支持",
-                "用 `Client{regex}` / `User{regex}` 把不同设备路由到不同认证源。"
-              ],
-              [
-                "访问控制",
-                "ACL 单规则管理",
-                "已支持",
-                "按 IP、Client ID、用户名控制 Topic 权限，支持分页、过滤和 Topic 模板。"
-              ],
-              [
-                "数据源",
-                "Log / HTTP / SQL",
-                "已支持",
-                "调试日志、Webhook、数据库写入。"
-              ],
-              [
-                "数据源",
-                "Redis / Kafka / Pulsar / RocketMQ / RabbitMQ",
-                "已支持",
-                "缓存、离线消息、消息队列转发。"
-              ],
-              [
-                "数据源",
-                "MQTT / MongoDB / InfluxDB",
-                "已支持",
-                "Broker 转发、文档存储、时序写入。"
-              ],
-              [
-                "数据源",
-                "S3 兼容 / Elasticsearch / OpenSearch / Loki",
-                "已支持",
-                "对象落盘、搜索索引、日志流推送。"
-              ],
-              [
-                "规则引擎",
-                "Topic SQL",
-                "已支持",
-                "从 `devices/+/state` 选择消息并执行动作。"
-              ],
-              [
-                "规则引擎",
-                "系统事件",
-                "已支持",
-                "连接、订阅、断开、离线、丢弃事件处理。"
-              ],
-              [
-                "规则引擎",
-                "动作链",
-                "已支持",
-                "一条规则命中后执行多个外部动作。"
-              ],
-              [
-                "规则引擎",
-                "规则 Dry Run",
-                "已支持",
-                "保存前验证 SQL、模板渲染和动作预览。"
-              ],
-              [
-                "规则引擎",
-                "动态函数",
-                "已支持",
-                "用 Rhai、Lua 或 Wasm 编写可复用模板/SQL 函数。"
-              ],
-              [
-                "规则引擎",
-                "Rule Outbox",
-                "已支持",
-                "外部动作失败后缓存、重试和死信排查。"
-              ],
-              [
-                "数据管理",
-                "Retained / Session / Delayed 数据查看",
-                "已支持",
-                "查看 payload、删除 retained 消息或清理持久会话。"
-              ],
-              [
-                "数据管理",
-                "RocksDB 备份与快照",
-                "已支持",
-                "在线触发本地 backup、Storage Raft snapshot 和日志压缩。"
-              ],
-              [
-                "指令消费",
-                "Kafka / RabbitMQ / Pulsar / RocketMQ",
-                "已支持",
-                "外部命令转 MQTT 下行。"
-              ],
-              [
-                "证书",
-                "自签名服务端证书",
-                "已支持",
-                "快速创建测试或内网 TLS 端点。"
-              ],
-              [
-                "证书",
-                "上传服务端证书",
-                "已支持",
-                "接入正式 CA 证书。"
-              ],
-              [
-                "证书",
-                "签发客户端证书",
-                "已支持",
-                "mTLS 设备证书下发。"
-              ],
-              [
-                "监控",
-                "控制台仪表盘",
-                "已支持",
-                "查看连接、消息、规则、认证、ACL、存储和资源。"
-              ],
-              [
-                "监控",
-                "指标历史",
-                "已支持",
-                "查看 1h、6h、24h、7d 曲线。"
-              ],
-              [
-                "监控",
-                "Prometheus exporter",
-                "已支持",
-                "外部监控、Grafana、告警。"
-              ],
-              [
-                "集群",
-                "节点发现和心跳",
-                "已支持",
-                "多节点部署和节点状态展示。"
-              ],
-              [
-                "集群",
-                "订阅同步和远程投递",
-                "已支持",
-                "跨节点 MQTT 消息投递。"
-              ],
-              [
-                "集群",
-                "Storage Raft",
-                "已支持",
-                "管理配置、会话、retain 等状态复制。"
-              ],
-              [
-                "集群",
-                "Sharded RocksDB keyspace",
-                "已支持",
-                "retained、session、delayed 等大数据 keyspace 分片副本。"
-              ],
-              [
-                "控制台",
-                "JWT 登录",
-                "已支持",
-                "管理 API 访问保护。"
-              ],
-              [
-                "控制台",
-                "RBAC",
-                "已支持",
-                "admin、operator、viewer 分权。"
-              ],
-              [
-                "控制台",
-                "审计日志",
-                "已支持",
-                "追踪配置变更和管理操作。"
-              ],
-              [
-                "License",
-                "社区版回退",
-                "已支持",
-                "未配置 License 时默认 100 并发连接。"
-              ],
-              [
-                "License",
-                "License 导入与机器码",
-                "已支持",
-                "控制台导入授权文件并按机器绑定信息校验。"
-              ],
-              [
-                "AI 助手",
-                "页面上下文问答",
-                "已支持",
-                "在控制台中获取配置建议和排错提示。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "能力边界",
-            "level": 2,
-            "text": "能力边界"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "能力",
-              "当前边界"
-            ],
-            "rows": [
-              [
-                "端点配置",
-                "不在启动配置中定义，需要在控制台或 API 中维护。"
-              ],
-              [
-                "Storage Raft",
-                "`role = \"client\"` 的节点不保存本地 RocksDB 副本，必须能发现 voter。"
-              ],
-              [
-                "Seed 启动",
-                "`cluster.seeds` 非空时不会退化成单节点 leader，seed 不可达会影响加入。"
-              ],
-              [
-                "Shard 参数",
-                "`virtual_shards` 上线后应保持稳定，扩缩容通过 shard 迁移完成。"
-              ],
-              [
-                "Rule Outbox",
-                "只缓存符合大小和条数限制的失败动作；超过动作限额会按 FIFO 清理旧记录。"
-              ],
-              [
-                "动态函数",
-                "函数执行受超时、内存、输出大小和并发上限约束。"
-              ],
-              [
-                "Traffic Tap",
-                "抓包有最长持续时间、单帧字节数和总字节数上限，viewer 角色不可使用。"
-              ],
-              [
-                "Prometheus",
-                "实时抓取，不负责长期存储。"
-              ],
-              [
-                "控制台用户",
-                "API 开启后必须登录，首次无用户需要 bootstrap。"
-              ],
-              [
-                "Oracle 数据源",
-                "默认 feature 可关闭，发布包默认 `--no-default-features` 以避免 OCI 依赖。"
-              ]
-            ]
+            "type": "paragraph",
+            "text": "Feature Matrix describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries."
           }
         ]
       },
@@ -26830,7 +20196,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ layered architecture",
+            "alt": "Product Introduction screenshot",
             "src": "/velamq-docs/img/architecture/velamq-architecture.svg"
           },
           {
@@ -26935,7 +20301,7 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
           },
           {
             "type": "image",
-            "alt": "VelaMQ 0.0.1 dashboard license panel screenshot",
+            "alt": "License and Authorization screenshot",
             "src": "/velamq-docs/img/screenshots/dashboard.png"
           },
           {
@@ -27139,93 +20505,37 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
       },
       "product/versioning": {
         "id": "product/versioning",
-        "title": "版本管理",
-        "summary": "VelaMQ 0.0.1 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `0.0.1`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。",
+        "title": "Version Management",
+        "summary": "Version Management describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries.",
         "sourcePath": "product/versioning.md",
         "headings": [
           {
-            "id": "目录结构",
+            "id": "overview",
             "level": 2,
-            "text": "目录结构"
+            "text": "Overview"
           },
           {
-            "id": "发布新文档版本",
+            "id": "examples-and-reference",
             "level": 2,
-            "text": "发布新文档版本"
-          },
-          {
-            "id": "日常编辑规则",
-            "level": 2,
-            "text": "日常编辑规则"
-          },
-          {
-            "id": "版本路由",
-            "level": 2,
-            "text": "版本路由"
-          },
-          {
-            "id": "回滚和删除版本",
-            "level": 2,
-            "text": "回滚和删除版本"
+            "text": "Examples and Reference"
           }
         ],
         "blocks": [
           {
-            "type": "paragraph",
-            "text": "VelaMQ 0.0.1 文档站使用 Docusaurus 官方文档版本机制管理版本。当前默认版本为 `0.0.1`，页面右上角的版本下拉显示具体版本号，后续发布新版本后可在不同版本之间切换。"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "`0.0.1`：来自 `versioned_docs/version-0.0.1/`，默认路径为 `/`。",
-              "`docs/`：作为下一版本的编辑源，不直接作为导航里的独立版本发布。"
-            ]
-          },
-          {
             "type": "heading",
-            "id": "目录结构",
+            "id": "overview",
             "level": 2,
-            "text": "目录结构"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "路径",
-              "说明"
-            ],
-            "rows": [
-              [
-                "`docs/`",
-                "下一版本草稿和日常编辑源。"
-              ],
-              [
-                "`sidebars.js`",
-                "下一版本草稿导航。"
-              ],
-              [
-                "`versions.json`",
-                "已发布版本列表，新版本会追加到这里。"
-              ],
-              [
-                "`versioned_docs/version-0.0.1/`",
-                "当前默认版本 `0.0.1` 的文档快照，站点路径为 `/`。"
-              ],
-              [
-                "`versioned_sidebars/version-0.0.1-sidebars.json`",
-                "当前默认版本 `0.0.1` 的导航快照。"
-              ]
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "发布新文档版本",
-            "level": 2,
-            "text": "发布新文档版本"
+            "text": "Overview"
           },
           {
             "type": "paragraph",
-            "text": "当 VelaMQ 0.0.1 发布新版本，例如 `0.0.2`，先确认 `docs/` 已经更新到该版本对应内容，然后执行："
+            "text": "Version Management describes the VelaMQ product capabilities, architecture, release model, and supported operational boundaries."
+          },
+          {
+            "type": "heading",
+            "id": "examples-and-reference",
+            "level": 2,
+            "text": "Examples and Reference"
           },
           {
             "type": "code",
@@ -27233,107 +20543,9 @@ export const velamqDocs: Record<'zh' | 'en', VelaMQDocsCatalog> = {
             "code": "cd /Users/lulu/Work/velamq-rs-doc\nnpm run docs:version 0.0.2"
           },
           {
-            "type": "paragraph",
-            "text": "该命令会："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "把当前 `docs/` 复制到 `versioned_docs/version-0.0.2/`。",
-              "把当前 `sidebars.js` 复制到 `versioned_sidebars/version-0.0.2-sidebars.json`。",
-              "更新 `versions.json`。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "随后在 `docusaurus.config.js` 的 `versions` 中补充展示标签："
-          },
-          {
             "type": "code",
             "language": "js",
             "code": "includeCurrentVersion: false,\nlastVersion: '0.0.2',\nversions: {\n  '0.0.2': {\n    label: '0.0.2',\n    path: '',\n    banner: 'none',\n  },\n  '0.0.1': {\n    label: '0.0.1',\n    path: '0.0.1',\n    banner: 'none',\n  },\n}"
-          },
-          {
-            "type": "heading",
-            "id": "日常编辑规则",
-            "level": 2,
-            "text": "日常编辑规则"
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "新功能、新截图、新案例优先编辑 `docs/`。",
-              "已发布版本目录只做勘误修复，不随下一版本草稿一起改。",
-              "如果某个功能只存在于新版本，不要回填到旧版本快照。",
-              "发布版本前先跑 `npm run build`，确保所有版本路由都能构建。",
-              "最新版本使用 `path: ''` 作为默认入口；旧版本使用版本号路径保留历史链接。"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "版本路由",
-            "level": 2,
-            "text": "版本路由"
-          },
-          {
-            "type": "table",
-            "headers": [
-              "版本",
-              "首页"
-            ],
-            "rows": [
-              [
-                "0.0.1 当前默认版本",
-                "`/`"
-              ],
-              [
-                "未来 0.0.2 默认版本",
-                "`/`"
-              ],
-              [
-                "未来 0.0.1 历史版本",
-                "`/0.0.1/`"
-              ]
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "示例："
-          },
-          {
-            "type": "list",
-            "ordered": false,
-            "items": [
-              "当前 0.0.1 功能清单：`/product/feature-list`",
-              "未来发布 0.0.2 后，0.0.1 历史功能清单：`/0.0.1/product/feature-list`"
-            ]
-          },
-          {
-            "type": "heading",
-            "id": "回滚和删除版本",
-            "level": 2,
-            "text": "回滚和删除版本"
-          },
-          {
-            "type": "paragraph",
-            "text": "如果错误生成了版本快照："
-          },
-          {
-            "type": "list",
-            "ordered": true,
-            "items": [
-              "删除对应目录：`versioned_docs/version-x.y.z/`。",
-              "删除对应侧边栏：`versioned_sidebars/version-x.y.z-sidebars.json`。",
-              "从 `versions.json` 移除版本号。",
-              "从 `docusaurus.config.js` 的 `versions` 移除版本配置。",
-              "重新运行 `npm run build`。"
-            ]
-          },
-          {
-            "type": "paragraph",
-            "text": "不要删除已经对外发布并被用户引用的版本，除非已经明确做了迁移公告。"
           }
         ]
       }

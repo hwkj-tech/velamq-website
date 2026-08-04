@@ -414,4 +414,8 @@ describe('HanNet homepage', () => {
 
     expect(missingAssets).toEqual([])
   })
+
+  it('keeps the complete English VelaMQ documentation catalog free of untranslated Chinese copy', () => {
+    expect(JSON.stringify(velamqDocs.en)).not.toMatch(/[\u3400-\u9fff]/)
+  })
 })

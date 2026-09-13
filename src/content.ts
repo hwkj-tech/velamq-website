@@ -10,6 +10,8 @@ export const productIds: ProductId[] = ['velamq', 'velamq-bench', 'velaedge']
 
 export const salesEmail = 'velamq@hanwangtech.cn'
 export const mailTo = `mailto:${salesEmail}`
+export const salesPhone = '13042579005'
+export const phoneTo = `tel:${salesPhone}`
 
 export const viewFromHash = (hash: string): ViewId => {
   const cleanHash = hash.replace(/^#/, '')
@@ -475,7 +477,9 @@ export const translations = {
     contactPage: {
       eyebrow: '联系我们',
       title: '联系销售',
-      body: '留下基础信息和业务需求，点击发送后会打开你的邮件客户端，并自动带上收件人、标题和正文。',
+      body: '如需方案咨询或商务合作，可直接联系魏先生；也可以留下基础信息和业务需求，通过邮件发送给我们。',
+      directPhoneLabel: '官方电话',
+      contactName: '魏先生',
       directEmailLabel: '销售邮箱',
       responseTime: '通常 1 个工作日内回复',
       fields: {
@@ -496,6 +500,7 @@ export const translations = {
       emptyValue: '未填写',
     },
     footerText: '南京翰网科技有限公司 专注于设备数据接入、业务规则协同与企业级运营支持。',
+    footerContactLabel: '官方联系',
     icp: {
       label: '网站备案号',
       number: '苏ICP备2026045547号-1',
@@ -979,7 +984,9 @@ export const translations = {
     contactPage: {
       eyebrow: 'Contact',
       title: 'Contact sales',
-      body: 'Share the basics and your business need. The send link opens your email app with the recipient, subject and body already filled in.',
+      body: 'For solution inquiries or business cooperation, contact Mr. Wei directly, or share your details and send us an email.',
+      directPhoneLabel: 'Official phone',
+      contactName: 'Mr. Wei',
       directEmailLabel: 'Sales email',
       responseTime: 'Usually replies within one business day',
       fields: {
@@ -1000,6 +1007,7 @@ export const translations = {
       emptyValue: 'Not provided',
     },
     footerText: 'Nanjing Hanwang Technology Co., Ltd. focuses on device data access, rule collaboration and enterprise operations.',
+    footerContactLabel: 'Official contact',
     icp: {
       label: 'ICP filing',
       number: '苏ICP备2026045547号-1',

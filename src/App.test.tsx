@@ -64,6 +64,8 @@ describe('HanNet homepage', () => {
       'https://beian.miit.gov.cn/',
     )
     expect(screen.getByText('velamq.com')).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '13042579005' })).toHaveAttribute('href', 'tel:13042579005')
+    expect(screen.getByText('魏先生')).toBeInTheDocument()
   })
 
   it('waits for a docs product selection before opening documentation', async () => {
@@ -102,6 +104,7 @@ describe('HanNet homepage', () => {
 
     expect(screen.getByRole('heading', { level: 2, name: '联系销售' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { level: 1, name: /设备数据接入与业务协同平台/ })).not.toBeInTheDocument()
+    expect(screen.getByRole('link', { name: '13042579005 · 魏先生' })).toHaveAttribute('href', 'tel:13042579005')
 
     await user.type(screen.getByLabelText('姓名'), '刘先生')
     await user.type(screen.getByLabelText('公司'), '翰网客户')

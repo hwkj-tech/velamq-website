@@ -15,6 +15,7 @@ import {
   Landmark,
   Languages,
   Mail,
+  Phone,
   Search,
   Server,
   ShieldCheck,
@@ -42,7 +43,9 @@ import { VelaMQIcon } from './components/VelaMQIcon'
 import {
   companyName,
   mailTo,
+  phoneTo,
   salesEmail,
+  salesPhone,
   translations,
   viewFromHash,
   viewIds,
@@ -1507,9 +1510,14 @@ function App() {
               <p>{copy.contactPage.body}</p>
               <div className="contact-meta">
                 <span>
+                  <Phone size={17} strokeWidth={1.8} aria-hidden="true" />
+                  <strong>{copy.contactPage.directPhoneLabel}</strong>
+                  <a href={phoneTo}>{salesPhone} · {copy.contactPage.contactName}</a>
+                </span>
+                <span>
                   <Mail size={17} strokeWidth={1.8} aria-hidden="true" />
                   <strong>{copy.contactPage.directEmailLabel}</strong>
-                  {salesEmail}
+                  <a href={mailTo}>{salesEmail}</a>
                 </span>
                 <span>
                   <Activity size={17} strokeWidth={1.8} aria-hidden="true" />
@@ -1580,6 +1588,12 @@ function App() {
         <div className="footer-brand">
           <BrandMark ariaLabel={copy.brandHomeLabel} href="#home" onClick={(event) => handleViewClick(event, 'home')} />
           <p>{copy.footerText}</p>
+          <div className="footer-contact" aria-label={copy.footerContactLabel}>
+            <Phone size={16} strokeWidth={1.8} aria-hidden="true" />
+            <span>{copy.footerContactLabel}</span>
+            <a href={phoneTo}>{salesPhone}</a>
+            <span>{copy.contactPage.contactName}</span>
+          </div>
           <div className="footer-filing" aria-label={copy.icp.label}>
             <a href={copy.icp.href} target="_blank" rel="noreferrer">
               {copy.icp.number}

@@ -6291,6 +6291,71 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
           "id": "guide/rule-engine/events-sql-v002-25",
           "level": 2,
           "text": "事件选择与函数规则示例"
+        },
+        {
+          "id": "event-input-json",
+          "level": 2,
+          "text": "各事件的完整输入 JSON"
+        },
+        {
+          "id": "event-input-connect",
+          "level": 3,
+          "text": "CONNECT · 连接"
+        },
+        {
+          "id": "event-input-publish",
+          "level": 3,
+          "text": "PUBLISH · 发布"
+        },
+        {
+          "id": "event-input-subscribe",
+          "level": 3,
+          "text": "SUBSCRIBE · 订阅"
+        },
+        {
+          "id": "event-input-unsubscribe",
+          "level": 3,
+          "text": "UNSUBSCRIBE · 取消订阅"
+        },
+        {
+          "id": "event-input-ack",
+          "level": 3,
+          "text": "ACK · 发布确认"
+        },
+        {
+          "id": "event-input-disconnect",
+          "level": 3,
+          "text": "DISCONNECT · 主动断开"
+        },
+        {
+          "id": "event-input-ping",
+          "level": 3,
+          "text": "PING · 心跳"
+        },
+        {
+          "id": "event-input-delivered",
+          "level": 3,
+          "text": "DELIVERED · 投递"
+        },
+        {
+          "id": "event-input-offline",
+          "level": 3,
+          "text": "OFFLINE · 离线保存"
+        },
+        {
+          "id": "event-input-drop",
+          "level": 3,
+          "text": "DROP · 消息丢弃"
+        },
+        {
+          "id": "event-input-close",
+          "level": 3,
+          "text": "CLOSE · 连接关闭"
+        },
+        {
+          "id": "event-input-connect-extensions",
+          "level": 3,
+          "text": "CONNECT · WebSocket 与 PROXY Protocol 扩展"
         }
       ],
       "blocks": [
@@ -6494,6 +6559,263 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "paragraph",
           "text": "完整配置、输入输出与操作示例见 [事件选择与函数规则示例](/rules.md)。"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-json",
+          "level": 2,
+          "text": "各事件的完整输入 JSON"
+        },
+        {
+          "type": "paragraph",
+          "text": "以下 JSON 展示进入规则 SQL 的可访问上下文，不是 MQTT 报文原文、内部事件结构体或 SELECT * 的序列化输出。每个示例都展开了该场景的全部基础字段，未使用省略号；CONNECT 的条件扩展字段见本节末尾。事件类型由 FROM \"$EVENT.…\" 指定，不需要在 JSON 中添加 event 字段。"
+        },
+        {
+          "type": "paragraph",
+          "text": "timestamp 为 Unix 毫秒时间戳。当前引擎的标量上下文字段以字符串保存，因此示例中的 qos、端口、时间戳和布尔标记使用字符串；做数值运算时可显式使用 to_double。payload、user_properties、http_headers、proxy_tcp 和 proxy_ssl 在这里按结构化视图展示，实际还提供相应文本视图。payload 内的业务 JSON 保留原始类型，并按规则需要解析；二进制载荷不可直接假定为 JSON。"
+        },
+        {
+          "type": "paragraph",
+          "text": "所有示例都假设存在用户名。username 为可选字段：仅在连接或运行上下文具有用户名时提供，不存在时省略，不固定补 null。用户属性、HTTP 头及代理字段同样按实际连接条件提供。不要把内部结构体中的 protocol、rule_data_type、auth、will 等字段直接当成可供规则访问的字段，也不会向规则暴露连接密码。"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-connect",
+          "level": 3,
+          "text": "CONNECT · 连接"
+        },
+        {
+          "type": "paragraph",
+          "text": "客户端连接事件。version 为 V3_1、V3_1_1 或 V5；keepalive 单位为秒。示例为 MQTT 5 TCP 直连，携带用户名和用户属性。普通直连也提供 proxied=false 和 proxy_tcp.proxied=false；transport 在有传输类型信息时提供。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.CONNECT\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"keepalive\": \"60\",\n  \"clean_session\": \"false\",\n  \"version\": \"V5\",\n  \"transport\": \"tcp\",\n  \"proxied\": \"false\",\n  \"proxy_tcp\": {\n    \"proxied\": false\n  },\n  \"user_properties\": {\n    \"tenant\": \"factory-a\",\n    \"tag\": [\n      \"sensor\",\n      \"outdoor\"\n    ]\n  }\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-publish",
+          "level": 3,
+          "text": "PUBLISH · 发布"
+        },
+        {
+          "type": "paragraph",
+          "text": "client_id 指发布客户端。payload 示例为 JSON 载荷，可使用 payload.temperature 取值；非 JSON 的 UTF-8 载荷按文本读取。QoS 0 的 is_offline 始终为 false。user_properties 仅在 MQTT 5 消息携带对应属性时存在，同名属性合并为数组。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.PUBLISH\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"topic\": \"devices/device-001/telemetry\",\n  \"qos\": \"1\",\n  \"message_id\": \"42\",\n  \"id\": \"msg-20260927-0001\",\n  \"retain\": \"false\",\n  \"dup\": \"false\",\n  \"is_offline\": \"false\",\n  \"payload\": {\n    \"temperature\": 23.5,\n    \"humidity\": 62\n  },\n  \"user_properties\": {\n    \"source\": \"sensor\",\n    \"tag\": [\n      \"telemetry\",\n      \"room-1\"\n    ]\n  }\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-subscribe",
+          "level": 3,
+          "text": "SUBSCRIBE · 订阅"
+        },
+        {
+          "type": "paragraph",
+          "text": "每次订阅事件包含该报文的全部主题过滤器。topic_filters 是逗号拼接的字符串，不是 JSON 数组；topic 和 qos 仅取第一个订阅项。id 为 sub: 加报文标识。不要使用 $EVENT.SUB。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.SUBSCRIBE\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"message_id\": \"7\",\n  \"topic_filters\": \"devices/device-001/commands,devices/+/state\",\n  \"topic\": \"devices/device-001/commands\",\n  \"qos\": \"1\",\n  \"id\": \"sub:7\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-unsubscribe",
+          "level": 3,
+          "text": "UNSUBSCRIBE · 取消订阅"
+        },
+        {
+          "type": "paragraph",
+          "text": "topics 是本次取消订阅的主题过滤器，以逗号拼接。此事件不提供 topic、qos、message_id 或 id 字段。不要使用 $EVENT.UNSUB。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.UNSUBSCRIBE\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"topics\": \"devices/device-001/commands,devices/+/state\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-ack",
+          "level": 3,
+          "text": "ACK · 发布确认"
+        },
+        {
+          "type": "paragraph",
+          "text": "desc 表示确认阶段：ack（PUBACK）、rec（PUBREC）、rel（PUBREL）、comp（PUBCOMP）。一个 QoS 2 交互可能产生多个阶段事件；离线消息在 QoS 1 的 ack 或 QoS 2 的 comp 阶段完成清理。规则上下文不提供 payload、retain 或 dup。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.ACK\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"topic\": \"devices/device-001/commands\",\n  \"qos\": \"1\",\n  \"message_id\": \"42\",\n  \"id\": \"msg-20260927-0001\",\n  \"desc\": \"ack\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-disconnect",
+          "level": 3,
+          "text": "DISCONNECT · 主动断开"
+        },
+        {
+          "type": "paragraph",
+          "text": "客户端发送 DISCONNECT 报文触发。当前规则上下文仅提供连接基础信息，没有 reason、topic 或 message_id；不要与连接关闭 CLOSE 混用。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.DISCONNECT\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-ping",
+          "level": 3,
+          "text": "PING · 心跳"
+        },
+        {
+          "type": "paragraph",
+          "text": "客户端心跳事件，提供连接基础信息，不包含消息载荷、主题或报文标识。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.PING\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-delivered",
+          "level": 3,
+          "text": "DELIVERED · 投递"
+        },
+        {
+          "type": "paragraph",
+          "text": "消息向接收客户端投递时产生，client_id 指接收客户端。投递事件不等于接收方已完成 QoS 确认；确认阶段使用 ACK。当前规则上下文不提供 payload、retain 或 dup。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.DELIVERED\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"topic\": \"devices/device-001/commands\",\n  \"qos\": \"1\",\n  \"message_id\": \"42\",\n  \"id\": \"msg-20260927-0001\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-offline",
+          "level": 3,
+          "text": "OFFLINE · 离线保存"
+        },
+        {
+          "type": "paragraph",
+          "text": "匹配离线持久会话的 QoS 1/2 投递触发，client_id 指接收设备，is_offline 为 true。离线时网络地址可能为空、端口可能为 0；message_id 尚未分配时也可能为 0。每个设备可有多条消息，按 client_id 与应用消息 id 区分，不能用可复用的 message_id 作为存储主键。此事件不提供 user_properties，QoS 0 不触发该事件。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.OFFLINE\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"\",\n  \"client_port\": \"0\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"topic\": \"devices/device-001/commands\",\n  \"qos\": \"1\",\n  \"message_id\": \"0\",\n  \"id\": \"msg-20260927-0001\",\n  \"is_offline\": \"true\",\n  \"retain\": \"false\",\n  \"dup\": \"false\",\n  \"payload\": {\n    \"command\": \"set_temperature\",\n    \"value\": 26\n  }\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-drop",
+          "level": 3,
+          "text": "DROP · 消息丢弃"
+        },
+        {
+          "type": "paragraph",
+          "text": "消息丢弃事件，drop_type 说明丢弃原因。示例表示消息超过客户端允许的最大报文大小；实际原因随丢弃路径变化。当前规则上下文不提供 payload、retain 或 dup。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.DROP\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"topic\": \"devices/device-001/commands\",\n  \"qos\": \"1\",\n  \"message_id\": \"42\",\n  \"id\": \"msg-20260927-0001\",\n  \"drop_type\": \"maximum_packet_size_exceeded\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-close",
+          "level": 3,
+          "text": "CLOSE · 连接关闭"
+        },
+        {
+          "type": "paragraph",
+          "text": "连接关闭事件，reason 为关闭原因。示例 session_takeover 表示同客户端 ID 的新连接接管会话。此事件不提供消息 id、message_id、topic 或 payload。"
+        },
+        {
+          "type": "code",
+          "language": "sql",
+          "code": "SELECT * FROM \"$EVENT.CLOSE\""
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"reason\": \"session_takeover\"\n}"
+        },
+        {
+          "type": "heading",
+          "id": "event-input-connect-extensions",
+          "level": 3,
+          "text": "CONNECT · WebSocket 与 PROXY Protocol 扩展"
+        },
+        {
+          "type": "paragraph",
+          "text": "下面完整示例适用于同时具有 WebSocket 握手元数据、PROXY Protocol v2 地址信息和 SSL TLV 的连接。未启用相应能力时不会出现这些扩展字段；proxy_ssl 描述代理上报的 TLS 信息，不是所有 TLS 直连都提供。proxy_source_*、proxy_destination_*、proxy_ssl 内的 version/cn/cipher/signature_algorithm/key_algorithm 仅在代理携带时出现；proxy_tlvs.count 仅在存在 TLV 时出现，不提供完整 TLV 数组。"
+        },
+        {
+          "type": "code",
+          "language": "json",
+          "code": "{\n  \"client_id\": \"device-001\",\n  \"timestamp\": \"1790467200000\",\n  \"client_ip\": \"192.0.2.10\",\n  \"client_port\": \"51832\",\n  \"node_ip\": \"192.0.2.20\",\n  \"username\": \"device-user\",\n  \"keepalive\": \"60\",\n  \"clean_session\": \"false\",\n  \"version\": \"V5\",\n  \"transport\": \"ws\",\n  \"proxied\": \"true\",\n  \"proxy_tcp\": {\n    \"proxied\": true,\n    \"version\": 2,\n    \"command\": \"PROXY\",\n    \"transport_protocol\": \"TCP4\",\n    \"source_addr\": \"192.0.2.10\",\n    \"source_port\": 51832,\n    \"destination_addr\": \"192.0.2.20\",\n    \"destination_port\": 8083\n  },\n  \"user_properties\": {\n    \"tenant\": \"factory-a\",\n    \"tag\": [\n      \"sensor\",\n      \"outdoor\"\n    ]\n  },\n  \"http_request_path\": \"/mqtt?tenant=factory-a\",\n  \"http_headers\": {\n    \"host\": \"mqtt.example.com\",\n    \"x_request_id\": \"req-001\",\n    \"x_tag\": [\n      \"a\",\n      \"b\"\n    ]\n  },\n  \"proxy_version\": \"2\",\n  \"proxy_command\": \"PROXY\",\n  \"proxy_transport_protocol\": \"TCP4\",\n  \"proxy_source_addr\": \"192.0.2.10\",\n  \"proxy_source_port\": \"51832\",\n  \"proxy_destination_addr\": \"192.0.2.20\",\n  \"proxy_destination_port\": \"8083\",\n  \"proxy_tlvs.count\": \"1\",\n  \"proxy_ssl\": {\n    \"client\": true,\n    \"has_client_cert\": true,\n    \"cert_conn\": true,\n    \"cert_sess\": false,\n    \"verify\": 0,\n    \"version\": \"TLSv1.3\",\n    \"cn\": \"device-001\",\n    \"cipher\": \"TLS_AES_128_GCM_SHA256\",\n    \"signature_algorithm\": \"RSA-PSS\",\n    \"key_algorithm\": \"RSA\"\n  }\n}"
+        },
+        {
+          "type": "paragraph",
+          "text": "HTTP 头名称转换为小写，非字母数字连续字符转换为下划线，例如 X-Request-ID 对应 http_headers.x_request_id；同名头使用数组。MQTT 用户属性保留原键名，同名键也使用数组。上述连接扩展字段只在 CONNECT 上下文中添加；PUBLISH 可携带自己的 user_properties，不自动继承 CONNECT 的 HTTP/代理字段。"
         }
       ]
     },
@@ -15258,12 +15580,6 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "doc",
-          "id": "rules",
-          "label": "规则事件与 SQL",
-          "depth": 1
-        },
-        {
-          "type": "doc",
           "id": "guide/rule-engine/templates",
           "label": "模板变量",
           "depth": 1
@@ -15294,12 +15610,6 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "doc",
-          "id": "custom-functions",
-          "label": "自定义函数",
-          "depth": 1
-        },
-        {
-          "type": "doc",
           "id": "guide/rule-engine/reliability-outbox",
           "label": "规则可靠性与 Outbox",
           "depth": 1
@@ -15314,13 +15624,13 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
           "type": "doc",
           "id": "offline-redis",
           "label": "Redis 离线消息",
-          "depth": 1
+          "depth": 2
         },
         {
           "type": "doc",
           "id": "offline-mysql",
           "label": "MySQL 离线消息",
-          "depth": 1
+          "depth": 2
         },
         {
           "type": "doc",

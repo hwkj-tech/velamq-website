@@ -88,16 +88,17 @@ function parseDocument(id) {
 
 const additions = Object.fromEntries(navigation.flatMap(([, ids]) => ids).map(id => [id, parseDocument(id)]))
 const documents = { ...updateArchivedDocuments(structuredClone(archive.documents), additions), ...additions }
+// Keep supplementary articles reachable from existing in-text links, without
+// duplicating the original Events/SQL and Dynamic Functions sidebar entries.
+const supplementalOnlyIds = new Set(['rules', 'custom-functions'])
 const newGroups = navigation.map(([title, ids]) => ({ title,
-  entries: ids.map(id => ({ type: 'doc', id, label: documents[id].title, depth: 0 })),
+  entries: ids.filter(id => !supplementalOnlyIds.has(id)).map(id => ({ type: 'doc', id, label: documents[id].title, depth: 0 })),
 }))
 const inheritedGroups = structuredClone(archive.groups)
 // Extend the existing rule-engine branch beside the relevant original topic.
 // These articles must not also appear as standalone groups at the bottom.
 const ruleEngineExtensions = new Map([
-  ['guide/rule-engine/events-sql', ['rules']],
   ['guide/rule-engine/templates', ['builtin-functions', 'template-functions']],
-  ['guide/rule-engine/functions', ['custom-functions']],
   ['guide/rule-engine/offline', ['offline-redis', 'offline-mysql']],
 ])
 const nestedIds = new Set([...ruleEngineExtensions.values()].flat())
@@ -109,7 +110,8 @@ for (const group of inheritedGroups) {
     return [{ ...entry, label: documents[entry.id].title }, ...extensions.map(id => {
       if (insertedIds.has(id)) throw new Error(`Duplicate rule-engine navigation entry: ${id}`)
       insertedIds.add(id)
-      return { type: 'doc', id, label: documents[id].title, depth: entry.depth }
+      const depth = entry.id === 'guide/rule-engine/offline' ? entry.depth + 1 : entry.depth
+      return { type: 'doc', id, label: documents[id].title, depth }
     })]
   })
 }

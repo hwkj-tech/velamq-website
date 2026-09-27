@@ -1,5 +1,6 @@
 // Version-specific edits to a deep copy of 0.0.1. Unchanged chapters, code
 // examples and navigation remain intact; the archived catalog is never edited.
+import { eventExampleBlocks } from './event-examples.mjs'
 const paragraph = text => ({ type: 'paragraph', text })
 const code = (language, value) => ({ type: 'code', language, code: value })
 const list = items => ({ type: 'list', ordered: false, items })
@@ -96,6 +97,7 @@ export function updateArchivedDocuments(documents, additions) {
   link(documents['guide/rule-engine/functions'], '自定义函数输入输出示例', 'custom-functions')
   link(documents['guide/rule-engine/templates'], '模板中的内置函数与适用场景', 'template-functions')
   link(documents['guide/rule-engine/events-sql'], '事件选择与函数规则示例', 'rules')
+  documents['guide/rule-engine/events-sql'].blocks.push(...eventExampleBlocks())
   link(documents['guide/rule-engine/overview'], '内置函数与输入输出', 'builtin-functions')
   link(documents['guide/auth-acl'], '认证与 ACL 模板函数', 'template-functions')
   link(documents['guide/commands'], '指令消费模板函数', 'template-functions')

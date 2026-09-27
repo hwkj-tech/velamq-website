@@ -15258,8 +15258,26 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "doc",
+          "id": "rules",
+          "label": "规则事件与 SQL",
+          "depth": 1
+        },
+        {
+          "type": "doc",
           "id": "guide/rule-engine/templates",
           "label": "模板变量",
+          "depth": 1
+        },
+        {
+          "type": "doc",
+          "id": "builtin-functions",
+          "label": "内置函数与输入输出",
+          "depth": 1
+        },
+        {
+          "type": "doc",
+          "id": "template-functions",
+          "label": "模板函数",
           "depth": 1
         },
         {
@@ -15276,6 +15294,12 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "doc",
+          "id": "custom-functions",
+          "label": "自定义函数",
+          "depth": 1
+        },
+        {
+          "type": "doc",
           "id": "guide/rule-engine/reliability-outbox",
           "label": "规则可靠性与 Outbox",
           "depth": 1
@@ -15284,6 +15308,18 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
           "type": "doc",
           "id": "guide/rule-engine/offline",
           "label": "离线消息",
+          "depth": 1
+        },
+        {
+          "type": "doc",
+          "id": "offline-redis",
+          "label": "Redis 离线消息",
+          "depth": 1
+        },
+        {
+          "type": "doc",
+          "id": "offline-mysql",
+          "label": "MySQL 离线消息",
           "depth": 1
         },
         {
@@ -15377,52 +15413,6 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
           "type": "doc",
           "id": "FAQ",
           "label": "FAQ",
-          "depth": 0
-        }
-      ]
-    },
-    {
-      "title": "规则引擎与函数",
-      "entries": [
-        {
-          "type": "doc",
-          "id": "rules",
-          "label": "规则事件与 SQL",
-          "depth": 0
-        },
-        {
-          "type": "doc",
-          "id": "builtin-functions",
-          "label": "内置函数与输入输出",
-          "depth": 0
-        },
-        {
-          "type": "doc",
-          "id": "template-functions",
-          "label": "模板函数",
-          "depth": 0
-        },
-        {
-          "type": "doc",
-          "id": "custom-functions",
-          "label": "自定义函数",
-          "depth": 0
-        }
-      ]
-    },
-    {
-      "title": "离线消息",
-      "entries": [
-        {
-          "type": "doc",
-          "id": "offline-redis",
-          "label": "Redis 离线消息",
-          "depth": 0
-        },
-        {
-          "type": "doc",
-          "id": "offline-mysql",
-          "label": "MySQL 离线消息",
           "depth": 0
         }
       ]

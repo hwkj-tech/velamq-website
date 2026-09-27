@@ -11,6 +11,7 @@ describe('VelaMQ 0.0.2 navigation', () => {
     localStorage.setItem('hannet-locale', 'zh')
     render(<App />)
     expect(screen.getByRole('heading', { name: 'VelaMQ 0.0.2 版本说明' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '展开 规则引擎' }))
     fireEvent.click(screen.getByRole('button', { name: '内置函数与输入输出' }))
     expect(screen.getByRole('heading', { name: '内置函数与输入输出' })).toBeInTheDocument()
     expect(screen.getByText('round(to_double(payload.temperature), 2)')).toBeInTheDocument()
@@ -27,6 +28,25 @@ describe('VelaMQ 0.0.2 navigation', () => {
     expect(screen.getByRole('heading', { name: '产品介绍' })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: 'VelaMQ 0.0.2 版本说明' }))
     expect(screen.getByRole('heading', { name: 'VelaMQ 0.0.2 版本说明' })).toBeInTheDocument()
+  })
+
+  it('nests functions and offline guides inside the existing rule-engine branch', () => {
+    window.location.hash = '#docs'
+    localStorage.setItem('hannet-locale', 'zh')
+    render(<App />)
+    const titles = ['规则事件与 SQL', '内置函数与输入输出', '模板函数', '自定义函数', 'Redis 离线消息', 'MySQL 离线消息']
+    expect(screen.queryByRole('heading', { name: '规则引擎与函数' })).not.toBeInTheDocument()
+    expect(screen.queryByRole('heading', { name: '离线消息' })).not.toBeInTheDocument()
+    for (const title of titles) expect(screen.queryByRole('button', { name: title, exact: true })).not.toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: '展开 规则引擎' }))
+    for (const title of titles) expect(screen.getAllByRole('button', { name: title, exact: true })).toHaveLength(1)
+    fireEvent.click(screen.getByRole('button', { name: '模板函数', exact: true }))
+    expect(screen.getByRole('heading', { name: '模板函数', exact: true })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Redis 离线消息', exact: true }))
+    expect(screen.getByRole('heading', { name: 'Redis 离线消息', exact: true })).toBeInTheDocument()
+    fireEvent.change(screen.getByRole('searchbox'), { target: { value: 'MySQL 离线消息' } })
+    fireEvent.click(screen.getByRole('option', { name: /MySQL 离线消息/ }))
+    expect(screen.getByRole('heading', { name: 'MySQL 离线消息', exact: true })).toBeInTheDocument()
   })
 
   it('exposes the original full guide in 0.0.2 with updated screenshots', () => {

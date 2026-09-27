@@ -31,6 +31,23 @@ describe('versioned VelaMQ documentation', () => {
     }
   })
 
+  it('places each new function and offline article under rule engine exactly once', () => {
+    const catalog = getVelaMQDocs('zh')
+    expect(catalog.groups.map(group => group.title)).not.toContain('规则引擎与函数')
+    expect(catalog.groups.map(group => group.title)).not.toContain('离线消息')
+    const guides = catalog.groups.find(group => group.title === '功能指南')!
+    const branchStart = guides.entries.findIndex(entry => entry.type === 'category' && entry.label === '规则引擎')
+    expect(branchStart).toBeGreaterThan(-1)
+    const children = guides.entries.slice(branchStart + 1)
+    const branchEnd = children.findIndex(entry => entry.depth === 0)
+    const branch = children.slice(0, branchEnd < 0 ? undefined : branchEnd)
+    for (const id of ['rules', 'builtin-functions', 'template-functions', 'custom-functions', 'offline-redis', 'offline-mysql']) {
+      expect(branch.some(entry => entry.type === 'doc' && entry.id === id && entry.depth === 1), id).toBe(true)
+      expect(catalog.groups.flatMap(group => group.entries).filter(entry => entry.type === 'doc' && entry.id === id), id).toHaveLength(1)
+    }
+    expect(getVelaMQDocs('zh', 'v0.0.1').groups).toEqual(velamqDocs.zh.groups)
+  })
+
   it('removes retired monitoring UI and keeps external metric collection', () => {
     const latest = getVelaMQDocs('zh')
     for (const [id, doc] of Object.entries(latest.documents)) {

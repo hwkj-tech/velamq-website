@@ -22,8 +22,7 @@ function link(doc, title, id) {
   append(doc, title, [paragraph(`完整配置、输入输出与操作示例见 [${title}](/${id}.md)。`)])
 }
 
-// Only prose is re-versioned. Download links and shell commands remain pinned
-// to the actual published 0.0.1 packages until 0.0.2 artifacts are released.
+// Re-version prose without changing references to the archived manual.
 function textUpdate(text) {
   return text
     .replaceAll('VelaMQ 0.0.1', 'VelaMQ 0.0.2')
@@ -43,6 +42,25 @@ function textUpdate(text) {
 }
 
 export function updateArchivedDocuments(documents, additions) {
+  // Keep download labels, URLs, extracted directories and startup commands in
+  // sync. Upgrade/rollback examples intentionally retain their old-version path.
+  const updatePackage = text => text
+    .replaceAll('velamqd-0.0.1-', 'velamqd-0.0.2-')
+    .replaceAll('当前公开安装包版本为 `0.0.1`', '当前公开安装包版本为 `0.0.2`')
+    .replaceAll('当前版本 **0.0.1**', '当前版本 **0.0.2**')
+  for (const id of ['install/package', 'install/linux', 'install/macos', 'install/windows', 'product/basic-info']) {
+    const doc = documents[id]
+    let historicalExample = false
+    doc.summary = updatePackage(doc.summary)
+    for (const block of doc.blocks) {
+      if (block.type === 'heading' && block.level === 2) historicalExample = /更新|回滚/.test(block.text)
+      if (historicalExample) continue
+      if (block.type === 'paragraph') block.text = updatePackage(block.text)
+      if (block.type === 'code') block.code = updatePackage(block.code)
+      if (block.type === 'list') block.items = block.items.map(updatePackage)
+      if (block.type === 'table') block.rows = block.rows.map(row => row.map(updatePackage))
+    }
+  }
   documents['operations/troubleshooting'].summary = '按控制台访问、MQTT 接入、跨节点投递、规则与存储状态逐项排查。'
   documents['product/feature-list'].summary = 'VelaMQ 0.0.2 的接入、安全、规则、存储、集群与运维功能清单。'
   section(documents.FAQ, '规则引擎的离线消息怎么做？', [

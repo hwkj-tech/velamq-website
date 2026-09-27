@@ -9928,11 +9928,11 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
           "rows": [
             [
               "`x86_64`",
-              "[velamqd-0.0.1-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip)"
+              "[velamqd-0.0.2-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip)"
             ],
             [
               "`aarch64`、`arm64`",
-              "[velamqd-0.0.1-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip)"
+              "[velamqd-0.0.2-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-aarch64.zip)"
             ]
           ]
         },
@@ -9949,7 +9949,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "bash",
-          "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.1-linux-musl-x86_64.zip\nsudo chmod +x velamqd-0.0.1-linux-musl-x86_64/bin/velamqd\nsudo chmod +x velamqd-0.0.1-linux-musl-x86_64/deploy/*.sh"
+          "code": "sudo mkdir -p /opt/velamq\ncd /opt/velamq\nsudo curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nsudo unzip velamqd-0.0.2-linux-musl-x86_64.zip\nsudo chmod +x velamqd-0.0.2-linux-musl-x86_64/bin/velamqd\nsudo chmod +x velamqd-0.0.2-linux-musl-x86_64/deploy/*.sh"
         },
         {
           "type": "paragraph",
@@ -9958,7 +9958,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "text",
-          "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\n  velamqd-0.0.1-linux-musl-x86_64/"
+          "code": "/opt/velamq/\n  current -> /opt/velamq/velamqd-0.0.2-linux-musl-x86_64\n  velamqd-0.0.2-linux-musl-x86_64/"
         },
         {
           "type": "heading",
@@ -9973,7 +9973,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "bash",
-          "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\n./deploy/start.sh\n./deploy/status.sh\n./deploy/logs.sh"
+          "code": "cd /opt/velamq/velamqd-0.0.2-linux-musl-x86_64\n./deploy/start.sh\n./deploy/status.sh\n./deploy/logs.sh"
         },
         {
           "type": "paragraph",
@@ -9997,7 +9997,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "bash",
-          "code": "cd /opt/velamq/velamqd-0.0.1-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now"
+          "code": "cd /opt/velamq/velamqd-0.0.2-linux-musl-x86_64\nsudo ./deploy/install-systemd.sh --enable-now"
         },
         {
           "type": "paragraph",
@@ -10276,11 +10276,11 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
           "rows": [
             [
               "`arm64`",
-              "[velamqd-0.0.1-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip)"
+              "[velamqd-0.0.2-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-macos-aarch64.zip)"
             ],
             [
               "`x86_64`",
-              "[velamqd-0.0.1-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip)"
+              "[velamqd-0.0.2-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-macos-x86_64.zip)"
             ]
           ]
         },
@@ -10297,11 +10297,11 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "bash",
-          "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip\nunzip velamqd-0.0.1-macos-aarch64.zip\ncd velamqd-0.0.1-macos-aarch64\nchmod +x bin/velamqd deploy/*.sh"
+          "code": "mkdir -p ~/velamq\ncd ~/velamq\ncurl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-macos-aarch64.zip\nunzip velamqd-0.0.2-macos-aarch64.zip\ncd velamqd-0.0.2-macos-aarch64\nchmod +x bin/velamqd deploy/*.sh"
         },
         {
           "type": "paragraph",
-          "text": "Intel Mac 请把文件名替换为 `velamqd-0.0.1-macos-x86_64.zip`。"
+          "text": "Intel Mac 请把文件名替换为 `velamqd-0.0.2-macos-x86_64.zip`。"
         },
         {
           "type": "heading",
@@ -10442,7 +10442,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "bash",
-          "code": "xattr -dr com.apple.quarantine ~/velamq/velamqd-0.0.1-macos-aarch64\nchmod +x ~/velamq/velamqd-0.0.1-macos-aarch64/bin/velamqd"
+          "code": "xattr -dr com.apple.quarantine ~/velamq/velamqd-0.0.2-macos-aarch64\nchmod +x ~/velamq/velamqd-0.0.2-macos-aarch64/bin/velamqd"
         },
         {
           "type": "paragraph",
@@ -10499,7 +10499,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "paragraph",
-          "text": "当前公开安装包版本为 `0.0.1`。"
+          "text": "当前公开安装包版本为 `0.0.2`。"
         },
         {
           "type": "heading",
@@ -10518,27 +10518,27 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
             [
               "Linux",
               "x86_64（Intel / AMD）",
-              "[velamqd-0.0.1-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip)"
+              "[velamqd-0.0.2-linux-musl-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip)"
             ],
             [
               "Linux",
               "ARM64 / aarch64",
-              "[velamqd-0.0.1-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-aarch64.zip)"
+              "[velamqd-0.0.2-linux-musl-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-aarch64.zip)"
             ],
             [
               "macOS",
               "Apple Silicon",
-              "[velamqd-0.0.1-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-aarch64.zip)"
+              "[velamqd-0.0.2-macos-aarch64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-macos-aarch64.zip)"
             ],
             [
               "macOS",
               "Intel",
-              "[velamqd-0.0.1-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-macos-x86_64.zip)"
+              "[velamqd-0.0.2-macos-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-macos-x86_64.zip)"
             ],
             [
               "Windows",
               "x86_64",
-              "[velamqd-0.0.1-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip)"
+              "[velamqd-0.0.2-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-windows-x86_64.zip)"
             ]
           ]
         },
@@ -10898,7 +10898,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "paragraph",
-          "text": "[下载 velamqd-0.0.1-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip)"
+          "text": "[下载 velamqd-0.0.2-windows-x86_64.zip](https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-windows-x86_64.zip)"
         },
         {
           "type": "heading",
@@ -10913,7 +10913,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "powershell",
-          "code": "New-Item -ItemType Directory -Force C:\\velamq | Out-Null\nSet-Location C:\\velamq\nInvoke-WebRequest `\n  -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-windows-x86_64.zip `\n  -OutFile velamqd-0.0.1-windows-x86_64.zip\nExpand-Archive `\n  .\\velamqd-0.0.1-windows-x86_64.zip `\n  -DestinationPath .\\velamqd-0.0.1-windows-x86_64\nSet-Location .\\velamqd-0.0.1-windows-x86_64"
+          "code": "New-Item -ItemType Directory -Force C:\\velamq | Out-Null\nSet-Location C:\\velamq\nInvoke-WebRequest `\n  -Uri https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-windows-x86_64.zip `\n  -OutFile velamqd-0.0.2-windows-x86_64.zip\nExpand-Archive `\n  .\\velamqd-0.0.2-windows-x86_64.zip `\n  -DestinationPath .\\velamqd-0.0.2-windows-x86_64\nSet-Location .\\velamqd-0.0.2-windows-x86_64"
         },
         {
           "type": "heading",
@@ -10956,7 +10956,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "powershell",
-          "code": "$package = \"C:\\velamq\\velamqd-0.0.1-windows-x86_64\"\n$env:VELAMQ_CONFIG_FILE = \"$package\\config.toml\"\n$process = Start-Process `\n  -FilePath \"$package\\bin\\velamqd.exe\" `\n  -WorkingDirectory $package `\n  -PassThru\n$process.Id | Set-Content \"$package\\velamqd.pid\""
+          "code": "$package = \"C:\\velamq\\velamqd-0.0.2-windows-x86_64\"\n$env:VELAMQ_CONFIG_FILE = \"$package\\config.toml\"\n$process = Start-Process `\n  -FilePath \"$package\\bin\\velamqd.exe\" `\n  -WorkingDirectory $package `\n  -PassThru\n$process.Id | Set-Content \"$package\\velamqd.pid\""
         },
         {
           "type": "paragraph",
@@ -12215,7 +12215,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "paragraph",
-          "text": "当前版本 **0.0.1** 发布文档快照"
+          "text": "当前版本 **0.0.2** 发布文档快照"
         },
         {
           "type": "paragraph",
@@ -12301,7 +12301,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         },
         {
           "type": "paragraph",
-          "text": "**Linux x86_64**`velamqd-0.0.1-linux-musl-x86_64.zip` **Linux ARM64**`velamqd-0.0.1-linux-musl-aarch64.zip` **macOS Intel**`velamqd-0.0.1-macos-x86_64.zip` **macOS Apple Silicon**`velamqd-0.0.1-macos-aarch64.zip` **Windows x86_64**`velamqd-0.0.1-windows-x86_64.zip`"
+          "text": "**Linux x86_64**`velamqd-0.0.2-linux-musl-x86_64.zip` **Linux ARM64**`velamqd-0.0.2-linux-musl-aarch64.zip` **macOS Intel**`velamqd-0.0.2-macos-x86_64.zip` **macOS Apple Silicon**`velamqd-0.0.2-macos-aarch64.zip` **Windows x86_64**`velamqd-0.0.2-windows-x86_64.zip`"
         },
         {
           "type": "heading",
@@ -12322,7 +12322,7 @@ export const velamqDocsV002Data: { documents: Record<string, VelaMQDocDocument>;
         {
           "type": "code",
           "language": "bash",
-          "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.1-linux-musl-x86_64.zip\nunzip velamqd-0.0.1-linux-musl-x86_64.zip\ncd velamqd-0.0.1-linux-musl-x86_64\n./deploy/start.sh"
+          "code": "curl -L -O https://velamq.obs.cn-east-3.myhuaweicloud.com/velamqd-0.0.2-linux-musl-x86_64.zip\nunzip velamqd-0.0.2-linux-musl-x86_64.zip\ncd velamqd-0.0.2-linux-musl-x86_64\n./deploy/start.sh"
         },
         {
           "type": "paragraph",

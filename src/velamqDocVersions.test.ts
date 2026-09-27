@@ -136,4 +136,28 @@ describe('versioned VelaMQ documentation', () => {
   it('does not relabel English 0.0.1 content as 0.0.2', () => {
     expect(getVelaMQDocs('en', 'v0.0.2').versions[0].id).toBe('v0.0.1')
   })
+
+  it('uses 0.0.2 download links and install paths without changing the archive or rollback paths', () => {
+    const latest = getVelaMQDocs('zh').documents
+    const archive = getVelaMQDocs('zh', 'v0.0.1').documents
+    const downloads = JSON.stringify(latest['install/package'])
+    expect(downloads).toContain('当前公开安装包版本为 `0.0.2`')
+    expect(downloads).not.toContain('0.0.1')
+    for (const platform of ['linux-musl-x86_64', 'linux-musl-aarch64', 'macos-aarch64', 'macos-x86_64', 'windows-x86_64']) {
+      const filename = `velamqd-0.0.2-${platform}.zip`
+      expect(downloads).toContain(`[${filename}](https://velamq.obs.cn-east-3.myhuaweicloud.com/${filename})`)
+    }
+    for (const id of ['install/linux', 'install/macos', 'install/windows', 'product/basic-info']) {
+      let historicalExample = false
+      for (const block of latest[id].blocks) {
+        if (block.type === 'heading' && block.level === 2) historicalExample = /更新|回滚/.test(block.text)
+        if (!historicalExample) expect(JSON.stringify(block), id).not.toContain('velamqd-0.0.1-')
+      }
+    }
+    for (const id of ['install/linux', 'install/macos', 'install/windows']) {
+      expect(JSON.stringify(latest[id])).toContain('velamqd-0.0.1-')
+    }
+    expect(JSON.stringify(archive['install/package'])).toContain('当前公开安装包版本为 `0.0.1`')
+    expect(JSON.stringify(latest['install/linux'])).toContain('http://127.0.0.1:8080/')
+  })
 })

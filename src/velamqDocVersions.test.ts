@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { getVelaMQDocs } from './velamqDocVersions'
 import { velamqDocs } from './velamqDocs'
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 describe('versioned VelaMQ documentation', () => {
@@ -41,6 +41,12 @@ describe('versioned VelaMQ documentation', () => {
         if (block.type === 'image') {
           if (block.src.includes('/screenshots/')) expect(block.src).toContain('/screenshots/v0.0.2/')
           if (block.src.startsWith('/')) expect(existsSync(resolve('public', block.src.slice(1))), block.src).toBe(true)
+          if (block.src.includes('/screenshots/v0.0.2/') && block.src.endsWith('.png')) {
+            const png = readFileSync(resolve('public', block.src.slice(1)))
+            // Catch screenshots clipped to a sliver while a drawer is opening.
+            expect(png.readUInt32BE(16), block.src).toBeGreaterThanOrEqual(400)
+            expect(png.readUInt32BE(20), block.src).toBeGreaterThanOrEqual(200)
+          }
         }
       }
     }

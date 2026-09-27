@@ -54,12 +54,12 @@ import {
   type ViewId,
 } from './content'
 import {
-  velamqDocs,
   type VelaMQDocBlock,
   type VelaMQDocDocument,
   type VelaMQDocNavEntry,
   type VelaMQDocsCatalog,
 } from './velamqDocs'
+import { getVelaMQDocs } from './velamqDocVersions'
 import { createVelaEdgeDocsCatalog } from './velaedgeDocs'
 
 const capabilityIcons = [Server, Workflow, Database, Activity, ShieldCheck, Cable]
@@ -573,8 +573,8 @@ function App() {
   const [activeView, setActiveView] = useState<ViewId>(() => viewFromHash(window.location.hash))
   const [activeProduct, setActiveProduct] = useState<ProductId>('velamq')
   const [activeDocsProduct, setActiveDocsProduct] = useState<ProductId>('velamq')
-  const [activeDocsVersion, setActiveDocsVersion] = useState(velamqDocs.zh.versions[0]?.id ?? 'v0.0.1')
-  const [activeDocsTopic, setActiveDocsTopic] = useState(velamqDocs.zh.defaultDocumentId)
+  const [activeDocsVersion, setActiveDocsVersion] = useState(() => getVelaMQDocs(locale).versions[0].id)
+  const [activeDocsTopic, setActiveDocsTopic] = useState(() => getVelaMQDocs(locale).defaultDocumentId)
   const [contactForm, setContactForm] = useState<ContactFormState>(initialContactForm)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
   const [isDocsMenuOpen, setIsDocsMenuOpen] = useState(false)
@@ -586,13 +586,15 @@ function App() {
   const copy = translations[locale]
   const docsCatalogs = useMemo<Record<ProductId, VelaMQDocsCatalog>>(
     () => ({
-      velamq: velamqDocs[locale],
+      velamq: getVelaMQDocs(locale),
       'velamq-bench': createBenchDocsCatalog(locale),
       velaedge: createVelaEdgeDocsCatalog(locale),
     }),
     [locale],
   )
-  const docsCatalog = docsCatalogs[activeDocsProduct]
+  const docsCatalog = activeDocsProduct === 'velamq'
+    ? getVelaMQDocs(locale, activeDocsVersion)
+    : docsCatalogs[activeDocsProduct]
   const docsProductOptions = useMemo(
     () =>
       copy.products.map((product) => ({
@@ -839,7 +841,11 @@ function App() {
   const selectedDocsVersionLabel = selectedDocsVersion.label
 
   const selectDocsVersion = (versionId: string) => {
+    const nextCatalog = activeDocsProduct === 'velamq' ? getVelaMQDocs(locale, versionId) : docsCatalog
     setActiveDocsVersion(versionId)
+    if (!nextCatalog.documents[activeDocsTopic]) setActiveDocsTopic(nextCatalog.defaultDocumentId)
+    setDocsSearchQuery('')
+    setExpandedDocsBranches([])
     setIsDocsVersionMenuOpen(false)
   }
 
@@ -1289,7 +1295,9 @@ function App() {
               <div className="docs-topic-panel docs-document-panel">
                 <div className="docs-document-header">
                   <h3 id={`${selectedDocsDocument.id}-title`}>{selectedDocsDocument.title}</h3>
-                  {selectedDocsDocument.summary && <p>{selectedDocsDocument.summary}</p>}
+                  {selectedDocsDocument.summary && (
+                    <p>{renderInlineText(selectedDocsDocument.summary, selectedDocsDocument, docsCatalog, selectDocsTopic)}</p>
+                  )}
                 </div>
 
                 <div className="docs-document-body">

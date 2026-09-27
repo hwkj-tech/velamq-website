@@ -201,9 +201,9 @@ describe('HanNet homepage', () => {
     expect(screen.getByRole('heading', { level: 2, name: 'VelaMQ 文档中心' })).toBeInTheDocument()
     expect(screen.getByRole('search', { name: '浏览 VelaMQ 文档、规则、API' })).toBeInTheDocument()
     expect(within(screen.getByRole('complementary', { name: 'VelaMQ 文档目录' })).queryByRole('search')).not.toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '版本: v0.0.1' })).toBeInTheDocument()
-    expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: '展开 快速开始' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '版本: v0.0.2' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { level: 3, name: 'VelaMQ 0.0.2 版本说明' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: '内置函数与输入输出' })).toBeInTheDocument()
     expect(screen.queryByRole('button', { name: 'Linux 安装与服务管理' })).not.toBeInTheDocument()
     expect(screen.queryByText('VELAMQ DOCS')).not.toBeInTheDocument()
     expect(screen.queryByText('流程保护')).not.toBeInTheDocument()
@@ -219,6 +219,8 @@ describe('HanNet homepage', () => {
     render(<App />)
 
     await chooseDocsProduct(user, '文档')
+    await user.click(screen.getByRole('button', { name: '版本: v0.0.2' }))
+    await user.click(screen.getByRole('option', { name: /v0.0.1/ }))
 
     const searchbox = screen.getByRole('searchbox', { name: '浏览 VelaMQ 文档、规则、API' })
     await user.type(searchbox, 'Linux 服务')
@@ -301,6 +303,8 @@ describe('HanNet homepage', () => {
     render(<App />)
 
     await chooseDocsProduct(user, '文档')
+    await user.click(screen.getByRole('button', { name: '版本: v0.0.2' }))
+    await user.click(screen.getByRole('option', { name: /v0.0.1/ }))
 
     expect(screen.getByRole('heading', { level: 3, name: '产品介绍' })).toBeInTheDocument()
     expect(screen.queryByRole('heading', { level: 3, name: '快速启动' })).not.toBeInTheDocument()
@@ -373,6 +377,8 @@ describe('HanNet homepage', () => {
     render(<App />)
 
     await chooseDocsProduct(user, '文档')
+    await user.click(screen.getByRole('button', { name: '版本: v0.0.2' }))
+    await user.click(screen.getByRole('option', { name: /v0.0.1/ }))
 
     expect(screen.queryByRole('button', { name: 'Linux 安装与服务管理' })).not.toBeInTheDocument()
     await user.click(screen.getByRole('button', { name: '展开 快速开始' }))

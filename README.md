@@ -17,6 +17,23 @@ npm run lint
 npm run build
 ```
 
+## VelaMQ 版本文档
+
+中文文档默认打开 0.0.2，并可切回独立的 0.0.1 内容。0.0.2 完整继承 0.0.1 的 59 篇文档与目录，在此基础上更新变化的功能、新增使用示例。内置指标历史页及相关截图不再出现在 0.0.2，Prometheus/Grafana 集成继续保留。
+
+内容全部位于本仓库：`content/velamq/0.0.2/zh/` 是新增文章的 Markdown，`content/velamq/0.0.2/updates.mjs` 是原有章节的定向更新，`src/velamqDocs.ts` 是只读的历史归档。0.0.2 截图独立存放在 `public/velamq-docs/img/screenshots/v0.0.2/`，不覆盖旧版素材。
+
+更新内容后重新生成并验证：
+
+```bash
+npm run docs:generate
+npm run docs:check
+npm test -- --run
+npm run build
+```
+
+仅新增中文 0.0.2 手册；英文文档继续保留明确标注版本的 0.0.1。文档版本更新不代表安装包已发布。部署仍按下面的流程执行。
+
 ## GitHub Pages 自动部署
 
 当前 GitHub Pages 可以使用两种发布方式。
